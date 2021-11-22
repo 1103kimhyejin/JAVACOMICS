@@ -22,7 +22,7 @@
 
 <div id="fullscreen" class="hide">
 	<%-- <jsp:include page="main/myMenu.jsp" /> --%>
-	<jsp:include page="supportService/supportService.jsp" />
+	<jsp:include page="main/myMenu/myMenu.jsp" />
 </div>
 <div class="history"></div>
 
