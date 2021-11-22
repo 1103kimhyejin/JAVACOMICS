@@ -3,47 +3,6 @@
 
 <style type="text/css">
 
-body {
-	background-color : black;
-	padding-left : 30%;
-}
-
-span {
-	color : white;
-	font-size : 17px;
-	font-weight : 700;
-}
-
-.div1{
-	padding-left : 25%;
-	padding-bottom : 30px;
-}
-
-.div2 {
-	float : left;
-	padding-right: 300px;
-}
-
-.div3 {
-	display : inline-block;
-}
-
-.ul1 {
-	color : white;
-	list-style : none;
-	line-height : 50px;
-}
-
-.ul2 {
-	color : #5f5f5f;
-	list-style : none;
-	line-height : 50px;
-}
-
-li {
-	cursor : pointer;
-}
-
 </style>
 
 <body>
