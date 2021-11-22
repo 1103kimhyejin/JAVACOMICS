@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+/* reset */
+body,div,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,
+table,tr,th,td,
+form,fieldset,legend,input,label,select,textarea,button,
+header,footer,nav,aside,section,article,main,
+a,span,strong,em,b,i,address {margin:0; padding:0; box-sizing:border-box;}
+html {font-size:0.625em;}  /* 10px */
+body,h1,h2,h3,h4,h5,h6,button {
+	font-family:'Spoqa Han Sans',"돋움",dotum,sans-serif;
+	line-height:1;
+}
+a {text-decoration:none;}
+ul,ol,li {list-style:none;}
+img,fieldset {vertical-align:middle; border:none;}
+strong,em,b,i,address {font-weight:normal; font-style:normal;}
+table {border-collapse:collapse;}
+button {
+	border:none;
+	background-color:transparent;
+    outline: 0;
+	cursor:pointer;
+}
+
+/* common */
+.hide {display:none;}
+.blind {position:absolute; left:-9999px;}
+.clear:after {
+	content:"";
+	clear:both;
+	display:block;
+}
+
+.pc {display:none;}
+.mobile {}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+@charset "UTF-8";
+.imagebox {
+	width: 100%;
+	height: 550px;
+	position: relative;
+	right: 0;
+	overflow: hidden; 
+}
+.imagebox .bg {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top:0;
+	right:0;
+	bottom:0;
+	overflow:hidden;
+	opacity: 0.8;
+}
+.imagebox .bg img{
+	width: 100%;
+}
+.imagebox > .mainimg {
+	position: absolute;
+	left: 50%;
+ 	transform: translateX(-50%); 
+}
+.imagebox > .mainimg video{
+	
+	width: 420px;
+ 	height: 420px;	
+}
+.line{
+	position: absolute;
+	border-top: 1px solid white;
+	bottom: 50px;
+	font-size: 2rem;
+	left: 50%;
+ 	transform: translateX(-50%); 
+ 	width: 640px;
+}
+.line ul li{
+	display: inline-block;
+	color: white;
+	text-align: center;
+	padding: 5px;
+}
+.line ul li:first-child{
+	position: absolute;
+	top: 15px;
+} 
+.line ul li:nth-child(3){
+	position: absolute;
+	top: 45px;
+} 
+.line ul li:nth-child(3), li:nth-child(4), li:nth-child(6), li:nth-child(8), li:nth-child(10){
+	font-size: 1.2rem;
+} 
+svg{
+	color : white;	
+}

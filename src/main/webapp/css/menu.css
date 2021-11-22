@@ -1,0 +1,152 @@
+@charset "UTF-8";
+
+#menubar {
+	width: 100%;
+	height: 137px;
+	background: linear-gradient(to bottom, rgba(0,0,0,1),rgba(0,0,0,1) 50%, rgba(0,0,0,.7) 80%, rgba(0,0,0,0) 100%);
+	color: #fff;
+	position: relative;
+	overflow: hidden;
+}
+.mymenu {
+	width: 100px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 10;
+}
+.mymenu ul li {
+	display: block;
+	float: left;
+	margin-left: 15px;
+	cursor: pointer;
+}
+
+.mainmenu {
+	width: 1024px;
+	line-height: 137px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.mainmenu div {
+	width: 25%;
+	float: left;
+	font-size: 3rem;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	opacity: 0.5;
+	padding: 0 20px 0;
+}
+.mainmenu div:first-child{
+	opacity: 1;
+}
+.mainmenu div:first-child img{
+	width: 100%;
+}
+.submenu {
+	width: 80%;
+	display: block;
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+	transform: translateX(-50%);
+	text-align: center;
+}
+.submenu ul{
+	display: inline-block;
+}
+.submenu .toonList li {
+	display: block;
+	float: left;
+	font-size: 1.8rem;
+	margin: 0 10px;
+	border-radius: 18px;
+	padding: 5px;
+	background-color: transparent;
+	cursor: pointer;
+}
+.submenu .ranking li {
+	float: left;
+	font-size: 1.8rem;
+	margin: 0 15px;
+	border-radius: 18px;
+	padding: 8px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.submenu .myBox li {
+	float: left;
+	font-size: 1.8rem;
+	margin: 0 15px;
+	border-radius: 18px;
+	padding: 8px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+/*-------------tablet 1024------------------*/
+@media all and (max-width:1300px){
+
+}
+
+/*-------------tablet 768------------------*/
+@media all and (max-width:1024px){
+	.mainmenu {
+		width: 100%;
+	}
+}
+
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+	#menubar {
+		height: 100px;
+	}
+	.mymenu {
+		top: 15px;
+		right: 5%;
+	}
+	
+	.mainmenu {
+		width: 768px;
+		line-height: 100px;
+		left: 0;
+		transform: translateX(0);
+	}
+	.mainmenu div {
+		width: 22%;
+		font-size: 1.8rem;
+	}
+	.mainmenu div:first-child{
+		opacity: 1;
+	}
+	.submenu {
+		width: 100%;
+		bottom: 2px;
+	}
+	.submenu ul{
+		display: inline-block;
+	}
+	.submenu .toonList li {
+		font-size: 1.2rem;
+		margin: 0 7px;
+		border-radius: 12px;
+		padding: 5px;
+	}
+	.submenu .ranking li {
+		font-size: 1.2rem;
+		margin: 0 4px;
+		border-radius: 12px;
+		padding: 5px;
+	}
+	
+	.submenu .myBox li {
+		font-size: 1.2rem;
+		margin: 0 15px;
+		border-radius: 12px;
+		padding: 5px;
+	}
+
+}

@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+.myMenu {
+	width: 620px;
+	margin: 300px auto;
+	font-size: 3rem;
+	text-align: center;
+}
+.myMenu .backBtn {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+
+/*--------------------------*/
+
+
+.contentsdiv {
+	width: 620px;
+	position: absolute;
+	left: 50%;
+	top: 100px;
+	transform: translateX(-50%);
+	text-align: center;
+}
+.contentsdiv .membernamediv{
+	color : gray;
+	font-size: 3rem;
+	margin-bottom: 20px;
+}
+.contentsdiv .cashdiv img {
+	width: 50px;
+}
+.contentsdiv .cashdiv .cashspan {
+	font-size : 3rem;
+	color : #C6A66D;
+	line-height : 3rem;
+	margin : 0 0 140px 0;
+	cursor : pointer;
+}
+.contentsdiv .spandiv{
+	font-size: 3rem;
+	margin-top: 30px;
+}
+.contentsdiv .spandiv div {
+	margin: 20px;
+}
+.contentsdiv .spandiv div a {
+	text-decoration: none;
+	color : #fff;
+}
+
+.bottomdiv {
+	position: absolute;
+	left: 50%;
+	top: 400px;
+	transform: translateX(-50%);
+}
+.bottomdiv div {
+	font-size: 1.2rem;
+}
+
