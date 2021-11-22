@@ -37,8 +37,8 @@
 	
 	<div id="content">
 		<c:if test="${empty display }"> 
-			<jsp:include page="episode.jsp" /> 
-			<%-- <jsp:include page="webtoonInnerList/webtoonExplain.jsp" /> --%>
+			<%-- <jsp:include page="episode.jsp" />  --%>
+			<jsp:include page="webtoonExplain.jsp" /> 
 		</c:if>
 		<%-- <c:if test="${not empty display }"> 
 			<jsp:include page="${display }" />

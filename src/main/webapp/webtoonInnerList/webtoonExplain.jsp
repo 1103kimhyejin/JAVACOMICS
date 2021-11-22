@@ -25,6 +25,9 @@
 				<br>
 				</p>
 			</div>
+			<div class="button">
+				<input type="button" value="더보기" class="more"></input>
+			</div>
 			<div class="hidden">
 				<p>
 				게이트 안의 던전에서 마물을 사냥하는 각성자.<br>
