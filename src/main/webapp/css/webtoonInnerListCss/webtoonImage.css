@@ -21,39 +21,43 @@
 }
 .imagebox > .mainimg {
 	position: absolute;
+	top: 40px;
 	left: 50%;
  	transform: translateX(-50%); 
 }
 .imagebox > .mainimg video{
-	
 	width: 420px;
  	height: 420px;	
 }
 .line{
 	position: absolute;
 	border-top: 1px solid white;
-	bottom: 50px;
-	font-size: 2rem;
+	bottom: -4px;
+	font-size: 2.2rem;
 	left: 50%;
  	transform: translateX(-50%); 
  	width: 640px;
 }
-.line ul li{
+.line>ul>li{
 	display: inline-block;
 	color: white;
 	text-align: center;
 	padding: 5px;
 }
-.line ul li:first-child{
+.line>ul>li:first-child{
 	position: absolute;
-	top: 15px;
+	top: 20px;
+	font-weight: bold;
 } 
-.line ul li:nth-child(3){
+.line>ul>li:nth-child(3){
 	position: absolute;
-	top: 45px;
+	top: 55px;
 } 
-.line ul li:nth-child(3), li:nth-child(4), li:nth-child(6), li:nth-child(8), li:nth-child(10){
+.line>ul>li:nth-child(3), li:nth-child(6), li:nth-child(8), li:nth-child(10){
 	font-size: 1.2rem;
+} 
+.line>ul>li:nth-child(4), li:nth-child(5), li:nth-child(6), li:nth-child(7), li:nth-child(8), li:nth-child(9), li:nth-child(10){
+	margin-top: 8px
 } 
 svg{
 	color : white;	
