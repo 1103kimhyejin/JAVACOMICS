@@ -41,7 +41,7 @@
 	         return false;
 	      }
  	     
-	    addItem('1', '작성자', '내용', '21.11.11');
+	    addItem('1', '작성자', $('#webtoonComment_inputText').val(), '21.11.11');
 	    	
 		return false;
 	});

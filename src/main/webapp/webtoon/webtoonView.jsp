@@ -9,23 +9,24 @@
 <link rel="stylesheet" href="/JAVACOMICS/css/webtoonView.css">
 </head>
 <body>
-<div>
+<div id="webtoonView">
 	<div id="webtoonView_toon">
-		<img src="/JAVACOMICS/image/webtoonComment_image/webtoonTestImage.PNG" />
+		<img src="/JAVACOMICS/image/webtoonView_image/webtoonTestImage.PNG" />
 	</div>
 	
 	<div id="webtoonView_bottom">
-		<div> <img src="/JAVACOMICS/image/webtoonComment_image/upicon.png" width="20" /> 맨 위로</div>
+		<div> <img src="/JAVACOMICS/image/webtoonView_image/upicon.png" width="20" /> 맨 위로</div>
 		
 		<div id="webtoonView_good">
-			<img src="/JAVACOMICS/image/webtoonComment_image/goodicon.PNG" />
+			<span>8,431</span>
+			<img src="/JAVACOMICS/image/webtoonView_image/goodicon.PNG" />
 		</div>
 		
 		
 		<div id="webtoonView_bestComment">
-			<hr>
+			<hr class="webtoonView_hr">
 			<span>BEST</span>
-			<hr>
+			<hr class="webtoonView_hr">
 			<span>댓글 더보기</span>
 		</div>
 		
@@ -33,8 +34,58 @@
 		<br>
 		<br>
 		
-		<div id="webtoonView_similartoon">이 작품과 유사한 작품들</div>
-	</div>
-</div>
+		<div id="webtoonView_similartoon">
+			<div id="webtoonView_similartoonTitle">이 작품과 유사한 작품들</div>
+			
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>
+			
+			
+		
+	</div>		
+		</div>
+	</div><!-- bottom  -->
 </body>
 </html>
