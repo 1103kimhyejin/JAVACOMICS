@@ -11,7 +11,7 @@
 		display: inline-block;
 		position: relative;
 		margin: 0.1%;
-		width: 24.1%;
+		width: 24.4%;
 		height: 330px;
 		overflow: hidden;
 	}
@@ -27,11 +27,11 @@
 		left:0;
 	}
 	.box3 > img {
-		width: 180px;
-		position: absolute;
+		width:100%;
+		position:absolute;
 		bottom: 20px;
-		left:-15px;
-
+		left:0;
+		z-index: 1;
 	}
 	
 	.box:after {
@@ -43,9 +43,8 @@
 	#longBox{
 		display: inline-block;
 		position: relative;
-		margin: 0.2%;
 		width: 24.6%;
-		height: 660px;
+		height: 663px;
 		overflow: hidden;
 		float: left;
 		background-color: blue;
@@ -66,11 +65,12 @@
 		left:0;
 	}
 	#longBox3 > img{
-		width: 180px;
-		position:absolute;
-		bottom: 20px;
-		left:-15px;
 		
+		width:100%;
+		position:absolute;
+		bottom: 30px;
+		left:0;
+		z-index: 1;
 	}
 	
 	#longBox:after {
@@ -95,7 +95,14 @@
 		word-break: break-word;
 		display:block;
 	}
-	
+  	#Transparency{
+		position: absolute;
+		width:100%;
+		height:calc((100% / 3)*2);
+		left:0;
+		bottom: 0;
+		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.6)); /*투명도  */
+	}
 	
 </style>
 <div class="webtoonList">
@@ -107,15 +114,19 @@
 			<div id="longBox1">
 				<img src="image/webtoonList/01.Mon/01/bg.jpg"/>
 			</div>
+			
 			<div id = longBox2>
 				<video autoplay loop muted playsinline>
 						<source src="image/webtoonList/01.Mon/01/main.webm"
 	            				type="video/webm">
 				</video>
 			</div>
+			
 			<div id = longBox3>
 				<img src="image/webtoonList/01.Mon/01/title.png"/>
 			</div>
+			
+			<div id= "Transparency"></div>
 		</div>
 	
 		<div class="box">
@@ -128,6 +139,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/05/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -140,6 +152,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/06/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -152,6 +165,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/07/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -164,6 +178,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/08/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -176,6 +191,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/09/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -188,6 +204,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/10/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -200,6 +217,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/11/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -212,6 +230,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/12/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -224,6 +243,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/13/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -236,6 +256,7 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/14/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">
@@ -248,6 +269,46 @@
 			<div class="box3">
 				<img src="image/webtoonList/01.Mon/15/title.png"/>
 			</div>
+			<div id= "Transparency"></div>
+		</div>
+		
+		<div class="box">
+			<div class="box1">
+				<img src="image/webtoonList/01.Mon/16/bg.jpg"/>				
+			</div>
+			<div class="box2">
+				<img src="image/webtoonList/01.Mon/16/main.png"/>
+			</div>
+			<div class="box3">
+				<img src="image/webtoonList/01.Mon/16/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
+		</div>
+		
+		<div class="box">
+			<div class="box1">
+				<img src="image/webtoonList/01.Mon/17/bg.jpg"/>				
+			</div>
+			<div class="box2">
+				<img src="image/webtoonList/01.Mon/17/main.png"/>
+			</div>
+			<div class="box3">
+				<img src="image/webtoonList/01.Mon/17/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
+		</div>
+		
+		<div class="box">
+			<div class="box1">
+				<img src="image/webtoonList/01.Mon/18/bg.jpg"/>				
+			</div>
+			<div class="box2">
+				<img src="image/webtoonList/01.Mon/18/main.png"/>
+			</div>
+			<div class="box3">
+				<img src="image/webtoonList/01.Mon/18/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
 		</div>
 	
 		

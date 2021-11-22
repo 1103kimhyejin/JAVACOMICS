@@ -34,9 +34,7 @@
 		top:210px;
 		text-align: left;
 		padding-left:15px;
-	}
-	#rankBigBox3 > img{
-
+		z-index:1 ;
 	}
 	#rankNew{
 		display: inline-flex;
@@ -63,6 +61,7 @@
 		overflow:hidden;
 		right: 10px;
 		width:76px;
+		z-index:1;
 	}
 	.rankOne{
 		position:absolute;
@@ -113,10 +112,11 @@
 		left:0;
 	}
 	.rankBox3 > img{
-		width: 180px;
-		position: absolute;
+		width:100%;
+		position:absolute;
 		bottom: 20px;
-		left:-15px;
+		left:0;
+		z-index:1;
 	}
 	.rankBox:after {
 		content: '';
@@ -142,6 +142,15 @@
 		font-size:14px;
 		font-weight:800;
 	}
+  	#Transparency{
+		position: absolute;
+		width:100%;
+		height:calc((100% / 3)*2);
+		left:0;
+		bottom: 0;
+		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.6)); /*투명도  */
+	}
+	
 </style>
  
 <div id= "rankWeb">
@@ -170,6 +179,7 @@
 			<span class= "rankOne">1</span>
 			<div class= "rankM">ㅡ</div>
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 	<div class= "rankBox">
@@ -185,6 +195,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/05/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -200,6 +211,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/06/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -215,6 +227,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/07/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -230,6 +243,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/08/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -245,6 +259,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/09/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -260,6 +275,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/10/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -275,6 +291,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/11/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -290,6 +307,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/12/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -305,6 +323,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/13/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 		<div class= "rankBox">
@@ -320,6 +339,7 @@
 		<div class = "rankBox3">
 			<img src="image/webtoonList/01.Mon/15/title.png">
 		</div>
+		<div id= "Transparency"></div>
 	</div>
 	
 
