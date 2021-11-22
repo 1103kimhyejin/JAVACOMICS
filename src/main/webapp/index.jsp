@@ -30,7 +30,7 @@
 
 	<div id="container">
 		<c:if test="${empty display }">
-			<jsp:include page="main/body.jsp" />
+			<jsp:include page="main/webtoonList/homebody.jsp" />
 		</c:if>
 		<c:if test="${not empty display }">
 			<jsp:include page="${display }" />
@@ -40,7 +40,7 @@
 
 <footer>
 	<ul>
-		<li>사업자 정보</li>
+		<li>사업자 정보1</li>
 		<li>이용약관</li>
 		<li>개인정보처리방침</li>
 		<li>청소년 보호 정책</li>
