@@ -149,7 +149,6 @@
 		display:block;
 		height:100%;
 		width:100%;
-		opacity:0.8;
 		
 	}
 	#watchingListBottomBox2 > img{
@@ -158,11 +157,117 @@
 		bottom:10px;
 		left:0;
 		display:block;
-		background-color: linear-gradient(180deg, transparent, rgba(0,0,0,.6);
-		margin-top:0;
-		margin-bottom:0;
-		margin-left:auto;
-		margin-right:auto;
+
+	}
+  	#Transparency{
+		position: absolute;
+		width:100%;
+		height:calc((100%/3)*2);
+		left:0;
+		bottom: 0;
+		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.6)); /*투명도  */
+	}
+	#similarList{
+		margin-top:70px;
+		padding-top: 68px;
+		position:relative;
+		width:100%;
+	}
+	#similarListTitle{
+		height: 120px;
+		transform: translateY(0px);
+		text-align: right;
+		line-height: 42px;
+		padding-left:20px;
+		padding-right:20px;
+	}
+	
+	
+	.similarListTitle1{
+		justify-content: flex-end;
+		display: flex;
+		overflow:hidden;
+		line-height:36px;
+		position: relative;
+		width:100%;
+	}
+	.similarListTitle1 > p{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		color: #333;
+		font-size:28px;
+		font-weight: 900;
+	}
+	.similarListTitle2{
+		justify-content: flex-end;
+		display: flex;
+		overflow:hidden;
+		line-height:36px;
+		position: relative;
+		width:100%;
+	}
+	.similarListTitle2 > p{
+		width:auto;
+		white-space:nowrap;
+		flex:0 1 auto;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		word-break: break-word;
+		color: #333;
+		font-size:28px;
+		font-weight:900;	
+	}
+	.similarListTitle3{
+		justify-content: flex-end;
+		display: flex;
+		overflow:hidden;
+		line-height:36px;
+		position: relative;
+		width:100%;
+	}
+	.similarListTitle3 > p{
+		width: auto;
+		white-space: nowrap;
+		flex: 0 1 auto;
+		overflow:hidden;
+		text-overflow:ellipsis;
+		word-break: break-word;
+		color: #333;
+		font-size:28px;
+		font-weight:900;
+	}
+	
+	#similarListBox{
+		display: inline-block;
+		position: relative;
+		margin: 0.1%;
+		width: 24.1%;
+		height: 330px;
+		overflow: hidden;
+	}
+	.similarListBox1 > img {
+		position: absolute;
+		top: -50px;
+		left: 0px;
+	}
+	.similarListBox2 > img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left:0;
+	}
+	.similarListBox3 > img {
+		width:100%;
+		position:absolute;
+		bottom: 20px;
+		left:0;
+		z-index: 1;
+	}
+	
+	.box:after {
+		content: '';
+		display: block;
+		clear: both;
 	}
 	
 </style>
@@ -184,6 +289,7 @@
 		</div>
 		
 		<div id = "watchingListBigBox">	<!-- 리스트박스 안에 큰박스  -->
+		
 			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
 				<div id= "watchingListTopBox">
 					<div id="watchingListTopTitle">
@@ -192,11 +298,12 @@
 				</div>
 				
 				<div id="watchingListBottomBox" >
+				
 					<div id="watchingListBottomBox1">
 						<img src= "image/webtoonList/01.Mon/06/main.png">
 					</div>
-					<div id ="">
-					</div>
+					
+					<div id ="Transparency"></div> <!--투명도  -->
 					
 					<div id="watchingListBottomBox2">
 						<img src= "image/webtoonList/01.Mon/06/title.png">
@@ -204,22 +311,179 @@
 					
 				</div>
 			</div>	
+			
+			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
+				<div id= "watchingListTopBox">
+					<div id="watchingListTopTitle">
+						<p>프롤로그</p>
+					</div>
+				</div>
+				
+				<div id="watchingListBottomBox" >
+				
+					<div id="watchingListBottomBox1">
+						<img src= "image/webtoonList/01.Mon/07/main.png">
+					</div>
+					
+					<div id ="Transparency"></div> <!--투명도  -->
+					
+					<div id="watchingListBottomBox2">
+						<img src= "image/webtoonList/01.Mon/07/title.png">
+					</div>
+					
+				</div>
+			</div>
+			
+			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
+				<div id= "watchingListTopBox">
+					<div id="watchingListTopTitle">
+						<p>1화</p>
+					</div>
+				</div>
+				
+				<div id="watchingListBottomBox" >
+				
+					<div id="watchingListBottomBox1">
+						<img src= "image/webtoonList/01.Mon/08/main.png">
+					</div>
+					
+					<div id ="Transparency"></div> <!--투명도  -->
+					
+					<div id="watchingListBottomBox2">
+						<img src= "image/webtoonList/01.Mon/08/title.png">
+					</div>
+					
+				</div>
+			</div>
 		</div>
 	</div>
 	
+	
+	
 	<div id = "similarList">	<!-- 컨테이너 안에서 유사리스트  -->
-		<div id= "similarListTitle" > <!--유사 리스트안에 제목박스  -->
-			<div></div>
-			<div></div>
-			<div></div>
+	
+		<div id= "similarListTitle" > <!--유사 리스트안에 큰제목  -->
+			<div class = "similarListTitle1">
+				<p>가비왕</p>
+			</div>
+			
+			<div class = "similarListTitle2">
+				<p>그림체와 유사한</p>
+			</div>
+			
+			<div class = "similarListTitle3">
+				<p>작품 어떠세요?</p>
+			</div>
 		</div>
 		
 		<div id= "similarListBigBox"> <!--유사 리스트 안에 큰박스  -->
+		
 			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div></div>
-				<div></div>
-				<div></div>
+				<div class="similarListBox1">
+					<img src="image/webtoonList/02.Tue/02/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="image/webtoonList/02.Tue/02/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="image/webtoonList/02.Tue/02/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
 			</div>
+			
+			<div id = "similarListBox"> <!--유사 리스트 박스  -->
+				<div class="similarListBox1">
+					<img src="image/webtoonList/02.Tue/03/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="image/webtoonList/02.Tue/03/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="image/webtoonList/02.Tue/03/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
+			</div>
+			
+			<div id = "similarListBox"> <!--유사 리스트 박스  -->
+				<div class="similarListBox1">
+					<img src="image/webtoonList/02.Tue/04/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="image/webtoonList/02.Tue/04/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="image/webtoonList/02.Tue/04/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
+			</div>
+			
+			<div id = "similarListBox"> <!--유사 리스트 박스  -->
+				<div class="similarListBox1">
+					<img src="image/webtoonList/02.Tue/05/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="image/webtoonList/02.Tue/05/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="image/webtoonList/02.Tue/05/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
+			</div>
+			
+			<div id = "similarListBox"> <!--유사 리스트 박스  -->
+				<div class="similarListBox1">
+					<img src="image/webtoonList/02.Tue/06/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="image/webtoonList/02.Tue/06/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="image/webtoonList/02.Tue/06/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
+			</div>
+			
+			<div id = "similarListBox"> <!--유사 리스트 박스  -->
+				<div class="similarListBox1">
+					<img src="image/webtoonList/02.Tue/07/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="image/webtoonList/02.Tue/07/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="image/webtoonList/02.Tue/07/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
+			</div>
+			
+			<div id = "similarListBox"> <!--유사 리스트 박스  -->
+				<div class="similarListBox1">
+					<img src="image/webtoonList/02.Tue/08/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="image/webtoonList/02.Tue/08/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="image/webtoonList/02.Tue/08/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
+			</div>
+			
+			<div id = "similarListBox"> <!--유사 리스트 박스  -->
+				<div class="similarListBox1">
+					<img src="image/webtoonList/02.Tue/09/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="image/webtoonList/02.Tue/09/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="image/webtoonList/02.Tue/09/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
+			</div>
+			
+			
+			
 		</div>
 	</div>
 </div>
