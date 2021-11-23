@@ -4,6 +4,7 @@
 	width: 640px;
 	margin: 0 auto; 
 	color: white;
+	padding: 10px 0 0 0; 
 }
 .plot>ul>li:first-child, .plot>ul>li:nth-child(2){
 	border-radius: 9px;
@@ -23,48 +24,49 @@
 	color: black;
 }
 .plot>ul>li:nth-child(4){
+	padding-top: 10px;
 	font-size: 2.2rem;
 	font-weight: bold;
 }
 .plot>ul>li:nth-child(5), .plot>ul>li:nth-child(6){
-	position: absolute;
 	display: inline-block;	
 	font-size: 1.3rem;
 	margin: 0 4px 0 0;
-	padding: 0 6px;
+	padding: 3px 0;
 }
 .plot>ul>li:nth-child(6){
-	left: 70px;	
+	position: absolute;
+	left: 80px;	
 }	
 .plot>ul>li:nth-child(8), .plot>ul>li:nth-child(9){
-	position: absolute;
 	display: inline-block;	
 	font-size: 1.3rem;
 	margin: 0 4px 0 0;
-	padding: 0 6px;
+	padding: 3px 0;
 }
 .plot>ul>li:nth-child(9){
-	left: 70px;	
+	position: absolute;
+	left: 80px;	
 }
 .plot>ul>li:nth-child(11), .plot>ul>li:nth-child(12){
-	position: absolute;
 	display: inline-block;	
 	font-size: 1.3rem;
 	margin: 0 4px 0 0;
-	padding: 0 6px;
+	padding: 3px 0;
 }
 .plot>ul>li:nth-child(12){
-	left: 70px;	
+	position: absolute;
+	left: 80px;	
 }
 .plot>ul>li:nth-child(14), .plot>ul>li:nth-child(15){
-	position: absolute;
 	display: inline-block;	
 	font-size: 1.3rem;
 	margin: 0 4px 0 0;
-	padding: 0 6px;
+	padding: 3px 0;
 }
 .plot>ul>li:nth-child(15){
-	left: 70px;	
+	position: absolute;
+	left: 80px;	
 }
 .plot>ul>li:nth-child(19){
 	font-size: 1.7rem;
@@ -78,47 +80,9 @@
 .visible>p, .hidden>p{
 	font-size: 1.3rem;
 }
-.visible>button{
-	color: white;
-}
-.keyword>span{
-	font-size: 1.7rem;
-	font-weight: bold;
-	padding-left: 20px;
-}
-.keyword ul>li{
-	position: absolute;
-	display: inline-block;
-	bottom: 1px;
-}
-.keyword ul>li:after{
-	content: '';
-	clear: both;
-	display: block; 
-}
-.keyword ul>li:first-child{
-	left: 25px;
-}
-.keyword ul>li:nth-child(2){
-	left: 100px;
-}
-.keyword ul>li:nth-child(3){
-	left: 200px;
-}
-.keyword ul>li:nth-child(4){
-	left: 400px;
-}
-.similar{
-	width: 10px;
-	height: 50px;
-}
-.button{
-	width: 100%;
-	hieght: 50px;
-	/* position: relative; */
-}
 .more{
-	position: absolute;
+	display: block;
+	margin: 0 auto;
 	border-radius: 9px;
 	border-color: white;
 	color: white;
@@ -127,9 +91,85 @@
 	transform: translateX(-50%);
 	padding: 3px 15px;
 	font-size: 1.3rem;
+	color: white;
 }
 .more::after{
 	content: '';
 	clear: both;
 	display: block;
+} 
+.keyword>span{
+	display: block;
+	font-size: 1.7rem;
+	font-weight: bold;
+	padding: 20px 0 0 20px;
+}
+.keyword ul>li{
+	display: inline-block;
+	margin: 12px 12px 5px 5px;
+	padding: 0 12px;
+	/* background-color: #FFFFFF1A; */
+	background-color: #313b4c;
+	font-size: 1.6rem;
+}
+.keyword ul>li:after{
+	content: '';
+	clear: both;
+	display: block; 
+}
+.keyword ul>li:first-child{
+	left: 17px;
+}
+.keyword ul>li:nth-child(2){
+	left: 105px;
+}
+.keyword ul>li:nth-child(3){
+	left: 206px;
+}
+.keyword ul>li:nth-child(4){
+	left: 327px;
+} 
+.similar>span{
+	width: 100%;
+	display: block;
+	font-size: 1.7rem;
+	font-weight: bold;
+	padding: 20px 0 15px 20px;
+}
+#webtoonView_similartoon {
+	width: 640px; 
+	display:inline-block;
+}
+#webtoonView_similartoonTitle{
+	color: white;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align:left;
+	padding:50px 0px 15px 5px;
+}
+.webtoonView_similartoonbox{
+	position: relative;
+	display: inline-block;
+	width: 18.5%;
+	height: 230px;
+	left: 20px;
+}
+
+.webtoonView_similartoonbox1 > img{
+	position:absolute;
+	width:100%;
+	height: 100%;
+	left:0;
+}
+.webtoonView_similartoonbox2 > img{
+	position:absolute;
+	width:100%;
+	height: 100%;
+	left:0;
+}
+.webtoonView_similartoonbox3 > img{
+	position:absolute;
+	width:100%;
+	bottom:20px;
+	left:0;
 }
