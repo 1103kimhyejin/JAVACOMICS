@@ -21,6 +21,7 @@
 </header>
 
 <div id="fullscreen" class="hide">
+	<div class="history"></div>
 	<%-- <jsp:include page="main/myMenu.jsp" /> --%>
 	<jsp:include page="main/myMenu/myMenu.jsp" />
 </div>

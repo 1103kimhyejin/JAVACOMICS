@@ -49,7 +49,6 @@
 }
 .searchDiv {
 	width: 100%;
-	background-color: green;
 }
 </style>
 
