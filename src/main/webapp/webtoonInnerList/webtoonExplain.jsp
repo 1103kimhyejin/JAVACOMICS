@@ -81,46 +81,46 @@
 			</div>
 			<div class="webtoonView_similartoonbox">
 				<div class="webtoonView_similartoonbox1">
-					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+					<img src="../image/webtoonList/01.Mon/05/bg.jpg"/>					
 				</div>
 				<div class="webtoonView_similartoonbox2">
-					<img src="../image/webtoonView_image/similartoon1.png"/>
+					<img src="../image/webtoonList/01.Mon/05/main.png"/>
 				</div>
 				<div class="webtoonView_similartoonbox3">
-					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+					<img src="../image/webtoonList/01.Mon/05/title.png"/>
 				</div>
 			</div>
 			<div class="webtoonView_similartoonbox">
 				<div class="webtoonView_similartoonbox1">
-					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+					<img src="../image/webtoonList/01.Mon/03/bg.jpg"/>					
 				</div>
 				<div class="webtoonView_similartoonbox2">
-					<img src="../image/webtoonView_image/similartoon1.png"/>
+					<img src="../image/webtoonList/01.Mon/03/main.png"/>
 				</div>
 				<div class="webtoonView_similartoonbox3">
-					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+					<img src="../image/webtoonList/01.Mon/03/title.png"/>
 				</div>
 			</div>
 			<div class="webtoonView_similartoonbox">
 				<div class="webtoonView_similartoonbox1">
-					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+					<img src="../image/webtoonList/02.Tue/03/bg.jpg"/>					
 				</div>
 				<div class="webtoonView_similartoonbox2">
-					<img src="../image/webtoonView_image/similartoon1.png"/>
+					<img src="../image/webtoonList/02.Tue/03/main.png"/>
 				</div>
 				<div class="webtoonView_similartoonbox3">
-					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+					<img src="../image/webtoonList/02.Tue/03/title.png"/>
 				</div>
 			</div>	
 			<div class="webtoonView_similartoonbox">
 				<div class="webtoonView_similartoonbox1">
-					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+					<img src="../image/webtoonList/04.Thu/05/bg.jpg"/>					
 				</div>
 				<div class="webtoonView_similartoonbox2">
-					<img src="../image/webtoonView_image/similartoon1.png"/>
+					<img src="../image/webtoonList/04.Thu/05/main.png"/>
 				</div>
 				<div class="webtoonView_similartoonbox3">
-					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+					<img src="../image/webtoonList/04.Thu/05/title.png"/>
 				</div>
 			</div>	
 		</div>		
