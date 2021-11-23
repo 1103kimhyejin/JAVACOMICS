@@ -51,3 +51,22 @@ section {
 #content {
 	background-color: black;
 }
+.scroll{
+	position: fixed;
+	bottom: 15px;
+	height: 45px;
+	width: 45px;
+	border-radius: 50%;
+	background-color: black;
+	left: 50%;
+	transform: translateX(-50%); 
+ 	border: 1px solid white; 
+}
+.scroll img{
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	left: 50%;
+	transform: translateX(-50%); 
+	bottom: 13px;
+}
