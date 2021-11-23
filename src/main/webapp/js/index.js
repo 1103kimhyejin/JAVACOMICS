@@ -56,11 +56,11 @@ $(function(){
 	$(window).resize(function(){
 	        var win_w = $(window).width()
 	        if (win_w >= 1300){
-	            slider.slick('unslick');
+	            
 	        } else if (win_w >= 1024 && win_w < 1300){
-	            slider.slick('unslick');
+	            
 	        } else if (win_w >= 768 && win_w < 1024){
-	            slider.slick('unslick');
+	            
 	        } else {
 	           $('.slider').slick({ 
 					responsive: [ // 반응형 웹 구현 옵션

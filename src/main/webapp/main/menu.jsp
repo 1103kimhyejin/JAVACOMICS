@@ -6,8 +6,8 @@
 <div id="menubar">
 	<div class="mymenu">
 		<ul>
-			<li>검색</li>
-			<li>마이메뉴</li>
+			<li><a href="search/searchMenu.jsp"><img src="image/searchBtn.svg"></a></li>
+			<li><img src="image/menuBtn.svg"></li>
 		</ul>
 	</div>
 	<div class="mainmenu slider">
