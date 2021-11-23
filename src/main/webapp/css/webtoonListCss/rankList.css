@@ -1,0 +1,150 @@
+@charset "UTF-8";
+	#rankWeb{
+		width:640px;
+		margin: 0 auto;
+		background-color: black;
+		
+	}
+	#rankBigBox{
+		display: inline-block;
+		position:relative;
+		width: 100%;
+		height: 440px;
+		overflow: hidden;
+	}
+	#rankBigBox1 > img{
+		position:absolute;
+		width:100%;
+		left:0;
+		
+	}
+	#rankBigBox2 > video{
+		position: absolute;
+		width:80%;
+		height:100%;
+		left:80px;
+		top:10px;
+	}
+	#rankBigBox3{
+		width:35%;
+		height: 200px;
+		position:absolute;
+		top:210px;
+		text-align: left;
+		padding-left:15px;
+		z-index:1 ;
+	}
+	#rankNew{
+		display: inline-flex;
+		height: 18px;
+		border-radius: 9px;
+		line-height: 20px;
+		color: #fff;
+		font-size:11px;
+		font-weight: 700;
+		background-color: #ff3042;
+		padding-left: 6px;
+		padding-right:6px;
+		margin-bottom:15px;
+	}
+	#rankStory{
+		font-size: larger;
+		margin-top: 20px;
+		line-height: 20px;
+	}
+	.rankBigNum{
+		position:absolute;
+		bottom:22px;
+		height:100px;
+		overflow:hidden;
+		right: 10px;
+		width:76px;
+		z-index:1;
+	}
+	.rankOne{
+		position:absolute;
+		color:#fff;
+		font-size:66px;
+		font-weight:800;
+		bottom:-7px;
+		left:6px;
+		z-index:1;
+		font-family: KwNumber,sans-serif!important;
+	}
+	.rankM{
+		position:absolute;
+		align-items: center;
+    	display: flex;
+    	justify-content: center;
+		bottom:2px;
+		height: 16px;
+		right: 8px;
+		z-index: 1;
+	}
+	.rankBigNum:after{
+		background-color: #ff3042;
+		border-radius: 10.5px;
+		bottom:0;
+		content: "";
+		height: 21px;
+		position: absolute;
+		right:0;
+		width:100%;
+	}
+	.rankBox{
+		display: inline-block;
+		position:relative;
+		width: 24.6%;
+		height: 330px;
+		overflow: hidden;
+	}
+	.rankBox1 > img{
+		position: absolute;
+		top: -50px;
+		left: 0px;
+	}
+	.rankBox2 > img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left:0;
+	}
+	.rankBox3 > img{
+		width:100%;
+		position:absolute;
+		bottom: 20px;
+		left:0;
+		z-index:1;
+	}
+	.rankBox:after {
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.rankNum{
+		position:absolute;
+		border-radius: 10.5px;
+		height:21px;
+		left:6px;
+		top:6px;
+		width:68px;
+		background-color: #1c1c1c;
+		padding-top:1px;
+		z-index:1;
+	}
+	.rankNum > span{
+		position:absolute;
+		left:8px;
+		top:4px;
+		color:#fff;
+		font-size:14px;
+		font-weight:800;
+	}
+  	#Transparency{
+		position: absolute;
+		width:100%;
+		height:calc((100% / 3)*2);
+		left:0;
+		bottom: 0;
+		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.6)); /*투명도  */
+	}
