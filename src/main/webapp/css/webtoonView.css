@@ -1,9 +1,80 @@
 @charset "UTF-8";
+#webtoonView_header {
+	display:flex;
+	width:100%;
+	height:100px;
+	color: white;
+	font-weight: bold;
+	font-size: 1.7rem;
+	background: linear-gradient(to bottom, rgba(128,128,128,1), rgba(255,255,255,0));
+	justify-content: space-between;
+}
+/* #webtoonView_header p:nth-child(3) svg{
+	width: 30px;
+	height: 30px;
+	color: white;
+} */
+#webtoonView_header p:nth-child(1){
+	margin:15px;
+}
+#webtoonView_header p:nth-child(2){
+	margin:15px;
+}
 
+#webtoonView_controllBar{
+	background-image: conic-gradient(from 
+					.36turn,#a02dff,#5f28ff 
+					.13turn,#3860ff 
+					.24turn,#0a96ff 
+					.35turn,#1e32ff 
+					.46turn,#5f28ff 
+					.55turn,#a02dff 
+					.72turn,#ff0f00 
+					.89turn,#a02dff);
+	border-radius: 26px;		
+	height: 54px;
+    width: 350px;
+	margin:0 auto;	
+	position: relative;
+}
+#webtoonView_controllBar_content{
+	border-radius: 24px;
+    height: 48px;
+    width: 344px;
+    background-color:black;
+    position: absolute; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+#webtoonView_controllBar_content img{
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%); 
+}
+#webtoonView_controllBar_content img:first-child{
+	left: 22px;
+}
+#webtoonView_controllBar_content img:nth-child(2){
+	left: 110px; 
+}
+#webtoonView_controllBar_content svg{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	color: white;
+	top: 50%;
+    transform: translateY(-50%);
+    left: 203px; 
+}
+#webtoonView_controllBar_content img:nth-child(4){
+	left: 290px; 
+}
 #webtoonView_up{
 	cursor:pointer;
 	border-top: 1px solid #f2f2f2;
 	padding:20px;
+	margin:30px 0px 0px 0px;
 }
 #webtoonView_upbtn{
 	border:none;
@@ -41,7 +112,7 @@
 	font-weight : bold;
 }
 
-#webtoonView_bestComment span:nth-child(4) {
+#webtoonView_bestComment a:nth-child(4) {
 	display: inline-block;
 	color: gray;
 	font-size: 1.5rem;
@@ -58,6 +129,11 @@
 
 #webtoonView{
 	text-align:center;	
+	
+}
+
+#webtoonView_toon{
+	margin:20px;
 }
 #webtoonView_similartoon {
 	width: 640px; 
