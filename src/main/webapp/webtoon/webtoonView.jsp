@@ -9,16 +9,26 @@
 <link rel="stylesheet" href="/JAVACOMICS/css/webtoonView.css">
 </head>
 <body>
+
+<header>
+   
+</header>
+
+
 <div id="webtoonView">
 	<div id="webtoonView_toon">
 		<img src="/JAVACOMICS/image/webtoonView_image/webtoonTestImage.PNG" />
 	</div>
 	
+	<div id="webtoonView_up"> 
+		<img src="/JAVACOMICS/image/webtoonView_image/upicon.png" />
+		<input type="button" value="맨 위로" id="webtoonView_upbtn"/>
+	</div>
+	
 	<div id="webtoonView_bottom">
-		<div> <img src="/JAVACOMICS/image/webtoonView_image/upicon.png" width="20" /> 맨 위로</div>
 		
 		<div id="webtoonView_good">
-			<span>8,431</span>
+			<div>8,431</div>
 			<img src="/JAVACOMICS/image/webtoonView_image/goodicon.PNG" />
 		</div>
 		
@@ -85,7 +95,7 @@
 			
 		
 	</div>		
-		</div>
+</div>
 	</div><!-- bottom  -->
 </body>
 </html>
