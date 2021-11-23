@@ -14,15 +14,17 @@
             				type="video/webm">
 			</video>
 		</div>
-		<div id = "rankBigBox3">
-			<p id ="rankNew">
-			신작
-			</p>
-			<img src ="image/rankbody/rankbigimg.png">
-			<p id = "rankStory">
-			오해를 딛고 불완전한 서로를 보듬고<br>
-			함께 성장하는 가족의 이야기.
-			</p>			
+		<div>
+			<div id = "rankBigBox3">
+				<p id ="rankNew">
+				신작
+				</p>
+				<img src ="image/rankbody/rankbigimg.png">
+				<p id = "rankStory">
+				오해를 딛고 불완전한 서로를 보듬고<br>
+				함께 성장하는 가족의 이야기.
+				</p>			
+			</div>
 		</div>
 		
 		<div class = "rankBigNum">
