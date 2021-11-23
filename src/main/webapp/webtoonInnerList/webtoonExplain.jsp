@@ -25,9 +25,7 @@
 				<br>
 				</p>
 			</div>
-			<div class="button">
-				<input type="button" value="더보기" class="more"></input>
-			</div>
+			<input type="button" value="더보기" class="more"></input>
 			<div class="hidden">
 				<p>
 				게이트 안의 던전에서 마물을 사냥하는 각성자.<br>
@@ -69,6 +67,63 @@
 			</ul>
 		</div>	
 		<div class="similar">
+			<span>이 작품과 유사한 작품들</span>		
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>	
+			<div class="webtoonView_similartoonbox">
+				<div class="webtoonView_similartoonbox1">
+					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
+				</div>
+				<div class="webtoonView_similartoonbox2">
+					<img src="../image/webtoonView_image/similartoon1.png"/>
+				</div>
+				<div class="webtoonView_similartoonbox3">
+					<img src="../image/webtoonView_image/similartoon1_name.png"/>
+				</div>
+			</div>	
+		</div>		
 		</div>		
 	</div>
 </div>
