@@ -1,6 +1,7 @@
 @charset "UTF-8";
 .imagebox {
 	width: 100%;
+	background-color: black;
 	height: 550px;
 	position: relative;
 	right: 0;
@@ -62,3 +63,14 @@
 svg{
 	color : white;	
 }
+
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+	.imagebox {
+		width: 100%;
+	}
+	.line{
+		width: 100%;
+	}
+}
+
