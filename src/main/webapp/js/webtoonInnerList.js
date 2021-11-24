@@ -9,10 +9,10 @@ $(function(){
 		$('.more').hide();
 	});
 	
-	$('.top ul:nth-child(2) li:nth-child(2)').css({"background-color":"transparent", "color":"#fff"});
+	$('.information').css({"background-color":"transparent", "color":"#fff"});
 	
-	$('.top ul:nth-child(2) li').click(function(){
+	$('.top ul li').click(function(){
 		$(this).css({"background-color":"#fff", "color":"black"})
-		$('.top ul:nth-child(2) li').not($(this)).css({"background-color":"transparent", "color":"#fff"})
+		$('.top ul li').not($(this)).css({"background-color":"transparent", "color":"#fff"})
 	});
 })
