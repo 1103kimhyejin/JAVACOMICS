@@ -26,7 +26,7 @@
 		<tr>
 			<td>비밀번호</td>
 			<td>
-				<input type="password" name="pwd" id="pwd" size="30" placeholder="비밀번호 입력">
+				<input type="password" name="pwd" id="pwd"  placeholder="비밀번호 입력">
 				<div id= "pwdDiv"></div>
 			</td>
 		</tr>

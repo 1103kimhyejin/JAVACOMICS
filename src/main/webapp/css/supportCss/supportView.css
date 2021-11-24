@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+.backBtn {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+.supportView {
+	width: 700px;
+	margin : 0 auto;
+	text-align: center;
+}
+.supportView h1 {
+	margin: 50px;
+}
+#supportViewForm {
+	margin: 0 auto;
+	background-color: rgba( 28, 28, 28, 0.8 );
+	padding: 20px;
+}
+#supportViewForm table {
+	width: 100%;
+	text-align: left;
+}
+#supportViewForm table tr td {
+	padding: 10px;
+	border-bottom: 1px solid #fff;
+}
+#supportViewForm table tr:nth-child(2) td {
+	width: 33%;
+	font-size: 1.6rem;
+}
+#supportViewForm table #subjectSpan {
+	font-size: 2rem;
+}
+#supportViewForm table td pre {
+	white-space: pre-line; 
+	word-break: break-all;
+}
+#supportViewForm table #contentSpan {
+	font-size: 1.6rem;
+}
+#supportViewForm input[type=button] {
+	width: 70px;
+	height: 30px;
+	float: right;
+	margin: 20px 5px;
+}
+
+
+/*-------------tablet 1024------------------*/
+@media all and (max-width:1300px){
+	
+}
+
+/*-------------tablet 768------------------*/
+@media all and (max-width:1024px){
+	
+}
+
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+	.supportView {
+		width: 100%;
+	}
+	#supportViewForm table tr:nth-child(2) td:first-child {
+		display: none;
+	}
+	#supportViewForm input[type=button] {
+		margin: 20px 2px;
+	}
+}
