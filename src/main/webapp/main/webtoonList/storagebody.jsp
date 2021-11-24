@@ -30,7 +30,6 @@
 				</div>
 				
 				<div id="watchingListBottomBox" >
-				
 					<div id="watchingListBottomBox1">
 						<img src= "image/webtoonList/01.Mon/06/main.png">
 					</div>
@@ -40,7 +39,6 @@
 					<div id="watchingListBottomBox2">
 						<img src= "image/webtoonList/01.Mon/06/title.png">
 					</div>
-					
 				</div>
 			</div>	
 			
@@ -52,7 +50,6 @@
 				</div>
 				
 				<div id="watchingListBottomBox" >
-				
 					<div id="watchingListBottomBox1">
 						<img src= "image/webtoonList/01.Mon/07/main.png">
 					</div>
@@ -62,7 +59,6 @@
 					<div id="watchingListBottomBox2">
 						<img src= "image/webtoonList/01.Mon/07/title.png">
 					</div>
-					
 				</div>
 			</div>
 			
@@ -74,7 +70,6 @@
 				</div>
 				
 				<div id="watchingListBottomBox" >
-				
 					<div id="watchingListBottomBox1">
 						<img src= "image/webtoonList/01.Mon/08/main.png">
 					</div>
@@ -84,9 +79,29 @@
 					<div id="watchingListBottomBox2">
 						<img src= "image/webtoonList/01.Mon/08/title.png">
 					</div>
-					
 				</div>
 			</div>
+			
+			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
+				<div id= "watchingListTopBox">
+					<div id="watchingListTopTitle">
+						<p>1화</p>
+					</div>
+				</div>
+				
+				<div id="watchingListBottomBox" >
+					<div id="watchingListBottomBox1">
+						<img src= "image/webtoonList/01.Mon/09/main.png">
+					</div>
+					
+					<div id ="Transparency"></div> <!--투명도  -->
+					
+					<div id="watchingListBottomBox2">
+						<img src= "image/webtoonList/01.Mon/09/title.png">
+					</div>
+				</div>
+			</div>
+			
 		</div>
 	</div>
 	
