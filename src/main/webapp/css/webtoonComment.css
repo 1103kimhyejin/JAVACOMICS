@@ -112,3 +112,8 @@ html{
 	margin: 8px;
 	border: solid 1px #1c1c1c;
 }
+
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+
+}

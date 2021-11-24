@@ -5,7 +5,7 @@
 	height:100px;
 	color: white;
 	font-weight: bold;
-	font-size: 1.7rem;
+	font-size: 2rem;
 	background: linear-gradient(to bottom, rgba(128,128,128,1), rgba(255,255,255,0));
 	justify-content: space-between;
 }
@@ -97,13 +97,23 @@
 	padding:10px;
 }
 
-#webtoonView_bestComment{
-	cursor: pointer;
+#webtoonView_comment{
+	display:inline-block;
+	margin: 15px 0 15px 0;
+}
+.webtoonView_bestComment{
+	font-size: 1.2rem;
+	color: white;	
+	width: 100%;
+	display: flex;
+	align-items: center;
+	width: 640px;	
+	font-size: 1.5rem;
+	
 }
 
-#webtoonView_bestComment span:nth-child(2) {
-
-	display: inline-block;
+.webtoonView_Best_p{
+	display: inline-block; 
 	background-color : red;
 	border-radius: 16px;
 	padding: 8px;
@@ -112,7 +122,27 @@
 	font-weight : bold;
 }
 
-#webtoonView_bestComment a:nth-child(4) {
+.webtoonView_Id_p{
+	font-weight : bold;
+	text-align:left;
+	width:500px;	
+	margin: 10px;
+}
+
+.webtoonView_Date_p{
+	color:#444444;
+	width:50px;
+}
+
+.webtoonView_Content_div{
+	text-align:left;
+	margin:8px 0 10px 0;
+	color: white;
+	font-size: 1.5rem;
+	
+}
+
+#webtoonView_commentMore {
 	display: inline-block;
 	color: gray;
 	font-size: 1.5rem;
@@ -120,21 +150,15 @@
 	padding:10px;
 	display: inline-block;
 }
-
 .webtoonView_hr{
 	border: 1px solid #2c2c2c;
 	width:640px;
 }
 
-
 #webtoonView{
 	text-align:center;	
-	
 }
 
-#webtoonView_toon{
-	margin:20px;
-}
 #webtoonView_similartoon {
 	width: 640px; 
 	display:inline-block;
@@ -170,4 +194,8 @@
 	width:100%;
 	bottom:20px;
 	left:0;
+}
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+	
 }

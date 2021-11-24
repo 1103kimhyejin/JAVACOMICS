@@ -5,12 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KAKAO WEBTOON</title>
 <link rel="stylesheet" href="../css/reset.css"> 
 <link rel="stylesheet" href="../css/webtoonInnerListCss/webtoonInnerList.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="../js/webtoonInnerList.js"></script>
+  
 </head>
 <body>
 <header>
@@ -38,16 +38,12 @@
 	<div id="content">
 		<c:if test="${empty display }"> 
 			<%-- <jsp:include page="episode.jsp" /> --%>
-			<jsp:include page="webtoonExplain.jsp" /> 
+			<jsp:include page="webtoonExplain.jsp" />
 		</c:if>
 		<%-- <c:if test="${not empty display }"> 
 			<jsp:include page="${display }" />
 		</c:if> --%>
 	</div>
-	
-	<button type="button" onclick="location.href='#'" class="scroll">
-		<img src="../image/webtoonInnerList/scrollicon.png" alt="스크롤">
-	</button>
 </section>
 </body>
 </html>
