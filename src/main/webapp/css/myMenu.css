@@ -61,3 +61,74 @@
 	font-size: 1.2rem;
 }
 
+
+/* ========================================================= */
+
+.loginDiv {
+	width: 100%;
+	margin: 0 auto;
+	height: 200px;
+	background-color: rgba(28,28,28,0.8);
+}
+#memberLoginForm {
+	margin: 0 auto;
+	font-size: 2rem;
+}
+#memberLoginForm tr > td:first-child {
+	width: 50%;
+	height: 50px;
+}
+#memberLoginForm tr > td:nth-child(2) {
+	width: 50%;
+}
+#memberLoginForm table input[type=text] {
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding-left: 10px;
+	margin-top: 20px; 
+}
+#memberLoginForm table input[type=password]{
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding-left: 10px;
+	margin-top: 20px; 
+}
+#memberLoginForm table input[type=button]{
+	width: 70px;
+	height: 30px;
+}
+
+/*-------------tablet 1024------------------*/
+@media all and (max-width:1300px){
+	
+}
+
+/*-------------tablet 768------------------*/
+@media all and (max-width:1024px){
+	
+
+}
+
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+	.myMenu {
+		width: 100%;
+	}
+	.contentsdiv {
+		width: 320px;
+	}
+	#memberLoginForm table input[type=text] {
+		width: 130px;
+	}
+	#memberLoginForm table input[type=password]{
+		width: 130px;
+	}
+}

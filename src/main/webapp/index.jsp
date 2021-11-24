@@ -23,7 +23,7 @@
 <div id="fullscreen" class="hide">
 	<div class="history"></div>
 	<%-- <jsp:include page="main/myMenu.jsp" /> --%>
-	<jsp:include page="main/myMenu/myMenu.jsp" />
+	<jsp:include page="main/myMenu/myMenuNoId.jsp" />
 </div>
 <div class="history"></div>
 
@@ -31,7 +31,7 @@
 
 	<div id="container">
 		<c:if test="${empty display }">
-			<jsp:include page="main/webtoonList/storagebody.jsp" />
+			<jsp:include page="main/body.jsp" />
 		</c:if>
 		<c:if test="${not empty display }">
 			<jsp:include page="${display }" />
