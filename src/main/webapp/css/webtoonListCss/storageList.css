@@ -275,6 +275,7 @@
 	.storageListBox{
 		width:100%;
 	}
+	
 	#similarListBox{
 		padding-top:53.4%;
 	}
@@ -283,5 +284,8 @@
 @media all and (max-width:580px){
 	#similarListBox{
 		width:32.4%;
+		padding-top:69%;
 	}
+	
+	
 }

@@ -124,11 +124,12 @@
 @media all and (max-width:580px){
 	.box{
 		width:32.4%;
-		padding-top:75%;
+		padding-top:69%;
 
 	}
 	#longBox{
 		width:32.4%;
-		padding-top:150%;
+		padding-top:138%;
+		margin-top: 0.5%;
 	}
 }

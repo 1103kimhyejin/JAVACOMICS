@@ -22,13 +22,13 @@
 	#rankBigBox2 > video{
 		position: absolute;
 		width:80%;
-		height:100%;
-		left:80px;
-		top:10px;
+		height:auto;
+		left:10%;
+		bottom:0;
 	}
 	#rankBigBox3{
 		width:100%;
-		height: 200px;
+		height: 30%;
 		position:absolute;
 		bottom:10px;
 		text-align: left;
@@ -48,13 +48,14 @@
 		padding-right:6px;
 		margin-bottom:15px;
 		position:absolute;
-		bottom:150px;
+		bottom:110%;
 	}
 	
 	
 	#rankBigBox3 > img{
 		position:absolute;
 		bottom:40px;
+		width:50%;
 		
 	}
 	
@@ -177,6 +178,14 @@
 		width:24.5%;
 		
 	}
+	#rankBigBox2 > video{
+		width:100%;
+		left:1%;
+	}
+	#rankNew{
+		bottom:83%;
+	}
+
 }
 
 /*-------------mobile------------------*/
@@ -184,6 +193,8 @@
 	
 	.rankBox{
 		width:32.4%;
+		padding-top:69%;
 	}
+	
 	
 }
