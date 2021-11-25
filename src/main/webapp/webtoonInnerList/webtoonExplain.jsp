@@ -67,9 +67,11 @@
 				<li>#학원/판타지</li>
 				<li>#레벨업물</li>
 			</ul>
+		</div>
+		<div class="similartoon">
+			<span>이 작품과 유사한 작품들</span>		
 		</div>	
 		<div class="similar">
-			<span>이 작품과 유사한 작품들</span>		
 			<div class="webtoonView_similartoonbox">
 				<div class="webtoonView_similartoonbox1">
 					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
@@ -125,7 +127,6 @@
 					<img src="../image/webtoonList/04.Thu/05/title.png"/>
 				</div>
 			</div>	
-		</div>		
-		</div>		
+		</div>			
 	</div>
 </div>
