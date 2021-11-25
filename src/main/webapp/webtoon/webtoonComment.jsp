@@ -4,31 +4,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>JAVA COMICS</title>
 <link rel="stylesheet" href="/JAVACOMICS/css/reset.css">
 <link rel="stylesheet" href="/JAVACOMICS/css/webtoonComment.css">
 </head>
 <body>
-<div id="webtoonComment_container">
-	
-	<div id="webtoonComment_header">
-		<p><img src="../image/webtoonComment_image/backicon.PNG"/></p>
-		<p>댓글</p>
-		<p><img src="../image/webtoonComment_image/scrollicon.png"/></p>
-	</div>
 
-	<div id="webtoonComment_content">
-		<form id="webtoonComment_inputForm">
-		   <div id="webtoonComment_input">
-		      <input name="webtoonComment_input" id="webtoonComment_inputText" placeholder="댓글을 입력해 주세요" type="text">
-		      <input type="submit" id="webtoonComment_inputBtn" value="입력" /> 
-		   </div>
-		</form>
-
-	     <ul id="webtoonComment_list">
-	     </ul>
-	</div>
+<div id="webtoonComment_header">
+	<p><img src="../image/webtoonComment_image/backicon.PNG"/></p>
+	<p>댓글</p>
+	<p><img src="../image/webtoonComment_image/scrollicon.png"/></p>
 </div>
+
+<form id="webtoonComment_inputForm">
+   <div id="webtoonComment_input">
+      <input name="webtoonComment_input" id="webtoonComment_inputText" placeholder="댓글을 입력해 주세요" type="text">
+      <input type="submit" id="webtoonComment_inputBtn" value="입력" /> 
+   </div>
+</form>
+
+<ul id="webtoonComment_list">
+</ul>
+
+
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
  $(function(){
