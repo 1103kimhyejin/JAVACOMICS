@@ -45,6 +45,11 @@
 			<jsp:include page="${display }" />
 		</c:if> --%>
 	</div>
+	
+	<button type="button" onclick="location.href='#'" class="scroll">
+		<img src="../image/webtoonInnerList/scrollicon.png" alt="스크롤">
+	</button>
+	
 </section>
 </body>
 </html>

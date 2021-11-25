@@ -15,10 +15,11 @@
 	right:0;
 	bottom:0;
 	overflow:hidden;
-	opacity: 0.8;
+	
 }
 .imagebox .bg img{
 	width: 100%;
+	opacity: 0.6;
 }
 .imagebox > .mainimg {
 	position: absolute;
