@@ -227,10 +227,8 @@
 					<img src="image/webtoonList/02.Tue/09/title.png"/>
 				</div>
 				<div id= "Transparency"></div>
-			</div>                                                                                                                   
-			
-			
-			
+			</div>
+						
 		</div>
 	</div>
 </div>
