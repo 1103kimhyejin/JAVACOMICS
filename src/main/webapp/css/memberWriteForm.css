@@ -11,9 +11,13 @@ h1 {
 	top: 50px;
 	cursor: pointer;
 }
-
-#memberWriteForm {
+.memberWriteFormDiv {
 	width: 600px;
+	margin: 100px auto;
+	text-align: center;
+}
+#memberWriteForm {
+	width: 100%;
 	margin: 100px auto;
 	font-size: 2rem;
 }
@@ -55,4 +59,39 @@ h1 {
 	height: 40px;
 	border: 1px solid #fff;
 	color: #fff;
+}
+
+/*-------------tablet 1024------------------*/
+@media all and (max-width:1300px){
+	
+}
+
+/*-------------tablet 768------------------*/
+@media all and (max-width:1024px){
+	
+
+}
+
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+	.memberWriteFormDiv {
+		width:100%;
+	}
+	#memberWriteForm {
+		width: 350px;
+	}
+	#memberWriteForm tr > td:first-child {
+		width: 150px;
+		padding-left: 10px;
+	}
+	#memberWriteForm tr > td:nth-child(2) {
+		width: 200px;
+		text-align: center;
+	}
+	#memberWriteForm table input[type=text] {
+		width: 200px;
+	}
+	#memberWriteForm table input[type=password]{
+		width: 200px;
+	}
 }
