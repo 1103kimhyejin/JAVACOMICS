@@ -4,15 +4,19 @@
 <link rel="stylesheet" href="../css/webtoonInnerListCss/webtoonImage.css"> 
 
 <div class="imagebox">
-	<div class="bg">
-		<img src="../image/mainbody/bg01.jpg">
+	<div class="top">
+		<div class="bg">
+			<img src="../image/mainbody/bg01.jpg">
+		</div>
+		<div class= "Transparency"></div>
+		<div class="mainimg">
+			<video autoplay loop muted playsinline>
+				<source src="../image/mainbody/main01.webm"
+	          				type="video/webm">
+			</video>
+		</div>
 	</div>
-	<div class="mainimg">
-		<video autoplay loop muted playsinline>
-			<source src="../image/mainbody/main01.webm"
-          				type="video/webm">
-		</video>
-	</div>
+	
 	<div class="line">
 		<ul>
 			<li>나 혼자만 레벨업</li>
