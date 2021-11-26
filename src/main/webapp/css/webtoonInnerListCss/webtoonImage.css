@@ -7,7 +7,10 @@
 	right: 0;
 	overflow: hidden; 
 }
-.imagebox .bg {
+.top {
+	width: 100%;
+}	
+.imagebox>.top>.bg {
 	width: 100%;
 	position: absolute;
 	left: 0;
@@ -17,10 +20,18 @@
 	overflow:hidden;
 	
 }
-.imagebox .bg img{
+.imagebox>.top>.bg>img{
 	width: 100%;
-	opacity: 0.6;
+	/* opacity: 0.6; */
 }
+.imagebox>.top>.Transparency{
+	position: absolute;
+	width:100%;
+	height:calc((100% / 3)*2);
+	left:0;
+	bottom: 0;
+	background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.6)); 
+} 
 .imagebox > .mainimg {
 	position: absolute;
 	top: 40px;
