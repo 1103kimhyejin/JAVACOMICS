@@ -15,7 +15,7 @@
 	<div class="backBtn2"><a href="../index.jsp"><img src="../image/backicon.PNG"></a></div>
 	<div class="searchArea">
 		<p>어떤 작품을 찾으세요?</p>
-		<div>
+		<div class = "searchName">
 			<input type="text" placeholder="작품, 작가, 장르를 입력하세요">
 			<div class="searchBtn"><img src="../image/searchBtn.svg"></div>
 		</div>
@@ -32,7 +32,7 @@
 			<div class="box3">
 				<img src="../image/webtoonList/01.Mon/05/title.png"/>
 			</div>
-			<div id= "../Transparency"></div>
+			<div id= "Transparency"></div>
 		</div>
 		
 		<div class="box">

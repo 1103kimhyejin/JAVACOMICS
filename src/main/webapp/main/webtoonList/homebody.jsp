@@ -174,7 +174,7 @@
 			<div class="box1">
 				<img src="image/webtoonList/01.Mon/16/bg.jpg"/>				
 			</div>
-			<div class="box2">
+			<div  class="box2">
 				<img src="image/webtoonList/01.Mon/16/main.png"/>
 			</div>
 			<div class="box3">
