@@ -203,6 +203,15 @@ footer{
 	width:100%;
 	bottom:20px;
 	left:0;
+	z-index:1;
+}
+#Transparency{
+		position: absolute;
+		width:100%;
+		height:calc((100% / 3)*2);
+		left:0;
+		bottom: 0;
+		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.6)); /*투명도  */
 }
 /*-------------tablet------------------*/
 @media all and (max-width:768px){
@@ -279,7 +288,7 @@ footer{
 		padding:0px 30px 0px 30px;
 	}
 	#similartoon {
-		width:430px;
+		width:400px;
 	}
 	#similartoonTitle{
 		margin:30px 0px 5px 10px;
@@ -293,4 +302,106 @@ footer{
 	#last_similartoonbox{
 		display:none;
 	}
+}
+@media all and (max-width:380px){
+	header {
+		width:100%;
+	}
+	section{
+		width:100%;
+	}
+	footer{
+		width:100%;
+	}
+	#webtoonimg{
+		width:100%;
+	}
+	#controllBar{
+		width: 236px;
+	}
+	#controllBar_content{
+		width:98.5%;
+	}
+	#controllBar_content img:first-child{
+		left: 10px;
+	}
+	#controllBar_content img:nth-child(2){
+		left: 70px; 
+	}
+	#controllBar_content svg{
+	    left: 130px; 
+	}
+	#controllBar_content img:nth-child(4){
+		left: 190px; 
+	}
+	#comment{
+		width:100%;
+		padding:0px 30px 0px 30px;
+	}
+	#similartoon {
+		width:90%;
+	}
+	#similartoonTitle{
+		margin:30px 0px 5px 10px;
+		padding:10px;
+	}
+	.similartoonbox{
+		 width:30%;
+		 height:200px;
+	}
+	#last_similartoonbox{
+		display:none;
+	}
+}
+
+@media all and (max-width:280px){
+		header {
+		width:100%;
+	}
+	section{
+		width:100%;
+	}
+	footer{
+		width:100%;
+	}
+	#webtoonimg{
+		width:100%;
+	}
+	#controllBar{
+		width: 236px;
+	}
+	#controllBar_content{
+		width:98.5%;
+	}
+	#controllBar_content img:first-child{
+		left: 10px;
+	}
+	#controllBar_content img:nth-child(2){
+		left: 70px; 
+	}
+	#controllBar_content svg{
+	    left: 130px; 
+	}
+	#controllBar_content img:nth-child(4){
+		left: 190px; 
+	}
+	#comment{
+		width:100%;
+		padding:0px 30px 0px 30px;
+	}
+	#similartoon {
+		width:90%;
+	}
+	#similartoonTitle{
+		margin:30px 0px 5px 10px;
+		padding:10px;
+	}
+	.similartoonbox{
+		 width:30%;
+		 height:150px;
+	}
+	#last_similartoonbox{
+		display:none;
+	}
+	
 }
