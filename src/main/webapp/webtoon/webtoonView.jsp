@@ -74,6 +74,8 @@
 				<div class="similartoonbox3">
 					<img src="../image/webtoonView_image/similartoon1_name.png"/>
 				</div>
+				
+				<div id="Transparency"></div>
 			</div>
 			<div class="similartoonbox">
 				<div class="similartoonbox1">
@@ -85,6 +87,7 @@
 				<div class="similartoonbox3">
 					<img src="../image/webtoonList/01.Mon/06/title.png"/>
 				</div>
+				<div id="Transparency"></div>
 			</div>
 			<div class="similartoonbox">
 				<div class="similartoonbox1">
@@ -96,6 +99,7 @@
 				<div class="similartoonbox3">
 					<img src="../image/webtoonList/01.Mon/12/title.png"/>
 				</div>
+				<div id="Transparency"></div>
 			</div>
 		
 			<div id="last_similartoonbox" class="similartoonbox">
@@ -108,6 +112,7 @@
 				<div class="similartoonbox3">
 					<img src="../image/webtoonList/01.Mon/15/title.png"/>
 				</div>
+				<div id="Transparency"></div>
 			</div>
 		
 		</div><!-- similartoon	 -->	
