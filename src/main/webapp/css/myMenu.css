@@ -54,7 +54,7 @@
 .bottomdiv {
 	position: absolute;
 	left: 50%;
-	top: 400px;
+	top: 500px;
 	transform: translateX(-50%);
 }
 .bottomdiv div {
