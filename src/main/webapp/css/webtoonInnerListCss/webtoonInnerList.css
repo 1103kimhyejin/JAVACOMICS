@@ -29,6 +29,13 @@ header {
 	transform: translateY(-50%); 
 	right: 15px;
 }
+.fillheart{
+	position: absolute;
+	color: white; 
+	top: 50%;
+	transform: translateY(-50%); 
+	right: 15px;
+}
 .top{
 	position: absolute;
 	left: 50%;
