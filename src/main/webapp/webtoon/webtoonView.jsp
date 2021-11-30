@@ -19,7 +19,7 @@
 		
 <section>
 	
-	<img id="webtoonimg" src="/JAVACOMICS/image/webtoonView_image/webtoon1.jpg" />
+	<img id="webtoonimg" src="/JAVACOMICS/image/webtoonView_image/webtoon_muhyeobAction/01.jpg" />
 	
 	<div id="controllBar">
 		<div id="controllBar_content">
