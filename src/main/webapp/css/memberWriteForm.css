@@ -60,6 +60,8 @@ h1 {
 	border: 1px solid #fff;
 	color: #fff;
 }
+#memberWriteForm div{
+}
 
 /*-------------tablet 1024------------------*/
 @media all and (max-width:1300px){
