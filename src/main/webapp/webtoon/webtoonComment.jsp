@@ -20,7 +20,7 @@
 
 <form id="webtoonComment_inputForm">
    <div id="webtoonComment_input">
-      <input name="webtoonComment_input" id="webtoonComment_inputText" placeholder="댓글을 입력해 주세요" type="text">
+      <input name="webtoonComment_inputText" id="webtoonComment_inputText" placeholder="댓글을 입력해 주세요" type="text">
       <input type="submit" id="webtoonComment_inputBtn" value="입력" /> 
    </div>
 </form>
@@ -39,15 +39,29 @@
 	         alert('내용을 입력하세요.');
 	         $('#webtoonComment_inputText').focus();
 	         return false;
-	      }
- 	     
-	    addItem('1', '작성자', $('#webtoonComment_inputText').val(), '21.11.11');
-	    	
+	      }else{
+	  		$.ajax({
+				type: 'post',
+				url: '/JAVACOMICS/tooncomment/toonCommentWrite',
+				data:'content='+ $('#content').val(),
+				success: function(data){
+					alert('글쓰기 완료');
+				
+					
+				addComment('둘리', $('#content').val(), '21.11.11');
+				
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
+		}
+	    	  
 		return false;
 	});
 }); 
 
-function addItem(num, writer, content, datetime){
+function addComment(id, content, logtime){
 	var webtoonComment_li = $('<li>');
 	//webtoonComment_li.attr('data-num', num);
 	webtoonComment_li.addClass('webtoonComment_li');
@@ -66,10 +80,10 @@ function addItem(num, writer, content, datetime){
 
 	var webtoonComment_Id_p=$('<p>');
 	webtoonComment_Id_p.addClass('webtoonComment_Id_p');
-	webtoonComment_Id_p.html(writer);
+	webtoonComment_Id_p.html(id);
 	
 	var webtoonComment_Date_p = $('<p>');
-	webtoonComment_Date_p.html(datetime);
+	webtoonComment_Date_p.html(logtime);
 	webtoonComment_Date_p.addClass('webtoonComment_Date_p');
 	
 	var webtoonComment_Content_div = $('<div>');
@@ -80,7 +94,7 @@ function addItem(num, writer, content, datetime){
 	/* 좋아요, 싫어요, 답글 버튼 div  */
 	var webtoonComment_GBRbtn_div = $('<div>');
 	webtoonComment_GBRbtn_div.addClass('webtoonComment_GBRbtn_div');
-	webtoonComment_GBRbtn_div.attr('data-num', num);
+	//webtoonComment_GBRbtn_div.attr('data-num', num);
 	
 	var webtoonComment_Good_btn = $('<input>');
 	webtoonComment_Good_btn.attr({
