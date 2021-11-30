@@ -17,5 +17,11 @@
 	<context:component-scan base-package="tooncomment.service" />
 
 	<context:component-scan base-package="spring.conf" />
+
+
+	<context:component-scan base-package="webtoon.bean" />
+	<context:component-scan base-package="webtoon.dao" />
+	<context:component-scan base-package="webtoon.service" />
+
 	<!-- ConnectionPool : 여기서 해도 된다 -->
 </beans>

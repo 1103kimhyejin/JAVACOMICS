@@ -11,6 +11,7 @@
 		width: 24.4%;
 		padding-top:51.6%;
 		overflow: hidden;
+		cursor: pointer;
 	}
 	.box1 > img {
 		position: absolute;
@@ -43,7 +44,8 @@
 		position: relative;
 		width: 24.6%;
 		padding-top:103.5%;
-		
+		left:5px;
+		top:1px;
 		overflow: hidden;
 		float: left;
 		background-color: blue;
@@ -84,8 +86,9 @@
 		display: flex;
 		padding-left:18px;
 		padding-right:18px;
+		padding-top: 90px;
 	}
-	#mon{
+	#mon, #tue, #wed, #thu, #fri, #sat, #sun{
 		width:86px;
 		height:36px;
 		color:#333;
@@ -111,25 +114,25 @@
 	}
 	
 	.box{
-		width:24.2%;
+		width:24.7%;
 		
 
 	}
 	#longBox{
-		width:24.2%;		
-		margin-left: 0.6%;
+		width: 24.9%;
+		left: -1px;		
+		margin-left: 0.4%;
 	}
 }
 /*-------------mobile------------------*/
 @media all and (max-width:580px){
 	.box{
-		width:32.4%;
+		width:33.2%;
 		padding-top:69%;
 
 	}
 	#longBox{
-		width:32.4%;
-		padding-top:138%;
-		margin-top: 0.5%;
+		width:32.7%;
+		padding-top:138.3%;
 	}
 }

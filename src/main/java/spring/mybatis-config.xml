@@ -3,11 +3,11 @@
  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+	<typeAliases>
+		<typeAlias type="webtoon.bean.WebtoonDTO" alias="webtoon"/>
 
- 	<typeAliases>
 		<typeAlias type="toonmember.bean.ToonMemberDTO" alias="toonmember"/>
 	
 		<typeAlias type="tooncomment.bean.ToonCommentDTO" alias="toonComment"/>
 	</typeAliases>
-
 </configuration>
