@@ -20,5 +20,6 @@ public class ToonCommentController {
 	@ResponseBody
 	public void toonCommentWrite(@ModelAttribute ToonCommentDTO toonCommentDTO) {
 		toonCommentService.toonCommentWrite(toonCommentDTO);
+		
 	}
 }
