@@ -15,10 +15,16 @@
 		<property name="maxUploadSize" value="5000000" />
 	</bean>
 	
+	<context:component-scan base-package="toonmember.controller"/>
+	<context:component-scan base-package="tooncomment.controller"/>
+	
+
  	<mvc:resources location="/js/" mapping="/js/**" />
  	<mvc:resources location="/image/" mapping="/image/**" />
  	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:annotation-driven />
+	
+	
 </beans>
 
  	<!-- 

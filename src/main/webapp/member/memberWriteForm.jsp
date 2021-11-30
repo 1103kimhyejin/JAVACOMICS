@@ -31,10 +31,17 @@
 			</td>
 		</tr>
 		<tr>
+			<td>비밀번호 확인</td>
+			<td>
+				<input type="password" name="pwd2" id="pwd2"  placeholder="비밀번호 확인">
+				<div id= "pwd2Div"></div>
+			</td>
+		</tr>
+		<tr>
 			<td>성별</td>
 			<td>
-				남 <input type="radio" name="gender" value="man">
-				여 <input type="radio" name="gender" value="woman">
+				남 <input type="radio" name="gender" value="남" checked="checked">
+				여 <input type="radio" name="gender" value="여">
 				<div id= "genderDiv"></div>
 			</td>
 		</tr>
@@ -43,6 +50,11 @@
 			<td>
 				<input type="text" name="email" id="email" placeholder="이메일 입력">
 				<div id= "emailDiv"></div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<div class="msgDiv"></div>
 			</td>
 		</tr>
 		<tr>
