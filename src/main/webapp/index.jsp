@@ -33,7 +33,6 @@
 <div class="history"></div>
 
 <section>
-
 	<div id="container">
 		<c:if test="${empty display }">
 
