@@ -1,7 +1,5 @@
 $(function(){
 
-	
-	
 	$('.mainmenu div:eq(0)').click(function(){
 		$('.submenu .ranking').addClass('hide');
 		$('.submenu .myBox').addClass('hide');
@@ -50,7 +48,110 @@ $(function(){
 	});
 
 	
+	//회원가입
+	$('#memberWriteBtn').click(function(){
+		$('#memberWriteForm .msgDiv').empty();
+		
+		if($('#memberWriteForm #name').val() == ''){
+			$('#memberWriteForm .msgDiv').text('이름을 입력해주세요');
+			$('#memberWriteForm .msgDiv').css('color', 'red');
+			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+			
+		}else if($('#memberWriteForm #id').val() == ''){
+			$('#memberWriteForm .msgDiv').text('아이디를 입력해주세요');
+			$('#memberWriteForm .msgDiv').css('color', 'red');
+			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+			
+		}else if($('#memberWriteForm #pwd').val() == ''){
+			$('#memberWriteForm .msgDiv').text('비밀번호를 입력해주세요');
+			$('#memberWriteForm .msgDiv').css('color', 'red');
+			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+		
+		}else if($('#memberWriteForm #pwd').val() != $('#memberWriteForm #pwd2').val()){
+			$('#memberWriteForm .msgDiv').text('비밀번호가 맞지 않습니다');
+			$('#memberWriteForm .msgDiv').css('color', 'red');
+			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+		
+		}else if($('#memberWriteForm #email').val() == ''){
+			$('#memberWriteForm .msgDiv').text('이메일을 입력해주세요');
+			$('#memberWriteForm .msgDiv').css('color', 'red');
+			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+			
+		}else if($('#check').val() != $('#memberWriteForm #id').val()){
+			$('#memberWriteForm .msgDiv').text('중복체크 하세요');
+			$('#memberWriteForm .msgDiv').css('color', 'red');
+			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+		} else{
+			$.ajax({
+				type: 'post',
+				url: '/JAVACOMICS/toonmember/toonMemberWrite',
+				data: $('#memberWriteForm').serialize(),
+				success: function(){
+					alert('회원가입을 축하합니다');
+					location.href = '/JAVACOMICS/index.jsp';
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
+		}
+		
+		
+	});
 
+	//회가입중 아이디 중복 확인
+	$('#memberWriteForm #id').focusout(function(){
+		$('#memberWriteForm .msgDiv').empty();
+			
+		if($('#memberWriteForm #id').val() == ''){
+			$('#memberWriteForm .msgDiv').text('아이디를 입력하세요');
+			$('#memberWriteForm .msgDiv').css('color', 'red');
+			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+			
+		}else{
+			$.ajax({
+				type: 'post',
+				url: '/JAVACOMICS/toonmember/checkId',
+				data: 'id='+$('#memberWriteForm #id').val(),
+				dataType: 'text',
+				success: function(data){
+					if(data == 'exist'){
+						$('#memberWriteForm .msgDiv').text('중복된 ID입니다');
+						$('#memberWriteForm .msgDiv').css('color', 'red');
+						$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+						$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+						
+					}else if(data == 'non_exist'){
+						$('#memberWriteForm .msgDiv').text('ID 사용 가능');
+						$('#memberWriteForm .msgDiv').css('color', 'red');
+						$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+						$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+						
+						$('#check').val($('#memberWriteForm #id').val());
+					}
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
+		}//if
+	});
+	
+	
+	//회원가입페이지로 이동
+	$('#memberWriteFormBtn').click(function(){
+		$(location).attr("href", "/JAVACOMICS/toonmember/memberWriteForm")
+	});
+	
+	
+	
 
 	var slider = $('.slider');  	
 	$(window).resize(function(){

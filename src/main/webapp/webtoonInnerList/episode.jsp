@@ -2,47 +2,47 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="../css/webtoonInnerListCss/episode.css">
 <div class="webtoonList">
-	<div>첫 화 보기</div>
+	<a href="#"><div>첫 화 보기</div></a>
 	<div class="list1">
-		<div class="epImage">
-			<img src="../image/webtoonInnerList/01.ep/ep01.jpg" /><br>
-		</div>
+		<a href="#"><div class="epImage">
+			<img src="../image/webtoonInnerList/01.ep/ep01.jpg" />
+		</div></a>
 		<div class="epInfo">
 			<span>173화<br></span>
 			<span>21.11.10</span>
 		</div>
 	</div>
 	<div class="list1">
-		<div class="epImage">
+		<a href="#"><div class="epImage">
 			<img src="../image/webtoonInnerList/01.ep/ep02.jpg" /><br>
-		</div>
+		</div></a>
 		<div class="epInfo">
 			<span>173화<br></span>
 			<span>21.11.10</span>
 		</div>
 	</div>
 	<div class="list1">
-		<div class="epImage">
+		<a href="#"><div class="epImage">
 			<img src="../image/webtoonInnerList/01.ep/ep03.jpg" /><br>
-		</div>
+		</div></a>
 		<div class="epInfo">
 			<span>173화<br></span>
 			<span>21.11.10</span>
 		</div>
 	</div>
 	<div class="list1">
-		<div class="epImage">
+		<a href="#"><div class="epImage">
 			<img src="../image/webtoonInnerList/01.ep/ep04.jpg" /><br>
-		</div>
+		</div></a>
 		<div class="epInfo">
 			<span>173화<br></span>
 			<span>21.11.10</span>
 		</div>
 	</div>
 	<div class="list1">
-		<div class="epImage">
+		<a href="#"><div class="epImage">
 			<img src="../image/webtoonInnerList/01.ep/ep05.jpg" /><br>
-		</div>
+		</div></a>
 		<div class="epInfo">
 			<span>173화<br></span>
 			<span>21.11.10</span>
