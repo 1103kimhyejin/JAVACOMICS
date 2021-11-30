@@ -35,9 +35,7 @@
 <section>
 	<div id="container">
 		<c:if test="${empty display }">
-
-			<jsp:include page="main/body.jsp" />
-
+			<jsp:include page="main/webtoonList/homebody.jsp" />
 		</c:if>
 		<c:if test="${not empty display }">
 			<jsp:include page="${display }" />
