@@ -5,5 +5,8 @@
 <configuration>
 	<typeAliases>
 		<typeAlias type="webtoon.bean.WebtoonDTO" alias="webtoon"/>
+		<typeAlias type="toonmember.bean.ToonMemberDTO" alias="toonmember"/>
+		<typeAlias type="tooncomment.bean.ToonCommentDTO" alias="toonComment"/>
+
 	</typeAliases>
 </configuration>
