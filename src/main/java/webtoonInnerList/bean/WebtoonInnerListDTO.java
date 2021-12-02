@@ -1,18 +1,15 @@
-package webtoon.bean;
+package webtoonInnerList.bean;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
-public class WebtoonDTO {
+public class WebtoonInnerListDTO {
 	private String title;
 	private String writer;
 	private String artist;
 	private String toonDay;
 	private String toonBg;
 	private String toonChar;
-	private String toonTitle;
 	private String toonType;
 	private String keyword1;
 	private String keyword2;
@@ -20,4 +17,6 @@ public class WebtoonDTO {
 	private String story1;
 	private String story2;
 	private String toonEnd;
+	private int totalGood;
+	private int totalView;
 }

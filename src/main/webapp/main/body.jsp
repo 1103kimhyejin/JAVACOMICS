@@ -2,18 +2,18 @@
     pageEncoding="UTF-8"%>
     
     
-<link rel="stylesheet" href="css/body.css">
+<link rel="stylesheet" href="/JAVACOMICS/css/body.css">
 
 <div id="container_inner">  
 
 	<div class="mainbody">
 		<div class="imagebox">
 			<div class="bg">
-				<img src="image/mainbody/bg01.jpg">
+				<img src="/JAVACOMICS/image/mainbody/bg01.jpg">
 			</div>
 			<div class="mainimg">
 				<video autoplay loop muted playsinline>
-					<source src="image/mainbody/main01.webm"
+					<source src="/JAVACOMICS/image/mainbody/main01.webm"
             				type="video/webm">
 				</video>
 			</div>
@@ -23,7 +23,7 @@
 		<div class="explain">
 			<span class="tag">AI추천</span>
 			<div class="title">
-				<img src="image/mainbody/title01.png">
+				<img src="/JAVACOMICS/image/mainbody/title01.png">
 			</div>
 			<p>
 				"일어나라." <br>
@@ -37,17 +37,17 @@
 		
 		<div class="imagebox">
 			<div class="bg">
-				<img src="image/mainbody/bg02.jpg">
+				<img src="/JAVACOMICS/image/mainbody/bg02.jpg">
 			</div>
 			<div class="mainimg">
-				<img src="image/mainbody/main02.png" />
+				<img src="/JAVACOMICS/image/mainbody/main02.png" />
 			</div>
 		</div>
 		
 		<div class="explain">
 			<span class="tag">인기</span>
 			<div class="title">
-				<img src="image/mainbody/title02.png">
+				<img src="/JAVACOMICS/image/mainbody/title02.png">
 			</div>
 			<p>
 				괴물 아기를 키우게 된 <br>
@@ -61,17 +61,17 @@
 	<div class="mainbody">
 		<div class="imagebox">
 			<div class="bg">
-				<img src="image/mainbody/bg03.jpg">
+				<img src="/JAVACOMICS/image/mainbody/bg03.jpg">
 			</div>
 			<div class="mainimg">
-				<img src="image/mainbody/main03.png" />
+				<img src="/JAVACOMICS/image/mainbody/main03.png" />
 			</div>
 		</div>
 		
 		<div class="explain">
 			<span class="tag">완결임박</span>
 			<div class="title">
-				<img src="image/mainbody/title03.png">
+				<img src="/JAVACOMICS/image/mainbody/title03.png">
 			</div>
 			<p>
 				어느 새카만 겨울날, <br>
@@ -84,11 +84,11 @@
 	<div class="mainbody">
 		<div class="imagebox">
 			<div class="bg">
-				<img src="image/mainbody/bg04.jpg">
+				<img src="/JAVACOMICS/image/mainbody/bg04.jpg">
 			</div>
 			<div class="mainimg">
 				<video autoplay loop muted playsinline>
-					<source src="image/mainbody/main04.webm"
+					<source src="/JAVACOMICS/image/mainbody/main04.webm"
             				type="video/webm">
 				</video>
 			</div>
@@ -96,7 +96,7 @@
 		<div class="explain">
 			<span class="tag">신작</span>
 			<div class="title">
-				<img src="image/mainbody/title04.png">
+				<img src="/JAVACOMICS/image/mainbody/title04.png">
 			</div>
 			<p>
 				반전에 반전을 <br>
