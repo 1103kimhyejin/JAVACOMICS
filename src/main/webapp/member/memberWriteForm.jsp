@@ -1,10 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" href="css/memberWriteForm.css">
+<link rel="stylesheet" href="/JAVACOMICS/css/memberWriteForm.css">
 <div class="memberWriteFormDiv">
 <h1>회원가입</h1>
-<div class="backBtn"><img src="image/back.png"/></div>
+<div class="backBtn"><img src="/JAVACOMICS/image/back.png"/></div>
 <form name="memberWriteForm" id="memberWriteForm" method="post">
 	
 	<table>
