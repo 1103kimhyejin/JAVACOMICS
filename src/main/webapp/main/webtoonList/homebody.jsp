@@ -177,6 +177,7 @@ $(function(){
 	$.ajax({
 		url: "/JAVACOMICS/webtoon/getHomeBodyList",
 		type: "post",
+		/* data : "toontype=학원/판타지", */
 		dataType: "json",
 		success: function(data){
 			alert(JSON.stringify(data));
@@ -185,7 +186,7 @@ $(function(){
 				if(items.toonDay == "월"){							
 					$("<div/>", {
 						class: "box",
-						onclick: href="location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList'"
+						onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList?title=" + items.title + "'"
 						
 					}).append($("<div/>", {
 						class: "box1"
