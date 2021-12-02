@@ -16,7 +16,7 @@
 	</bean>
 	
 
-	<context:component-scan base-package="webtoon.controller"></context:component-scan>
+	<context:component-scan base-package="webtoon.controller"/>
 	<context:component-scan base-package="toonmember.controller"/>
 	<context:component-scan base-package="tooncomment.controller"/>
 	
