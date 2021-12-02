@@ -8,10 +8,10 @@
 <meta charset="UTF-8">
 <title>KAKAO WEBTOON</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-<link rel="stylesheet" href="css/reset.css">
-<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="/JAVACOMICS/css/reset.css">
+<link rel="stylesheet" href="/JAVACOMICS/css/index.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="/JAVACOMICS/js/index.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 </head>
@@ -19,7 +19,7 @@
 <header>
 	<jsp:include page="main/menu.jsp"/>
 </header>
-
+<input type="hidden" id="hideBox" value="${hide }">
 <div id="fullscreen" class="hide">
 	<div class="history"></div>
 	<c:if test="${empty fullscreenDisplay }">

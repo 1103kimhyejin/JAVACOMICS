@@ -10,4 +10,5 @@
       <typeAlias type="episodelist.bean.EpisodeListDTO" alias="episodeList"/>
       <typeAlias type="webtoonInnerList.bean.WebtoonInnerListDTO" alias="webtoonInnerList"/>
    </typeAliases>
+
 </configuration>

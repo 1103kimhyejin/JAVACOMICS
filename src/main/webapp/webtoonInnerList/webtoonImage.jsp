@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<link rel="stylesheet" href="../css/webtoonInnerListCss/webtoonImage.css"> 
+<link rel="stylesheet" href="/JAVACOMICS/css/webtoonInnerListCss/webtoonImage.css"> 
 
 <div class="imagebox">
 <!-- 	<div class="top"> -->
 		<div class="bg">
-			<img src="../image/mainbody/bg01.jpg">
+			<img src="/JAVACOMICS/image/mainbody/bg01.jpg">
 		</div>
 		<div class="mainimg">
 			<video autoplay loop muted playsinline>
-				<source src="../image/mainbody/main01.webm"
+				<source src="/JAVACOMICS/image/mainbody/main01.webm"
 	          				type="video/webm">
 			</video>
 		<!-- </div> -->

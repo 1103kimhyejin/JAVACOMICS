@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" href="css/menu.css">
+<link rel="stylesheet" href="/JAVACOMICS/css/menu.css">
 
 <div id="menubar">
 	<div class="mymenu">
 		<ul>
-			<li><a href="search/searchMenu.jsp"><img src="image/searchBtn.svg"></a></li>
-			<li><img src="image/menuBtn.svg"></li>
+			<li><a href="search/searchMenu.jsp"><img src="/JAVACOMICS/image/searchBtn.svg"></a></li>
+			<li><img src="/JAVACOMICS/image/menuBtn.svg"></li>
 		</ul>
 	</div>
 	<div class="mainmenu slider">
-		<div><img src="image/mainbody/homeLogo.svg" alt="kakao_webtoon"></div>
+		<div><img src="/JAVACOMICS/image/mainbody/homeLogo.svg" alt="kakao_webtoon"></div>
 		<div>웹툰</div>
 		<div>랭킹</div>
 		<div>보관함</div>

@@ -7,16 +7,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JAVA COMICS</title>
-<link rel="stylesheet" href="../css/reset.css"> 
-<link rel="stylesheet" href="../css/webtoonInnerListCss/webtoonInnerList.css">
+<link rel="stylesheet" href="/JAVACOMICS/css/reset.css"> 
+<link rel="stylesheet" href="/JAVACOMICS/css/webtoonInnerListCss/webtoonInnerList.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="../js/webtoonInnerList.js"></script>
+<script type="text/javascript" src="/JAVACOMICS/js/webtoonInnerList.js"></script>
   
 </head>
 <body>
 <header>
 	<div class="back">
-		<li><img src="../image/webtoonInnerList/back.png"/></li>
+		<a href="/JAVACOMICS/index.jsp"><li><img src="/JAVACOMICS/image/webtoonInnerList/back.png"/></li></a>
 	</div>
 	<div class="heart">
 		<li>
@@ -36,8 +36,8 @@
 	
 	<div class="top">
 		<ul>
-			<li class="episode">회차</li>
-			<li class="information">작품 정보</li>
+			<li class="episode" id="episode">회차</li>
+			<li class="information" id="information">작품 정보</li>
 		</ul>	
 	</div>
 </header>
@@ -47,23 +47,22 @@
 		<c:if test="${empty display }"> 
 			<jsp:include page="webtoonImage.jsp" /> 
 		</c:if>
-		<%-- <c:if test="${not empty display }"> 
-			<jsp:include page="${display }" />
-		</c:if> --%>
 	</div>
 	
 	<div id="content">
 		<c:if test="${empty display }"> 
 			<jsp:include page="episode.jsp" />
-			<%-- <jsp:include page="webtoonExplain.jsp" /> --%>
 		</c:if>
 		<%-- <c:if test="${not empty display }"> 
 			<jsp:include page="${display }" />
 		</c:if> --%>
+		<c:if test="${not empty display }"> 
+			<jsp:include page="webtoonExplain.jsp" /> 
+		</c:if>
 	</div>
 	
 	<button type="button" onclick="location.href='#'" class="scroll">
-		<img src="../image/webtoonInnerList/scrollicon.png" alt="스크롤">
+		<img src="/JAVACOMICS/image/webtoonInnerList/scrollicon.png" alt="스크롤">
 	</button>
 	
 </section>

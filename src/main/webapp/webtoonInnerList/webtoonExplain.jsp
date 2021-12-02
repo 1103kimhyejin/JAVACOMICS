@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" href="../css/webtoonInnerListCss/webtoonExplain.css">
+<link rel="stylesheet" href="/JAVACOMICS/css/webtoonInnerListCss/webtoonExplain.css">
 <div class="explain">
 	<div class="plot">
 		<ul>
@@ -12,9 +12,7 @@
 			<li>그림</li>
 			<li>장성락(REDICE STUDIO)</li><br>
 			<li>원작</li>
-			<li>추공</li><br>
-			<li>발행처</li>
-			<li>디앤씨웹툰비즈</li><br><br><br>
+			<li>추공</li><br><br><br>
 			<li>줄거리</li>
 		</ul>	
 			<div class="visible">
