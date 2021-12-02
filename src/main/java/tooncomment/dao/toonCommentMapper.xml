@@ -4,15 +4,23 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="toonCommentSQL">
 	<insert id="toonCommentWrite" parameterType="toonComment">
-		insert into toonComment 
+		insert into tooncomment 
 			values(commentseq_tooncomment.nextval,
 					1,		
-					'둘리',
+					'내id는과자',
 					#{content},
 					commentseq_tooncomment.nextval,
 					0,
 					0,
 					0,
-					sysdate)
+					sysdate
+					,0)
 	</insert>
+	<select id="getToonCommentList" parameterType="int" resultType="toonComment" >
+		select * from tooncomment left join 
+			(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
+			from commentgoodbad group by commentseq) 
+			using(commentseq) 
+			where episodecode=#{episodecode} order by commentseq desc
+	</select>
 </mapper>

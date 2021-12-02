@@ -15,4 +15,8 @@ public class ToonCommentDTO {
 	private int step;
 	private int pseq;
 	private Date logtime;
+	private int reply;
+	private int totalgood;
+	private int totalbad;
+	
 }
