@@ -31,4 +31,6 @@ $(function(){
 		$('.heart').show();
 	});
 
+	//webtoonInnerList 상단부분 회차, 작품정보버튼 클릭시 페이지 이동
+	
 })
