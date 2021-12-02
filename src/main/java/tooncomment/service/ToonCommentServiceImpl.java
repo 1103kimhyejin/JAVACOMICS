@@ -1,5 +1,7 @@
 package tooncomment.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,12 @@ public class ToonCommentServiceImpl implements ToonCommentService {
 	public void toonCommentWrite(ToonCommentDTO toonCommentDTO) {
 		toonCommentDAO.toonCommentWrite(toonCommentDTO);
 		
+	}
+
+	@Override
+	public List<ToonCommentDTO> getToonCommentList(int episodecode) {
+		
+		return toonCommentDAO.getToonCommentList(episodecode);
 	}
 
 }
