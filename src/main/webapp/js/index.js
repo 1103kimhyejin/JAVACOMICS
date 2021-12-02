@@ -1,5 +1,12 @@
 $(function(){
 
+	//onload hide 확인
+	if($('#hideBox').val()=="o"){
+		$('#fullscreen').removeClass('hide');
+	}
+
+
+
 	$('.mainmenu div:eq(0)').click(function(){
 		$('.submenu .ranking').addClass('hide');
 		$('.submenu .myBox').addClass('hide');

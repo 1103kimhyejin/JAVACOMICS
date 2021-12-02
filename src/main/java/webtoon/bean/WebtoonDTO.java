@@ -1,8 +1,10 @@
 package webtoon.bean;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class WebtoonDTO {
 	private String title;
 	private String writer;

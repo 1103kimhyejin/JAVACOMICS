@@ -21,7 +21,8 @@ public class ToonMemberController {
 	
 	@RequestMapping(value="memberWriteForm", method=RequestMethod.GET)
 	public String memberWriteForm(Model model) {
-		model.addAttribute("fullscreenDisplay","/member/memberWriteForm.jsp");
+		model.addAttribute("fullscreenDisplay","member/memberWriteForm.jsp");
+		model.addAttribute("hide","o");
 		return "/index";
 	}
 	
