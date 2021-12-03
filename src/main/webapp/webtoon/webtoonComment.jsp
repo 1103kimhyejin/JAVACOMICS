@@ -13,9 +13,9 @@
 <body>
 
 <div id="webtoonComment_header">
-	<p><img src="../image/webtoonComment_image/backicon.PNG"/></p>
+	<a onclick="location.href='/JAVACOMICS/webtoon/webtoonView.jsp'"><p><img src="../image/webtoonComment_image/backicon.PNG"/></p></a>
 	<p>댓글</p>
-	<p><img src="../image/webtoonComment_image/scrollicon.png"/></p>
+	<p><img id="sortBtn" src="../image/webtoonComment_image/sorticon.png" onClick="sortBtn()"></p>
 </div>
 
 <form id="webtoonComment_inputForm">
@@ -31,7 +31,7 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-
+//댓글목록출력
 $(function(){
 		$.ajax({
 			url: '/JAVACOMICS/tooncomment/getToonCommentList',
@@ -39,19 +39,45 @@ $(function(){
 			data:'episodecode=1',
 			dataType: 'json',
 			success: function(data){
-				//alert(JSON.stringify(data));
 				
+				//alert(JSON.stringify(data));
+						if($('img[id="sortgood"]')) sortgood()
+						if($('img[id="sortlatest"]')) sortlatest()
+						if($('img[id="sortbasic"]')){
 			 	$.each(data, function(index, items){
-					addComment(items.id, items.content, items.logtime
-							, items.totalgood, items.totalbad, items.reply
-							, items.commentSeq);
+							addComment(items.id, items.content, items.logtime
+								, items.totalgood, items.totalbad, items.reply
+								, items.commentSeq);
+					
 				}) 
+						}
 			},
 			error: function(err){
 				console.log(err);	
 			}
 		});
+		
 });
+
+function sortBtn() {
+    if ($('#sortBtn').attr('name')=="sortgood") 
+    	$('#sortBtn').attr("name","sortlatest");
+   	if	($('img[name="sortlatest"]')) 
+    	$('#sortBtn').attr("name","sortbasic"); 
+    if	($('img[name="sortbasic"]')) 
+    	$('#sortBtn').attr("name","sortgood");
+    
+}
+//$("#").attr("name","새로운네임")
+//댓글목록 좋아요순정렬
+function sortgood(){
+	
+}
+function sortlatest(){
+	
+}
+
+
 //저장
 $(function(){
 	$('#webtoonComment_inputForm').submit(function(){
@@ -78,6 +104,7 @@ $(function(){
 		return false;
 	});
 }); 
+
 
 function addComment(id, content, logtime, totalgood, totalbad, reply, commentSeq){
 	var webtoonComment_li = $('<li>');
@@ -155,10 +182,12 @@ function addComment(id, content, logtime, totalgood, totalbad, reply, commentSeq
 		$('#webtoonComment_list').append(webtoonComment_li);
 	}
 }
-
+//좋아요
 $(document).on('click', '.webtoonComment_Good_btn', function(){
 
 	var commentSeq= $(this).parents('li').attr('data-num');
+	//var offset = $(this).parents('li').offset();
+	//alert(offset);
 	
 	$.ajax({
 		type: 'post',
@@ -167,6 +196,12 @@ $(document).on('click', '.webtoonComment_Good_btn', function(){
 		success: function(){
 			//alert('좋아요 완료');
 			location.href='/JAVACOMICS/webtoon/webtoonComment.jsp'
+			 
+	
+	          //$("html body").animate({scrollTop:offset.top},2000);
+	      //  $('html').animate({scrollTop : offset.top}, 400);
+
+
 		},
 		error: function(err){
 			alert(err);

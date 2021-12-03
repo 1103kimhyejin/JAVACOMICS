@@ -165,6 +165,7 @@ footer{
 	font-weight : bold;
 	padding:10px;
 	display: inline-block;
+	cursor: pointer;
 }
  
 

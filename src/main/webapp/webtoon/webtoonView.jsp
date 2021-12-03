@@ -12,7 +12,7 @@
 <body>
 
 <header>
-	<p><img src="../image/webtoonComment_image/backicon.PNG"/></p>
+		<a onclick="location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp'"><p><img src="../image/webtoonComment_image/backicon.PNG"/></p></a>
 	<p>1화</p>
 	<p></p>
 </header>
@@ -55,7 +55,7 @@
 			<div class="comment_content">안녕하세요</div>	
 		</div>
 		<br>
-		<span id="commentMore">댓글 더보기</span>
+			<a onclick="location.href='/JAVACOMICS/webtoon/webtoonComment.jsp'"><span id="commentMore">댓글 더보기</span></a>
 		
 	
 		<br>

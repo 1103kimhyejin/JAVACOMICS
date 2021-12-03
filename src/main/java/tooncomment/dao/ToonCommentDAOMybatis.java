@@ -1,5 +1,6 @@
 package tooncomment.dao;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -23,6 +24,7 @@ public class ToonCommentDAOMybatis implements ToonCommentDAO {
 
 	@Override
 	public List<ToonCommentDTO> getToonCommentList(int episodecode) {
+	
 		return sqlSession.selectList("toonCommentSQL.getToonCommentList", episodecode);
 	}
 

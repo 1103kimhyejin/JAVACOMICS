@@ -1,5 +1,6 @@
 package tooncomment.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
-import commentgoodbad.bean.CommentGoodBadDTO;
-import commentgoodbad.service.CommentGoodBadService;
 import tooncomment.bean.ToonCommentDTO;
 import tooncomment.service.ToonCommentService;
-import webtoon.bean.WebtoonDTO;
 
 @Controller
 @RequestMapping(value = "/tooncomment")
@@ -27,6 +24,7 @@ public class ToonCommentController {
 	@RequestMapping(value="/toonCommentWrite", method=RequestMethod.POST)
 	@ResponseBody
 	public void toonCommentWrite(@ModelAttribute ToonCommentDTO toonCommentDTO) {
+	
 		toonCommentService.toonCommentWrite(toonCommentDTO);
 	}
 
@@ -48,6 +46,7 @@ public class ToonCommentController {
 	@PostMapping(value="getToonCommentList")
 	@ResponseBody
 	public List<ToonCommentDTO> getToonCommentList(@RequestParam int episodecode){
+		
 		return toonCommentService.getToonCommentList(episodecode);
 	}
 	/*
