@@ -39,7 +39,7 @@
 		clear: both;
 	}
 
-	#longBox{
+	.longBox{
 		display: inline-block;
 		position: relative;
 		width: 24.6%;
@@ -53,20 +53,20 @@
 		clear : both;
 		
 	}
-	#longBox1 > img{
+	.longBox1 > img{
 		position: absolute;
 		top: 0;
 		left: -100px;
 		transform:scale(2.34);
 		transform-origin:50% 0;
 	}
-	#longBox2 > video{
+	.longBox2 > video{
 		position: absolute;
 		width:100%;
 		left:0;
 		bottom:0;
 	}
-	#longBox3 > img{
+	.longBox3 > img{
 		
 		width:100%;
 		position:absolute;
@@ -75,7 +75,7 @@
 		z-index: 1;
 	}
 	
-	#longBox:after {
+	.longBox:after {
 		content: '';
 		display: block;
 		clear: both;
@@ -127,7 +127,7 @@
 /*-------------mobile------------------*/
 @media all and (max-width:580px){
 	.box{
-		width:33.2%;
+		width:33.1%;
 		padding-top:69%;
 
 	}

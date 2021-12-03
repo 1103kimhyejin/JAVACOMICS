@@ -7,4 +7,12 @@
 	<select id="getHomeBodyList" resultType="webtoon">
 		select * from webtoon
 	</select>
+	
+	<select id="getRankBodyList" resultType="webtoon">
+		select title, writer, artist, toonday, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, story1, story2, toonend, toonvideo, nvl("좋아요",0) "좋아요" 
+		from webtoon left join
+   		(select count(episodegood) "좋아요", title 
+    	from episodegoodview where episodegood='T' group by title) using(title)
+    	order by "좋아요" desc
+	</select>
 </mapper>

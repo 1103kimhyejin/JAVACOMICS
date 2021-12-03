@@ -109,7 +109,8 @@
 	.rankBox{
 		display: inline-block;
 		position:relative;
-		width: 24.6%;
+		width: 24.67%;
+		margin:1px;
 		padding-top:51.8%;
 		overflow: hidden;
 	}
@@ -175,7 +176,7 @@
 		padding-top:93.3333%;
 	}
 	.rankBox{
-		width:24.5%;
+		width:24.6%;
 		
 	}
 	#rankBigBox2 > video{
@@ -192,7 +193,7 @@
 @media all and (max-width:580px){
 	
 	.rankBox{
-		width:32.4%;
+		width:32.9%;
 		padding-top:69%;
 	}
 	

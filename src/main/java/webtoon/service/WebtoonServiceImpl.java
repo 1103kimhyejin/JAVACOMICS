@@ -19,4 +19,10 @@ public class WebtoonServiceImpl implements WebtoonService {
 		
 		return webtoonDAO.getHomeBodyList();
 	}
+
+	@Override
+	public List<WebtoonDTO> getRankBodyList() {
+		
+		return webtoonDAO.getRankBodyList();
+	}
 }
