@@ -10,9 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <link rel="stylesheet" href="/JAVACOMICS/css/reset.css">
 <link rel="stylesheet" href="/JAVACOMICS/css/index.css">
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/JAVACOMICS/js/index.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 
 </head>
 <body>
@@ -56,6 +54,8 @@
 	</ul>
 	<span>&copy; KAKAO WEBTOON</span>
 </footer>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="/JAVACOMICS/js/index.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
 </html>

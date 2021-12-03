@@ -3,10 +3,10 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="webtoonInnerListSQL">
-	<select id="episodeList" parameterType="String" resultType="webtoonInnerList">
-		select title, writer, artist, toonday, toonbg, toonchar, toontype, keyword1, keyword2, keyword3, story1, story2, toonend, totalgood, totalview from webtoon
+	<select id="getEpisode" parameterType="String" resultType="webtoonInnerList">
+		select title, writer, artist, toonday, toonBg, toonvideo, toontype, keyword1, keyword2, keyword3, story1, story2, toonend, totalgood, totalview from webtoon
 		join (select
-		(select distinct title from episodegoodview) as title,
+		(select distinct title from episodegoodview where title=#{title}) as title,
 		(select count(*) from episodegoodview where episodegood='T' and title=#{title}) as totalgood, 
 		(select count(*) from episodegoodview where episodeview='T' and title=#{title}) as totalview
 		from dual) using (title)		
