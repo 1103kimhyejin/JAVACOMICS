@@ -1,5 +1,9 @@
 package toonmember.controller;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,10 +30,22 @@ public class ToonMemberController {
 		return "/index";
 	}
 	
+	@RequestMapping(value="login", method=RequestMethod.POST)
+	@ResponseBody
+	public String login(@RequestParam Map<String, String> map, HttpSession session) {
+		return toonMemberService.login(map, session);
+	}
+	
+	@RequestMapping(value="logout", method=RequestMethod.GET)
+	public String logout(HttpSession session) {
+		session.invalidate();//무효화
+		return "/index";
+	}
+	
 	@RequestMapping(value="toonMemberWrite", method=RequestMethod.POST)
 	@ResponseBody
 	public void toonMemberWrite(@ModelAttribute ToonMemberDTO toonMemberDTO) {
-		System.out.println("aaa");
+		//System.out.println("aaa");
 		toonMemberService.toonMemberWrite(toonMemberDTO);
 	}
 	

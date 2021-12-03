@@ -49,7 +49,13 @@
 			<td>이메일</td>
 			<td>
 				<input type="text" name="email" id="email" placeholder="이메일 입력">
-				<div id= "emailDiv"></div>
+				<input type="button" id="emailConfirm" value="메일인증">
+			</td>
+		</tr>
+		<tr>
+			<td>인증번호</td>
+			<td>
+				<input type="text" name="confirm" id="confirm" >
 			</td>
 		</tr>
 		<tr>

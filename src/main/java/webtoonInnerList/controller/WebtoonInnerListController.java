@@ -31,7 +31,7 @@ public class WebtoonInnerListController {
 	@PostMapping(value="/episodeList")
 	public String episodeList(@RequestParam String title){
 		
-		WebtoonInnerListDTO webtoonInnerListDTO = episodeList(title);
+		//WebtoonInnerListDTO webtoonInnerListDTO = episodeList(title);
 		
 		return "/JAVACOMICS/webtoonInnerList/webtoonInnerList";
 		
