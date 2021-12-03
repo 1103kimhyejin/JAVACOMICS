@@ -17,10 +17,11 @@
 					,0)
 	</insert>
 	<select id="getToonCommentList" parameterType="int" resultType="toonComment" >
-		select * from tooncomment left join 
-			(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
-			from commentgoodbad group by commentseq) 
-			using(commentseq) 
-			where episodecode=#{episodecode} order by commentseq desc
+		select *
+		from tooncomment left join 
+		(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
+		from commentgoodbad group by commentseq) using(commentseq) 
+		where episodecode='1'
+		<![CDATA[order by (case when totalgood > 10 then 1 else 2 end), commentseq desc]]>
 	</select>
 </mapper>
