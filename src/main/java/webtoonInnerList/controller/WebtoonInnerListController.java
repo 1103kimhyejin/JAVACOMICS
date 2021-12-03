@@ -28,7 +28,6 @@ public class WebtoonInnerListController {
 //		
 //	}
 
-
 	@PostMapping(value="/episodeList")
 	public String episodeList(@RequestParam String title){
 		
