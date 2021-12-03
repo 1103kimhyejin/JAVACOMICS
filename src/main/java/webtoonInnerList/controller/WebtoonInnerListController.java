@@ -41,11 +41,13 @@ public class WebtoonInnerListController {
 //		
 //	}
 
-//	@GetMapping(value="/webtoonInnerList")
-//	public String webtoonInnerList(@RequestParam String title){
-//		System.out.println(title);
-//		System.out.println("컨트롤러와따");
-//		return "/webtoonInnerList/webtoonInnerList";	
+//	@PostMapping(value="/episodeList")
+//	public String episodeList(@RequestParam String title){
+//		
+//		//WebtoonInnerListDTO webtoonInnerListDTO = episodeList(title);
+//		
+//		return "/JAVACOMICS/webtoonInnerList/webtoonInnerList";
+//		
 //	}
-	
+
 }

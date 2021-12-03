@@ -8,4 +8,6 @@ public interface WebtoonDAO {
 
 	List<WebtoonDTO> getHomeBodyList();
 
+	List<WebtoonDTO> getRankBodyList();
+
 }

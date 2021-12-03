@@ -24,4 +24,10 @@ public class WebtoonController {
 	public List<WebtoonDTO> getHomeBodyList(){
 		return webtoonService.getHomeBodyList();
 	}
+	
+	@PostMapping(value="getRankBodyList")
+	@ResponseBody
+	public List<WebtoonDTO> getRankBodyList(){
+		return webtoonService.getRankBodyList();
+	}
 }

@@ -8,4 +8,6 @@ public interface WebtoonService {
 
 	List<WebtoonDTO> getHomeBodyList();
 
+	List<WebtoonDTO> getRankBodyList();
+
 }

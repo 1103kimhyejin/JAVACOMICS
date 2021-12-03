@@ -37,6 +37,9 @@ h1 {
 	color: #fff;
 	padding-left: 10px;
 }
+#memberWriteForm table #email {
+	width:190px;
+}
 #memberWriteForm table input[type=password]{
 	width: 250px;
 	height: 30px;
@@ -52,6 +55,11 @@ h1 {
 	height: 40px;
 	border: 1px solid #fff;
 	color: #fff;
+}
+#memberWriteForm table #emailConfirm {
+	width: 60px;
+	height: 30px;
+	font-size: 1.2rem;
 }
 #memberWriteForm table input[type=reset] {
 	background-color: transparent;
