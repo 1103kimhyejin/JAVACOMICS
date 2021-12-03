@@ -2,14 +2,14 @@
     pageEncoding="UTF-8"%>
 
 
-<link rel="stylesheet" href="css/myMenu.css">   
+<link rel="stylesheet" href="/JAVACOMICS/css/myMenu.css">   
     
 <div class="myMenu">
 
-	<div class="backBtn"><img src="image/backicon.PNG"></div>
+	<div class="backBtn"><img src="/JAVACOMICS/image/backicon.PNG"></div>
 	<div class="contentsdiv">
 		
-		<div class="spandiv">
+		<div class="spandiv2">
 			<div><a href="#">로그인</a>
 				<div class="loginDiv hid">
 					<form name="memberLoginForm" id="memberLoginForm" method="post">
@@ -17,21 +17,29 @@
 							<tr>
 								<td>아이디</td>
 								<td>
-									<input type="text" name="id" id="id" placeholder="아이디 입력">
+									<input type="text" name="id" id="loginId" placeholder="아이디 입력">
 									<div id= "idDiv"></div>
 								</td>
 							</tr>
 							<tr>
 								<td>비밀번호</td>
 								<td>
-									<input type="password" name="pwd" id="pwd" placeholder="비밀번호 입력">
+									<input type="password" name="pwd" id="loginPwd" placeholder="비밀번호 입력">
 									<div id= "pwdDiv"></div>
 								</td>
 							</tr>
+							
+							<tr>
+								<td colspan="2" align="center">
+									<div id="loginDiv"></div>
+								</td>
+							</tr>
+							
 							<tr>
 								<td colspan="2" align="center">
 									<input type="button" id="memberLoginBtn" value="로그인">
 									<input type="button" id="memberWriteFormBtn" value="회원가입">
+									<input type="button" id="kakaoLoginBtn" value="카카오톡 로그인">
 								</td>
 							</tr>
 						</table>

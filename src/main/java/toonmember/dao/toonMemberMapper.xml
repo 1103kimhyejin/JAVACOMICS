@@ -19,4 +19,10 @@
 		select * from toonmember where id=#{id}
 	</select>
 
+	<!-- 로그인 -->
+	<select id="login" parameterType="java.util.Map" resultType="toonmember">
+		select * from toonmember where id=#{id} and pwd=#{pwd}
+	</select>
+	
+
 </mapper>

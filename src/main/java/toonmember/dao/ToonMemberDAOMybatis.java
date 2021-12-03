@@ -1,5 +1,7 @@
 package toonmember.dao;
 
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,6 +24,11 @@ public class ToonMemberDAOMybatis implements ToonMemberDAO {
 	@Override
 	public ToonMemberDTO checkId(String id) {
 		return sqlSession.selectOne("toonmemberSQL.checkId",id);
+	}
+
+	@Override
+	public ToonMemberDTO login(Map<String, String> map) {
+		return sqlSession.selectOne("toonmemberSQL.login", map);
 	}
 
 }

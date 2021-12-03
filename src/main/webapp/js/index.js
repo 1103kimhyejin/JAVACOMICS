@@ -55,6 +55,48 @@ $(function(){
 	});
 
 	
+	//로그인 
+	$('#memberLoginBtn').click(function(){
+		
+		$('#loginDiv').empty();
+		
+		if($('#loginId').val() == ''){
+			$('#loginDiv').text('아이디 입력');
+			$('#loginDiv').css('color', 'red');
+			$('#loginDiv').css('font-size', '14pt');
+			$('#loginDiv').css('font-weight', 'bold');
+			
+		}else if($('#loginPwd').val() == ''){
+			$('#loginDiv').text('비밀번호 입력');
+			$('#loginDiv').css('color', 'red');
+			$('#loginDiv').css('font-size', '14pt');
+			$('#loginDiv').css('font-weight', 'bold');
+			
+		}else{
+			$.ajax({
+				type : 'post',
+				url: '/JAVACOMICS/toonmember/login',
+				data: {
+					'id': $('#loginId').val(),
+					'pwd': $('#loginPwd').val()
+				},
+				dataType: 'text',
+				success: function(data){
+					if(data == 'success'){
+						location.href = '/JAVACOMICS/index.jsp';
+					}else{
+						alert('로그인 실패');
+					}
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
+		}
+	});
+	
+ 
+	
 	//회원가입
 	$('#memberWriteBtn').click(function(){
 		$('#memberWriteForm .msgDiv').empty();

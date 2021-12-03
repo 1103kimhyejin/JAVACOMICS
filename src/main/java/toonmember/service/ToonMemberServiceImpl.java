@@ -1,5 +1,9 @@
 package toonmember.service;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +30,21 @@ public class ToonMemberServiceImpl implements ToonMemberService {
 		} else {
 			return "exist";
 		}
+	}
+
+	@Override
+	public String login(Map<String, String> map, HttpSession session) {
+		ToonMemberDTO toonMemberDTO = toonMemberDAO.login(map);
+		System.out.println("aaaaaa");
+		if(toonMemberDTO == null) {
+			return "fail";
+			
+		}else {
+			session.setAttribute("toonMemName", toonMemberDTO.getName());
+			session.setAttribute("toonMemId", toonMemberDTO.getId());
+			return "success";
+		}
+		
 	}
 
 }
