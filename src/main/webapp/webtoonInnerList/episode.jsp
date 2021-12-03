@@ -12,7 +12,7 @@
 			<span>21.11.10</span>
 		</div>
 	</div>
-	<div class="list1">
+<!-- <div class="list1">
 		<a href="#"><div class="epImage">
 			<img src="../image/webtoonInnerList/01.ep/ep02.jpg" /><br>
 		</div></a>
@@ -129,7 +129,7 @@
 			<span>21.11.10</span>
 		</div>
 	</div>
-		<div class="list1">
+	<div class="list1">
 		<div class="epImage">
 			<img src="../image/webtoonInnerList/01.ep/ep15.jpg" /><br>
 		</div>
@@ -137,5 +137,5 @@
 			<span>173화<br></span>
 			<span>21.11.10</span>
 		</div>
-	</div>	
+	</div> -->	
 </div>

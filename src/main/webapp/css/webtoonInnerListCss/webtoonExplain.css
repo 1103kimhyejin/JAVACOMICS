@@ -49,17 +49,7 @@
 	position: absolute;
 	left: 80px;	
 }
-.plot>ul>li:nth-child(11), .plot>ul>li:nth-child(12){
-	display: inline-block;	
-	font-size: 1.3rem;
-	margin: 0 4px 0 0;
-	padding: 3px 0;
-}
-.plot>ul>li:nth-child(12){
-	position: absolute;
-	left: 80px;	
-}
-.plot>ul>li:nth-child(16){
+.plot>ul>li:nth-child(13){
 	font-size: 1.7rem;
 	font-weight: bold;
 }

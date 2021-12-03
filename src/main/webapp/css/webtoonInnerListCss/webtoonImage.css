@@ -15,36 +15,45 @@
 	right:0;
 	bottom:0;
 	overflow:hidden;
-	
+	z-index: 1;
 }
 .imagebox .bg img{
 	width: 100%;
-	opacity: 0.6;
+	/* opacity: 0.6; */
+	z-index: 1;
 }
 .imagebox > .mainimg {
 	position: absolute;
 	top: 40px;
 	left: 50%;
  	transform: translateX(-50%); 
+ 	/* max-height: 386px;
+ 	overflow: hidden; */
+ 	z-index: 2;
 }
 .imagebox > .mainimg video{
 	width: 420px;
- 	height: 420px;	
+ 	height: 420px;
+/*  max-height: initial;
+ 	margin-top: 5%; */
+ 	z-index: 2;
 }
 .line{
 	position: absolute;
 	border-top: 1px solid white;
-	bottom: -4px;
+	bottom: -6px;
 	font-size: 2.2rem;
 	left: 50%;
  	transform: translateX(-50%); 
  	width: 640px;
+ 	z-index: 2;
 }
 .line>ul>li{
 	display: inline-block;
 	color: white;
 	text-align: center;
 	padding: 5px;
+	z-index: 2;
 }
 .line>ul>li:first-child{
 	position: absolute;

@@ -9,7 +9,7 @@ public class WebtoonInnerListDTO {
 	private String artist;
 	private String toonDay;
 	private String toonBg;
-	private String toonChar;
+	private String toonVideo;
 	private String toonType;
 	private String keyword1;
 	private String keyword2;

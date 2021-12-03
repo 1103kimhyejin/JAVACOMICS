@@ -4,172 +4,157 @@
 <link rel="stylesheet" href="/JAVACOMICS/css/webtoonListCss/homeList.css">
 
 <div class="webtoonList">
-   <div id = monWeb>
-      <div class = "day">
-         <p id ="mon">월요일</p>   
-      </div>
-      <div class="longBox">
-         <div class="longBox1">
-            <img src="image/webtoonList/01.Mon/01/bg.jpg"/>
-         </div>
-         <div class = longBox2>
-            <video autoplay loop muted playsinline>
-                  <source src="/JAVACOMICS/image/webtoonList/01.Mon/01/main.webm"
-                           type="video/webm">
-            </video>
-         </div>
-         <div class = longBox3>
-            <img src="image/webtoonList/01.Mon/01/title.png"/>
-         </div>
-         <div id= "Transparency"></div>
-      </div>
-   </div>
-   
-   <div id = tueWeb>
-      <div class = "day">
-         <p id ="tue">화요일</p>   
-      </div>
-      <div class="longBox">
-         <div class="longBox1">
-            <img alt = "gy" src="image/webtoonList/02.Tue/03/bg.jpg"/>
-         </div>
-         
-         <div class = longBox2>
-            <video autoplay loop muted playsinline>
-                  <source src="/JAVACOMICS/image/webtoonList/02.Tue/03/main.webm"
-                           type="video/webm">
-            </video>
-         </div>
-         
-         <div class = longBox3>
-            <img src="image/webtoonList/02.Tue/03/title.png"/>
-         </div>
-         
-         <div id= "Transparency"></div>
-      </div>   
-   </div>
-   
-   <div id = wedWeb>
-      <div class = "day">
-         <p id ="wed">수요일</p>   
-      </div>
-      <div class="longBox">
-         <div class="longBox1">
-            <img src="image/webtoonList/03.Wed/08/bg.jpg"/>
-         </div>
-         <div class = longBox2>
-            <video autoplay loop muted playsinline>
-                  <source src="image/webtoonList/03.Wed/08/main.webm"
-                           type="video/webm">
-            </video>
-         </div>
-         <div class = longBox3>
-            <img src="image/webtoonList/03.Wed/08/title.png"/>
-         </div>
-         <div id= "Transparency"></div>
-      </div>
-   </div>
-   
-   <div id = thuWeb>
-      <div class = "day">
-         <p id ="thu">목요일</p>   
-      </div>
-      <div class="longBox">
-         <div class="longBox1">
-            <img src="image/webtoonList/04.Thu/08/bg.jpg"/>
-         </div>
-         <div class = longBox2>
-            <video autoplay loop muted playsinline>
-                  <source src="image/webtoonList/04.Thu/08/main.webm"
-                           type="video/webm">
-            </video>
-         </div>
-         <div class = longBox3>
-            <img src="image/webtoonList/04.Thu/08/title.png"/>
-         </div>
-         <div id= "Transparency"></div>
-      </div>
-   </div>
-   
-   <div id = friWeb>
-      <div class = "day">
-         <p id ="fri">금요일</p>   
-      </div>
-      <div class="longBox">
-         <div class="longBox1">
-            <img src="image/webtoonList/05.Fri/05/bg.jpg"/>
-         </div>
-         <div class = longBox2>
-            <video autoplay loop muted playsinline>
-                  <source src="image/webtoonList/05.Fri/05/main.webm"
-                           type="video/webm">
-            </video>
-         </div>
-         <div class = longBox3>
-            <img src="image/webtoonList/05.Fri/05/title.png"/>
-         </div>
-         <div id= "Transparency"></div>
-      </div>
-   </div>
-   
-   <div id = satWeb>
-      <div class = "day">
-         <p id ="sat">토요일</p>   
-      </div>
-      <div class="longBox">
-         <div class="longBox1">
-            <img src="image/webtoonList/06.Sat/11/bg.jpg"/>
-         </div>
-         <div class = longBox2>
-            <video autoplay loop muted playsinline>
-                  <source src="image/webtoonList/06.Sat/11/main.webm"
-                           type="video/webm">
-            </video>
-         </div>
-         <div class = longBox3>
-            <img src="image/webtoonList/06.Sat/11/title.png"/>
-         </div>
-         <div id= "Transparency"></div>
-      </div>
-   </div>
-   
-   <div id = sunWeb>
-      <div class = "day">
-         <p id ="sun">일요일</p>   
-      </div>
-      <div class="longBox">
-         <div class="longBox1">
-            <img src="image/webtoonList/07.Sun/07/bg.jpg"/>
-         </div>
-         <div class = longBox2>
-            <video autoplay loop muted playsinline>
-                  <source src="image/webtoonList/07.Sun/07/main.webm"
-                           type="video/webm">
-            </video>
-         </div>
-         <div class = longBox3>
-            <img src="image/webtoonList/07.Sun/07/title.png"/>
-         </div>
-         <div id= "Transparency"></div>
-      </div>
-   </div>
+	<div id = monWeb>
+		<div class = "day">
+			<p id ="mon">월요일</p>	
+		</div>
+		<div id="longBox">
+			<div id="longBox1">
+				<img src="image/webtoonList/01.Mon/01/bg.jpg"/>
+			</div>
+			<div id = longBox2>
+				<video autoplay loop muted playsinline>
+						<source src="image/webtoonList/01.Mon/01/main.webm"
+	            				type="video/webm">
+				</video>
+			</div>
+			<div id = longBox3>
+				<img src="image/webtoonList/01.Mon/01/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
+		</div>
+	</div>
+	
+	<div id = tueWeb>
+		<div class = "day">
+			<p id ="tue">화요일</p>	
+		</div>
+		<div id="longBox">
+			<div id="longBox1">
+				<img src="image/webtoonList/01.Mon/01/bg.jpg"/>
+			</div>
+			
+			<div id = longBox2>
+				<video autoplay loop muted playsinline>
+						<source src="image/webtoonList/01.Mon/01/main.webm"
+	            				type="video/webm">
+				</video>
+			</div>
+			
+			<div id = longBox3>
+				<img src="image/webtoonList/01.Mon/01/title.png"/>
+			</div>
+			
+			<div id= "Transparency"></div>
+		</div>	
+	</div>
+	
+	<div id = wedWeb>
+		<div class = "day">
+			<p id ="wed">수요일</p>	
+		</div>
+		<div id="longBox">
+			<div id="longBox1">
+				<img src="image/webtoonList/01.Mon/01/bg.jpg"/>
+			</div>
+			<div id = longBox2>
+				<video autoplay loop muted playsinline>
+						<source src="image/webtoonList/01.Mon/01/main.webm"
+	            				type="video/webm">
+				</video>
+			</div>
+			<div id = longBox3>
+				<img src="image/webtoonList/01.Mon/01/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
+		</div>
+	</div>
+	
+	<div id = thuWeb>
+		<div class = "day">
+			<p id ="thu">목요일</p>	
+		</div>
+		<div id="longBox">
+			<div id="longBox1">
+				<img src="image/webtoonList/01.Mon/01/bg.jpg"/>
+			</div>
+			<div id = longBox2>
+				<video autoplay loop muted playsinline>
+						<source src="image/webtoonList/01.Mon/01/main.webm"
+	            				type="video/webm">
+				</video>
+			</div>
+			<div id = longBox3>
+				<img src="image/webtoonList/01.Mon/01/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
+		</div>
+	</div>
+	
+	<div id = friWeb>
+		<div class = "day">
+			<p id ="fri">금요일</p>	
+		</div>
+		<div id="longBox">
+			<div id="longBox1">
+				<img src="image/webtoonList/01.Mon/01/bg.jpg"/>
+			</div>
+			<div id = longBox2>
+				<video autoplay loop muted playsinline>
+						<source src="image/webtoonList/01.Mon/01/main.webm"
+	            				type="video/webm">
+				</video>
+			</div>
+			<div id = longBox3>
+				<img src="image/webtoonList/01.Mon/01/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
+		</div>
+	</div>
+	
+	<div id = satWeb>
+		<div class = "day">
+			<p id ="sat">토요일</p>	
+		</div>
+		<div id="longBox">
+			<div id="longBox1">
+				<img src="image/webtoonList/01.Mon/01/bg.jpg"/>
+			</div>
+			<div id = longBox2>
+				<video autoplay loop muted playsinline>
+						<source src="image/webtoonList/01.Mon/01/main.webm"
+	            				type="video/webm">
+				</video>
+			</div>
+			<div id = longBox3>
+				<img src="image/webtoonList/01.Mon/01/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
+		</div>
+	</div>
+	
+	<div id = sunWeb>
+		<div class = "day">
+			<p id ="sun">일요일</p>	
+		</div>
+		<div id="longBox">
+			<div id="longBox1">
+				<img src="image/webtoonList/01.Mon/01/bg.jpg"/>
+			</div>
+			<div id = longBox2>
+				<video autoplay loop muted playsinline>
+						<source src="image/webtoonList/01.Mon/01/main.webm"
+	            				type="video/webm">
+				</video>
+			</div>
+			<div id = longBox3>
+				<img src="image/webtoonList/01.Mon/01/title.png"/>
+			</div>
+			<div id= "Transparency"></div>
+		</div>
+	</div>
 </div>
 
-
-<!-- 
-      <div class="box" >
-         <div class="box1">
-            <img src="image/webtoonList/01.Mon/05/bg.jpg"/>            
-         </div>
-         <div class="box2">
-            <img src="image/webtoonList/01.Mon/05/main.png"/>
-         </div>
-         <div class="box3">
-            <img src="image/webtoonList/01.Mon/05/title.png"/>
-         </div>
-         <div id= "Transparency"></div>
-      </div>
--->
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(function(){

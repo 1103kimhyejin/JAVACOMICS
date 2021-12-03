@@ -6,6 +6,8 @@ import webtoonInnerList.bean.WebtoonInnerListDTO;
 
 public interface WebtoonInnerListDAO {
 
-	WebtoonInnerListDTO episodeList(String title);
+	public WebtoonInnerListDTO getEpisode(String title);
+
+//	WebtoonInnerListDTO episodeList(String title);
 
 }

@@ -24,9 +24,8 @@
     <mvc:resources location="/js/" mapping="/js/**" />
     <mvc:resources location="/image/" mapping="/image/**" />
     <mvc:resources location="/css/" mapping="/css/**" />
-    
-   <mvc:annotation-driven />
+    <mvc:resources location="/webtoonInnerList/" mapping="/webtoonInnerList/**" />
+   	<mvc:annotation-driven />
    
-
 </beans>
 

@@ -4,23 +4,22 @@
 <div class="explain">
 	<div class="plot">
 		<ul>
-			<li>연재</li>
-			<li>목</li><br>
-			<li>나 혼자만 레벨업</li>
+			<li>toonEnd</li>
+			<li>toonDay</li><br>
+			<li>title</li>
 			<li>글</li>
-			<li>현군</li><br>
+			<li>writer</li><br>
 			<li>그림</li>
-			<li>장성락(REDICE STUDIO)</li><br>
-			<li>원작</li>
-			<li>추공</li><br><br><br>
+			<li>artist</li><br><br><br>
 			<li>줄거리</li>
 		</ul>	
 			<div class="visible">
 				<p>
-				10여 년 전, <br>
+				<!-- 10여 년 전, <br>
 				다른 차원과 이쪽 세계를 이어주는 통로 '게이트'가 열리고 <br>
 				평범한 이들 중 각성한 자들이 생겨났다.
-				<br>
+				<br> -->
+				stroy1
 				</p>
 			</div>
 			<div class="moreview">
@@ -28,7 +27,7 @@
 			</div>
 			<div class="hidden">
 				<p>
-				게이트 안의 던전에서 마물을 사냥하는 각성자.<br>
+				<!-- 게이트 안의 던전에서 마물을 사냥하는 각성자.<br>
 				그들을 일컬어 '헌터'라고 부른다.
 				<br><br>
 				그러나 모든 헌터가 강한 것은 아니다.
@@ -54,16 +53,17 @@
 				오직 그 혼자만!
 				<br><br>
 				최약체 헌터에서 최강 헌터로 각성하다!
-				<br><br><br>
+				<br><br><br> -->
+				story2
 				</p>
 			</div>		
 		<div class="keyword">
 		<span>키워드</span>
 			<ul>
-				<li>#통쾌한</li>
-				<li>#압도되는</li>
-				<li>#학원/판타지</li>
-				<li>#레벨업물</li>
+				<li>#toonType</li>
+				<li>#keyword1</li>
+				<li>#keyword1</li>
+				<li>#keyword1</li>
 			</ul>
 		</div>
 		<div class="similartoon">
