@@ -21,8 +21,8 @@ a:active{ color: white; text-decoration: none;}
 .list1{
 	display: inline-block;
     position: relative;
-    width: 19.5%;
-    padding-top: 19%;
+    width: 19.97%;
+    padding-top: 13%;
     overflow: hidden;
 }
 .epImage{
@@ -57,7 +57,7 @@ a:active{ color: white; text-decoration: none;}
 	    width: 32%;
 	    overflow: hidden;
 	    margin: 0 auto;
-	    padding-top: 27%
+	    padding-top: 19%;
 	}
 	.epInfo{
 		width: 100%;

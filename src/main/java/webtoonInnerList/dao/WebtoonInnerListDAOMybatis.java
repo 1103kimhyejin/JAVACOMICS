@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import episodelist.bean.EpisodeListDTO;
 import webtoonInnerList.bean.WebtoonInnerListDTO;
 
 @Repository
@@ -19,6 +20,11 @@ public class WebtoonInnerListDAOMybatis implements WebtoonInnerListDAO {
 	@Override
 	public WebtoonInnerListDTO getEpisode(String title) {
 		return sqlSession.selectOne("webtoonInnerListSQL.getEpisode", title);
+	}
+
+	@Override
+	public List<EpisodeListDTO> episodeList(String title) {
+		return sqlSession.selectList("webtoonInnerListSQL.episodeList", title);
 	}
 
 //	@Override

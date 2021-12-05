@@ -11,4 +11,9 @@
 		(select count(*) from episodegoodview where episodeview='T' and title=#{title}) as totalview
 		from dual) using (title)		
 	</select>
+	
+	<select id="episodeList" parameterType="String" resultType="episodeListdto">
+		select episode, title, thumbnail, to_char(updatetime, 'YYYY-MM-DD') as updateTime
+		, free from episodelist where title=#{title} order by episodeCode desc
+	</select>
 </mapper> 

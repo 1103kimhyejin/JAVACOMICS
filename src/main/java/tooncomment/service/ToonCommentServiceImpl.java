@@ -26,4 +26,9 @@ public class ToonCommentServiceImpl implements ToonCommentService {
 		return toonCommentDAO.getToonCommentList(episodecode);
 	}
 
+	@Override
+	public List<ToonCommentDTO> SortLatest(int episodecode) {
+		return toonCommentDAO.SortLatest(episodecode);
+	}
+
 }

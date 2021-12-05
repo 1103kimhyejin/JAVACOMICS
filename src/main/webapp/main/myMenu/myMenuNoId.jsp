@@ -39,7 +39,7 @@
 								<td colspan="2" align="center">
 									<input type="button" id="memberLoginBtn" value="로그인">
 									<input type="button" id="memberWriteFormBtn" value="회원가입">
-									<input type="button" id="kakaoLoginBtn" value="카카오톡 로그인">
+									<div id="kakaoLoginBtn"><img src="/JAVACOMICS/image/myMenu/kakaologin.png"></div>
 								</td>
 							</tr>
 						</table>
@@ -49,6 +49,6 @@
 			<div><a href="#">고객센터</a></div>
 		</div>
 	</div>	
-
 	
 </div>
+

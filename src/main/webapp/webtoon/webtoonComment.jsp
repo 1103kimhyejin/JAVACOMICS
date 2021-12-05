@@ -28,7 +28,7 @@
 <ul id="webtoonComment_list">
 </ul>
 
-
+<input id="sessionid" type="hidden" value="${sessionScope.toonMemId }"/>
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
 //댓글목록출력
@@ -40,17 +40,14 @@ $(function(){
 			dataType: 'json',
 			success: function(data){
 				
-				//alert(JSON.stringify(data));
-						if($('img[id="sortgood"]')) sortgood()
-						if($('img[id="sortlatest"]')) sortlatest()
-						if($('img[id="sortbasic"]')){
+
 			 	$.each(data, function(index, items){
 							addComment(items.id, items.content, items.logtime
 								, items.totalgood, items.totalbad, items.reply
 								, items.commentSeq);
-					
+							
 				}) 
-						}
+						
 			},
 			error: function(err){
 				console.log(err);	
@@ -59,29 +56,44 @@ $(function(){
 		
 });
 
-function sortBtn() {
-    if ($('#sortBtn').attr('name')=="sortgood") 
-    	$('#sortBtn').attr("name","sortlatest");
-   	if	($('img[name="sortlatest"]')) 
-    	$('#sortBtn').attr("name","sortbasic"); 
-    if	($('img[name="sortbasic"]')) 
-    	$('#sortBtn').attr("name","sortgood");
+
     
-}
+
 //$("#").attr("name","새로운네임")
 //댓글목록 좋아요순정렬
-function sortgood(){
-	
-}
-function sortlatest(){
-	
-}
 
+
+function sortLatest(){
+	$.ajax({
+		url: '/JAVACOMICS/tooncomment/SortLatest',
+		type: 'post',
+		data:'episodecode=1',
+		dataType: 'json',
+		success: function(data){
+			
+			 	$.each(data, function(index, items){
+						addComment(items.id, items.content, items.logtime
+							, items.totalgood, items.totalbad, items.reply
+							, items.commentSeq);
+						
+			}) 
+				
+		},
+		error: function(err){
+			console.log(err);	
+		}
+	});
+	
+}
 
 //저장
 $(function(){
 	$('#webtoonComment_inputForm').submit(function(){
 	      
+	      if($('#sessionid').val()==''){
+	    	  alert('로그인 하세요');
+	    	  return false;
+	      }
 	      if(!$('#webtoonComment_inputText').val()){
 	         alert('내용을 입력하세요.');
 	         $('#webtoonComment_inputText').focus();
@@ -92,8 +104,9 @@ $(function(){
 				url: '/JAVACOMICS/tooncomment/toonCommentWrite',
 				data:'content='+ $('#webtoonComment_inputText').val(),
 				success: function(){
-					//alert('댓글쓰기 완료');
-					location.href='/JAVACOMICS/webtoon/webtoonComment.jsp'
+					alert('댓글쓰기완료');
+					$('#webtoonComment_list').empty();
+					sortLatest();
 				},
 				error: function(err){
 					console.log(err);
@@ -151,6 +164,7 @@ function addComment(id, content, logtime, totalgood, totalbad, reply, commentSeq
 		'type' : 'button',
 		'value' : '싫어요 '+totalbad
 	});
+	webtoonComment_Bad_btn.addClass('webtoonComment_Bad_btn');
 	
 	var webtoonComment_Reply_btn = $('<input>');
 	webtoonComment_Reply_btn.attr({
@@ -181,33 +195,117 @@ function addComment(id, content, logtime, totalgood, totalbad, reply, commentSeq
 		webtoonComment_li.append(webtoonComment_BIDC_div).append(webtoonComment_GBRbtn_div);
 		$('#webtoonComment_list').append(webtoonComment_li);
 	}
+
 }
+
 //좋아요
 $(document).on('click', '.webtoonComment_Good_btn', function(){
-
+	//$(this).parents(li).attr('id','good'); 
+	if($('#sessionid').val()==''){
+  	  alert('로그인 하세요');
+  	  return false;
+    }else{
 	var commentSeq= $(this).parents('li').attr('data-num');
-	//var offset = $(this).parents('li').offset();
-	//alert(offset);
-	
-	$.ajax({
-		type: 'post',
-		url: '/JAVACOMICS/commentGoodBad/commentGood',
-		data:'commentSeq='+commentSeq,
-		success: function(){
-			//alert('좋아요 완료');
-			location.href='/JAVACOMICS/webtoon/webtoonComment.jsp'
-			 
-	
-	          //$("html body").animate({scrollTop:offset.top},2000);
-	      //  $('html').animate({scrollTop : offset.top}, 400);
+		$.ajax({
+			type: 'post',
+			url: '/JAVACOMICS/commentGoodBad/checkGoodId',
+			data:'commentSeq='+commentSeq,
+			success: function(data){
+				if(data == 'exist'){
+					alert('좋아요취소');
+					
+					$.ajax({
+						type: 'post',
+						url: '/JAVACOMICS/commentGoodBad/commentGoodDelete',
+						data:'commentSeq='+commentSeq,
+						success: function(){
+							location.href='/JAVACOMICS/webtoon/webtoonComment.jsp'
+						},
+						error: function(err){
+							alert('좋아요취소에러');
+						}
+					});	
 
-
-		},
-		error: function(err){
-			alert(err);
-		}
-	});
+				}else if(data == 'non_exist'){
+					$.ajax({
+						type: 'post',
+						url: '/JAVACOMICS/commentGoodBad/commentGood',
+						data:'commentSeq='+commentSeq,
+						success: function(){
+							
+							location.href='/JAVACOMICS/webtoon/webtoonComment.jsp'
+							//good.load('/JAVACOMICS/commentGoodBad/commentGood good');
+							
+						},
+						error: function(err){
+							alert('인서트에러');
+						}
+					});		
+				
+						
+							
+				}
+			},			 
+			error: function(err){
+				alert('에러');
+			}
+		});
+	
+	}
 });
+
+//싫어요
+$(document).on('click', '.webtoonComment_Bad_btn', function(){
+	//$(this).css('color', 'red');
+	//$('input[name="checked"]').css('color', 'red');
+	if($('#sessionid').val()==''){
+  	  alert('로그인 하세요');
+  	  return false;
+    }else{
+	var commentSeq= $(this).parents('li').attr('data-num');
+		$.ajax({
+			type: 'post',
+			url: '/JAVACOMICS/commentGoodBad/checkBadId',
+			data:'commentSeq='+commentSeq,
+			success: function(data){
+				if(data == 'exist'){
+					alert('싫어요취소');
+					
+					$.ajax({
+						type: 'post',
+						url: '/JAVACOMICS/commentGoodBad/commentBadDelete',
+						data:'commentSeq='+commentSeq,
+						success: function(){
+							location.href='/JAVACOMICS/webtoon/webtoonComment.jsp'
+						},
+						error: function(err){
+							alert('싫어요취소에러');
+						}
+					});	
+
+				}else if(data == 'non_exist'){
+					$.ajax({
+						type: 'post',
+						url: '/JAVACOMICS/commentGoodBad/commentBad',
+						data:'commentSeq='+commentSeq,
+						success: function(){
+							location.href='/JAVACOMICS/webtoon/webtoonComment.jsp'
+							//$(this).css('color', 'red');
+							// $('#checked').load(location.href + ' #checked');	
+						},
+						error: function(err){
+							alert('인서트에러');
+						}
+					});			
+				}
+			},			 
+			error: function(err){
+				alert('에러');
+			}
+		});
+	}
+});
+
 </script>
 </body>
 </html>

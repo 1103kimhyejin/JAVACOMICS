@@ -47,4 +47,18 @@ public class ToonMemberServiceImpl implements ToonMemberService {
 		
 	}
 
+	@Override
+	public void kakaoMemberWrite(Map<String, String> map, HttpSession session) {
+		
+		toonMemberDAO.kakaoMemberWrite(map);
+	}
+
+	@Override
+	public String cashcheck(String id) {
+		ToonMemberDTO toonMemberDTO = toonMemberDAO.checkId(id);
+		
+		return  Integer.toString(toonMemberDTO.getCash());
+		
+	}
+
 }

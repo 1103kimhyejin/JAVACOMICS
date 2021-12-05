@@ -12,4 +12,6 @@ public interface ToonMemberDAO {
 
 	public ToonMemberDTO login(Map<String, String> map);
 
+	public void kakaoMemberWrite(Map<String, String> map);
+
 }

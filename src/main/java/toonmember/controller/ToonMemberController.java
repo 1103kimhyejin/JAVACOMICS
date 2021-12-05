@@ -33,6 +33,7 @@ public class ToonMemberController {
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	@ResponseBody
 	public String login(@RequestParam Map<String, String> map, HttpSession session) {
+		System.out.println("toonMemberlogin");
 		return toonMemberService.login(map, session);
 	}
 	
@@ -42,15 +43,29 @@ public class ToonMemberController {
 		return "/index";
 	}
 	
+	@RequestMapping(value="cashcheck", method=RequestMethod.GET)
+	@ResponseBody
+	public String cashcheck(Model model, @RequestParam String id) {
+		return toonMemberService.cashcheck(id);		
+	}
+	
 	@RequestMapping(value="toonMemberWrite", method=RequestMethod.POST)
 	@ResponseBody
 	public void toonMemberWrite(@ModelAttribute ToonMemberDTO toonMemberDTO) {
-		//System.out.println("aaa");
+		System.out.println("toonMemberWrite");
 		toonMemberService.toonMemberWrite(toonMemberDTO);
+	}
+	
+	@RequestMapping(value="kakaoMemberWrite", method=RequestMethod.POST)
+	@ResponseBody
+	public void kakaoMemberWrite(@RequestParam Map<String, String> map, HttpSession session) {
+		System.out.println("kakaoMemberWrite");
+		toonMemberService.kakaoMemberWrite(map, session);
 	}
 	
 	@RequestMapping(value="checkId", method=RequestMethod.POST)
 	public @ResponseBody String checkId(@RequestParam String id) {
+		System.out.println("toonMemberCheckId");
 		return toonMemberService.checkId(id);
 	}
 

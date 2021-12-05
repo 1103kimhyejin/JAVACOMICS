@@ -9,10 +9,10 @@
 	<div class="contentsdiv">
 		<div class="membernamediv" href="#">${sessionScope.toonMemName } ></div><!-- 내 정보 표시 자리 -->
 		<div class="cashdiv">
-			<img src="image/myMenu/cash.svg"><span class="cashspan">1,000</span>
+			<img src="image/myMenu/cash.svg"><span class="cashspan"></span>
 		</div>
 		<div class="spandiv">
-			<div><a href="/JAVACOMICS/toonmember/logout" id="logoutBtn">로그아웃    </a></div>
+			<div><a href="#" id="kakaoLogoutBtn">로그아웃    </a></div>
 			<div><a href="#">캐시 충전     </a></div>
 			<div><a href="#">충전 내역     </a></div>
 			<div><a href="#">고객센터      </a></div>
@@ -24,3 +24,23 @@
 		<div>CASH PASS VIP</div>
 	</div>
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	$.ajax({
+		type: 'get',
+		url: '/JAVACOMICS/toonmember/cashcheck',
+		data: 'id='+'${sessionScope.toonMemId }',
+		dataType: 'text',
+		success: function(data){
+			$('.cashspan').text(data);
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+});
+
+
+</script>
