@@ -7,6 +7,7 @@
       <typeAlias type="webtoon.bean.WebtoonDTO" alias="webtoon"/>
       <typeAlias type="toonmember.bean.ToonMemberDTO" alias="toonmember"/>
       <typeAlias type="tooncomment.bean.ToonCommentDTO" alias="toonComment"/>
+      <typeAlias type="commentgoodbad.bean.CommentGoodBadDTO" alias="commentGoodBad"/>
       <typeAlias type="episodelist.bean.EpisodeListDTO" alias="episodeList"/>
       <typeAlias type="webtoonInnerList.bean.WebtoonInnerListDTO" alias="webtoonInnerList"/>
    </typeAliases>
