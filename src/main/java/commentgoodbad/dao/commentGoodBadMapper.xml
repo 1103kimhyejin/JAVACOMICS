@@ -6,7 +6,22 @@
 <!-- 	<select id="getCommentGoodBadList"  parameterType="int" resultType="toonComment">
 		select * from tooncomment where episodecode = #{episodecode};
 	</select> -->
-	<insert id="commentGood" parameterType="int">
-		insert into commentgoodbad(commentseq, commentgood) values(#{commentSeq},'T')
+	<insert id="commentGood" parameterType="commentGoodBad">
+		insert into commentgoodbad(commentSeq, goodBadId, commentgood) values(#{commentSeq},#{goodBadId},'T')
 	</insert>
+	<insert id="commentBad" parameterType="commentGoodBad">
+		insert into commentgoodbad(commentSeq, goodBadId, commentbad) values(#{commentSeq},#{goodBadId},'T')
+	</insert>
+	<select id="checkBadId" parameterType="commentGoodBad" resultType="commentGoodBad">
+		select distinct * from commentgoodbad where goodbadid=#{goodBadId} and commentSeq=#{commentSeq} and commentbad='T'
+	</select> 
+	<select id="checkGoodId" parameterType="commentGoodBad" resultType="commentGoodBad">
+		select distinct * from commentgoodbad where goodbadid=#{goodBadId} and commentSeq=#{commentSeq} and commentgood='T'
+	</select> 
+	<delete id="commentGoodDelete"  parameterType="commentGoodBad"> 
+		delete from commentgoodbad where goodbadid=#{goodBadId} and commentSeq=#{commentSeq} and commentgood='T'
+	</delete>
+	<delete id="commentBadDelete"  parameterType="commentGoodBad"> 
+		delete from commentgoodbad where goodbadid=#{goodBadId} and commentSeq=#{commentSeq} and commentbad='T'
+	</delete>
 </mapper>

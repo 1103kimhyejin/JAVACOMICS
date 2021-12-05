@@ -31,4 +31,10 @@ public class ToonMemberDAOMybatis implements ToonMemberDAO {
 		return sqlSession.selectOne("toonmemberSQL.login", map);
 	}
 
+	@Override
+	public void kakaoMemberWrite(Map<String, String> map) {
+		sqlSession.insert("toonmemberSQL.kakaoMemberWrite",map);
+		
+	}
+
 }

@@ -24,5 +24,17 @@
 		select * from toonmember where id=#{id} and pwd=#{pwd}
 	</select>
 	
+	<!-- 카카오 회원가입 -->
+	<insert id="kakaoMemberWrite" parameterType="java.util.Map">
+		insert into toonmember (name,id,pwd,gender,age,email,cash,logtime) values(#{name},
+																			#{id},
+																			#{pwd},
+																			#{gender},
+																			#{age},
+																			#{email},
+																			0,
+																			sysdate)
+	</insert>
+	
 
 </mapper>

@@ -72,3 +72,27 @@
 	</table>
 </form>
 </div>
+
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$('#emailConfirm').click(function(){
+	
+	$.ajax({
+		type: 'post',
+		url: '/JAVACOMICS/email/send',
+		data: 'email='+$('#email').val(),
+		dataType: 'text',
+		success: function(data){
+			alert(data);
+		},
+		error: function(err){
+			console.log(err);
+		}
+	});
+	
+});
+</script>
+
+
+

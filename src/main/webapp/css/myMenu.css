@@ -67,6 +67,7 @@
 .loginDiv {
 	width: 100%;
 	margin: 15px auto;
+	position: relative;
 	height: 180px;
 	background-color: rgba(28,28,28,0.8);
 }
@@ -75,7 +76,10 @@
 	color : #fff;
 }
 #memberLoginForm {
-	margin: 0 auto;
+	width: 500px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
 	font-size: 2rem;
 }
 #memberLoginForm tr > td:first-child {
@@ -109,6 +113,16 @@
 #memberLoginForm table input[type=button]{
 	width: 70px;
 	height: 30px;
+	background-color: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+#memberLoginForm table #kakaoLoginBtn {
+	display: inline-block;
+}
+#memberLoginForm table #kakaoLoginBtn img {
+
+	height: 30px;
 }
 
 /*-------------tablet 1024------------------*/
@@ -129,6 +143,9 @@
 	}
 	.contentsdiv {
 		width: 320px;
+	}
+	#memberLoginForm {
+		width: 300px;
 	}
 	#memberLoginForm table input[type=text] {
 		width: 130px;
