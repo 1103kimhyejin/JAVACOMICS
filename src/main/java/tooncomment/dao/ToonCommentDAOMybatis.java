@@ -28,4 +28,9 @@ public class ToonCommentDAOMybatis implements ToonCommentDAO {
 		return sqlSession.selectList("toonCommentSQL.getToonCommentList", episodecode);
 	}
 
+	@Override
+	public List<ToonCommentDTO> SortLatest(int episodecode) {
+		return sqlSession.selectList("toonCommentSQL.SortLatest", episodecode);
+	}
+
 }
