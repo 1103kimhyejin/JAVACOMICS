@@ -141,7 +141,7 @@
     
     
     <!-- 이메일 인증 -->
-   <!--  <dependency>
+   <dependency>
         <groupId>javax.mail</groupId>
         <artifactId>mail</artifactId>
         <version>1.4.7</version>
@@ -150,7 +150,7 @@
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-context-support</artifactId>
 	    <version>5.3.12</version>
-	</dependency> -->
+	</dependency>
 	
 	
   </dependencies>

@@ -14,4 +14,8 @@ public interface ToonMemberService {
 
 	public String login(Map<String, String> map, HttpSession session);
 
+	public void kakaoMemberWrite(Map<String, String> map, HttpSession session);
+
+	public String cashcheck(String id);
+
 }
