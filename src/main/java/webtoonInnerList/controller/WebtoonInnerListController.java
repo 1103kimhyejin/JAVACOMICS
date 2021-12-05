@@ -1,12 +1,16 @@
 package webtoonInnerList.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import episodelist.bean.EpisodeListDTO;
 import webtoonInnerList.bean.WebtoonInnerListDTO;
 import webtoonInnerList.service.WebtoonInnerListService;
 
@@ -19,17 +23,20 @@ public class WebtoonInnerListController {
 	
 	@PostMapping(value="/getEpisode")
 	@ResponseBody
-	public WebtoonInnerListDTO episodeList(@RequestParam String title){
+	public WebtoonInnerListDTO getEpisode(@RequestParam String title){
 		System.out.println(title);
 		return webtoonInnerListService.getEpisode(title);	
 	}
 
-//	@RequestMapping(value="episodeList", method=RequestMethod.POST)
-//	public String modify(@RequestParam String title, Model model) {
-//		webtoonInnerListService.episode(title);	
-//		model.addAttribute("display", "/webtoonInnerList/episodeList");
-//		return "/webtoonInnerList/webtoonInnerList";
-//	}
+	@PostMapping(value="/episodeList")
+	@ResponseBody
+	public List<EpisodeListDTO> episodeList(@RequestParam String title) {
+		System.out.println("컨트롤러와따");
+		/* List<EpisodeListDTO> list = webtoonInnerListService.episodeList(title); */
+		/* model.addAttribute("list", list); */
+		/* model.addAttribute("display", "/webtoonInnerList/episode.jsp"); */
+		return webtoonInnerListService.episodeList(title);
+	}
 	
 //	@PostMapping(value="/getEpisode")
 //	public String episodeList(@RequestParam String title,

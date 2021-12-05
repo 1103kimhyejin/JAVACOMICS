@@ -117,6 +117,7 @@ $(function(){
 			if(data.toonEnd=='F'){
 				$('.plot>ul>li:first-child').text("연재");
 			}
+			
 			$('.plot>ul>li:nth-child(2)').text(data.toonDay);
 			$('.plot>ul>li:nth-child(4)').text(data.title);
 			$('.plot>ul>li:nth-child(6)').text(data.writer);
@@ -133,7 +134,6 @@ $(function(){
 		}
 	});
  	
- 	
  	//episodeList
  	$.ajax({
 		type: 'post',
@@ -142,6 +142,25 @@ $(function(){
 		dataType: "json",
 		success: function(data){
 			alert(JSON.stringify(data));
+			
+			$.each(data, function(index, items){
+				$("<div/>", {
+					class: "list1"
+				}).append($("<a/>", {
+					href: "#"
+				}).append($("<div/>", {
+					class: "epImage"
+				}).append($("<img/>", {
+					src: "../image/" + items.thumbnail
+				})))).after($("<div/>", {
+					class: "epInfo"
+					})).append($("<span/>", {
+						text: items.episode
+						})).append($("<br/>")).append($("<span/>", {
+							text: items.updateTime
+							})).appendTo($(".webtoonList"));		
+
+			}); //each
 		},
 		error: function(err){
 			console.log(err);
