@@ -21,8 +21,8 @@ public class WebtoonServiceImpl implements WebtoonService {
 	}
 
 	@Override
-	public List<WebtoonDTO> getRankBodyList() {
+	public List<WebtoonDTO> getRankBodyList(String category) {
 		
-		return webtoonDAO.getRankBodyList();
+		return webtoonDAO.getRankBodyList(category);
 	}
 }

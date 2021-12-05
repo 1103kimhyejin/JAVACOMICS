@@ -22,8 +22,8 @@ public class WebtoonDAOMybatis implements WebtoonDAO {
 	}
 
 	@Override
-	public List<WebtoonDTO> getRankBodyList() {
+	public List<WebtoonDTO> getRankBodyList(String category) {
 		
-		return sqlSession.selectList("webtoonSQL.getRankBodyList");
+		return sqlSession.selectList("webtoonSQL.getRankBodyList", category);
 	}
 }
