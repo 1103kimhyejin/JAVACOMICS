@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import episodelist.bean.EpisodeListDTO;
 import webtoonInnerList.bean.WebtoonInnerListDTO;
 import webtoonInnerList.dao.WebtoonInnerListDAO;
 
@@ -18,6 +19,11 @@ public class WebtoonInnerListServiceImpl implements WebtoonInnerListService {
 	@Override
 	public WebtoonInnerListDTO getEpisode(String title) {
 		return webtoonInnerListDAO.getEpisode(title);
+	}
+
+	@Override
+	public List<EpisodeListDTO> episodeList(String title) {
+		return webtoonInnerListDAO.episodeList(title);
 	}
 
 //	@Override
