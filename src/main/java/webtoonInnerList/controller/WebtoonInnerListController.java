@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,7 +32,6 @@ public class WebtoonInnerListController {
 	@PostMapping(value="/episodeList")
 	@ResponseBody
 	public List<EpisodeListDTO> episodeList(@RequestParam String title) {
-		System.out.println("컨트롤러와따");
 		/* List<EpisodeListDTO> list = webtoonInnerListService.episodeList(title); */
 		/* model.addAttribute("list", list); */
 		/* model.addAttribute("display", "/webtoonInnerList/episode.jsp"); */
@@ -47,14 +47,13 @@ public class WebtoonInnerListController {
 //		return "/webtoonInnerList/webtoonInnerList";
 //		
 //	}
-
-//	@PostMapping(value="/episodeList")
-//	public String episodeList(@RequestParam String title){
-//		
-//		//WebtoonInnerListDTO webtoonInnerListDTO = episodeList(title);
-//		
-//		return "/JAVACOMICS/webtoonInnerList/webtoonInnerList";
-//		
-//	}
-
+	//@PostMapping(value="/webtoonExplain")
+	@RequestMapping(value="webtoonExplain", method=RequestMethod.GET)
+	public String webtoonExplain(@RequestParam String title, Model model){
+		System.out.println("display 컨트롤러와따");
+		System.out.println(title);
+		model.addAttribute("title", title);
+		model.addAttribute("display", "webtoonExplain.jsp");
+		return "/webtoonInnerList/webtoonInnerList";
+	}
 }

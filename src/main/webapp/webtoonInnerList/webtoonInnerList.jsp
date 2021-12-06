@@ -47,13 +47,12 @@
 	
 	<div id="content">
 		<c:if test="${empty display }"> 
-			<jsp:include page="webtoonExplain.jsp" /> 
-		</c:if>
-		<%-- <c:if test="${not empty display }"> 
-			<jsp:include page="${display }" />
-		</c:if> --%>
-		<c:if test="${not empty display }"> 
 			<jsp:include page="episode.jsp" />
+		</c:if>
+		
+		<c:if test="${not empty display }"> 
+			<%-- <jsp:include page="webtoonExplain.jsp" />  --%>
+			<jsp:include page="${display }" />
 		</c:if>
 	</div>
 	
@@ -117,6 +116,10 @@ $(function(){
 			if(data.toonEnd=='F'){
 				$('.plot>ul>li:first-child').text("연재");
 			}
+			if(data.toonEnd=='T'){
+				$('.plot>ul>li:first-child').text("완결");
+				$('.plot>ul>li:first-child').css("background-color", "#8e8e8e")
+			}
 			
 			$('.plot>ul>li:nth-child(2)').text(data.toonDay);
 			$('.plot>ul>li:nth-child(4)').text(data.title);
@@ -134,6 +137,18 @@ $(function(){
 		}
 	});
  	
+ 	//작품정보 클릭시 display include
+	$('.information').click(function(){
+		alert('클릭했다');
+		location.href='/JAVACOMICS/webtoonInnerList/webtoonExplain?title='+$('#webtoon_title').val();
+	});
+ 	
+ 	//회차정보 클릭
+ 	$('.episode').click(function(){
+		alert('회차 클릭했다');
+		location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+$('#webtoon_title').val();
+	});
+ 	
  	//episodeList
  	$.ajax({
 		type: 'post',
@@ -144,7 +159,7 @@ $(function(){
 			alert(JSON.stringify(data));
 			
 			$.each(data, function(index, items){
-				$("<div/>", {
+				/* $("<div/>", {
 					class: "list1"
 				}).append($("<a/>", {
 					href: "#"
@@ -158,9 +173,52 @@ $(function(){
 						text: items.episode
 						})).append($("<br/>")).append($("<span/>", {
 							text: items.updateTime
-							})).appendTo($(".webtoonList"));		
-
+							})).after($("<div/>", {
+								class: "epFree"
+							})).append($("<span/>", {
+								text: items.free
+								})).appendTo($(".webtoonList"));		 */
+				
+								
+				$("<div/>", {
+					class: "list1"
+				}).append($("<a/>", {
+					href: "#"
+				}).append($("<div/>", {
+					class: "epImage"
+				}).append($("<img/>", {
+					src: "../image/" + items.thumbnail
+				})))).append($("<div/>", {
+					class: "epInfo"
+				}).append($("<span/>", {
+					text: items.episode
+					})).append($("<br/>")).append($("<span/>", {
+						text: items.updateTime
+						}))).append($("<div/>", {
+							class: "epFree"
+						}).append($("<span/>", {
+							id : items.free
+							}))).appendTo($(".webtoonList"));	
+								
+				var free = $(".epFree span").attr("id");
+				
+				//무료 유료 회차 구분
+				if(free=='F'){
+					$(".epFree").removeClass();
+				}				
+				if(free=='T'){
+					$(".epFree span").text('무료')
+				}	
+				
 			}); //each
+			
+			//유료회차 클릭시 이용권 구매창 이동
+			$('#sunWeb > .box').click(function(){
+			 	var title= $(this).attr("id");
+			 	alert(title); 
+			 	location.href='/JAVACOMICS/index.jsp?';
+			});
+			
 		},
 		error: function(err){
 			console.log(err);

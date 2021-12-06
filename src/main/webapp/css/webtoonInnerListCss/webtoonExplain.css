@@ -7,6 +7,14 @@
 	color: white;
 	padding: 10px 0 0 0; 
 }
+.information{
+	background-color: #fff;
+	color: black;
+}
+.episode{
+	background-color: transparent;
+	color: #fff;
+} 
 .plot>ul>li:first-child, .plot>ul>li:nth-child(2){
 	border-radius: 9px;
 	position: absolute;
