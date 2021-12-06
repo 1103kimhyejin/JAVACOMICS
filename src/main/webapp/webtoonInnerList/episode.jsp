@@ -4,7 +4,7 @@
 <div class="webtoonList">
 	<a href="#"><div>첫 화 보기</div></a>
  	
-<!--  	<div class="list1">
+<!-- 	<div class="list1">
 		<a href="#">
 			<div class="epImage">
 				<img src="/JAVACOMICS/image/webtoonInnerList/01.ep/ep01.jpg" /> 
@@ -18,5 +18,10 @@
 				updateTime
 			</span>
 		</div>
-	</div> -->
+		<div class="epFree">
+			<span>
+				free
+			</span>	
+		</div>
+	</div --> 
 </div>

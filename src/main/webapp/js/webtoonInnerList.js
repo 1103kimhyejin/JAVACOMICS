@@ -1,8 +1,4 @@
 $(function(){
-	//$('.information').click(function(){
-		//location.href='/kakaowebtoon/webtoonInnerList/webtoonExplain.jsp';
-	//});
-	
 	//webtoonExplain 더보기
 	$('.hidden').hide();
 	$('.more').click(function(){

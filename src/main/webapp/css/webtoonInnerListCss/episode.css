@@ -21,8 +21,8 @@ a:active{ color: white; text-decoration: none;}
 .list1{
 	display: inline-block;
     position: relative;
-    width: 19.97%;
-    padding-top: 13%;
+    width: 19.95%;
+    padding-top: 19%;
     overflow: hidden;
 }
 .epImage{
@@ -38,11 +38,26 @@ a:active{ color: white; text-decoration: none;}
 	position: absolute;
 	width: 100%;
 	height: 46px;
-	bottom: 0;
-	font-size: 1.2rem;
+	bottom: -7px;
+	font-size: 1.1rem;
 }
 .epInfo>span:first-child{
 	font-weight: bold;
+}
+.epFree{
+	position: absolute;
+	height: 16px;
+    border-radius: 8px;
+    left: 2px;
+    top: 2px;
+    color: #000;
+    font-size: 10px;
+    font-weight: 700;
+    border: 1px solid rgba(0,0,0,.25);
+    background-color: #fff;
+    padding: 0 5px;
+    text-align: center;
+    line-height: 16px;
 }
 /*-------------mobile------------------*/
 @media all and (max-width:768px){
@@ -50,26 +65,33 @@ a:active{ color: white; text-decoration: none;}
 		width: 100%;
 		text-align: center;
 	}
- 	.webtoonList>div:first-child{
+ 	.webtoonList>a>div:first-child{
 		margin: 10px;
 	} 
 	.list1{
-	    width: 32%;
+	    width: 32.3%;
 	    overflow: hidden;
 	    margin: 0 auto;
-	    padding-top: 19%;
+	    padding-top: 27%
 	}
 	.epInfo{
 		width: 100%;
 		/* height:46px; */
 		text-align: left;
-		bottom: -2px;
+		bottom: -6px;
 	}
 }
 
 /*-------------mobile------------------*/
 @media all and (max-width:580px){
+	.list1{
+	    width: 31.9%;
+	    padding-top: 27%
+	}
 	.epInfo{
-		bottom: -9px;
+		bottom: -14px;
+	}
+	.epInfo{
+		font-size: 0.8rem;
 	}
 }
