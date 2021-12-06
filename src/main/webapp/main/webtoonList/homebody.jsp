@@ -165,6 +165,9 @@ $(function(){
 		success: function(data){
 			alert(JSON.stringify(data));
 			
+			var monset = $('#monWeb').offset(); 
+		    $('html').animate({scrollTop : monset.top}, 300);
+		    
 			$.each(data, function(index, items){
 				if(items.toonDay == "월"){							
 					$("<div/>", {
@@ -174,19 +177,19 @@ $(function(){
 						class: "box1"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonBg
+						src: "/JAVACOMICS/image/" + items.toonBg
 						
 					}))).append($("<div/>", {
 						class: "box2"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonChar
+						src: "/JAVACOMICS/image/" + items.toonChar
 						
 					}))).append($("<div/>", {
 						class: "box3"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonTitle
+						src: "/JAVACOMICS/image/" + items.toonTitle
 						
 					}))).append($("<div/>", {
 						id: "Transparency"
@@ -202,19 +205,19 @@ $(function(){
 						class: "box1"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonBg
+						src: "/JAVACOMICS/image/" + items.toonBg
 						
 					}))).append($("<div/>", {
 						class: "box2"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonChar
+						src: "/JAVACOMICS/image/" + items.toonChar
 						
 					}))).append($("<div/>", {
 						class: "box3"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonTitle
+						src: "/JAVACOMICS/image/" + items.toonTitle
 						
 					}))).append($("<div/>", {
 						id: "Transparency"
@@ -230,19 +233,19 @@ $(function(){
 						class: "box1"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonBg
+						src: "/JAVACOMICS/image/" + items.toonBg
 						
 					}))).append($("<div/>", {
 						class: "box2"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonChar
+						src: "/JAVACOMICS/image/" + items.toonChar
 						
 					}))).append($("<div/>", {
 						class: "box3"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonTitle
+						src: "/JAVACOMICS/image/" + items.toonTitle
 						
 					}))).append($("<div/>", {
 						id: "Transparency"
@@ -259,19 +262,19 @@ $(function(){
 						class: "box1"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonBg
+						src: "/JAVACOMICS/image/" + items.toonBg
 						
 					}))).append($("<div/>", {
 						class: "box2"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonChar
+						src: "/JAVACOMICS/image/" + items.toonChar
 						
 					}))).append($("<div/>", {
 						class: "box3"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonTitle
+						src: "/JAVACOMICS/image/" + items.toonTitle
 						
 					}))).append($("<div/>", {
 						id: "Transparency"
@@ -288,19 +291,19 @@ $(function(){
 						class: "box1"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonBg
+						src: "/JAVACOMICS/image/" + items.toonBg
 						
 					}))).append($("<div/>", {
 						class: "box2"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonChar
+						src: "/JAVACOMICS/image/" + items.toonChar
 						
 					}))).append($("<div/>", {
 						class: "box3"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonTitle
+						src: "/JAVACOMICS/image/" + items.toonTitle
 						
 					}))).append($("<div/>", {
 						id: "Transparency"
@@ -317,19 +320,19 @@ $(function(){
 						class: "box1"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonBg
+						src: "/JAVACOMICS/image/" + items.toonBg
 						
 					}))).append($("<div/>", {
 						class: "box2"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonChar
+						src: "/JAVACOMICS/image/" + items.toonChar
 						
 					}))).append($("<div/>", {
 						class: "box3"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonTitle
+						src: "/JAVACOMICS/image/" + items.toonTitle
 						
 					}))).append($("<div/>", {
 						id: "Transparency"
@@ -346,19 +349,19 @@ $(function(){
 						class: "box1"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonBg
+						src: "/JAVACOMICS/image/" + items.toonBg
 						
 					}))).append($("<div/>", {
 						class: "box2"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonChar
+						src: "/JAVACOMICS/image/" + items.toonChar
 						
 					}))).append($("<div/>", {
 						class: "box3"
 						
 					}).append($("<img/>", {
-						src: "image/" + items.toonTitle
+						src: "/JAVACOMICS/image/" + items.toonTitle
 						
 					}))).append($("<div/>", {
 						id: "Transparency"

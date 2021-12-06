@@ -13,6 +13,7 @@
 
 </head>
 <body>
+<input type="hidden" id="rankTop">
 <header>
 	<jsp:include page="main/menu.jsp"/>
 </header>
@@ -36,7 +37,7 @@
 <section>
 	<div id="container">
 		<c:if test="${empty display }">
-			<jsp:include page="main/webtoonList/homebody.jsp" />
+			<jsp:include page="main/webtoonList/rankbody.jsp" />
 		</c:if>
 		<c:if test="${not empty display }">
 			<jsp:include page="${display }" />
@@ -59,7 +60,7 @@
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 <script type="text/javascript" src="/JAVACOMICS/js/index.js"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-<script type="text/javascript" src="/JAVACOMICS/js/webtoonrankList.js"></script>
+<script type="text/javascript" src="/JAVACOMICS/js/webtoonmenubar.js"></script>
 
 <script type="text/javascript">
 //SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.

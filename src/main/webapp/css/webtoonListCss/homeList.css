@@ -86,8 +86,9 @@
 		display: flex;
 		padding-left:18px;
 		padding-right:18px;
-		padding-top: 90px;
+		padding-top: 180px;
 	}
+	
 	#mon, #tue, #wed, #thu, #fri, #sat, #sun{
 		width:86px;
 		height:36px;
@@ -118,7 +119,7 @@
 		
 
 	}
-	#longBox{
+	.longBox{
 		width: 24.9%;
 		left: -1px;		
 		margin-left: 0.4%;
@@ -131,7 +132,7 @@
 		padding-top:69%;
 
 	}
-	#longBox{
+	.longBox{
 		width:32.7%;
 		padding-top:138.3%;
 	}

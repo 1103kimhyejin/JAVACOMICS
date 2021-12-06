@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,5 +32,17 @@ public class WebtoonController {
 	@ResponseBody
 	public List<WebtoonDTO> getRankBodyList(@RequestParam String category ){
 		return webtoonService.getRankBodyList(category);
+	}
+	
+	@GetMapping(value="homebody")
+	public String homebody(Model model){
+		model.addAttribute("display", "main/webtoonList/homebody.jsp");
+		return "/index";
+	}
+	
+	@GetMapping(value="rankbody")
+	public String rankbody(Model model){
+		model.addAttribute("display", "main/webtoonList/rankbody.jsp");
+		return "/index";
 	}
 }
