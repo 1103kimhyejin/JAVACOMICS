@@ -11,21 +11,41 @@ $(function(){
 		$('.submenu .ranking').addClass('hide');
 		$('.submenu .myBox').addClass('hide');
 		$('.submenu .toonList').addClass('hide');
+		
+		if($('#display').val() != "main/body.jsp"){
+			$(location).attr("href", "/JAVACOMICS/webtoon/mainpage");
+		}
+		
 	});
 	$('.mainmenu div:eq(1)').click(function(){
 		$('.submenu .ranking').addClass('hide');
 		$('.submenu .myBox').addClass('hide');
 		$('.submenu .toonList').removeClass('hide');
+		//alert($('#display').val());
+		
+		if($('#display').val() != "main/webtoonList/homebody.jsp"){
+			$(location).attr("href", "/JAVACOMICS/webtoon/homebody");
+		}
+		
 	});
 	$('.mainmenu div:eq(2)').click(function(){
 		$('.submenu .myBox').addClass('hide');
 		$('.submenu .toonList').addClass('hide');
 		$('.submenu .ranking').removeClass('hide');
+		
+		if($('#display').val() != "main/webtoonList/rankbody.jsp"){
+			$(location).attr("href", "/JAVACOMICS/webtoon/rankbody");
+		}
+		
 	});
 	$('.mainmenu div:eq(3)').click(function(){
 		$('.submenu .toonList').addClass('hide');
 		$('.submenu .ranking').addClass('hide');
 		$('.submenu .myBox').removeClass('hide');
+		
+		if($('#display').val() != "main/webtoonList/storagebody.jsp"){
+			$(location).attr("href", "/JAVACOMICS/webtoon/storagebody");
+		}
 	});
 	
 	$('.mainmenu div').click(function(){
@@ -52,6 +72,10 @@ $(function(){
 	
 	$('.backBtn').click(function(){
 		$('#fullscreen').addClass('hide');
+	});
+	
+	$('.backBtn2').click(function(){
+		$(location).attr("href", "/JAVACOMICS/menu/backmenu");
 	});
 
 	
@@ -133,6 +157,11 @@ $(function(){
 			
 		}else if($('#check').val() != $('#memberWriteForm #id').val()){
 			$('#memberWriteForm .msgDiv').text('중복체크 하세요');
+			$('#memberWriteForm .msgDiv').css('color', 'red');
+			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
+			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
+		}else if($('#confirm').val() != $('#confirmNumber').val() || $('#confirm').val() == ""){
+			$('#memberWriteForm .msgDiv').text('이메일 인증 번호를 다시 확인해주세요');
 			$('#memberWriteForm .msgDiv').css('color', 'red');
 			$('#memberWriteForm .msgDiv').css('font-size', '14pt');
 			$('#memberWriteForm .msgDiv').css('font-weight', 'bold');
@@ -242,7 +271,7 @@ $(function(){
 	});
 	
 	
-	if($("#showhide").val() != "main/webtoonList/homebody.jsp"){
+/*	if($("#showhide").val() != "main/webtoonList/homebody.jsp"){
 		$('.mainmenu div:eq(1)').click(function(){
 			location.href = "/JAVACOMICS/webtoon/homebody"
 		});
@@ -253,6 +282,6 @@ $(function(){
 			location.href = "/JAVACOMICS/webtoon/rankbody"
 		});
 	}
-	
+*/	
 
 })

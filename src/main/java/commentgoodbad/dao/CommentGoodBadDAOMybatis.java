@@ -1,6 +1,7 @@
 package commentgoodbad.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
@@ -58,6 +59,13 @@ public class CommentGoodBadDAOMybatis implements CommentGoodBadDAO {
 	public void commentBadDelete(CommentGoodBadDTO commentGoodBadDTO) {
 		sqlSession.delete("commentGoodBadSQL.commentBadDelete",commentGoodBadDTO);
 		
+	}
+
+
+
+	@Override
+	public List<CommentGoodBadDTO> commentGoodBadCheck(CommentGoodBadDTO commentGoodBadDTO) {
+		return sqlSession.selectList("commentGoodBadSQL.commentGoodBadCheck",commentGoodBadDTO);
 	}
 	
 

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -34,15 +35,28 @@ public class WebtoonController {
 		return webtoonService.getRankBodyList(category);
 	}
 	
-	@GetMapping(value="homebody")
-	public String homebody(Model model){
-		model.addAttribute("display", "main/webtoonList/homebody.jsp");
+
+	@RequestMapping(value="homebody", method=RequestMethod.GET)
+	public String homebody(Model model) {
+		model.addAttribute("display","main/webtoonList/homebody.jsp");
 		return "/index";
 	}
 	
-	@GetMapping(value="rankbody")
-	public String rankbody(Model model){
-		model.addAttribute("display", "main/webtoonList/rankbody.jsp");
+	@RequestMapping(value="rankbody", method=RequestMethod.GET)
+	public String rankbody(Model model) {
+		model.addAttribute("display","main/webtoonList/rankbody.jsp");
+		return "/index";
+	}
+	
+	@RequestMapping(value="storagebody", method=RequestMethod.GET)
+	public String storagebody(Model model) {
+		model.addAttribute("display","main/webtoonList/storagebody.jsp");
+		return "/index";
+	}
+	
+	@RequestMapping(value="mainpage", method=RequestMethod.GET)
+	public String mainpage(Model model) {
+		model.addAttribute("display","main/body.jsp");
 		return "/index";
 	}
 }

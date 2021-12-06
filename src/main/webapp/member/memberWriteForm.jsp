@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="/JAVACOMICS/css/memberWriteForm.css">
 <div class="memberWriteFormDiv">
 <h1>회원가입</h1>
-<div class="backBtn"><img src="/JAVACOMICS/image/back.png"/></div>
+<div class="backBtn2"><img src="/JAVACOMICS/image/back.png"/></div>
 <form name="memberWriteForm" id="memberWriteForm" method="post">
 	
 	<table>
@@ -56,6 +56,7 @@
 			<td>인증번호</td>
 			<td>
 				<input type="text" name="confirm" id="confirm" >
+				<input type="hidden" id="confirmNumber" value="">
 			</td>
 		</tr>
 		<tr>
@@ -84,7 +85,7 @@ $('#emailConfirm').click(function(){
 		data: 'email='+$('#email').val(),
 		dataType: 'text',
 		success: function(data){
-			alert(data);
+			$('#confirmNumber').val(data);
 		},
 		error: function(err){
 			console.log(err);
@@ -92,6 +93,7 @@ $('#emailConfirm').click(function(){
 	});
 	
 });
+
 </script>
 
 

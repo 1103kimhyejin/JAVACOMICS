@@ -12,6 +12,8 @@ public interface ToonCommentDAO {
 
 	public List<ToonCommentDTO> SortLatest(int episodecode);
 
+	public ToonCommentDTO getCommentGood(int commentSeq);
+
 
 		
 }

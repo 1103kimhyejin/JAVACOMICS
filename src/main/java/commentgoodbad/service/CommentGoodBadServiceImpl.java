@@ -67,6 +67,13 @@ public class CommentGoodBadServiceImpl implements CommentGoodBadService {
 		commentGoodBadDAO.commentBadDelete(commentGoodBadDTO);
 		
 	}
+
+
+
+	@Override
+	public List<CommentGoodBadDTO> commentGoodBadCheck(CommentGoodBadDTO commentGoodBadDTO) {
+		return commentGoodBadDAO.commentGoodBadCheck(commentGoodBadDTO);
+	}
 	
 
 

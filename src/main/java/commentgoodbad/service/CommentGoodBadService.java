@@ -18,6 +18,8 @@ public interface CommentGoodBadService {
 
 	public void commentBadDelete(CommentGoodBadDTO commentGoodBadDTO);
 
+	public List<CommentGoodBadDTO> commentGoodBadCheck(CommentGoodBadDTO commentGoodBadDTO);
+
 	
 
 }
