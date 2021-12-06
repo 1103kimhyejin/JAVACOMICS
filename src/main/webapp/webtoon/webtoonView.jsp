@@ -12,7 +12,7 @@
 <body>
 
 <header>
-		<a onclick="location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp'"><p><img src="../image/webtoonComment_image/backicon.PNG"/></p></a>
+		<a onclick="location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=${param.title}'"><p><img src="../image/webtoonComment_image/backicon.PNG"/></p></a>
 	<p>1화</p>
 	<p></p>
 </header>
