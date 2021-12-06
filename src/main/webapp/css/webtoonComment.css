@@ -131,6 +131,13 @@ html{
 	border: solid 1px #1c1c1c;
 }
 
+.swal-text {
+  text-align: center;
+
+  font-family: Verdana, Geneva, Arial, sans-serif;
+  color:#222222;
+}
+
 /*-------------mobile------------------*/
 @media all and (max-width:768px){
 	#webtoonComment_header{

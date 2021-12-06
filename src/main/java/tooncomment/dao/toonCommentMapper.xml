@@ -16,7 +16,7 @@
 					sysdate
 					,0)
 	</insert>
-	<select id="getToonCommentList" parameterType="int" resultType="toonComment" >
+	<select id="getToonCommentList" parameterType="int" resultType="toonComment">
 		<!-- select *
 		from tooncomment left join 
 		(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
@@ -30,7 +30,7 @@
 		where episodecode='1'
 		order by totalgood desc NULLS LAST
 	</select>
-		<select id="SortLatest" parameterType="int" resultType="toonComment" >
+	<select id="SortLatest" parameterType="int" resultType="toonComment">
 		select *
 		from tooncomment left join 
 		(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
@@ -38,4 +38,12 @@
 		where episodecode='1'
 		order by commentseq desc
 	</select>
+	<select id="getCommentGood" parameterType="int" resultType="toonComment">
+		select *
+		from tooncomment left join 
+		(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
+		from commentgoodbad group by commentseq) using(commentseq) 
+		where commentseq=#{commentseq}
+	</select>
+	
 </mapper>

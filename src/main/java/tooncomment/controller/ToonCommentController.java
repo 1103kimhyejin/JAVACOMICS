@@ -80,4 +80,11 @@ public class ToonCommentController {
 	 * @GetMapping(value = "/list") public String list() { return "/user/list"; }
 	 */
 	
+	@PostMapping(value="getCommentGood")
+	@ResponseBody
+	public ToonCommentDTO getCommentGood(@RequestParam int commentSeq){
+		
+		return toonCommentService.getCommentGood(commentSeq);
+	
+	}
 }

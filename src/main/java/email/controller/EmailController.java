@@ -1,5 +1,9 @@
 package email.controller;
 
+import java.util.Random;
+
+import javax.servlet.http.Cookie;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,12 +31,30 @@ public class EmailController {
     @ResponseBody
     public String send(@ModelAttribute EmailDTO emailDTO, Model model, @RequestParam String email) {
     	emailDTO.setReceiveMail(email);
-    	emailDTO.setMessage("12345");
+    	
+    	
+    	//----------------------
+        Random rnd = new Random();
+        int number = rnd.nextInt(999999);
+
+        // this will convert any number sequence into 6 character.
+        String confirmNumber = String.format("%06d", number);
+    	
+    	
+    	//-------------------------
+    	
+    	
+    	
+    	
+    	
+    	emailDTO.setMessage("인증 번호 : "+confirmNumber);
         try {
  
             emailService.sendMail(emailDTO); // dto (메일관련 정보)를 sendMail에 저장함
             //model.addAttribute("message", "이메일이 발송되었습니다."); // 이메일이 발송되었다는 메시지를 출력시킨다.
-            return "인증 메일이 발송되었습니다";
+            
+            
+            return confirmNumber;
  
         } catch (Exception e) {
             e.printStackTrace();
