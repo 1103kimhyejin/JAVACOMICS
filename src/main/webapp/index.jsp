@@ -35,8 +35,9 @@
 
 <section>
 	<div id="container">
+		<input type="hidden" id="display" value="${display }">
 		<c:if test="${empty display }">
-			<jsp:include page="main/webtoonList/homebody.jsp" />
+			<jsp:include page="main/body.jsp" />
 		</c:if>
 		<c:if test="${not empty display }">
 			<jsp:include page="${display }" />

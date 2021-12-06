@@ -32,11 +32,11 @@ li {
 </style>
 <body>
 	<div class="div1">
-		<img class="img1" src="../image/loginPic.png">
+		<img class="img1" src="/JAVACOMICS/image/loginPic.png">
 	</div>
 	
 	<div class="div2">
-		<img class="img2" src="../image/loginPic2.png" onclick="location.href='로그인 p'">
+		<img class="img2" src="/JAVACOMICS/image/loginPic2.png" onclick="location.href='로그인 p'">
 	</div>
 	
 	<div class="div3">

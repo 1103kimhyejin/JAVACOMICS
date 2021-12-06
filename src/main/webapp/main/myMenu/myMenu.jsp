@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<link rel="stylesheet" href="css/myMenu.css">   
+<link rel="stylesheet" href="/JAVACOMICS/css/myMenu.css">   
     
 <div class="myMenu">
 
-	<div class="backBtn"><img src="image/backicon.PNG"></div>
+	<div class="backBtn"><img src="/JAVACOMICS/image/backicon.PNG"></div>
 	<div class="contentsdiv">
 		<div class="membernamediv" href="#">${sessionScope.toonMemName } ></div><!-- 내 정보 표시 자리 -->
 		<div class="cashdiv">
-			<img src="image/myMenu/cash.svg"><span class="cashspan"></span>
+			<img src="/JAVACOMICS/image/myMenu/cash.svg"><span class="cashspan"></span>
 		</div>
 		<div class="spandiv">
 			<div><a href="#" id="kakaoLogoutBtn">로그아웃    </a></div>
@@ -19,7 +19,7 @@
 		</div>
 	</div>	
 	<div class="bottomdiv">
-		<video src="image/myMenu/VIP.mp4" height=200 width=250 loop autoplay="" muted="" ></video>
+		<video src="/JAVACOMICS/image/myMenu/VIP.mp4" height=200 width=250 loop autoplay="" muted="" ></video>
 		<div>최대 10% 캐시백</div>
 		<div>CASH PASS VIP</div>
 	</div>
