@@ -7,13 +7,11 @@
 <input type="hidden" id="category">
 	<div id= "rankBigBox">
 		<div id = "rankBigBox1">
-			<img src = "image/rankbody/rankbigbg.jpg">
+			<img src = "">
 			
 		</div>
 		<div id = "rankBigBox2">
 			<video autoplay loop muted playsinline>
-					<source src="image/rankbody/rankbigimg.webm"
-            				type="video/webm">
 			</video>
 		</div>
 		<div>
@@ -21,10 +19,8 @@
 				<p id ="rankNew">
 				신작
 				</p>
-				<img src ="image/rankbody/rankbigimg.png">
+				<img src ="">
 				<p id = "rankStory">
-				오해를 딛고 불완전한 서로를 보듬고<br>
-				함께 성장하는 가족의 이야기.
 				</p>			
 			</div>
 		</div>
@@ -35,26 +31,9 @@
 		</div>
 		<div id= "Transparency"></div>
 	</div>
-	<div id="rankBody111"></div>
+	<div id="rankType"></div>
 	
-<!--
- 	<div class= "rankBox">
-		<div class = rankNum>
-			<span>2</span>
-		</div>
-		<div class = "rankBox1">
-			<img src="image/webtoonList/01.Mon/05/bg.jpg">
-		</div>
-		<div class = "rankBox2">
-			<img src="image/webtoonList/01.Mon/05/main.png">
-		</div>
-		<div class = "rankBox3">
-			<img src="image/webtoonList/01.Mon/05/title.png">
-		</div>
-		<div id= "Transparency"></div>
-	</div>
--->
-</div>
+
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
@@ -67,41 +46,50 @@ $(function(){
 			dataType: "json",
 			success: function(data){
 				alert(JSON.stringify(data));
-				$('#rankBody111').empty();
 				
 				$.each(data, function(index, items){
-					$("<div/>", {
-						class: "rankBox",
-						onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList?title=" + items.title + "'"
-						
-					}).append($("<div/>", {
-						class: "rankNum"
-						
-					}).append($("<span/>",{
-						text: index+2
-						
-					}))).append($("<div/>", {
-						class: "rankBox1"
-						
-					}).append($("<img/>", {
-						src:"/JAVACOMICS/image/" + items.toonBg
-						
-					}))).append($("<div>", {
-						class: "rankBox2"
-						
-					}).append($("<img/>", {
-						src: "/JAVACOMICS/image/" + items.toonChar
-						
-					}))).append($("<div>", {
-						class: "rankBox3"
-						
-					}).append($("<img/>", {
-						src: "/JAVACOMICS/image/" + items.toonTitle
-						
-					}))).append($("<div/>", {
-						id: "Transparency"
-						
-					})).appendTo($("#rankWeb"));
+					
+					
+					if(index == 0){
+						$("#rankBigBox1 > img").prop("src", "/JAVACOMICS/image/" + items.toonBg)
+						$("#rankBigBox2 video").html('<source src="/JAVACOMICS/image/'+ items.toonVideo + '" type="video/webm">')
+						$("#rankBigBox3 > img").prop("src", "/JAVACOMICS/image/" + items.toonTitle)
+						$("#rankStory").text(items.story1)
+					}else{
+					
+						$("<div/>", {
+							class: "rankBox",
+							onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList?title=" + items.title + "'"
+							
+						}).append($("<div/>", {
+							class: "rankNum"
+							
+						}).append($("<span/>",{
+							text: index+1
+							
+						}))).append($("<div/>", {
+							class: "rankBox1"
+							
+						}).append($("<img/>", {
+							src:"/JAVACOMICS/image/" + items.toonBg
+							
+						}))).append($("<div>", {
+							class: "rankBox2"
+							
+						}).append($("<img/>", {
+							src: "/JAVACOMICS/image/" + items.toonChar
+							
+						}))).append($("<div>", {
+							class: "rankBox3"
+							
+						}).append($("<img/>", {
+							src: "/JAVACOMICS/image/" + items.toonTitle
+							
+						}))).append($("<div/>", {
+							id: "Transparency"
+							
+						})).appendTo($("#rankWeb"));
+					}
 				})
 			},
 			error: function(err){

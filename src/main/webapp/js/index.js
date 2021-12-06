@@ -270,5 +270,18 @@ $(function(){
 		
 	});
 	
+	
+/*	if($("#showhide").val() != "main/webtoonList/homebody.jsp"){
+		$('.mainmenu div:eq(1)').click(function(){
+			location.href = "/JAVACOMICS/webtoon/homebody"
+		});
+	}
+	
+	if($("#showhide").val() != "main/webtoonList/rankbody.jsp"){
+		$('.mainmenu div:eq(2)').click(function(){
+			location.href = "/JAVACOMICS/webtoon/rankbody"
+		});
+	}
+*/	
 
 })
