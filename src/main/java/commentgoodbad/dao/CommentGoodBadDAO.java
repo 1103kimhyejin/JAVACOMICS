@@ -19,4 +19,7 @@ public interface CommentGoodBadDAO {
 
 	public void commentBadDelete(CommentGoodBadDTO commentGoodBadDTO);
 
+	public List<CommentGoodBadDTO> commentGoodBadCheck(CommentGoodBadDTO commentGoodBadDTO);
+
+
 }

@@ -1,5 +1,7 @@
 package commentgoodbad.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import commentgoodbad.bean.CommentGoodBadDTO;
@@ -41,7 +42,7 @@ public class CommentGoodBadController {
 		commentGoodBadService.commentBad(commentGoodBadDTO);
 	}
 	
-	@RequestMapping(value="checkGoodId", method=RequestMethod.POST)
+	@RequestMapping(value="/checkGoodId", method=RequestMethod.POST)
 	public @ResponseBody String checkGoodId(int commentSeq, @ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
 		String id = (String) session.getAttribute("toonMemId");
 		commentGoodBadDTO.setGoodBadId(id);
@@ -50,7 +51,7 @@ public class CommentGoodBadController {
 		return commentGoodBadService.checkGoodId(commentGoodBadDTO);
 	}
 	
-	@RequestMapping(value="checkBadId", method=RequestMethod.POST)
+	@RequestMapping(value="/checkBadId", method=RequestMethod.POST)
 	public @ResponseBody String checkBadId(int commentSeq, @ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
 		String id = (String) session.getAttribute("toonMemId");
 		commentGoodBadDTO.setGoodBadId(id);
@@ -80,6 +81,14 @@ public class CommentGoodBadController {
 		
 		commentGoodBadService.commentBadDelete(commentGoodBadDTO);
 	}
-	
+
+	@RequestMapping(value="/commentGoodBadCheck", method=RequestMethod.POST)
+	@ResponseBody
+	public List<CommentGoodBadDTO> commentGoodBadCheck(@ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
+		String id = (String) session.getAttribute("toonMemId");
+		commentGoodBadDTO.setGoodBadId(id);
+		
+		return commentGoodBadService.commentGoodBadCheck(commentGoodBadDTO);
+	}
 	
 }

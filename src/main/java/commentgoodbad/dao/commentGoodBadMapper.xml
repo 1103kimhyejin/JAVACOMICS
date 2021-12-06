@@ -24,4 +24,7 @@
 	<delete id="commentBadDelete"  parameterType="commentGoodBad"> 
 		delete from commentgoodbad where goodbadid=#{goodBadId} and commentSeq=#{commentSeq} and commentbad='T'
 	</delete>
+	<select id="commentGoodBadCheck" parameterType="commentGoodBad" resultType="commentGoodBad">
+		select * from commentgoodbad where goodbadid=#{goodBadId} and commentgood ='T' or goodbadid=#{goodBadId} and commentbad='T'
+	</select>
 </mapper>

@@ -13,7 +13,7 @@
 	</select>
 	
 	<select id="episodeList" parameterType="String" resultType="episodeListdto">
-		select episode, title, thumbnail, to_char(updatetime, 'YYYY-MM-DD') as updateTime
+		select episodecode, episode, title, thumbnail, to_char(updatetime, 'YYYY-MM-DD') as updateTime
 		, free from episodelist where title=#{title} order by episodeCode desc
 	</select>
 </mapper> 
