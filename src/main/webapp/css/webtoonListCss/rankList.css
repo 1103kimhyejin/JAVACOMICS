@@ -54,9 +54,9 @@
 	
 	#rankBigBox3 > img{
 		position:absolute;
-		bottom:40px;
-		width:50%;
-		
+		bottom:60px;
+		width:30%;
+		left:15px;
 		
 	}
 	
@@ -65,8 +65,8 @@
 		margin-top: 20px;
 		line-height: 20px;
 		position:absolute;
-		bottom:0;
-		width:50%;
+		bottom:10px;
+		width:40%;
 		
 	}
 	.rankBigNum{
@@ -118,8 +118,11 @@
 	}
 	.rankBox1 > img{
 		position: absolute;
-		top: -50px;
-		left: 0px;
+		top: 0;
+		left: 0;
+		width:100%;
+		transform-origin: 50% 0;
+		transform: scale(1.5);
 	}
 	.rankBox2 > img{
 		position: absolute;

@@ -163,7 +163,7 @@ $(function(){
 		type: "post",
 		dataType: "json",
 		success: function(data){
-			alert(JSON.stringify(data));
+			
 			
 			var monset = $('#monWeb').offset(); 
 		    $('html').animate({scrollTop : monset.top}, 300);
