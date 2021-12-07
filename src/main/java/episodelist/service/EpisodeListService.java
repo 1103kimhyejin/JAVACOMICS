@@ -4,8 +4,13 @@ import java.util.List;
 
 import episodelist.bean.EpisodeListDTO;
 
+
 public interface EpisodeListService {
 
-	List<EpisodeListDTO> getEpisodeListTable(String title);
+	public List<EpisodeListDTO> getEpisodeListTable(String title);
+
+	public EpisodeListDTO getEpisode(int episodeCode);
+
+	public List<EpisodeListDTO> lownumEpisodeCode(String title);
 
 }

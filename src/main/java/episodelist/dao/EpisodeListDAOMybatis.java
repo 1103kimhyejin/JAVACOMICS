@@ -18,5 +18,14 @@ public class EpisodeListDAOMybatis implements EpisodeListDAO {
 	public List<EpisodeListDTO> getEpisodeListTable(String title) {
 		return sqlSession.selectList("episodeListSQL.getEpisodeListTable", title);
 	}
+	@Override
+	public EpisodeListDTO getEpisode(int episodeCode) {
+		return sqlSession.selectOne("episodeListSQL.getEpisode", episodeCode);
+
+	}
+	@Override
+	public List<EpisodeListDTO> lownumEpisodeCode(String title) {
+		return sqlSession.selectList("episodeListSQL.lownumEpisodeCode", title);
+	}
 
 }

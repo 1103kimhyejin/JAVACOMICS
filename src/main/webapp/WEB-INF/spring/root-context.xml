@@ -24,6 +24,8 @@
    <context:component-scan base-package="webtoon.bean" />
 
    <context:component-scan base-package="episodelist.bean" />
+   <context:component-scan base-package="episodelist.dao" />
+   <context:component-scan base-package="episodelist.service" />
    <context:component-scan base-package="webtoonInnerList.bean" />
    <context:component-scan base-package="webtoonInnerList.dao" />
    <context:component-scan base-package="webtoonInnerList.service" />

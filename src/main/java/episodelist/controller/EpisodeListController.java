@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import episodelist.bean.EpisodeListDTO;
 import episodelist.service.EpisodeListService;
 
-
 @Controller
-@RequestMapping(value = "episodeList")
+@RequestMapping(value="episodeList")
 public class EpisodeListController {
 	@Autowired
 	private EpisodeListService episodeListService;
@@ -25,6 +24,22 @@ public class EpisodeListController {
 	public List<EpisodeListDTO> getEpisodeListTable(@RequestParam String title){
 		
 		return episodeListService.getEpisodeListTable(title);
+	
+	}
+	
+	@PostMapping(value="/getEpisode")
+	@ResponseBody
+	public EpisodeListDTO getEpisode(@RequestParam int episodeCode){
+		
+		return episodeListService.getEpisode(episodeCode);
+	
+	}
+	
+	@PostMapping(value="lownumEpisodeCode")
+	@ResponseBody
+	public List<EpisodeListDTO> lownumEpisodeCode(@RequestParam String title){
+		
+		return episodeListService.lownumEpisodeCode(title);
 	
 	}
 }
