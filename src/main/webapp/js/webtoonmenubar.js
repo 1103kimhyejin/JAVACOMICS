@@ -42,9 +42,9 @@ $(function(){
 		data: 'category='+$('#category').val(),
 		dataType: "json",
 		success: function(data){
-			alert(JSON.stringify(data));
+			
 			$('#rankType').empty();
-			$('.rankBox').empty();
+			$('.rankBox').remove();
 			$("#rankBigBox2 video").remove();
 			
 			$.each(data, function(index, items){
@@ -53,7 +53,7 @@ $(function(){
 					$("#rankBigBox1 > img").prop("src", "/JAVACOMICS/image/" + items.toonBg)
 					$("#rankBigBox2").html("<video autoplay loop muted playsinline>")
 					$("#rankBigBox2 video").html('<source src="/JAVACOMICS/image/'+ items.toonVideo + '" type="video/webm">')
-					$("#rankBigBox3 > img").prop("src", "/JAVACOMICS/image/" + items.toonTitle)
+					$("#rankBigBox3 > img").prop("src", "/JAVACOMICS/image/" + items.type1stTitle)
 					$("#rankStory").text(items.story1)
 				}else{
 					$("<div/>", {
