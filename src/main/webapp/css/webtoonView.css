@@ -1,6 +1,7 @@
 @charset "UTF-8";
 body{
 	text-align:center;	
+	font-family: Arial, sans-serif;
 }
 
 header {
@@ -41,7 +42,11 @@ header p:nth-child(2){
 	height: 54px;
     width: 350px;
 	margin:0 auto;	
-	position: relative;
+	/* position: relative; */
+	position: fixed;
+	left: 50%;
+    
+    transform: translate(-50%, -50%);
 } 
 #controllBar_content{
 	border-radius: 24px;
@@ -52,19 +57,22 @@ header p:nth-child(2){
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    
 }
 #controllBar_content img{
 	position: absolute;
 	top: 50%;
     transform: translateY(-50%); 
 }
-#controllBar_content img:first-child{
+#controllBar_content a:first-child img{
 	left: 22px;
+	cursor:pointer;
 }
-#controllBar_content img:nth-child(2){
+#controllBar_content a:nth-child(2) img{
 	left: 110px; 
+	cursor:pointer;
 }
-#controllBar_content svg{
+#controllBar_content a svg{
 	position: absolute;
 	width: 30px;
 	height: 30px;
@@ -72,9 +80,11 @@ header p:nth-child(2){
 	top: 50%;
     transform: translateY(-50%);
     left: 203px; 
+    cursor:pointer;
 }
-#controllBar_content img:nth-child(4){
+#controllBar_content a:nth-child(4) img{
 	left: 290px; 
+	cursor:pointer;
 }
 #up{
 	cursor:pointer;
@@ -113,18 +123,23 @@ footer{
 	width: 640px;	
 	font-size: 1.5rem;
 	margin: 15px 0 15px 0;
+	padding-top:20px;
 	display:inline-block;
+	border-top: 1px solid #1c1c1c;
+	border-bottom: 1px solid #1c1c1c;
 }
 
-#comment div:first-child{
+	
+
+#comment li div:first-child{
 	display: flex;
-	border-top: 1px solid #1c1c1c;
+	/* border-top: 1px solid #1c1c1c; */
 	padding: 10px 0 0 0;
 	align-items: center;
 }
 	
-#comment div:last-child{
-	border-bottom: 1px solid #1c1c1c;
+#comment li div:last-child{
+	/* border-bottom: 1px solid #1c1c1c; */
 	padding: 0 0px 20px 0px;
 }
 
@@ -132,7 +147,11 @@ footer{
 	display: inline-block; 
 	background-color : red;
 	border-radius: 16px;
-	padding: 6px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top:3px;
+	padding-bottom:3px;
+	margin-right:8px;
 	font-size: 1.2rem;
 	color: white;
 	font-weight : bold;
@@ -141,9 +160,9 @@ footer{
 .id_p{
 	font-weight : bold;
 	text-align:left;
-	width:500px;	
-	margin: 10px;
-	color: white;
+	width:525px;	
+	font-family: 돋움;
+	color:#dddddd;
 }
 
 .date_p{
@@ -153,17 +172,20 @@ footer{
 
 .comment_content{
 	text-align:left;
-	margin:8px 0 10px 0;
+	margin-top:10px;
+	margin-bottom:7px;
 	color: #c8c8c8;
 	font-size: 1.5rem;
+	line-height:20px;
 }
 
 #commentMore {
+	
 	display: inline-block;
-	color: gray;
+	color: #5f5f5f;
 	font-size: 1.5rem;
-	font-weight : bold;
-	padding:10px;
+	font-weight: bold;
+	padding-bottom:15px;
 	display: inline-block;
 	cursor: pointer;
 }
@@ -272,17 +294,17 @@ footer{
 		width:98.5%;
 	}
 	
-	#controllBar_content img:first-child{
-		left: 10px;
+	#controllBar_content a:first-child img{
+		left: 20px;
 	}
-	#controllBar_content img:nth-child(2){
+	#controllBar_content a:nth-child(2) img{
 		left: 70px; 
 	}
-	#controllBar_content svg{
+	#controllBar_content a svg{
 	    left: 130px; 
 	}
-	#controllBar_content img:nth-child(4){
-		left: 190px; 
+	#controllBar_content a:nth-child(4) img{
+		left: 180px; 
 	}
 	#comment{
 		width:100%;
@@ -323,17 +345,17 @@ footer{
 	#controllBar_content{
 		width:98.5%;
 	}
-	#controllBar_content img:first-child{
-		left: 10px;
+	#controllBar_content a:first-child img{
+		left: 20px;
 	}
-	#controllBar_content img:nth-child(2){
+	#controllBar_content a:nth-child(2) img{
 		left: 70px; 
 	}
-	#controllBar_content svg{
+	#controllBar_content a svg{
 	    left: 130px; 
 	}
-	#controllBar_content img:nth-child(4){
-		left: 190px; 
+	#controllBar_content a:nth-child(4) img{
+		left: 180px; 
 	}
 	#comment{
 		width:100%;
@@ -374,17 +396,17 @@ footer{
 	#controllBar_content{
 		width:98.5%;
 	}
-	#controllBar_content img:first-child{
-		left: 10px;
+	#controllBar_content a:first-child img{
+		left: 20px;
 	}
-	#controllBar_content img:nth-child(2){
+	#controllBar_content a:nth-child(2) img{
 		left: 70px; 
 	}
-	#controllBar_content svg{
+	#controllBar_content a svg{
 	    left: 130px; 
 	}
-	#controllBar_content img:nth-child(4){
-		left: 190px; 
+	#controllBar_content a:nth-child(4) img{
+		left: 180px; 
 	}
 	#comment{
 		width:100%;

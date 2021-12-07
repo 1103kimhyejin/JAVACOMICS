@@ -27,14 +27,18 @@ public class ToonCommentServiceImpl implements ToonCommentService {
 	}
 
 	@Override
-	public List<ToonCommentDTO> SortLatest(int episodecode) {
-		return toonCommentDAO.SortLatest(episodecode);
+	public List<ToonCommentDTO> sortLatest(int episodecode) {
+		return toonCommentDAO.sortLatest(episodecode);
 	}
 
 	@Override
 	public ToonCommentDTO getCommentGood(int commentSeq) {
-		
 		return toonCommentDAO.getCommentGood(commentSeq);
+	}
+
+	@Override
+	public int getToonCommentCount(int episodecode) {
+		return toonCommentDAO.getToonCommentCount(episodecode);
 	}
 
 }

@@ -4,6 +4,12 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="episodeListSQL">
 	<select id="getEpisodeListTable" parameterType="int" resultType="episodeListdto">
-		select * from episodelist where title =#{title}; 
+		select * from episodelist where title =#{title}
+	</select>
+	<select id="getEpisode" parameterType="int" resultType="episodeListdto">
+		select * from episodelist where episodeCode =#{episodeCode}
+	</select>
+	<select id="lownumEpisodeCode" parameterType="String" resultType="episodeListdto">
+		select rownum, r.episodecode, r.free from (select * from episodelist where title =#{title} order by episodecode)r
 	</select>
 </mapper>

@@ -19,4 +19,16 @@ public class EpisodeListServiceImpl implements EpisodeListService {
 		return episodeListDAO.getEpisodeListTable(title);
 	}
 
+
+	@Override
+	public EpisodeListDTO getEpisode(int episodeCode) {
+		return episodeListDAO.getEpisode(episodeCode);
+	}
+
+
+	@Override
+	public List<EpisodeListDTO> lownumEpisodeCode(String title) {
+		return episodeListDAO.lownumEpisodeCode(title);
+	}
+
 }

@@ -14,4 +14,5 @@ public class EpisodeListDTO {
 	private String episodeContent;
 	private String updateTime;
 	private String free;
+	private int rownum;
 }

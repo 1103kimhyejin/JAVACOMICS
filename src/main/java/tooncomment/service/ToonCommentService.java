@@ -10,11 +10,10 @@ public interface ToonCommentService {
 
 	public List<ToonCommentDTO> getToonCommentList(int episodecode);
 
-	public List<ToonCommentDTO> SortLatest(int episodecode);
+	public List<ToonCommentDTO> sortLatest(int episodecode);
 
 	public ToonCommentDTO getCommentGood(int commentSeq);
 
-
-
+	public int getToonCommentCount(int episodecode);
 
 }

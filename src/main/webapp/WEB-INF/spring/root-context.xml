@@ -24,12 +24,18 @@
    <context:component-scan base-package="webtoon.bean" />
 
    <context:component-scan base-package="episodelist.bean" />
+   <context:component-scan base-package="episodelist.dao" />
+   <context:component-scan base-package="episodelist.service" />
    <context:component-scan base-package="webtoonInnerList.bean" />
    <context:component-scan base-package="webtoonInnerList.dao" />
    <context:component-scan base-package="webtoonInnerList.service" />
    
    <context:component-scan base-package="email.bean"/>
    <context:component-scan base-package="email.service"/>
+   
+   <context:component-scan base-package="customerboard.dao" />
+   <context:component-scan base-package="customerboard.service" />
+   <context:component-scan base-package="customerboard.bean" />
    
    <!-- 이메일 발송 bean 설정 -->
     <bean id="mailSender" 

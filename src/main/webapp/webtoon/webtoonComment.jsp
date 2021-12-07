@@ -8,15 +8,15 @@
 
 <title>JAVA COMICS</title>
 <link rel="stylesheet" href="/JAVACOMICS/css/reset.css">
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
 <link rel="stylesheet" href="/JAVACOMICS/css/webtoonComment.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
 <body>
+<input type="hidden" id="episodeCode" value="${param.episodeCode}">
 <div id="webtoonComment_header">
-	<a onclick="location.href='/JAVACOMICS/webtoon/webtoonView.jsp'"><p><img src="../image/webtoonComment_image/backicon.PNG"/></p></a>
-	<p>댓글</p>
+	<a onclick="history.back(-1)"><p><img src="../image/webtoonComment_image/backicon.PNG"/></p></a>
+	<p>댓글<span></span></p>
 	<p id="sortBtn"><img src="../image/webtoonComment_image/sorticon.png"></p>
 </div>
 
@@ -37,52 +37,69 @@
 <script type="text/javascript">
 
 
-//댓글목록출력
 $(function(){
+//댓글목록출력
 	//swal("a","a");
-	$('#sortGood').hide();
 	$('#webtoonComment_list').attr('value','sortGood');
 		$.ajax({
 			url: '/JAVACOMICS/tooncomment/getToonCommentList',
 			type: 'post',
-			data:'episodecode=1',
+			data:'episodeCode='+$('#episodeCode').val(),
 			dataType: 'json',
 			success: function(data){
-				
-
 			 	$.each(data, function(index, items){
 							addComment(items.id, items.content, items.logtime
 								, items.totalgood, items.totalbad, items.reply
 								, items.commentSeq);
-				});
-			 	
-				
-						
+				});						
 			},
 			error: function(err){
 				console.log(err);	
 			}
 		});
-	
+//댓글 총 개수 가져오기
+		$.ajax({
+			url: '/JAVACOMICS/tooncomment/getToonCommentCount',
+			type: 'post',
+			data:'episodeCode='+$('#episodeCode').val(),
+			dataType: 'json',
+			success: function(data){
+					$('#webtoonComment_header p:nth-child(2) span').html(' '+data);
+			},
+			error: function(err){
+				console.log(err);	
+			}
+		});
 });
-
+//최신순 정렬
 function sortLatest(){
 	$('#webtoonComment_list').attr('value','sortLatest');
 $('#webtoonComment_list').empty();
 $.ajax({
-	url: '/JAVACOMICS/tooncomment/SortLatest',
+	url: '/JAVACOMICS/tooncomment/sortLatest',
 	type: 'post',
-	data:'episodecode=1',
+	data:'episodeCode='+$('#episodeCode').val(),
 	dataType: 'json',
 	success: function(data){
-	
 		 	$.each(data, function(index, items){
 					addComment(items.id, items.content, items.logtime
 						, items.totalgood, items.totalbad, items.reply
 						, items.commentSeq);
-					
 		}) 
 			
+	},
+	error: function(err){
+		console.log(err);	
+	}
+});
+//댓글 총 개수 가져오기
+$.ajax({
+	url: '/JAVACOMICS/tooncomment/getToonCommentCount',
+	type: 'post',
+	data:'episodeCode='+$('#episodeCode').val(),
+	dataType: 'json',
+	success: function(data){
+			$('#webtoonComment_header p:nth-child(2) span').html(' '+data);
 	},
 	error: function(err){
 		console.log(err);	
@@ -91,20 +108,18 @@ $.ajax({
 
 }
  
-//댓글목록 좋아요순정렬
 $('#sortBtn').click(function(){
 
 	if($('#webtoonComment_list').attr('value') == 'sortGood'){
 			$('#webtoonComment_list').empty();
-			//alert('최신순으로 정렬됩니다.');
 			swal("최신순으로 정렬됩니다.", {
 					  buttons: false,
 					  timer: 1000
 					});
 			$.ajax({
-				url: '/JAVACOMICS/tooncomment/SortLatest',
+				url: '/JAVACOMICS/tooncomment/sortLatest',
 				type: 'post',
-				data:'episodecode=1',
+				data:'episodeCode='+$('#episodeCode').val(),
 				dataType: 'json',
 				success: function(data){
 				
@@ -124,8 +139,6 @@ $('#sortBtn').click(function(){
 		
 		}else if($('#webtoonComment_list').attr('value') == 'sortLatest'){
 			$('#webtoonComment_list').empty();
-			
-			//alert('좋아요순으로 정렬됩니다.');
 				swal("좋아요순으로 정렬됩니다.", {
 					  buttons: false,
 					  timer: 1000
@@ -133,19 +146,15 @@ $('#sortBtn').click(function(){
 			$.ajax({
 				url: '/JAVACOMICS/tooncomment/getToonCommentList',
 				type: 'post',
-				data:'episodecode=1',
+				data:'episodeCode='+$('#episodeCode').val(),
 				dataType: 'json',
 				success: function(data){
-					
-
 				 	$.each(data, function(index, items){
 								addComment(items.id, items.content, items.logtime
 									, items.totalgood, items.totalbad, items.reply
 									, items.commentSeq);
 					});
-				 	
-					
-							
+		
 				},
 				error: function(err){
 					console.log(err);	
@@ -157,8 +166,6 @@ $('#sortBtn').click(function(){
 		}
 	});
 	
-	
-
 
 //저장
 $(function(){
@@ -176,11 +183,9 @@ $(function(){
 	  		$.ajax({
 				type: 'post',
 				url: '/JAVACOMICS/tooncomment/toonCommentWrite',
-				data:'content='+ $('#webtoonComment_inputText').val(),
+				data:'content='+ $('#webtoonComment_inputText').val()+'&episodeCode='+$('#episodeCode').val(),
 				success: function(){
-					$('#webtoonComment_inputText').val()='';
-					//alert('댓글쓰기완료');
-					//$('#webtoonComment_list').empty();
+					//$('#webtoonComment_inputText').val()='';
 					sortLatest();
 				},
 				error: function(err){
@@ -479,6 +484,9 @@ $(document).on('click', '.webtoonComment_Bad_btn', function(){
 		});
 	}
 });
+
+
+
 
 </script>
 </body>
