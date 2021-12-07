@@ -19,17 +19,18 @@ import tooncomment.bean.ToonCommentDTO;
 import tooncomment.service.ToonCommentService;
 
 @Controller
-@RequestMapping(value = "/tooncomment")
+@RequestMapping(value = "tooncomment")
 public class ToonCommentController {
 	@Autowired
 	private ToonCommentService toonCommentService; 
 
-	@RequestMapping(value="/toonCommentWrite", method=RequestMethod.POST)
+	@RequestMapping(value="toonCommentWrite", method=RequestMethod.POST)
 	@ResponseBody
 	public void toonCommentWrite(@ModelAttribute ToonCommentDTO toonCommentDTO
-								,HttpSession session) {
+								,@RequestParam String episodeCode,HttpSession session) {
 		String id = (String) session.getAttribute("toonMemId");
 		toonCommentDTO.setId(id);
+		toonCommentDTO.setEpisodeCode(Integer.parseInt(episodeCode));
 		toonCommentService.toonCommentWrite(toonCommentDTO);
 	}
 
@@ -63,18 +64,16 @@ public class ToonCommentController {
 	
 	@PostMapping(value="getToonCommentList")
 	@ResponseBody
-	public List<ToonCommentDTO> getToonCommentList(@RequestParam int episodecode){
-		
+	public List<ToonCommentDTO> getToonCommentList(@RequestParam String episodeCode){
+		int episodecode=Integer.parseInt(episodeCode);
 		return toonCommentService.getToonCommentList(episodecode);
-	
 	}
 	
-	@PostMapping(value="SortLatest")
+	@PostMapping(value="sortLatest")
 	@ResponseBody
-	public List<ToonCommentDTO> SortLatest(@RequestParam int episodecode){
-		
-		return toonCommentService.SortLatest(episodecode);
-	
+	public List<ToonCommentDTO> sortLatest(@RequestParam String episodeCode){
+		int episodecode=Integer.parseInt(episodeCode);
+		return toonCommentService.sortLatest(episodecode);
 	}
 	/*
 	 * @GetMapping(value = "/list") public String list() { return "/user/list"; }
@@ -83,8 +82,14 @@ public class ToonCommentController {
 	@PostMapping(value="getCommentGood")
 	@ResponseBody
 	public ToonCommentDTO getCommentGood(@RequestParam int commentSeq){
-		
 		return toonCommentService.getCommentGood(commentSeq);
-	
 	}
+	
+	@PostMapping(value="getToonCommentCount")
+	@ResponseBody
+	public int getToonCommentCount(@RequestParam String episodeCode){
+		int episodecode=Integer.parseInt(episodeCode);
+		return toonCommentService.getToonCommentCount(episodecode);
+	}
+	
 }

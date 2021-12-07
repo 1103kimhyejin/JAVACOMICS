@@ -19,23 +19,26 @@ public class ToonCommentDAOMybatis implements ToonCommentDAO {
 	@Override
 	public void toonCommentWrite(ToonCommentDTO toonCommentDTO) {
 		sqlSession.insert("toonCommentSQL.toonCommentWrite", toonCommentDTO);
-		
 	}
 
 	@Override
 	public List<ToonCommentDTO> getToonCommentList(int episodecode) {
-	
 		return sqlSession.selectList("toonCommentSQL.getToonCommentList", episodecode);
 	}
 
 	@Override
-	public List<ToonCommentDTO> SortLatest(int episodecode) {
-		return sqlSession.selectList("toonCommentSQL.SortLatest", episodecode);
+	public List<ToonCommentDTO> sortLatest(int episodecode) {
+		return sqlSession.selectList("toonCommentSQL.sortLatest", episodecode);
 	}
 
 	@Override
 	public ToonCommentDTO getCommentGood(int commentSeq) {
 		return sqlSession.selectOne("toonCommentSQL.getCommentGood", commentSeq);
+	}
+
+	@Override
+	public int getToonCommentCount(int episodecode) {
+		return sqlSession.selectOne("toonCommentSQL.getToonCommentCount", episodecode);
 	}
 
 }

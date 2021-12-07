@@ -20,6 +20,10 @@ html{
 #webtoonComment_header a{
 	cursor:pointer;
 }
+#webtoonComment_header p:nth-child(2) span{
+	font-weight:normal;	
+}
+
 #webtoonComment_header p:last-child{
 	cursor:pointer;
 }
@@ -28,6 +32,7 @@ html{
 	display:inline-block;
 	position:relative;
 }
+
 #webtoonComment_inputForm{
 	text-align:center;	
 	width:640px;
@@ -88,8 +93,8 @@ html{
 	border-radius: 16px;
 	padding-left: 8px;
 	padding-right: 8px;
-	padding-top:4.5px;
-	padding-bottom:4.5px;
+	padding-top:3px;
+	padding-bottom:3px;
 	margin-right:8px;
 	font-size: 1.2rem;
 	color: white;
@@ -100,7 +105,9 @@ html{
 	font-weight : bold;
 	text-align:left;
 	/* margin: 10px; */
-	font-family: Verdana, Geneva, Arial, sans-serif;
+	font-family: 돋움;
+	color:#dddddd;
+	
 }
 
 .webtoonComment_Date_p{
@@ -111,11 +118,15 @@ html{
 
 .webtoonComment_Content_div{
 	text-align:left;
-	margin:8px 0 10px 0;
+	margin-top:10px;
+	margin-bottom:7px;
+	color:#c8c8c8;
+	line-height:20px;
 }
 
 .webtoonComment_GBRbtn_div{
 	text-align:left;
+	margin-bottom:15px;
 }
 
 .webtoonComment_GBRbtn_div input{
@@ -133,8 +144,7 @@ html{
 
 .swal-text {
   text-align: center;
-
-  font-family: Verdana, Geneva, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   color:#222222;
 }
 
