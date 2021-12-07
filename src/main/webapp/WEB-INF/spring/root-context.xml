@@ -31,6 +31,10 @@
    <context:component-scan base-package="email.bean"/>
    <context:component-scan base-package="email.service"/>
    
+   <context:component-scan base-package="customerboard.dao" />
+   <context:component-scan base-package="customerboard.service" />
+   <context:component-scan base-package="customerboard.bean" />
+   
    <!-- 이메일 발송 bean 설정 -->
     <bean id="mailSender" 
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">
