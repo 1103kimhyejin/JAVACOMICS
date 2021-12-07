@@ -56,4 +56,10 @@ public class WebtoonInnerListController {
 		model.addAttribute("display", "webtoonExplain.jsp");
 		return "/webtoonInnerList/webtoonInnerList";
 	}
+	
+	@RequestMapping(value="webtoonPay", method=RequestMethod.GET)
+	public String webtoonPay(){
+		System.out.println("webtoonPay 컨트롤러와따");
+		return "/webtoonInnerList/webtoonPay";
+	}
 }

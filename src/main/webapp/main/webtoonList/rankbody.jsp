@@ -59,8 +59,8 @@ $(function(){
 					
 						$("<div/>", {
 							class: "rankBox",
-							onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList?title=" + items.title + "'"
-							
+							/* onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList?title=" + items.title + "'" */
+							onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
 						}).append($("<div/>", {
 							class: "rankNum"
 							
