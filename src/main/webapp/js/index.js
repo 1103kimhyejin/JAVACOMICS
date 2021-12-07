@@ -77,6 +77,10 @@ $(function(){
 	$('.backBtn2').click(function(){
 		$(location).attr("href", "/JAVACOMICS/menu/backmenu");
 	});
+	
+	$('.backBtnSupport').click(function(){
+		$(location).attr("href", "/JAVACOMICS/customerboard/customerboardList");
+	});
 
 	
 	//로그인 

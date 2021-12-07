@@ -42,6 +42,7 @@ public class ToonMemberServiceImpl implements ToonMemberService {
 		}else {
 			session.setAttribute("toonMemName", toonMemberDTO.getName());
 			session.setAttribute("toonMemId", toonMemberDTO.getId());
+			session.setAttribute("toonMemEmail", toonMemberDTO.getEmail());
 			return "success";
 		}
 		

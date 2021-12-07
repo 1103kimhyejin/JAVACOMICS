@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.backBtn {
+.backBtn2 {
 	position: absolute;
 	left: 50px;
 	top: 50px;
@@ -41,7 +41,7 @@
 #supportListTable tr td:nth-child(2):hover {
 	color: gray;
 }
-#supportWriteBtn {
+#customerboardWriteFormBtn {
 	width: 60px;
 	height: 30px;
 	float: left;

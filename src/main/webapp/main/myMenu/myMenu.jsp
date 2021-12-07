@@ -15,7 +15,7 @@
 			<div><a href="#" id="kakaoLogoutBtn">로그아웃    </a></div>
 			<div><a href="#">캐시 충전     </a></div>
 			<div><a href="#">충전 내역     </a></div>
-			<div><a href="#">고객센터      </a></div>
+			<div><a href="/JAVACOMICS/customerboard/customerboardList">고객센터      </a></div>
 		</div>
 	</div>	
 	<div class="bottomdiv">
