@@ -12,9 +12,10 @@
 </head>
 <body>
 <input type="hidden" id="webtoon_title" value="${param.title }"> 
+<input type="hidden" id="toonMemId" value="${sessionScope.toonMemId }"> 
 <header>
 	<div class="back">
-		<a href="/JAVACOMICS/index.jsp"><li><img src="/JAVACOMICS/image/webtoonInnerList/back.png"/></li></a>
+		<a href="#" onclick="history.back(-1)"><li><img src="/JAVACOMICS/image/webtoonInnerList/back.png"/></li></a>
 	</div>
 	<div class="heart">
 		<li>
@@ -158,29 +159,9 @@ $(function(){
 			alert(JSON.stringify(data));
 			
 			$.each(data, function(index, items){
-				/* $("<div/>", {
-					class: "list1"
-				}).append($("<a/>", {
-					href: "/JAVACOMICS/webtoon/webtoonView.jsp?"+"episodeCode="+items.episodeCode+"&"+"title="+items.title//혜진추가
-				}).append($("<div/>", {
-					class: "epImage"
-				}).append($("<img/>", {
-					src: "../image/" + items.thumbnail
-				})))).after($("<div/>", {
-					class: "epInfo"
-					})).append($("<span/>", {
-						text: items.episode
-						})).append($("<br/>")).append($("<span/>", {
-							text: items.updateTime
-							})).after($("<div/>", {
-								class: "epFree"
-							})).append($("<span/>", {
-								text: items.free
-								})).appendTo($(".webtoonList"));		 */
-				
-								
+		
 				$("<div/>", {
-					class: "list1"
+					class: "list1",
 				}).append($("<a/>", {
 					href: "/JAVACOMICS/webtoon/webtoonView.jsp?"+"episodeCode="+items.episodeCode+"&"+"title="+items.title
 				}).append($("<div/>", {
@@ -204,18 +185,32 @@ $(function(){
 				//무료 유료 회차 구분
 				if(free=='F'){
 					$(".epFree").removeClass();
+					$(".epInfo").next().addClass("epPay");
 				}				
 				if(free=='T'){
 					$(".epFree span").text('무료')
-				}	
+				}	 
+				
+				//유료회차 클릭시 이용권 구매창 이동
+				$('.epPay').parents('.list1').click(function(){	
+					if(${sessionScope.toonMemId != null }){
+						window.open("/JAVACOMICS/webtoonInnerList/webtoonPay", "JAVACOMICS Pay", "width=400 height=600 top=200 left=700");
+					 	return false;						
+					}
+				});
+				
+				//첫화보기 클릭
+				$('.webtoonList>a>div:first-child').click(function(){	
+				 	location.href='/JAVACOMICS/webtoon/webtoonView.jsp?'+'episodeCode='+items.episodeCode+'&'+'title='+items.title
+				});
 				
 			}); //each
 			
-			//유료회차 클릭시 이용권 구매창 이동
-			$('#sunWeb > .box').click(function(){
-			 	var title= $(this).attr("id");
-			 	alert(title); 
-			 	location.href='/JAVACOMICS/index.jsp?';
+			$('.epPay').parents('.list1').click(function(){	
+				if(${sessionScope.toonMemId == null }){
+					alert("로그인 먼저 하세요");
+					return false;	
+				}
 			});
 			
 		},

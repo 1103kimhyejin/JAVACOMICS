@@ -1,0 +1,63 @@
+@charset "UTF-8";
+*{
+	background-color: black;
+	color: white;
+}
+.ico_change {
+	margin-right: 4px;
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    background-position: -40px -20px;
+}
+.img_wtc {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 1px;
+    line-height: 0;
+    color: transparent;
+    vertical-align: top;
+    background-image: url(https://billing-web-prod.kr.kakaowebtoon.com/static/_images/m640/img_cash.png);
+    background-repeat: no-repeat;
+    background-size: 180px 60px;
+}
+.ico_close {
+	display: inline-block;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 24px;
+    height: 24px;
+    background-position: -80px -20px;
+}
+.cashPass {
+    position: absolute;
+    /* top: calc(100% - 4px); */
+    left: 0;
+    padding: 5px 12px 4px;
+    border-radius: 12px;
+    background-color: #FF3042;
+    margin: 0;
+    display: block;
+    font-size: 14px;
+    line-height: 1.5;
+    /* font-family: AppleSDGothicNeo,'Malgun Gothic','맑은 고딕',sans-serif; */
+    color: #333;
+}
+.cashPass:before{
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: 22px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 6px 4px;
+    border-color: transparent transparent #FF3042 transparent;
+}
+.txt_ballon {
+    font-size: 12px;
+    line-height: 15px;
+    color: #fff;
+    white-space: nowrap;
+    background-color: #FF3042;
+}
