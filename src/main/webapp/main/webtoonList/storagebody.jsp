@@ -12,7 +12,7 @@
 			</div>
 			
 			<div class = "watchingListTitle2">
-				<p>사장님의 특별지시</p>
+				<p id ="randomTitle" ></p>
 			</div>
 				<p></p>
 			<div class = "watchingListTitle3">
@@ -28,76 +28,15 @@
 						<p>24화 영이 내려온다</p>
 					</div>
 				</div>
-				
 				<div id="watchingListBottomBox" >
 					<div id="watchingListBottomBox1">
-						<img src= "image/webtoonList/01.Mon/06/main.png">
+						<img src= "/JAVACOMICS/image/webtoonList/01.Mon/06/main.png">
 					</div>
 					
 					<div id ="Transparency"></div> <!--투명도  -->
 					
 					<div id="watchingListBottomBox2">
-						<img src= "image/webtoonList/01.Mon/06/title.png">
-					</div>
-				</div>
-			</div>	
-			
-			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
-				<div id= "watchingListTopBox">
-					<div id="watchingListTopTitle">
-						<p>프롤로그</p>
-					</div>
-				</div>
-				
-				<div id="watchingListBottomBox" >
-					<div id="watchingListBottomBox1">
-						<img src= "image/webtoonList/01.Mon/07/main.png">
-					</div>
-					
-					<div id ="Transparency"></div> <!--투명도  -->
-					
-					<div id="watchingListBottomBox2">
-						<img src= "image/webtoonList/01.Mon/07/title.png">
-					</div>
-				</div>
-			</div>
-			
-			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
-				<div id= "watchingListTopBox">
-					<div id="watchingListTopTitle">
-						<p>1화</p>
-					</div>
-				</div>
-				
-				<div id="watchingListBottomBox" >
-					<div id="watchingListBottomBox1">
-						<img src= "image/webtoonList/01.Mon/08/main.png">
-					</div>
-					
-					<div id ="Transparency"></div> <!--투명도  -->
-					
-					<div id="watchingListBottomBox2">
-						<img src= "image/webtoonList/01.Mon/08/title.png">
-					</div>
-				</div>
-			</div>
-			
-			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
-				<div id= "watchingListTopBox">
-					<div id="watchingListTopTitle">
-						<p>1화</p>
-					</div>
-				</div>
-				
-				<div id="watchingListBottomBox" >
-					<div id="watchingListBottomBox1">
-						<img src= "image/webtoonList/01.Mon/09/main.png">
-					</div>
-					
-					<div id ="Transparency"></div> <!--투명도  -->
-					
-					<div id="watchingListBottomBox2">
-						<img src= "image/webtoonList/01.Mon/09/title.png">
+						<img src= "/JAVACOMICS/image/webtoonList/01.Mon/06/title.png">
 					</div>
 				</div>
 			</div>
@@ -127,104 +66,13 @@
 		
 			<div id = "similarListBox"> <!--유사 리스트 박스  -->
 				<div class="similarListBox1">
-					<img src="image/webtoonList/02.Tue/02/bg.jpg"/>				
+					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/bg.jpg"/>				
 				</div>
 				<div class="similarListBox2">
-					<img src="image/webtoonList/02.Tue/02/main.png"/>
+					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/main.png"/>
 				</div>
 				<div class="similarListBox3">
-					<img src="image/webtoonList/02.Tue/02/title.png"/>
-				</div>
-				<div id= "Transparency"></div>
-			</div>
-			
-			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div class="similarListBox1">
-					<img src="image/webtoonList/02.Tue/03/bg.jpg"/>				
-				</div>
-				<div class="similarListBox2">
-					<img src="image/webtoonList/02.Tue/03/main.png"/>
-				</div>
-				<div class="similarListBox3">
-					<img src="image/webtoonList/02.Tue/03/title.png"/>
-				</div>
-				<div id= "Transparency"></div>
-			</div>
-			
-			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div class="similarListBox1">
-					<img src="image/webtoonList/02.Tue/04/bg.jpg"/>				
-				</div>
-				<div class="similarListBox2">
-					<img src="image/webtoonList/02.Tue/04/main.png"/>
-				</div>
-				<div class="similarListBox3">
-					<img src="image/webtoonList/02.Tue/04/title.png"/>
-				</div>
-				<div id= "Transparency"></div>
-			</div>
-			
-			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div class="similarListBox1">
-					<img src="image/webtoonList/02.Tue/05/bg.jpg"/>				
-				</div>
-				<div class="similarListBox2">
-					<img src="image/webtoonList/02.Tue/05/main.png"/>
-				</div>
-				<div class="similarListBox3">
-					<img src="image/webtoonList/02.Tue/05/title.png"/>
-				</div>
-				<div id= "Transparency"></div>
-			</div>
-			
-			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div class="similarListBox1">
-					<img src="image/webtoonList/02.Tue/06/bg.jpg"/>				
-				</div>
-				<div class="similarListBox2">
-					<img src="image/webtoonList/02.Tue/06/main.png"/>
-				</div>
-				<div class="similarListBox3">
-					<img src="image/webtoonList/02.Tue/06/title.png"/>
-				</div>
-				<div id= "Transparency"></div>
-			</div>
-			
-			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div class="similarListBox1">
-					<img src="image/webtoonList/02.Tue/07/bg.jpg"/>				
-				</div>
-				<div class="similarListBox2">
-					<img src="image/webtoonList/02.Tue/07/main.png"/>
-				</div>
-				<div class="similarListBox3">
-					<img src="image/webtoonList/02.Tue/07/title.png"/>
-				</div>
-				<div id= "Transparency"></div>
-			</div>
-			
-			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div class="similarListBox1">
-					<img src="image/webtoonList/02.Tue/08/bg.jpg"/>				
-				</div>
-				<div class="similarListBox2">
-					<img src="image/webtoonList/02.Tue/08/main.png"/>
-				</div>
-				<div class="similarListBox3">
-					<img src="image/webtoonList/02.Tue/08/title.png"/>
-				</div>
-				<div id= "Transparency"></div>
-			</div>
-			
-			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div class="similarListBox1">
-					<img src="image/webtoonList/02.Tue/09/bg.jpg"/>				
-				</div>
-				<div class="similarListBox2">
-					<img src="image/webtoonList/02.Tue/09/main.png"/>
-				</div>
-				<div class="similarListBox3">
-					<img src="image/webtoonList/02.Tue/09/title.png"/>
+					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/title.png"/>
 				</div>
 				<div id= "Transparency"></div>
 			</div>
@@ -232,3 +80,68 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(function(){
+	
+	var randomT = "";
+	
+	$.ajax({
+		url: "/JAVACOMICS/webtoon/getStorageBodyList",
+		type: "post",
+		data: 'id='+'angel',
+		success: function(data){
+			console.log(JSON.stringify(data));
+			
+
+			$.each(data.list, function(index, items){
+				if(data.random == index){
+					$("#randomTitle").text(items.title)
+					randomT = items.title;
+				}
+				
+				$("<div>", {
+					id: 'watchingListBox'
+				}).append($("<div>", {
+					id: "watchingListTopBox"
+					
+				}).append($("<div>", {
+					id: "watchingListTopTitle"
+					
+				}).append($("<p>", {
+					text: items.episode
+					
+				})))).append($("<div>", {
+					id: "watchingListBottomBox"
+					
+				}).append($("<div>", {
+					id: "watchingListBottomBox1"
+					
+				}).append($("<img>", {
+					src: "/JAVACOMICS/image/"+items.toonChar
+					
+				}))).append($("<div>", {
+					id: "Transparency"
+					
+				}))).append($("<div>", {
+					id: "watchingListBottomBox2"
+					
+				}).append($("<img>", {
+					src: "/JAVACOMICS/image/" + items.toonTitle
+					
+				}))).appendTo($("#watchingListBigBox"));
+				
+			});
+			
+			
+		},
+		error: function(err){
+			console.log(err)		
+		}
+	})
+	
+});
+
+
+</script>

@@ -22,4 +22,12 @@
 	    	order by "좋아요" desc
 			
 	</select>
+	
+	<select id="getStorageBodyList" parameterType = "String" resultType="webtoon">
+		select title, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, toonend, episode, episodecode
+        from webtoon
+        join episodelist using(title)
+        join(select * from recentview where id = #{toonMemId } order by logtime desc) using(episodecode)
+
+	</select>
 </mapper>

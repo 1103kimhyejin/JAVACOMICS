@@ -2,6 +2,7 @@ package webtoon.controller;
 
 import java.util.List;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +34,12 @@ public class WebtoonController {
 	@ResponseBody
 	public List<WebtoonDTO> getRankBodyList(@RequestParam String category ){
 		return webtoonService.getRankBodyList(category);
+	}
+	
+	@PostMapping(value="getStorageBodyList")
+	@ResponseBody
+	public JSONObject getStorageBodyList(@RequestParam String id){
+		return webtoonService.getStorageBodyList(id);
 	}
 	
 
