@@ -85,7 +85,7 @@ $(function(){
 			video/풍운객잔.webm
 			video/학사재생.webm */
 			
-			alert(JSON.stringify(data));
+			/* alert(JSON.stringify(data)); */
 			
 			$("<div/>", { 
 				class : "bg"
@@ -156,7 +156,7 @@ $(function(){
 		data: 'title='+$('#webtoon_title').val(),
 		dataType: "json",
 		success: function(data){
-			alert(JSON.stringify(data));
+			/* alert(JSON.stringify(data)); */
 			
 			$.each(data, function(index, items){
 		
@@ -194,7 +194,7 @@ $(function(){
 				//유료회차 클릭시 이용권 구매창 이동
 				$('.epPay').parents('.list1').click(function(){	
 					if(${sessionScope.toonMemId != null }){
-						window.open("/JAVACOMICS/webtoonInnerList/webtoonPay", "JAVACOMICS Pay", "width=400 height=600 top=200 left=700");
+						window.open("/JAVACOMICS/webtoonInnerList/webtoonPay", "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
 					 	return false;						
 					}
 				});
