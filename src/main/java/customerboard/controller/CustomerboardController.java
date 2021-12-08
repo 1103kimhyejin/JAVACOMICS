@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -72,7 +73,45 @@ public class CustomerboardController {
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	@RequestMapping(value="customerboardView", method=RequestMethod.GET)
+	public String customerboardView(@RequestParam String seq,
+							@RequestParam String pg,
+							Model model) {
+				
+		model.addAttribute("seq", seq);
+		model.addAttribute("pg", pg);
+		model.addAttribute("hide", "o");
+		model.addAttribute("fullscreenDisplay", "/supportService/supportView.jsp");
+		return "/index";
+	}
 	
+	@RequestMapping(value="getCustomerboard", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView getCustomerboard(@RequestParam String seq, 
+								 @CookieValue(value="memHit", required=false) Cookie cookie,
+								 HttpSession session,
+								 HttpServletResponse response) {
+		
+		//조회수  - 새로고침 방지
+		/*
+		if(cookie != null) {
+			customerboardService.hitUpdate(seq); //조회수 증가
+			cookie.setMaxAge(0); //쿠키 삭제
+			response.addCookie(cookie);//클라이언트 보내기
+		}	
+		*/
+		
+		CustomerBoardDTO customerboardDTO = customerboardService.getCustomerboard(seq);
+		
+		//세션
+		String toonMemId = (String) session.getAttribute("toonMemId");
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("customerboardDTO", customerboardDTO);
+		mav.addObject("toonMemId", toonMemId);
+		mav.setViewName("jsonView");
+		return mav;
+	}
 	
 	@RequestMapping(value="customerboardWrite", method=RequestMethod.POST)
 	@ResponseBody
@@ -81,4 +120,21 @@ public class CustomerboardController {
 		customerboardService.customerboardWrite(map);
 	}
 	
+	@RequestMapping(value="boardModifyForm", method=RequestMethod.GET)
+	public String boardModifyForm(@RequestParam String seq,
+								  @RequestParam String pg,
+								  Model model) {
+		System.out.println("bodymodifyform 왔음");
+		model.addAttribute("seq", seq);
+		model.addAttribute("pg", pg);
+		model.addAttribute("hide", "o");
+		model.addAttribute("fullscreenDisplay", "/supportService/supportModifyForm.jsp");
+		return "/index";
+	}
+	
+	@RequestMapping(value="boardModify", method=RequestMethod.POST)
+	@ResponseBody
+	public void modify(@RequestParam Map<String, Object> map) {
+		customerboardService.boardModify(map);
+	}
 }

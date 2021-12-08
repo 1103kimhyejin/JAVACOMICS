@@ -1,0 +1,66 @@
+@charset "UTF-8";
+.backBtnSupport {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+.supportModifyFormDiv {
+	width: 620px;
+	margin: 0 auto;
+	text-align: center;
+}
+.supportModifyFormDiv h1 {
+	margin: 50px;
+}
+
+#supportModifyForm table {
+	width: 100%;
+	border:none;
+	margin: 0 auto;
+}
+
+#supportModifyForm tr td {
+	
+}
+#supportModifyForm tr td input[type=text] {
+	width: 100%;
+	height: 50px;
+	padding: 10px;
+	background-color: rgba( 28, 28, 28, 0.8 );
+	color: #fff;
+	border: none;
+	border-bottom: 1px solid #fff;
+}
+#supportModifyForm tr td textarea {
+	width: 100%;
+	margin: 30px 0;
+	padding: 10px;
+	background-color: #1c1c1c;
+	color: #fff;
+	border: 1px solid #fff;
+}
+#supportModifyForm tr td input[type=file] {
+	float: left;
+}
+#supportModifyForm tr:last-child td input {
+	width: 100px;
+	height: 50px;
+}
+
+/*-------------tablet 1024------------------*/
+@media all and (max-width:1300px){
+	
+}
+
+/*-------------tablet 768------------------*/
+@media all and (max-width:1024px){
+	
+}
+
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+	.supportModifyFormDiv {
+		width: 100%;
+	}
+}

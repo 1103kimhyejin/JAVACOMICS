@@ -13,4 +13,8 @@ public interface CustomerboardDAO {
 
 	public int getTotalA();
 
+	public CustomerBoardDTO getCustomerboard(String seq);
+
+	public void boardModify(Map<String, Object> map);
+
 }

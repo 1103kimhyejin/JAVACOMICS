@@ -27,5 +27,15 @@
 	<select id="getTotalA" resultType="int">
 		select count(*) from customerboard
 	</select>
+	
+	<!-- 1사람 글 -->
+	<select id="getCustomerboard" parameterType="int" resultType="customerboard">
+		select * from customerboard where seq=#{seq}
+	</select>
+	
+	<!-- 글수정 -->
+	<update id="boardModify" parameterType="java.util.Map">
+		update customerboard set subject=#{subject}, content=#{content}, logtime=sysdate where seq=#{seq}
+	</update>
 
 </mapper>
