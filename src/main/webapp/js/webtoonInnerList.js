@@ -27,4 +27,18 @@ $(function(){
 		$('.heart').show();
 	});
 
+	//결제창
+	$('.btnPayNext').click(function(){
+		$(this).css({"background-color":"white", "color":"black", "border":"1px solid white"});
+	});
+	
+	
+	//radio버튼 클릭시 값 확인 => db들어갈 값
+	var check = $("input[name='item_id']:checked").val();
+	alert(check);
+		
+	$('input[name=item_id]').click(function(){
+		var check = $("input[name='item_id']:checked").val();
+		alert(check);	
+	});
 })
