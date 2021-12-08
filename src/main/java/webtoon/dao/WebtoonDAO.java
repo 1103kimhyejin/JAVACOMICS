@@ -10,4 +10,6 @@ public interface WebtoonDAO {
 
 	List<WebtoonDTO> getRankBodyList(String category);
 
+	List<WebtoonDTO> getStorageBodyList(String toonMemId);
+
 }

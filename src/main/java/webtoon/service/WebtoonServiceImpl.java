@@ -1,7 +1,9 @@
 package webtoon.service;
 
 import java.util.List;
+import java.util.Random;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +26,22 @@ public class WebtoonServiceImpl implements WebtoonService {
 	public List<WebtoonDTO> getRankBodyList(String category) {
 		
 		return webtoonDAO.getRankBodyList(category);
+	}
+
+
+
+	@Override
+	public JSONObject getStorageBodyList(String toonMemId) {
+		List<WebtoonDTO> list = webtoonDAO.getStorageBodyList(toonMemId);
+		int random = (int)(Math.random() * list.size());
+		
+		JSONObject json = new JSONObject();
+		
+		json.put("list", list);
+		json.put("random", random);
+		
+		return json;
+		
+		
 	}
 }

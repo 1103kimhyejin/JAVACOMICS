@@ -121,33 +121,28 @@
 
 
 
-	<div id= "rankBigBox">
-		<div id = "rankBigBox1">
-			<img src = "/JAVACOMICS/image/webtoonList/06.Sat/04/bg.jpg">
-			
-		</div>
-		<div id = "rankBigBox2">
-			<video autoplay loop muted playsinline>
-					<source src="/JAVACOMICS/image/webtoonList/06.Sat/04/main.webm"
-            				type="video/webm">
-			</video>
-		</div>
-		<div>
-			<div id = "rankBigBox3">
-				<p id ="rankNew">
-				신작
-				</p>
-				<img src ="">
-				<p id = "rankStory">
-				오해를 딛고 불완전한 서로를 보듬고<br>
-				함께 성장하는 가족의 이야기.
-				</p>			
+			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
+				<div id= "watchingListTopBox">
+					<div id="watchingListTopTitle">
+						<p>24화 영이 내려온다</p>
+					</div>
+				</div>
+				<div id="watchingListBottomBox" >
+					<div id="watchingListBottomBox1">
+						<img src= "/JAVACOMICS/image/webtoonList/01.Mon/06/main.png">
+					</div>
+					
+					<div id ="Transparency"></div> <!--투명도  -->
+					
+					<div id="watchingListBottomBox2">
+						<img src= "/JAVACOMICS/image/webtoonList/01.Mon/06/title.png">
+					</div>
+				</div>
 			</div>
-		</div>
-		
-		<div class = "rankBigNum">
-			<span class= "rankOne">1</span>
-			<div class= "rankM">ㅡ</div>
-		</div>
-		<div id= "Transparency"></div>
-	</div>
+			
+			
+			
+			
+			
+			
+			
