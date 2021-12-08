@@ -14,6 +14,7 @@
 </head>
 <body>
 <input type="hidden" id="episodeCode" value="${param.episodeCode}">
+<input id="sessionid" type="hidden" value="${sessionScope.toonMemId }"/>
 <div id="webtoonComment_header">
 	<a onclick="history.back(-1)"><p><img src="../image/webtoonComment_image/backicon.PNG"/></p></a>
 	<p>댓글<span></span></p>
@@ -30,7 +31,6 @@
 <ul id="webtoonComment_list">
 </ul>
 
-<input id="sessionid" type="hidden" value="${sessionScope.toonMemId }"/>
 
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -16,6 +16,10 @@
    <context:component-scan base-package="commentgoodbad.bean" />
    <context:component-scan base-package="commentgoodbad.dao" />
    <context:component-scan base-package="commentgoodbad.service" />
+   
+   <context:component-scan base-package="episodegoodview.bean" />
+   <context:component-scan base-package="episodegoodview.dao" />
+   <context:component-scan base-package="episodegoodview.service" />
 
    <context:component-scan base-package="spring.conf" />
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="episodeGoodViewSQL">
+	<insert id="episodeGood" parameterType="episodeGoodView">
+		insert into episodegoodview (id, episodecode, title, episodegood) values(#{id},#{episodeCode},#{title},'T')
+	</insert>
+	<delete id="episodeGoodDelete" parameterType="episodeGoodView">
+		delete from episodegoodview where id=#{id} and episodecode=#{episodeCode} and episodegood='T' 
+	</delete>	
+	<select id="episodeGoodCheckId" parameterType="episodeGoodView" resultType="String">
+		select distinct id from episodegoodview where id=#{id} and episodecode=#{episodeCode} and episodegood='T' 
+	</select>
+	<select id="goodCount" parameterType="int" resultType="int">
+		select count(*) from episodegoodview where episodecode=#{episodeCode}
+	</select>
+</mapper>
