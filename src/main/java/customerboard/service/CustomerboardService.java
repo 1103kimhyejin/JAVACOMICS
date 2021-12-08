@@ -14,4 +14,8 @@ public interface CustomerboardService {
 
 	public CustomerboardPaging customerboardPaging(String pg);
 
+	public CustomerBoardDTO getCustomerboard(String seq);
+
+	public void boardModify(Map<String, Object> map);
+
 }

@@ -59,13 +59,24 @@ public class CustomerboardServiceImpl implements CustomerboardService {
 		int totalA = customerboardDAO.getTotalA(); //총글수
 		
 		customerboardPaging.setCurrentPage(Integer.parseInt(pg)); //현재 페이지
-		customerboardPaging.setPageBlock(3);
+		customerboardPaging.setPageBlock(5);
 		customerboardPaging.setPageSize(5);
 		customerboardPaging.setTotalA(totalA);
 		customerboardPaging.makePagingHTML();
 		
 		System.out.println(customerboardPaging);
 		return customerboardPaging;
+	}
+
+	@Override
+	public CustomerBoardDTO getCustomerboard(String seq) {
+		return customerboardDAO.getCustomerboard(seq);
+	}
+
+	@Override
+	public void boardModify(Map<String, Object> map) {
+		customerboardDAO.boardModify(map);
+		
 	}
 
 }

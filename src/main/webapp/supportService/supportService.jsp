@@ -12,7 +12,6 @@
 			<th>글번호</th>
 			<th>제목</th>
 			<th>작성자</th>
-			<th>조회수</th>
 			<th>작성일</th>
 		</tr>
 		<!-- <tr>
@@ -53,7 +52,7 @@
 		
 	</table>
 	<input type="button" id="customerboardWriteFormBtn" value="글쓰기">
-	<div style="width: 750px; text-align: center;" id="supportPagingDiv"></div>
+	<div id="supportPagingDiv"></div>
 	<div class="searchDiv">
 		<input type="text" id="searchBox" placeholder="">
 		<input type="button" id="searchBtn" value="검색">
@@ -77,13 +76,12 @@ $(function(){
 		dataType: 'json',
 		success: function(data){
 			console.log(JSON.stringify(data));
-			alert(JSON.stringify(data));
 			$.each(data.list, function(index, items){
 				$('<tr/>').append($('<td/>',{
 					align: 'center',
 					text: items.seq
 				})).append($('<td/>',{
-					
+						align: 'left'
 					}).append($('<a/>',{
 						href: '#',
 						text: items.subject,
@@ -96,9 +94,6 @@ $(function(){
 				})).append($('<td/>',{
 					align: 'center',
 					text: items.logtime
-				})).append($('<td/>',{
-					align: 'center',
-					text: items.hit
 				})).appendTo($('#supportListTable'));
 				
 				//답글
@@ -132,10 +127,10 @@ $(function(){
 				if(data.toonMemId == null){
 					alert("먼저 로그인하세요");
 				}else{
-					/*
+					
 					var seq = $(this).parent().prev().text();
-					location.href = '/JAVACOMICS/customerboard/boardView?seq='+seq+'&pg='+$('#pg').val();
-					*/
+					location.href = '/JAVACOMICS/customerboard/customerboardView?seq='+seq+'&pg='+$('#pg').val();
+					
 				}
 			});
 			
@@ -148,6 +143,25 @@ $(function(){
 	});
 });
 
-
+function customerboardPaging(pg){
+	var searchBox = document.getElementById('searchBox').value;
+	if(searchBox==''){
+		location.href = 'customerboardList?pg='+pg;
+	}else{
+		$('input[name=pg]').val(pg); //form 안에 pg의 값이 1로 고정되어 있기 때문에
+		
+		//1번인 경우
+		//$('#boardSearchBtn').trigger('click'); //강제 이벤트 발생
+		//만약 [2]페이지에서 다시 검색 버튼을 누르면 [2]페이지부터 검색이 시작된다.
+		//다시 검색 버튼을 눌렀을 때 1페이지부터 검색을 할 수 있도록 pg를 바꿔주어야 한다.
+		$('input[name=pg]').val(1);
+		
+		//2번인 경우
+		//$('#boardSearchBtn').trigger('click', 'research'); //강제 이벤트 발생
+		//만약 [2]페이지에서 다시 검색 버튼을 누르면 [2]페이지부터 검색이 시작된다.
+		//다시 검색 버튼을 눌렀을 때 1페이지부터 검색을 할 수 있도록 pg를 바꿔주어야 한다.
+		
+	}
+}
 
 </script>

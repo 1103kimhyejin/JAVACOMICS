@@ -31,6 +31,16 @@ public class CustomerboardDAOMybatis implements CustomerboardDAO {
 		System.out.println("DAOMybatis paging");
 		return sqlSession.selectOne("customerboardSQL.getTotalA");
 	}
+
+	@Override
+	public CustomerBoardDTO getCustomerboard(String seq) {
+		return sqlSession.selectOne("customerboardSQL.getCustomerboard", Integer.parseInt(seq));
+	}
+
+	@Override
+	public void boardModify(Map<String, Object> map) {
+		sqlSession.update("customerboardSQL.boardModify", map);
+	}
 	
 	
 }

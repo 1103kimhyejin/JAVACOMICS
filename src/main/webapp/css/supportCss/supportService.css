@@ -21,7 +21,7 @@
 	border-bottom:  1px solid gray;
 }
 #supportListTable tr th {
-	width: 100px;
+	width: 200px;
 	height: 50px;
 	font-size: 1.6rem;
 }
@@ -36,10 +36,34 @@
 }
 #supportListTable tr td:nth-child(2) {
 	width: 300px;
+	padding-left: 10px;
 	cursor: pointer;
 }
 #supportListTable tr td:nth-child(2):hover {
 	color: gray;
+}
+#supportListTable #subjectA {
+	color: #fff;
+}
+#supportListTable #subjectA:hover {
+	color: gray;
+}
+#supportPagingDiv {
+	width: 700px;
+	text-align: center;
+	margin: 10px 0;
+	font-size: 1.6rem;
+}
+#currentPaging {
+	color: green;
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#paging {
+	color: white;
+	text-decoration: none;
+	cursor: pointer;
 }
 #customerboardWriteFormBtn {
 	width: 60px;
@@ -92,6 +116,9 @@
 	#supportListTable tr td:nth-child(2) {
 		width: 60%;
 		cursor: pointer;
+	}
+	#supportPagingDiv {
+		width: 100%;
 	}
 }
 
