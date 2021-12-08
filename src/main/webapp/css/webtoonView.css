@@ -116,7 +116,11 @@ footer{
 #good div{
 	padding:10px;
 }
-
+#good svg{
+	margin:20px;
+	width: 100px;
+	height: 100px;
+}
 
 #comment{
 	font-size: 1.2rem;	

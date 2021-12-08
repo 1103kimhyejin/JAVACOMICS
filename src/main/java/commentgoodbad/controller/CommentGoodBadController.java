@@ -15,12 +15,12 @@ import commentgoodbad.bean.CommentGoodBadDTO;
 import commentgoodbad.service.CommentGoodBadService;
 
 @Controller
-@RequestMapping(value = "/commentGoodBad")
+@RequestMapping(value = "commentGoodBad")
 public class CommentGoodBadController {
 	@Autowired
 	private CommentGoodBadService commentGoodBadService; 
 	
-	@RequestMapping(value="/commentGood", method=RequestMethod.POST)
+	@RequestMapping(value="commentGood", method=RequestMethod.POST)
 	@ResponseBody
 	public void commentGood(int commentSeq, @ModelAttribute CommentGoodBadDTO commentGoodBadDTO
 			,HttpSession session) {
@@ -31,7 +31,7 @@ public class CommentGoodBadController {
 		commentGoodBadService.commentGood(commentGoodBadDTO);
 	}
 	
-	@RequestMapping(value="/commentBad", method=RequestMethod.POST)
+	@RequestMapping(value="commentBad", method=RequestMethod.POST)
 	@ResponseBody
 	public void commentBad(int commentSeq, @ModelAttribute CommentGoodBadDTO commentGoodBadDTO
 			,HttpSession session) {
@@ -42,7 +42,7 @@ public class CommentGoodBadController {
 		commentGoodBadService.commentBad(commentGoodBadDTO);
 	}
 	
-	@RequestMapping(value="/checkGoodId", method=RequestMethod.POST)
+	@RequestMapping(value="checkGoodId", method=RequestMethod.POST)
 	public @ResponseBody String checkGoodId(int commentSeq, @ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
 		String id = (String) session.getAttribute("toonMemId");
 		commentGoodBadDTO.setGoodBadId(id);
@@ -51,7 +51,7 @@ public class CommentGoodBadController {
 		return commentGoodBadService.checkGoodId(commentGoodBadDTO);
 	}
 	
-	@RequestMapping(value="/checkBadId", method=RequestMethod.POST)
+	@RequestMapping(value="checkBadId", method=RequestMethod.POST)
 	public @ResponseBody String checkBadId(int commentSeq, @ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
 		String id = (String) session.getAttribute("toonMemId");
 		commentGoodBadDTO.setGoodBadId(id);
@@ -60,7 +60,7 @@ public class CommentGoodBadController {
 		return commentGoodBadService.checkBadId(commentGoodBadDTO);
 	}
 	
-	@RequestMapping(value="/commentGoodDelete", method=RequestMethod.POST)
+	@RequestMapping(value="commentGoodDelete", method=RequestMethod.POST)
 	@ResponseBody
 	public void commentGoodDelete(int commentSeq, @ModelAttribute CommentGoodBadDTO commentGoodBadDTO
 			,HttpSession session) {
@@ -71,7 +71,7 @@ public class CommentGoodBadController {
 		commentGoodBadService.commentGoodDelete(commentGoodBadDTO);
 	}
 	
-	@RequestMapping(value="/commentBadDelete", method=RequestMethod.POST)
+	@RequestMapping(value="commentBadDelete", method=RequestMethod.POST)
 	@ResponseBody
 	public void commentBadDelete(int commentSeq, @ModelAttribute CommentGoodBadDTO commentGoodBadDTO
 			,HttpSession session) {
@@ -82,7 +82,7 @@ public class CommentGoodBadController {
 		commentGoodBadService.commentBadDelete(commentGoodBadDTO);
 	}
 
-	@RequestMapping(value="/commentGoodBadCheck", method=RequestMethod.POST)
+	@RequestMapping(value="commentGoodBadCheck", method=RequestMethod.POST)
 	@ResponseBody
 	public List<CommentGoodBadDTO> commentGoodBadCheck(@ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
 		String id = (String) session.getAttribute("toonMemId");
