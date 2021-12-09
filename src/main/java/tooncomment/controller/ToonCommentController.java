@@ -92,4 +92,21 @@ public class ToonCommentController {
 		return toonCommentService.getToonCommentCount(episodecode);
 	}
 	
+	@PostMapping(value="commentCheckId")
+	@ResponseBody
+	public List<ToonCommentDTO> commentCheckId(@RequestParam String episodeCode, 
+												@ModelAttribute ToonCommentDTO toonCommentDTO, HttpSession session){
+		int episodecode=Integer.parseInt(episodeCode);
+		String id = (String) session.getAttribute("toonMemId");
+		toonCommentDTO.setId(id);
+		return toonCommentService.commentCheckId(toonCommentDTO);
+	}
+	
+	
+	@PostMapping(value="commentDelete")
+	@ResponseBody
+	public void commentDelete(@RequestParam int commentSeq){
+		toonCommentService.commentDelete(commentSeq);
+	}
+
 }

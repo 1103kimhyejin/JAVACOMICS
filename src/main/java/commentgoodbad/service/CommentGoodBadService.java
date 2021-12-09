@@ -3,6 +3,7 @@ package commentgoodbad.service;
 import java.util.List;
 
 import commentgoodbad.bean.CommentGoodBadDTO;
+import tooncomment.bean.ToonCommentDTO;
 
 public interface CommentGoodBadService {
 
@@ -18,8 +19,10 @@ public interface CommentGoodBadService {
 
 	public void commentBadDelete(CommentGoodBadDTO commentGoodBadDTO);
 
-	public List<CommentGoodBadDTO> commentGoodBadCheck(CommentGoodBadDTO commentGoodBadDTO);
+	public List<CommentGoodBadDTO> commentGoodCheck(CommentGoodBadDTO commentGoodBadDTO);
 
-	
+	public List<CommentGoodBadDTO> commentBadCheck(CommentGoodBadDTO commentGoodBadDTO);
+
+
 
 }

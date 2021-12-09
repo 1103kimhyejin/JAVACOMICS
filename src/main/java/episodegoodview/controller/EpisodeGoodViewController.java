@@ -1,5 +1,8 @@
 package episodegoodview.controller;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,7 +55,6 @@ public class EpisodeGoodViewController {
 		String id = (String) session.getAttribute("toonMemId");
 		episodeGoodViewDTO.setId(id);
 		episodeGoodViewDTO.setEpisodeCode(Integer.parseInt(episodeCode));
-		
 		return episodeGoodViewService.episodeGoodCheckId(episodeGoodViewDTO);
 	}
 	
@@ -63,4 +65,24 @@ public class EpisodeGoodViewController {
 		return episodeGoodViewService.goodCount(episodecode);
 	}
 	
+	/*
+	 * @RequestMapping(value="episodeView", method=RequestMethod.POST)
+	 * 
+	 * @ResponseBody public void episodeView(@RequestParam String
+	 * episodeCode, @RequestParam String title, @ModelAttribute EpisodeGoodViewDTO
+	 * episodeGoodViewDTO ,HttpSession session, HttpServletResponse response,
+	 * HttpServletRequest request) { String id = (String)
+	 * session.getAttribute("toonMemId"); if(session.getAttribute("toonMemId")
+	 * ==null);
+	 * 
+	 * //episodeGoodViewDTO.setId(id); Cookie[] cookies = request.getCookies();
+	 * 
+	 * // 비교하기 위해 새로운 쿠키 Cookie viewCookie = null;
+	 * 
+	 * 
+	 * episodeGoodViewDTO.setEpisodeCode(Integer.parseInt(episodeCode));
+	 * //episodeGoodViewDTO.setTitle(title);
+	 * 
+	 * episodeGoodViewService.episodeGood(episodeGoodViewDTO); }
+	 */
 }

@@ -3,6 +3,7 @@ package commentgoodbad.dao;
 import java.util.List;
 
 import commentgoodbad.bean.CommentGoodBadDTO;
+import tooncomment.bean.ToonCommentDTO;
 
 public interface CommentGoodBadDAO {
 
@@ -19,7 +20,9 @@ public interface CommentGoodBadDAO {
 
 	public void commentBadDelete(CommentGoodBadDTO commentGoodBadDTO);
 
-	public List<CommentGoodBadDTO> commentGoodBadCheck(CommentGoodBadDTO commentGoodBadDTO);
+	public List<CommentGoodBadDTO> commentGoodCheck(CommentGoodBadDTO commentGoodBadDTO);
+
+	public List<CommentGoodBadDTO> commentBadCheck(CommentGoodBadDTO commentGoodBadDTO);
 
 
 }

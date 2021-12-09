@@ -99,8 +99,6 @@ header p:nth-child(2){
 	cursor:pointer;
 }
 
-
-
 footer{
 	width:100%;
 	position:relative;
@@ -108,37 +106,44 @@ footer{
 	padding:0px 0px 100px 0px;
 }
 #good{
-	font-weight:bold;
-	padding:50px;	
+	font-weight:bold;	
 	color:white;
 	font-size: 2rem;
 }
-#good div{
-	padding:10px;
+#good div:first-child{
+	padding-top:85px;
+	padding-bottom:30px;
 }
+#goodicon, #fillgoodicon{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+}
+
 #good svg{
-	margin:20px;
 	width: 100px;
 	height: 100px;
 }
-
+#good div:last-child{
+	margin-bottom:50px;
+}
 #comment{
+	margin-top:50px;
 	font-size: 1.2rem;	
 	width: 640px;	
 	font-size: 1.5rem;
-	margin: 15px 0 15px 0;
-	padding-top:20px;
+	margin: 15px 0 20px 0;
+	padding-top:10px;
 	display:inline-block;
 	border-top: 1px solid #1c1c1c;
 	border-bottom: 1px solid #1c1c1c;
-}
-
-	
+}	
 
 #comment li div:first-child{
+
 	display: flex;
 	/* border-top: 1px solid #1c1c1c; */
-	padding: 10px 0 0 0;
+	padding: 25px 0 0 0;
 	align-items: center;
 }
 	
@@ -196,6 +201,7 @@ footer{
  
 
 #similartoon {
+	margin-top:10px;
 	width:640px;
 	display:inline-block;
 }

@@ -41,4 +41,14 @@ public class ToonCommentServiceImpl implements ToonCommentService {
 		return toonCommentDAO.getToonCommentCount(episodecode);
 	}
 
+	@Override
+	public List<ToonCommentDTO> commentCheckId(ToonCommentDTO toonCommentDTO) {
+		return toonCommentDAO.commentCheckId(toonCommentDTO);
+	}
+
+	@Override
+	public void commentDelete(int commentSeq) {
+		toonCommentDAO.commentDelete(commentSeq);
+	}
+
 }

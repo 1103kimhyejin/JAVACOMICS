@@ -70,41 +70,42 @@ $(function(){
 				console.log(err);	
 			}
 		});
-});
-//최신순 정렬
+});//onload
+
+//최신순 정렬 함수
 function sortLatest(){
-	$('#webtoonComment_list').attr('value','sortLatest');
-$('#webtoonComment_list').empty();
-$.ajax({
-	url: '/JAVACOMICS/tooncomment/sortLatest',
-	type: 'post',
-	data:'episodeCode='+$('#episodeCode').val(),
-	dataType: 'json',
-	success: function(data){
-		 	$.each(data, function(index, items){
-					addComment(items.id, items.content, items.logtime
-						, items.totalgood, items.totalbad, items.reply
-						, items.commentSeq);
-		}) 
-			
-	},
-	error: function(err){
-		console.log(err);	
-	}
-});
-//댓글 총 개수 가져오기
-$.ajax({
-	url: '/JAVACOMICS/tooncomment/getToonCommentCount',
-	type: 'post',
-	data:'episodeCode='+$('#episodeCode').val(),
-	dataType: 'json',
-	success: function(data){
-			$('#webtoonComment_header p:nth-child(2) span').html(' '+data);
-	},
-	error: function(err){
-		console.log(err);	
-	}
-});
+		$('#webtoonComment_list').attr('value','sortLatest');
+		$('#webtoonComment_list').empty();
+		$.ajax({
+			url: '/JAVACOMICS/tooncomment/sortLatest',
+			type: 'post',
+			data:'episodeCode='+$('#episodeCode').val(),
+			dataType: 'json',
+			success: function(data){
+				 	$.each(data, function(index, items){
+							addComment(items.id, items.content, items.logtime
+								, items.totalgood, items.totalbad, items.reply
+								, items.commentSeq);
+				}) 
+					
+			},
+			error: function(err){
+				console.log(err);	
+			}
+		});
+		//댓글 총 개수 가져오기
+		$.ajax({
+			url: '/JAVACOMICS/tooncomment/getToonCommentCount',
+			type: 'post',
+			data:'episodeCode='+$('#episodeCode').val(),
+			dataType: 'json',
+			success: function(data){
+					$('#webtoonComment_header p:nth-child(2) span').html(' '+data);
+			},
+			error: function(err){
+				console.log(err);	
+			}
+		});
 
 }
  
@@ -185,7 +186,6 @@ $(function(){
 				url: '/JAVACOMICS/tooncomment/toonCommentWrite',
 				data:'content='+ $('#webtoonComment_inputText').val()+'&episodeCode='+$('#episodeCode').val(),
 				success: function(){
-					//$('#webtoonComment_inputText').val()='';
 					sortLatest();
 				},
 				error: function(err){
@@ -231,54 +231,13 @@ function addComment(id, content, logtime, totalgood, totalbad, reply, commentSeq
 	/* 좋아요, 싫어요, 답글 버튼 div  */
 	var webtoonComment_GBRbtn_div = $('<div>');
 	webtoonComment_GBRbtn_div.addClass('webtoonComment_GBRbtn_div');
-/* 	
+
 	var webtoonComment_Good_btn = $('<input>');
 	webtoonComment_Good_btn.attr({
 		'type' : 'button',
 		'value' : '좋아요 '+totalgood,
 	});
 	webtoonComment_Good_btn.addClass('webtoonComment_Good_btn');
- */	
-/*	if($('#sessionid').val()!=''){
-		$.ajax({
-			url: '/JAVACOMICS/commentGoodBad/commentGoodBadCheck',
-			type: 'post',
-			dataType: 'json',
-			success: function(data){
-				//alert(JSON.stringify(data));
-				$.each(data, function(index, items){
-					if(items.commentSeq==commentSeq){
-						if(items.commentgood == 'T'){ 
-							 	
-	
-							
-							
-							
-						 
-							
-							
-							//$('.webtoonComment_li').attr('data-num') == items.commentseq) $(this).css('color','red');
-							}
-						
-					//if(items.commentbad == 'T') $(this).css('color','red');
-					}
-				});//each			
-			},
-			error: function(err){
-				alert('에러');	
-			}
-		});
-	}*/
-	//else{ 
-		var webtoonComment_Good_btn = $('<input>');
-		webtoonComment_Good_btn.attr({
-			'type' : 'button',
-			'value' : '좋아요 '+totalgood,
-		});
-		webtoonComment_Good_btn.addClass('webtoonComment_Good_btn');
-	 
-	//}
-	
 
 	var webtoonComment_Bad_btn = $('<input>');
 	webtoonComment_Bad_btn.attr({
@@ -293,14 +252,13 @@ function addComment(id, content, logtime, totalgood, totalbad, reply, commentSeq
 		'value' : '답글 '+reply
 	});
 
-	/* 삭제하기 일단 냅둠 */
+	/* 삭제하기 버튼 */
 	var del_input = $('<input>');
 	del_input.attr({
 		'type' : 'button',
-		'value' : '삭제하기'
+		'value' : '삭제',
 	});
 	del_input.addClass('delete_btn');
- 
 	
 	if(totalgood>10){
 		webtoonComment_Best_Id_Date_div.append(webtoonComment_Best_p).append(webtoonComment_Id_p).append(webtoonComment_Date_p);
@@ -309,17 +267,66 @@ function addComment(id, content, logtime, totalgood, totalbad, reply, commentSeq
 		webtoonComment_li.append(webtoonComment_BIDC_div).append(webtoonComment_GBRbtn_div);
 		$('#webtoonComment_list').append(webtoonComment_li);
 	}else{
-		//webtoonComment_Best_Id_Date_div.append(webtoonComment_Best_p).append(webtoonComment_Id_p).append(webtoonComment_Date_p);
 		webtoonComment_Best_Id_Date_div.append(webtoonComment_Id_p).append(webtoonComment_Date_p);
 		webtoonComment_BIDC_div.append(webtoonComment_Best_Id_Date_div).append(webtoonComment_Content_div);
 		webtoonComment_GBRbtn_div.append(webtoonComment_Good_btn).append(webtoonComment_Bad_btn).append(webtoonComment_Reply_btn);
 		webtoonComment_li.append(webtoonComment_BIDC_div).append(webtoonComment_GBRbtn_div);
 		$('#webtoonComment_list').append(webtoonComment_li);
 	} 
- 	
-	 
-
+if($('#sessionid').val()!=''){
+	//댓글 삭제하기 버튼 추가 - 자기가 쓴 댓글만
+		$.ajax({
+			url: '/JAVACOMICS/tooncomment/commentCheckId',
+			type: 'post',
+			data:'episodeCode='+$('#episodeCode').val(),
+			dataType: 'json',
+			success: function(data){
+				$.each(data, function(index, items){
+					if(commentSeq==items.commentSeq){
+						webtoonComment_Id_p.append(del_input);
+					}
+				});
+			},
+			error: function( request, status, error ){
+				alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
+			}
+		});
+	
+	//좋아요 눌렀던거 빨간색
+		$.ajax({
+			url: '/JAVACOMICS/commentGoodBad/commentGoodCheck',
+			type: 'post',
+			dataType: 'json',
+			success: function(data){
+				$.each(data, function(index, items){
+					if(commentSeq==items.commentSeq){
+						webtoonComment_Good_btn.css('color','red');
+					}
+				});
+			},
+			error: function( request, status, error ){
+				alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
+			}
+		});
+	//싫어요 눌렀던거 빨간색
+	$.ajax({
+		url: '/JAVACOMICS/commentGoodBad/commentBadCheck',
+		type: 'post',
+		dataType: 'json',
+		success: function(data){
+			$.each(data, function(index, items){
+				if(commentSeq==items.commentSeq){
+					webtoonComment_Bad_btn.css('color','red');
+				}
+			});
+		},
+		error: function( request, status, error ){
+			alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
+		}
+	});
 }
+}//onload시 호출 함수
+
 
 //좋아요
 $(document).on('click', '.webtoonComment_Good_btn', function(){
@@ -430,14 +437,9 @@ $(document).on('click', '.webtoonComment_Bad_btn', function(){
 								type: 'post',
 								data:'commentSeq='+commentSeq,
 								dataType: 'json',
-								success: function(data){
-							
+								success: function(data){							
 									bad.css('color', '#777777');
-									bad.attr('value','싫어요 '+data.totalbad);	
-								 	/* $.each(data, function(index, items){
-								 		bad.attr('value','싫어요 '+items.totalbad);	
-									}); */
-												
+									bad.attr('value','싫어요 '+data.totalbad);				
 								},
 								error: function(err){
 									console.log(err);	
@@ -485,9 +487,25 @@ $(document).on('click', '.webtoonComment_Bad_btn', function(){
 	}
 });
 
-
-
-
+//삭제하기
+$(document).on('click', '.delete_btn', function(){
+	if(confirm('선택하신 댓글을 삭제하시겠습니까?')){
+		var commentSeq =$(this).parents('li').attr('data-num');
+		var target = $(this).parents('.webtoonComment_li');
+		$.ajax({
+			type: 'post',
+			url: '/JAVACOMICS/tooncomment/commentDelete',
+			data:'commentSeq='+commentSeq,
+			success: function(){
+				target.remove();
+			},
+			error: function( request, status, error ){
+				alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
+			}
+		});			
+		
+	}
+});
 </script>
 </body>
 </html>
