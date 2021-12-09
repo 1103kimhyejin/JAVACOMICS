@@ -17,4 +17,10 @@ public interface CustomerboardDAO {
 
 	public void boardModify(Map<String, Object> map);
 
+	public void boardDelete(String seq);
+
+	public List<CustomerBoardDTO> getSearchList(Map<String, String> map);
+
+	public int getTotalSearchA(Map<String, String> map);
+
 }

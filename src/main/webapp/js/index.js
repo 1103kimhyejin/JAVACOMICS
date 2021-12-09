@@ -79,7 +79,10 @@ $(function(){
 	});
 	
 	$('.backBtnSupport').click(function(){
-		$(location).attr("href", "/JAVACOMICS/customerboard/customerboardList");
+		$(location).attr("href", "/JAVACOMICS/customerboard/customerboardList?pg="+$('#pg').val());
+	});
+	$('.backBtnSupportView').click(function(){
+		$(location).attr("href",  "/JAVACOMICS/customerboard/customerboardView?seq="+$('#seq').val()+"&pg="+$('#pg').val());
 	});
 
 	

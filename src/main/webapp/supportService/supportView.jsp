@@ -35,14 +35,14 @@
 		
 		<input type="button" id="customerboardListBtn" value="목록" 
 		onclick="location.href='customerboardList?pg=${pg}'">
+		<input type="button" id="boardModify" value="글수정" onclick="">
 		<span id="supportViewSpan">
 		
-			<input type="button" id="boardModify" value="글수정" onclick="">
 			<input type="button" id="boardDelete" value="글삭제" onclick="">
-			
-		</span>
-		<input type="button" value="답글"
+			<input id="replyBtn" type="button" value="답글"
 		onclick="location.href='boardReplyForm.do?seq=${seq}&pg=${pg}'">
+		</span>
+		
 	</form>
 </div>
 
@@ -64,10 +64,16 @@ $(function(){
 			$('#idSpan').text(data.customerboardDTO.id);
 			$('#contentSpan').text(data.customerboardDTO.content);
 			
-			if(data.toonMemId == data.customerboardDTO.id)
+			if(data.toonMemId == data.customerboardDTO.id || data.toonMemId == 'manager_001')
 				$('#supportViewSpan').show();
 			else
 				$('#supportViewSpan').hide();
+			
+			if(data.toonMemId == data.customerboardDTO.id){
+				$('#boardModify').show();
+			} else {
+				$('#boardModify').hide();
+			}
 			
 		},
 		error: function(err){
@@ -80,6 +86,11 @@ $(function(){
 $('#boardModify').click(function(){
 	location.href = '/JAVACOMICS/customerboard/boardModifyForm?seq='+$('#seq').val()
 			+'&pg='+$('#pg').val();
+	
+});
+
+$('#boardDelete').click(function(){
+	location.href = '/JAVACOMICS/customerboard/boardDelete?seq='+$('#seq').val();
 	
 });
 </script>

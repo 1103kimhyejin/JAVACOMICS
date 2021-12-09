@@ -46,7 +46,8 @@
 					</form>
 				</div>
 			</div>
-			<div><a href="#">고객센터</a></div>
+			<div><a href="/JAVACOMICS/customerboard/customerboardList">고객센터</a></div>
+			<div><a href="/JAVACOMICS/main/myMenu/map.jsp">사업자정보</a></div>
 		</div>
 	</div>	
 	
