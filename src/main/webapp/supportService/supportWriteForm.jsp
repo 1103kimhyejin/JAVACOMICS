@@ -19,6 +19,7 @@
 			
 			<tr>
 				<td><textarea cols="50" rows="15" name="supportContent" id="supportContent"></textarea></td>
+				
 			</tr>
 			
 			<tr>
@@ -28,6 +29,12 @@
 			</tr>
 			<tr>
 				<td>
+					<label>비밀글<input type="checkbox" id="secret" name="secret" value="T" ></label>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					
 					<input type="button" id="supportWriteBtn" value="글저장"/>
 					<input type="reset" value="다시작성"/>
 				</td>
@@ -54,13 +61,19 @@ $('#supportWriteBtn').click(function(){
 		$('.msgDiv').css('font-weight','bold');
 		
 	}else{
-		
+		if($('#secret').is(':checked')){
+			$('#secret').val('T')
+		} else {
+			$('#secret').val('F')
+		}
 		$.ajax({
 			type: 'post',
 			url: '/JAVACOMICS/customerboard/customerboardWrite',
 			data: {
 				'subject': $('#supportSubject').val(),
-				'content': $('#supportContent').val()
+				'content': $('#supportContent').val(),
+				'secret': $('#secret').val()
+				
 			},
 			success: function(){
 				$(location).attr("href", "/JAVACOMICS/customerboard/customerboardList")

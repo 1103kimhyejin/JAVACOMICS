@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="/JAVACOMICS/css/supportCss/supportModifyForm.css">
   
 <div class="supportModifyFormDiv">
-	<div class="backBtnSupport"><img src="/JAVACOMICS/image/backicon.PNG"></div>
+	<div class="backBtnSupportView"><img src="/JAVACOMICS/image/backicon.PNG"></div>
 	<h1>고객문의</h1>
 	<form id="supportModifyForm" enctype="multipart/form-data" method="post" 
 									action="">       
@@ -49,7 +49,7 @@ $(function(){
 		data: 'seq='+$('input[name=seq]').val(),
 		dataType: 'json',
 		success : function(data){
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			$('#supportSubject').val(data.customerboardDTO.subject);
 			$('#supportContent').val(data.customerboardDTO.content);
 		},

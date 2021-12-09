@@ -134,7 +134,36 @@ public class CustomerboardController {
 	
 	@RequestMapping(value="boardModify", method=RequestMethod.POST)
 	@ResponseBody
-	public void modify(@RequestParam Map<String, Object> map) {
+	public void boardModify(@RequestParam Map<String, Object> map) {
 		customerboardService.boardModify(map);
+	}
+	
+	@RequestMapping(value="boardDelete", method=RequestMethod.GET)
+	public ModelAndView boardDelete(@RequestParam String seq) {
+		customerboardService.boardDelete(seq);
+		
+		return new ModelAndView("redirect:/customerboard/customerboardList");
+	}
+	
+	@RequestMapping(value="getSearchList", method=RequestMethod.POST)
+	@ResponseBody
+	public ModelAndView getSearchList(@RequestParam Map<String, String> map, //pg, searchOption, keyword
+										   HttpSession session) { 
+		//1페이지당 5개씩
+		List<CustomerBoardDTO> list = customerboardService.getSearchList(map);
+		
+		//세션
+		String toonMemId = (String) session.getAttribute("toonMemId");
+		
+		//페이징 처리
+		CustomerboardPaging customerboardPaging = customerboardService.customerboardPaging(map);
+		
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("pg", map.get("pg"));
+		mav.addObject("list", list);
+		mav.addObject("toonMemId", toonMemId);
+		mav.addObject("customerboardPaging", customerboardPaging);
+		mav.setViewName("jsonView");
+		return mav;
 	}
 }
