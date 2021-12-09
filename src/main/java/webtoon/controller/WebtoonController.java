@@ -42,6 +42,14 @@ public class WebtoonController {
 		return webtoonService.getStorageBodyList(id);
 	}
 	
+	@PostMapping(value="getStorageBodybottom")
+	@ResponseBody
+	public List<WebtoonDTO> getStorageBodybottom(@RequestParam String title){
+		System.out.println(title);
+		return webtoonService.getStorageBodybottom(title);
+		
+	}
+	
 
 	@RequestMapping(value="homebody", method=RequestMethod.GET)
 	public String homebody(Model model) {

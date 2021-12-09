@@ -31,4 +31,9 @@ public class WebtoonDAOMybatis implements WebtoonDAO {
 	public List<WebtoonDTO> getStorageBodyList(String toonMemId) {
 		return sqlSession.selectList("webtoonSQL.getStorageBodyList", toonMemId);
 	}
+
+	@Override
+	public List<WebtoonDTO> getStorageBodybottom(String title) {
+		return sqlSession.selectList("webtoonSQL.getStorageBodybottom", title);
+	}
 }

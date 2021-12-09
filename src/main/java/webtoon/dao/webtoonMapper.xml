@@ -10,10 +10,10 @@
 	
 	<select id="getRankBodyList" parameterType = "String" resultType="webtoon">
 		
-			select title, writer, artist, toonday, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, story1, story2, toonend, toonvideo, type1stTitle, nvl("좋아요",0) "좋아요" 
-			from webtoon left join
-	   		(select count(episodegood) "좋아요", title 
-	    	from episodegoodview where episodegood='T' group by title) using(title)
+		select title, writer, artist, toonday, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, story1, story2, toonend, toonvideo, type1stTitle, nvl("좋아요",0) "좋아요" 
+		from webtoon left join
+	   	(select count(episodegood) "좋아요", title 
+	    from episodegoodview where episodegood='T' group by title) using(title)
 
 		
 		<if test="category!='전체'">
@@ -28,6 +28,18 @@
         from webtoon
         join episodelist using(title)
         join(select * from recentview where id = #{toonMemId } order by logtime desc) using(episodecode)
+
+	</select>
+	
+	
+	<select id="getStorageBodybottom" parameterType = "String" resultType="webtoon">
+		
+		select title, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, toonend
+    	from webtoon
+    	where toontype in(select toontype from webtoon where title = #{title })
+    	or keyword1 in(select keyword1 from webtoon where title = #{title })
+        or keyword2 in(select keyword2 from webtoon where title = #{title })
+        or keyword3 in(select keyword3 from webtoon where title = #{title })
 
 	</select>
 </mapper>

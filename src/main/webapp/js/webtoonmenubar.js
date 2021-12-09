@@ -1,7 +1,7 @@
 $(function(){
 	//요일 메뉴바 클릭시 스크롤 이동
 	$(".toonList li:nth-child(2)").click(function(){
-		var monset = $('#monWeb').offset(); 
+		var monset = $('#rankTop').offset(); 
 	    $('html').animate({scrollTop : monset.top}, 800); 
 	})
 	$(".toonList li:nth-child(3)").click(function(){

@@ -8,11 +8,11 @@
 	<div id = "watchingList">	<!-- 보관함박스 안에 리스트박스  -->
 		<div id = "watchingListTitle">	<!-- 리스트박스 안에 큰제목  -->
 			<div class = "watchingListTitle1">
-				<p>최근에는</p>
+				<p id = "watchingmemId"></p>
 			</div>
 			
 			<div class = "watchingListTitle2">
-				<p id ="randomTitle" ></p>
+				<p class ="randomTitle" ></p>
 			</div>
 				<p></p>
 			<div class = "watchingListTitle3">
@@ -22,25 +22,6 @@
 		
 		<div id = "watchingListBigBox">	<!-- 리스트박스 안에 큰박스  -->
 		
-			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
-				<div id= "watchingListTopBox">
-					<div id="watchingListTopTitle">
-						<p>24화 영이 내려온다</p>
-					</div>
-				</div>
-				<div id="watchingListBottomBox" >
-					<div id="watchingListBottomBox1">
-						<img src= "/JAVACOMICS/image/webtoonList/01.Mon/06/main.png">
-					</div>
-					
-					<div id ="Transparency"></div> <!--투명도  -->
-					
-					<div id="watchingListBottomBox2">
-						<img src= "/JAVACOMICS/image/webtoonList/01.Mon/06/title.png">
-					</div>
-				</div>
-			</div>
-			
 		</div>
 	</div>
 	
@@ -50,7 +31,7 @@
 	
 		<div id= "similarListTitle" > <!--유사 리스트안에 큰제목  -->
 			<div class = "similarListTitle1">
-				<p>가비왕</p>
+				<p class ="randomTitle" id="randomTitle"></p>
 			</div>
 			
 			<div class = "similarListTitle2">
@@ -64,18 +45,6 @@
 		
 		<div id= "similarListBigBox"> <!--유사 리스트 안에 큰박스  -->
 		
-			<div id = "similarListBox"> <!--유사 리스트 박스  -->
-				<div class="similarListBox1">
-					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/bg.jpg"/>				
-				</div>
-				<div class="similarListBox2">
-					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/main.png"/>
-				</div>
-				<div class="similarListBox3">
-					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/title.png"/>
-				</div>
-				<div id= "Transparency"></div>
-			</div>
 						
 		</div>
 	</div>
@@ -84,22 +53,21 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(function(){
-	
-	var randomT = "";
-	
+
 	$.ajax({
 		url: "/JAVACOMICS/webtoon/getStorageBodyList",
 		type: "post",
-		data: 'id='+'angel',
+		data: 'id=${toonMemId}',
 		success: function(data){
-			console.log(JSON.stringify(data));
 			
 
 			$.each(data.list, function(index, items){
+				
 				if(data.random == index){
-					$("#randomTitle").text(items.title)
-					randomT = items.title;
+					$(".randomTitle").text(items.title)
 				}
+				
+				$("#watchingmemId").text("${toonMemId}님은")
 				
 				$("<div>", {
 					id: 'watchingListBox'
@@ -124,13 +92,58 @@ $(function(){
 				}))).append($("<div>", {
 					id: "Transparency"
 					
-				}))).append($("<div>", {
+				})).append($("<div>", {
 					id: "watchingListBottomBox2"
 					
 				}).append($("<img>", {
 					src: "/JAVACOMICS/image/" + items.toonTitle
 					
-				}))).appendTo($("#watchingListBigBox"));
+				})))).appendTo($("#watchingListBigBox"));
+				
+			});
+			
+			$.ajax({
+				url: "/JAVACOMICS/webtoon/getStorageBodybottom",
+				type: "post",
+				data: "title="+ $("#randomTitle").text(),
+				success: function(data){
+
+
+					$.each(data, function(index, items){
+						if(items.title != $("#randomTitle").text() && index < 17){
+
+							$("<div>", {
+								id: 'similarListBox'
+							}).append($("<div>", {
+								class: "similarListBox1"
+								
+							}).append($("<img>", {
+								src : "/JAVACOMICS/image/" +items.toonBg
+							
+							}))).append($("<div>", {
+								class: "similarListBox2"
+								
+							}).append($("<img>", {
+								src: "/JAVACOMICS/image/" + items.toonChar
+								
+							}))).append($("<div>", {
+								id: "Transparency"
+								
+							})).append($("<div>", {
+								class: "similarListBox3"
+								
+							}).append($("<img>", {
+								src: "/JAVACOMICS/image/" + items.toonTitle
+								
+							}))).appendTo($("#similarListBigBox"));
+						}
+					});
+					
+					
+				},
+				error: function(err){
+					console.log(err)		
+				}
 				
 			});
 			
@@ -140,6 +153,10 @@ $(function(){
 			console.log(err)		
 		}
 	})
+	
+	
+	
+
 	
 });
 
