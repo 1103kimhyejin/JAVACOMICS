@@ -77,15 +77,15 @@ header{
 section{
 	width: 100%;
 	top: 90px;
-    position: relative;s
+    position: relative;
 }
-.myCash, .useCash{
+.myCash{
 	font-size: 1.3rem;
 	margin-left: 10px;
 	margin-top: 10px;
 	color: #a6a6a6;
 }
-.myCash>span:last-child, .useCash>span:last-child{
+.myCash>span:last-child{
 	font-weight: bold;
 	margin-left: 260px;
 	color: #fff;

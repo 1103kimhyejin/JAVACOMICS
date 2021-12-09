@@ -31,12 +31,7 @@
 			<span>보유 캐시</span>
 			<span>myCash</span>
 		</div>
-		
-		<div class="useCash">
-			<span>사용하기</span>
-			<span>200 캐시</span>
-		</div>
-		
+	
 		<div class="cashCharge">
 			<p>캐시</p>
 			<p>충전</p>
