@@ -7,7 +7,7 @@ $(function(){
 	});
 	
 	//webtoonInnerList 상단부분 회차, 작품정보버튼 클릭 이벤트
-	$('.information').css({"background-color":"transparent", "color":"#fff"});
+	//$('.information').css({"background-color":"transparent", "color":"#fff"});
 	
 	$('.top ul li').click(function(){
 		$(this).css({"background-color":"#fff", "color":"black"})

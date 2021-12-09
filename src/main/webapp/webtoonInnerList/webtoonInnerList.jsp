@@ -15,7 +15,7 @@
 <input type="hidden" id="toonMemId" value="${sessionScope.toonMemId }"> 
 <header>
 	<div class="back">
-		<a href="#" onclick="history.back(-1)"><li><img src="/JAVACOMICS/image/webtoonInnerList/back.png"/></li></a>
+		<a href="/JAVACOMICS/webtoon/homebody"><li><img src="/JAVACOMICS/image/webtoonInnerList/back.png"/></li></a>
 	</div>
 	<div class="heart">
 		<li>
@@ -73,19 +73,6 @@ $(function(){
 		data: 'title='+$('#webtoon_title').val(),
 		dataType: "json",
 		success: function(data){
-			/* video/나만아는사랑.webm
-			video/내일도출근!.webm
-			video/대마법사의딸.webm
-			video/마존현세_강림기.webm
-			video/바리공주.webm
-			video/밤의새벽.webm
-			video/아비무쌍.webm
-			video/유부녀킬러.webm
-			video/이미테이션.webm
-			video/풍운객잔.webm
-			video/학사재생.webm */
-			
-			/* alert(JSON.stringify(data)); */
 			
 			$("<div/>", { 
 				class : "bg"
@@ -156,7 +143,6 @@ $(function(){
 		data: 'title='+$('#webtoon_title').val(),
 		dataType: "json",
 		success: function(data){
-			/* alert(JSON.stringify(data)); */
 			
 			$.each(data, function(index, items){
 		
@@ -194,8 +180,10 @@ $(function(){
 				//유료회차 클릭시 이용권 구매창 이동
 				$('.epPay').parents('.list1').click(function(){	
 					if(${sessionScope.toonMemId != null }){
-						window.open("/JAVACOMICS/webtoonInnerList/webtoonPay", "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
-					 	return false;						
+						//myMenu로 이동완료
+						//window.open("/JAVACOMICS/webtoonInnerList/webtoonPay", "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
+					 	window.open("/JAVACOMICS/webtoonInnerList/episodeBuy", "EPISODE BUY", "width=400 height=600 top=200 left=700 scrollbars=yes");
+						return false;						
 					}
 				});
 				

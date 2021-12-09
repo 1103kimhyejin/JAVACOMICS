@@ -18,6 +18,14 @@ a:link{ color: white; text-decoration: none;}
 a:hover{ color: white; text-decoration: none;}
 a:visited{ color: white; text-decoration: none;}
 a:active{ color: white; text-decoration: none;}
+.information{
+	background-color: transparent;
+	color: #fff;
+}
+.episode{
+	background-color: #fff;
+	color: black;
+} 
 .list1{
 	display: inline-block;
     position: relative;

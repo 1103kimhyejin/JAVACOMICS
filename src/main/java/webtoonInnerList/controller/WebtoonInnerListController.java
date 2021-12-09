@@ -58,8 +58,15 @@ public class WebtoonInnerListController {
 	}
 	
 	@RequestMapping(value="webtoonPay", method=RequestMethod.GET)
-	public String webtoonPay(){
+	public String webtoonPay(@RequestParam String id, Model model){
 		System.out.println("webtoonPay 컨트롤러와따");
+		model.addAttribute("id", id);
 		return "/webtoonInnerList/webtoonPay";
+	}
+	
+	@RequestMapping(value="episodeBuy", method=RequestMethod.GET)
+	public String episodeBuy(){
+		System.out.println("episodeBuy 컨트롤러와따");
+		return "/webtoonInnerList/episodeBuy";
 	}
 }

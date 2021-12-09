@@ -372,45 +372,38 @@ $(function(){
 			
 			//각 div에 있는 웹툰 한 박스 클릭했을때 페이지 이동
 			$('#monWeb > .box').click(function(){
-			 	var title= $(this).attr("id");
-			 	alert(title); 
+			 	var title= $(this).attr("id"); 
 			 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+title;
 			});
 			
 			$('#tueWeb > .box').click(function(){	
 			 	var title= $(this).attr("id");
-			 	alert(title);
 			 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+title;
 			});
 			
 			
 			$('#wedWeb > .box').click(function(){
 			 	var title= $(this).attr("id");
-			 	alert(title); 
 			 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+title;
 			});
 			
 			$('#thuWeb > .box').click(function(){
 			 	var title= $(this).attr("id");
-			 	alert(title); 
 			 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+title;
 			});
 			
 			$('#friWeb > .box').click(function(){
 			 	var title= $(this).attr("id");
-			 	alert(title); 
 			 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+title;
 			});
 			
 			$('#satWeb > .box').click(function(){
 			 	var title= $(this).attr("id");
-			 	alert(title); 
 			 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+title;
 			});
 			
 			$('#sunWeb > .box').click(function(){
 			 	var title= $(this).attr("id");
-			 	alert(title); 
 			 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+title;
 			});
 		},

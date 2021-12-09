@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" href="/JAVACOMICS/css/myMenu.css">   
-    
+<input type="hidden" id="toonMemId" value="${sessionScope.toonMemId }"> <!-- 주희추가 -->    
 <div class="myMenu">
 
 	<div class="backBtn"><img src="/JAVACOMICS/image/backicon.PNG"></div>
@@ -13,7 +13,7 @@
 		</div>
 		<div class="spandiv">
 			<div><a href="#" id="kakaoLogoutBtn">로그아웃    </a></div>
-			<div><a href="#">캐시 충전     </a></div>
+			<div><a href="#" id="webtoonPayBtn">캐시 충전     </a></div> <!-- 주희 추가 -->
 			<div><a href="#">충전 내역     </a></div>
 			<div><a href="/JAVACOMICS/customerboard/customerboardList">고객센터      </a></div>
 		</div>
@@ -39,6 +39,13 @@ $(function(){
 		error: function(err){
 			console.log(err);
 		}
+	});
+	
+	//주희 추가
+	$('#webtoonPayBtn').click(function(){	
+		var id= $('#toonMemId').attr("value");
+		alert(id);
+		window.open("/JAVACOMICS/webtoonInnerList/webtoonPay?id="+id, "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
 	});
 });
 
