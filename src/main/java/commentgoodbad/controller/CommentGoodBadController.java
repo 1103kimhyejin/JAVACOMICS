@@ -7,12 +7,14 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import commentgoodbad.bean.CommentGoodBadDTO;
 import commentgoodbad.service.CommentGoodBadService;
+import tooncomment.bean.ToonCommentDTO;
 
 @Controller
 @RequestMapping(value = "commentGoodBad")
@@ -82,13 +84,21 @@ public class CommentGoodBadController {
 		commentGoodBadService.commentBadDelete(commentGoodBadDTO);
 	}
 
-	@RequestMapping(value="commentGoodBadCheck", method=RequestMethod.POST)
+	@RequestMapping(value="commentGoodCheck", method=RequestMethod.POST)
 	@ResponseBody
-	public List<CommentGoodBadDTO> commentGoodBadCheck(@ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
+	public List<CommentGoodBadDTO> commentGoodCheck(@ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
 		String id = (String) session.getAttribute("toonMemId");
 		commentGoodBadDTO.setGoodBadId(id);
 		
-		return commentGoodBadService.commentGoodBadCheck(commentGoodBadDTO);
+		return commentGoodBadService.commentGoodCheck(commentGoodBadDTO);
 	}
-	
+	@RequestMapping(value="commentBadCheck", method=RequestMethod.POST)
+	@ResponseBody
+	public List<CommentGoodBadDTO> commentBadCheck(@ModelAttribute CommentGoodBadDTO commentGoodBadDTO, HttpSession session) {
+		String id = (String) session.getAttribute("toonMemId");
+		commentGoodBadDTO.setGoodBadId(id);
+		
+		return commentGoodBadService.commentBadCheck(commentGoodBadDTO);
+	}
 }
+

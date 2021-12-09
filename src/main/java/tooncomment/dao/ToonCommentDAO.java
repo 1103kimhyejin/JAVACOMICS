@@ -16,5 +16,8 @@ public interface ToonCommentDAO {
 
 	public int getToonCommentCount(int episodecode);
 
-	
+	public List<ToonCommentDTO> commentCheckId(ToonCommentDTO toonCommentDTO);
+
+	public void commentDelete(int commentSeq);
+
 }

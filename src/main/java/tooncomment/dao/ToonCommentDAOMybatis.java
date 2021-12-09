@@ -41,4 +41,16 @@ public class ToonCommentDAOMybatis implements ToonCommentDAO {
 		return sqlSession.selectOne("toonCommentSQL.getToonCommentCount", episodecode);
 	}
 
+	@Override
+	public List<ToonCommentDTO> commentCheckId(ToonCommentDTO toonCommentDTO) {
+		return sqlSession.selectList("toonCommentSQL.commentCheckId", toonCommentDTO);
+	}
+
+	@Override
+	public void commentDelete(int commentSeq) {
+		sqlSession.delete("toonCommentSQL.commentDelete", commentSeq);
+	}
+
+
+
 }

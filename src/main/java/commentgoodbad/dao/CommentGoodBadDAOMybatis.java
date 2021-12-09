@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import commentgoodbad.bean.CommentGoodBadDTO;
+import tooncomment.bean.ToonCommentDTO;
 
 @Repository
 @Transactional
@@ -24,8 +25,6 @@ public class CommentGoodBadDAOMybatis implements CommentGoodBadDAO {
 		sqlSession.insert("commentGoodBadSQL.commentGood",commentGoodBadDTO);
 		
 	}
-
-
 
 	@Override
 	public void commentBad(CommentGoodBadDTO commentGoodBadDTO) {
@@ -45,15 +44,11 @@ public class CommentGoodBadDAOMybatis implements CommentGoodBadDAO {
 
 	}
 
-
-
 	@Override
 	public void commentGoodDelete(CommentGoodBadDTO commentGoodBadDTO) {
 		sqlSession.delete("commentGoodBadSQL.commentGoodDelete",commentGoodBadDTO);
 		
 	}
-
-
 
 	@Override
 	public void commentBadDelete(CommentGoodBadDTO commentGoodBadDTO) {
@@ -61,12 +56,15 @@ public class CommentGoodBadDAOMybatis implements CommentGoodBadDAO {
 		
 	}
 
-
+	@Override
+	public List<CommentGoodBadDTO> commentGoodCheck(CommentGoodBadDTO commentGoodBadDTO) {
+		return sqlSession.selectList("commentGoodBadSQL.commentGoodCheck",commentGoodBadDTO);
+	}
 
 	@Override
-	public List<CommentGoodBadDTO> commentGoodBadCheck(CommentGoodBadDTO commentGoodBadDTO) {
-		return sqlSession.selectList("commentGoodBadSQL.commentGoodBadCheck",commentGoodBadDTO);
+	public List<CommentGoodBadDTO> commentBadCheck(CommentGoodBadDTO commentGoodBadDTO) {
+		return sqlSession.selectList("commentGoodBadSQL.commentBadCheck",commentGoodBadDTO);
 	}
-	
+
 
 }

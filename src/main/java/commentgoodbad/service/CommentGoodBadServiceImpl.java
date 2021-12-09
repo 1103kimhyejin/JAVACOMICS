@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import commentgoodbad.bean.CommentGoodBadDTO;
 import commentgoodbad.dao.CommentGoodBadDAO;
+import tooncomment.bean.ToonCommentDTO;
 
 
 @Service
@@ -71,10 +72,17 @@ public class CommentGoodBadServiceImpl implements CommentGoodBadService {
 
 
 	@Override
-	public List<CommentGoodBadDTO> commentGoodBadCheck(CommentGoodBadDTO commentGoodBadDTO) {
-		return commentGoodBadDAO.commentGoodBadCheck(commentGoodBadDTO);
+	public List<CommentGoodBadDTO> commentGoodCheck(CommentGoodBadDTO commentGoodBadDTO) {
+		return commentGoodBadDAO.commentGoodCheck(commentGoodBadDTO);
 	}
-	
+
+
+
+	@Override
+	public List<CommentGoodBadDTO> commentBadCheck(CommentGoodBadDTO commentGoodBadDTO) {
+		return commentGoodBadDAO.commentBadCheck(commentGoodBadDTO);
+	}
+
 
 
 	

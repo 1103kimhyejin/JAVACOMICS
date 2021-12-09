@@ -26,7 +26,8 @@
 		select *
 		from tooncomment left join 
 		(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
-		from commentgoodbad group by commentseq) using(commentseq) 
+		from commentgoodbad group by commentseq) 
+		using(commentseq) 
 		where episodecode=#{episodecode}
 		order by totalgood desc NULLS LAST
 	</select>
@@ -34,7 +35,8 @@
 		select *
 		from tooncomment left join 
 		(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
-		from commentgoodbad group by commentseq) using(commentseq) 
+		from commentgoodbad group by commentseq) 
+		using(commentseq) 
 		where episodecode=#{episodecode}
 		order by commentseq desc
 	</select>
@@ -48,6 +50,21 @@
 	<select id="getToonCommentCount" parameterType="int" resultType="int">
 		select count(*) from tooncomment where episodecode=#{episodecode}
 	</select>
-	
+	<select id="commentCheckId" parameterType="toonComment" resultType="toonComment">
+		select *
+		from tooncomment left join 
+		(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
+		from commentgoodbad group by commentseq) 
+        using(commentseq) 
+		where id=#{id} and episodecode=#{episodeCode}
+		order by commentseq desc
+	</select>
+	<delete id="commentDelete" parameterType="int">
+		delete from tooncomment where commentseq=#{commentSeq}
+		<!-- 기본키 외래키 제약조건 걸어둠 
+		alter table commentgoodbad add constraint tooncomment_pk
+                                foreign key (commentseq)
+                                references tooncomment(commentseq) on delete cascade;   -->
+	</delete>
 	
 </mapper>
