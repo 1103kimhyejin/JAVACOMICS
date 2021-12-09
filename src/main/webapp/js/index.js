@@ -38,15 +38,7 @@ $(function(){
 		}
 		
 	});
-	$('.mainmenu div:eq(3)').click(function(){
-		$('.submenu .toonList').addClass('hide');
-		$('.submenu .ranking').addClass('hide');
-		$('.submenu .myBox').removeClass('hide');
-		
-		if($('#display').val() != "main/webtoonList/storagebody.jsp"){
-			$(location).attr("href", "/JAVACOMICS/webtoon/storagebody");
-		}
-	});
+
 	
 	$('.mainmenu div').click(function(){
 		$(this).css("opacity","1");

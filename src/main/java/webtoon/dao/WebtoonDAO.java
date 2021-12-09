@@ -12,4 +12,6 @@ public interface WebtoonDAO {
 
 	List<WebtoonDTO> getStorageBodyList(String toonMemId);
 
+	List<WebtoonDTO> getStorageBodybottom(String title);
+
 }

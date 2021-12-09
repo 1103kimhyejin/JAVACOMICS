@@ -44,4 +44,10 @@ public class WebtoonServiceImpl implements WebtoonService {
 		
 		
 	}
+
+	@Override
+	public List<WebtoonDTO> getStorageBodybottom(String title) {
+		
+		return webtoonDAO.getStorageBodybottom(title);
+	}
 }

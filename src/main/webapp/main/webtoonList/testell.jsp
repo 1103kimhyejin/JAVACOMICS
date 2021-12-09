@@ -37,15 +37,15 @@
       }
       /* 위에서 아래로 페이드 인 */
       .sa-down {
-        transform: translateY(58px);
+        transform: translateY(100px);
       }
       /* 왼쪽에서 오른쪽으로 페이드 인 */
       .sa-right {
-        transform: translateY(116px);
+        transform: translateY(200px);
       }
       /* 오른쪽에서 왼쪽으로 페이드 인 */
       .sa-left {
-        transform: translateY(174px);
+        transform: translateY(300px);
       }
       /* 왼쪽으로 회전하면서 페이드 인 */
       .sa-rotateL {
@@ -120,8 +120,8 @@
 
 
 
-
-			<div id = "watchingListBox"> <!--큰박스안에 박스   -->
+<!-- 
+			<div id = "watchingListBox"> 큰박스안에 박스  
 				<div id= "watchingListTopBox">
 					<div id="watchingListTopTitle">
 						<p>24화 영이 내려온다</p>
@@ -132,7 +132,7 @@
 						<img src= "/JAVACOMICS/image/webtoonList/01.Mon/06/main.png">
 					</div>
 					
-					<div id ="Transparency"></div> <!--투명도  -->
+					<div id ="Transparency"></div> 투명도 
 					
 					<div id="watchingListBottomBox2">
 						<img src= "/JAVACOMICS/image/webtoonList/01.Mon/06/title.png">
@@ -142,7 +142,21 @@
 			
 			
 			
+			<div id = "similarListBox"> 유사 리스트 박스 
+				<div class="similarListBox1">
+					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/bg.jpg"/>				
+				</div>
+				<div class="similarListBox2">
+					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/main.png"/>
+				</div>
+				<div class="similarListBox3">
+					<img src="/JAVACOMICS/image/webtoonList/02.Tue/02/title.png"/>
+				</div>
+				<div id= "Transparency"></div>
+			</div>
 			
+			 -->
 			
+
 			
 			

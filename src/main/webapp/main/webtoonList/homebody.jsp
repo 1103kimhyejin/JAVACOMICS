@@ -5,7 +5,7 @@
 
 <div class="webtoonList">
 	<div id = monWeb>
-		<div class = "day">
+		<div class = "Fday">
 			<p id ="mon">월요일</p>	
 		</div>
 		<div class ="longBox">
@@ -165,7 +165,7 @@ $(function(){
 		success: function(data){
 			
 			
-			var monset = $('#monWeb').offset(); 
+			var monset = $('#rankTop').offset(); 
 		    $('html').animate({scrollTop : monset.top}, 300);
 		    
 			$.each(data, function(index, items){

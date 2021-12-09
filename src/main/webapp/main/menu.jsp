@@ -46,3 +46,21 @@
 
 
 </div>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+$('.mainmenu div:eq(3)').click(function(){
+	
+	$('.submenu .toonList').addClass('hide');
+	$('.submenu .ranking').addClass('hide');
+	$('.submenu .myBox').removeClass('hide');
+	
+	if(${toonMemId == null}){
+		alert("먼저 로그인하세요")
+	}else if($('#display').val() != "main/webtoonList/storagebody.jsp"){
+		$(location).attr("href", "/JAVACOMICS/webtoon/storagebody");
+	}
+});
+
+</script>

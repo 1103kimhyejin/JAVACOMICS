@@ -14,4 +14,6 @@ public interface WebtoonService {
 
 	JSONObject getStorageBodyList(String toonMemId);
 
+	List<WebtoonDTO> getStorageBodybottom(String title);
+
 }

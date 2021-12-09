@@ -96,7 +96,7 @@
 		border-right:1px solid #000;
 		width: calc(100%/4);
 		margin-bottom:1px;
-		height:390px;
+		
 	}
 	#watchingListTopBox{
 		position: relative;
@@ -286,13 +286,18 @@
 	
 	#similarListBox{
 		padding-top:53.4%;
+		width:24.8%;
 	}
+
 }
 /*-------------mobile------------------*/
 @media all and (max-width:580px){
 	#similarListBox{
-		width:32.4%;
+		width:33.1%;
 		padding-top:69%;
+	}
+	#watchingListBox{
+		width:33.1%;
 	}
 	
 	
