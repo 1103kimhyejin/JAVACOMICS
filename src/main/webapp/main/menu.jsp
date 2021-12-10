@@ -6,7 +6,7 @@
 <div id="menubar">
 	<div class="mymenu">
 		<ul>
-			<li><a href="search/searchMenu.jsp"><img src="/JAVACOMICS/image/searchBtn.svg"></a></li>
+			<li><a href="/JAVACOMICS/search/searchMenu.jsp"><img src="/JAVACOMICS/image/searchBtn.svg"></a></li>
 			<li><img src="/JAVACOMICS/image/menuBtn.svg"></li>
 		</ul>
 	</div>

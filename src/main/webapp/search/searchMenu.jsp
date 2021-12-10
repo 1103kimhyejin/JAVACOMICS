@@ -22,7 +22,7 @@
 	</div>
 	
 	
-	<div class="box">
+	<!-- <div class="box">
 			<div class="box1">
 				<img src="../image/webtoonList/01.Mon/05/bg.jpg"/>				
 			</div>
@@ -202,7 +202,7 @@
 				<img src="../image/webtoonList/01.Mon/18/title.png"/>
 			</div>
 			<div id= "Transparency"></div>
-		</div>
+		</div> -->
 	
 
 </div>

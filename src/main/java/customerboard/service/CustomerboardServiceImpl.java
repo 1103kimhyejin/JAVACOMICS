@@ -113,5 +113,27 @@ public class CustomerboardServiceImpl implements CustomerboardService {
 		return customerboardDAO.getSearchList(map);
 	}
 
+	@Override
+	public void boardReply(Map<String, String> map) {
+		//원글
+		CustomerBoardDTO pDTO = customerboardDAO.getCustomerboard(map.get("pseq"));
+		
+		map.put("id", (String) session.getAttribute("toonMemId"));
+		map.put("name", (String) session.getAttribute("toonMemName"));
+		map.put("email", (String) session.getAttribute("toonMemEmail"));
+		map.put("ref", pDTO.getRef()+""); //원글ref
+		map.put("lev", pDTO.getLev()+""); //원글lev
+		map.put("step", pDTO.getStep()+""); //원글step
+		
+		customerboardDAO.boardReply(map);	
+
+	}
+
+	@Override
+	public String getOriginId(String ref) {
+		CustomerBoardDTO customerboardDTO = customerboardDAO.getOriginId(ref);
+		return customerboardDTO.getId();
+	}
+
 
 }
