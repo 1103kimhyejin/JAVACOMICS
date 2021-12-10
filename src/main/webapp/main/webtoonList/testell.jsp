@@ -157,6 +157,41 @@
 			
 			 -->
 			
+			
+	<div class= "rankBox">
+		<div class = "rankBox1">
+			<img src="/JAVACOMICS/image/webtoonList/08.End/12/bg.jpg">
+		</div>
+		<div class = "rankBox2">
+			<img src="/JAVACOMICS/image/webtoonList/08.End/12/main.png">
+		</div>
+		<div class = "rankBox3">
+			<img src="/JAVACOMICS/image/webtoonList/08.End/12/title.png">
+		</div>
+		<div id= "Transparency"></div>
+	</div>
 
+
+
+	<div id = monWeb>
+		<div class = "Fday">
+			<p id ="mon">월요일</p>	
+		</div>
+		<div class ="longBox">
+			<div class ="longBox1">
+				<img src="/JAVACOMICS/image/webtoonList/01.Mon/01/bg.jpg"/>
+			</div>
+			<div class  = longBox2>
+				<video autoplay loop muted playsinline>
+						<source src="/JAVACOMICS/image/webtoonList/01.Mon/01/main.webm"
+	            				type="video/webm">
+				</video>
+			</div>
+			<div class = longBox3>
+				<img src="/JAVACOMICS/image/webtoonList/01.Mon/01/title.png"/>
+			</div>
+			<div id = "Transparency"></div>
+		</div>
+	</div>
 			
 			

@@ -2,6 +2,8 @@ package webtoon.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -49,8 +51,32 @@ public class WebtoonController {
 		return webtoonService.getStorageBodybottom(title);
 		
 	}
+	@PostMapping(value="updateRecent")
+	@ResponseBody
+	public void updateRecent(@RequestParam int episodeCode, HttpSession session){
+		System.out.println(episodeCode);
+		webtoonService.updateRecent(episodeCode, session.getAttribute("toonMemId")+"");
+		
+	}
 	
-
+	@PostMapping(value="homeEndBody")
+	@ResponseBody
+	public List<WebtoonDTO> homeEndBody(@RequestParam String end ){
+		return webtoonService.homeEndBody(end);
+	}
+	
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value="homeendbody", method=RequestMethod.GET)
+	public String homeendbody(Model model) {
+		model.addAttribute("display","main/webtoonList/homeendbody.jsp");
+		return "/index";
+	}
+	
 	@RequestMapping(value="homebody", method=RequestMethod.GET)
 	public String homebody(Model model) {
 		model.addAttribute("display","main/webtoonList/homebody.jsp");

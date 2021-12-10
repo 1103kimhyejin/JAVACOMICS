@@ -162,7 +162,10 @@ $(function(){
 							class: "epFree"
 						}).append($("<span/>", {
 							id : items.free
-							}))).appendTo($(".webtoonList"));	
+							}))).append($("<input>", {
+								value : items.episodeCode,
+								type: "hidden"
+							})).appendTo($(".webtoonList"));	
 								
 				var free = $(".epFree span").attr("id");
 				
@@ -191,6 +194,7 @@ $(function(){
 				 	location.href='/JAVACOMICS/webtoon/webtoonView.jsp?'+'episodeCode='+items.episodeCode+'&'+'title='+items.title
 				});
 				
+				
 			}); //each
 			
 			$('.epPay').parents('.list1').click(function(){	
@@ -198,7 +202,28 @@ $(function(){
 					alert("로그인 먼저 하세요");
 					return false;	
 				}
-			});			
+
+			});
+			
+			
+			$('.epFree').parents('.list1').click(function(){
+				
+				if(${toonMemId != null}){					
+					$.ajax({
+						url: "/JAVACOMICS/webtoon/updateRecent",
+						type: "post",
+						data: "episodeCode=" + $(this).find(".epFree").next().val(),
+						success: function(data){
+							alert("123")
+						},
+						error: function(err){
+							
+						}
+					});
+				}
+					
+			});
+			
 		},
 		error: function(err){
 			console.log(err);

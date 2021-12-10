@@ -16,4 +16,8 @@ public interface WebtoonService {
 
 	List<WebtoonDTO> getStorageBodybottom(String title);
 
+	void updateRecent(int episodeCode, String id);
+
+	List<WebtoonDTO> homeEndBody(String end);
+
 }

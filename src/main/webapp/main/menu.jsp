@@ -63,4 +63,15 @@ $('.mainmenu div:eq(3)').click(function(){
 	}
 });
 
+
+$('.toonList li:eq(8)').click(function(){
+	$('.submenu .ranking').addClass('hide');
+	$('.submenu .myBox').addClass('hide');
+	$('.submenu .toonList').removeClass('hide');
+	
+	if($('#display').val() != "main/webtoonList/homeendbody.jsp"){
+		$(location).attr("href", "/JAVACOMICS/webtoon/homeendbody");
+	}
+});
+
 </script>

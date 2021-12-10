@@ -1,6 +1,8 @@
 package webtoon.service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 
 import org.json.simple.JSONObject;
@@ -49,5 +51,18 @@ public class WebtoonServiceImpl implements WebtoonService {
 	public List<WebtoonDTO> getStorageBodybottom(String title) {
 		
 		return webtoonDAO.getStorageBodybottom(title);
+	}
+
+	@Override
+	public void updateRecent(int episodeCode, String id) {
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("episodeCode", episodeCode);
+		map.put("id", id);
+		webtoonDAO.updateRecent(map);
+	}
+
+	@Override
+	public List<WebtoonDTO> homeEndBody(String end) {
+		return webtoonDAO.homeEndBody(end);
 	}
 }
