@@ -20,4 +20,10 @@ public interface ToonCommentDAO {
 
 	public void commentDelete(int commentSeq);
 
+	public ToonCommentDTO getPcomment(int commentSeq);
+
+	public void toonCommentReplyWrite(ToonCommentDTO toonCommentDTO);
+
+	public List<ToonCommentDTO> getToonCommentReplyList(int ref);
+
 }
