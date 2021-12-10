@@ -84,24 +84,51 @@ $(function(){
 		success: function(data){
 			console.log(JSON.stringify(data));
 			$.each(data.list, function(index, items){
-				$('<tr/>').append($('<td/>',{
-					align: 'center',
-					text: items.seq
-				})).append($('<td/>',{
-						align: 'left'
-					}).append($('<a/>',{
-						href: '#',
-						text: items.subject,
-						id: 'subjectA',
-						class: 'subject_'+items.seq
-					}))
-				).append($('<td/>',{
-					align: 'center',
-					text: items.id
-				})).append($('<td/>',{
-					align: 'center',
-					text: items.logtime
-				})).appendTo($('#supportListTable'));
+				//백업포인트
+				if(items.secretTF == 'T' &&
+						data.toonMemId != items.id){
+					$('<tr/>').append($('<td/>',{
+						align: 'center',
+						text: items.seq
+					})).append($('<td/>',{
+							align: 'left'
+						}).append($('<a/>',{
+							href: '#',
+							text: '(비밀글입니다)',
+							id: 'subjectA',
+							class: 'subject_'+items.seq
+						}))
+					).append($('<td/>',{
+						align: 'center',
+						text: items.id
+					})).append($('<td/>',{
+						align: 'center',
+						text: items.logtime
+					})).appendTo($('#supportListTable'));
+				} else {
+					$('<tr/>').append($('<td/>',{
+						align: 'center',
+						text: items.seq
+					})).append($('<td/>',{
+							align: 'left'
+						}).append($('<a/>',{
+							href: '#',
+							text: items.subject,
+							id: 'subjectA',
+							class: 'subject_'+items.seq
+						}))
+					).append($('<td/>',{
+						align: 'center',
+						text: items.id
+					})).append($('<td/>',{
+						align: 'center',
+						text: items.logtime
+					})).appendTo($('#supportListTable'));
+				}
+				
+				
+				
+				
 				
 				//답글
 				for(var i=1; i<=items.lev; i++){

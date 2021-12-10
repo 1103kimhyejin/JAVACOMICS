@@ -9,6 +9,7 @@
 	<form id="supportViewForm" action="">
 		<input type="hidden" id="seq" name="seq" value="${requestScope.seq }">
 		<input type="hidden" id="pg" name="pg" value="${requestScope.pg }">
+		<input type="hidden" id="originId" name="originId" value="">
 		<table>
 			<tr>
 				<td colspan="3"><h3><span id="subjectSpan"></span></h3></td>
@@ -39,8 +40,7 @@
 		<span id="supportViewSpan">
 		
 			<input type="button" id="boardDelete" value="글삭제" onclick="">
-			<input id="replyBtn" type="button" value="답글"
-		onclick="location.href='boardReplyForm.do?seq=${seq}&pg=${pg}'">
+			<input id="boardReply" type="button" value="답글" onclick="">
 		</span>
 		
 	</form>
@@ -57,23 +57,63 @@ $(function(){
 		data: 'seq='+$('#seq').val(),
 		dataType : 'json',
 		success : function(data){
-			//console.log(data);
 			
-			$('#subjectSpan').text(data.customerboardDTO.subject);
-			$('#seqSpan').text(data.customerboardDTO.seq);
-			$('#idSpan').text(data.customerboardDTO.id);
-			$('#contentSpan').text(data.customerboardDTO.content);
+			//원글 id 가져오기 
+			$.ajax({
+				type: 'post',
+				url: '/JAVACOMICS/customerboard/getOriginId',
+				data: 'ref='+data.customerboardDTO.ref,
+				dataType : 'text',
+				success : function(data2){
+					
+					
+					//비밀글------------
+					
+					if(data.customerboardDTO.secretTF == 'T' &&
+							data.toonMemId != data.customerboardDTO.id &&
+							data.toonMemId != data2 &&
+							data.toonMemId != 'manager_001'){
+						
+						$('#subjectSpan').text('비밀글입니다');
+						$('#seqSpan').text(data.customerboardDTO.seq);
+						$('#idSpan').text(data.customerboardDTO.id);
+						$('#contentSpan').text('비밀글입니다');
+						
+						$('#supportViewSpan').hide();
+						$('#boardModify').hide();
+					} else {
+						
+						$('#subjectSpan').text(data.customerboardDTO.subject);
+						$('#seqSpan').text(data.customerboardDTO.seq);
+						$('#idSpan').text(data.customerboardDTO.id);
+						$('#contentSpan').text(data.customerboardDTO.content);
+						
+						if(data.toonMemId == data.customerboardDTO.id || data.toonMemId == 'manager_001')
+							$('#supportViewSpan').show();
+						else
+							$('#supportViewSpan').hide();
+						
+						if(data.toonMemId == data.customerboardDTO.id){
+							$('#boardModify').show();
+						} else {
+							$('#boardModify').hide();
+						}
+						
+					}
+					
+					
+					//----------------
+					
+					
+					
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
 			
-			if(data.toonMemId == data.customerboardDTO.id || data.toonMemId == 'manager_001')
-				$('#supportViewSpan').show();
-			else
-				$('#supportViewSpan').hide();
 			
-			if(data.toonMemId == data.customerboardDTO.id){
-				$('#boardModify').show();
-			} else {
-				$('#boardModify').hide();
-			}
+			
 			
 		},
 		error: function(err){
@@ -91,8 +131,13 @@ $('#boardModify').click(function(){
 
 $('#boardDelete').click(function(){
 	location.href = '/JAVACOMICS/customerboard/boardDelete?seq='+$('#seq').val();
-	
 });
+
+$('#boardReply').click(function(){
+	location.href = '/JAVACOMICS/customerboard/boardReplyForm?seq='+$('#seq').val()+'&pg='+$('#pg').val();
+
+});
+
 </script>
 
 

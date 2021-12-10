@@ -26,5 +26,9 @@ public interface CustomerboardService {
 
 	public List<CustomerBoardDTO> getSearchList(Map<String, String> map);
 
+	public void boardReply(Map<String, String> map);
+
+	public String getOriginId(String ref);
+
 
 }

@@ -35,10 +35,10 @@ $(function(){
 	
 	//radio버튼 클릭시 값 확인 => db들어갈 값
 	var check = $("input[name='item_id']:checked").val();
-	alert(check);
+	//alert(check);
 		
 	$('input[name=item_id]').click(function(){
 		var check = $("input[name='item_id']:checked").val();
-		alert(check);	
+		//alert(check);	
 	});
 })
