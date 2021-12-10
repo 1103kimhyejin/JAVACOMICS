@@ -1,6 +1,7 @@
 package webtoon.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,26 @@ public class WebtoonDAOMybatis implements WebtoonDAO {
 	@Override
 	public List<WebtoonDTO> getStorageBodybottom(String title) {
 		return sqlSession.selectList("webtoonSQL.getStorageBodybottom", title);
+	}
+
+	@Override
+	public void updateRecent(Map<String, Object> map) {
+		
+		Integer count = sqlSession.selectOne("webtoonSQL.getCount", map);
+		System.out.println(count);
+		
+		map.put("count", count);
+		
+		if(count == null) {
+			sqlSession.insert("webtoonSQL.insertRecent", map);			
+		}else {
+			sqlSession.update("webtoonSQL.updateRecent", map);
+		}
+		
+	}
+
+	@Override
+	public List<WebtoonDTO> homeEndBody(String end) {
+		return sqlSession.selectList("webtoonSQL.homeEndBody", end);
 	}
 }

@@ -15,31 +15,51 @@
 	   	(select count(episodegood) "좋아요", title 
 	    from episodegoodview where episodegood='T' group by title) using(title)
 
-		
 		<if test="category!='전체'">
 			where toontype = #{category }
 		</if>
 	    	order by "좋아요" desc
-			
 	</select>
 	
 	<select id="getStorageBodyList" parameterType = "String" resultType="webtoon">
-		select title, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, toonend, episode, episodecode
+		select * from(select rownum rn, a.* from (select title, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, toonend, episode, episodecode
         from webtoon
         join episodelist using(title)
-        join(select * from recentview where id = #{toonMemId } order by logtime desc) using(episodecode)
-
+        join(select * from recentview where id = #{id } order by logtime desc) using(episodecode))a)
+        where rn between 1 and 12
 	</select>
 	
 	
 	<select id="getStorageBodybottom" parameterType = "String" resultType="webtoon">
-		
 		select title, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, toonend
     	from webtoon
     	where toontype in(select toontype from webtoon where title = #{title })
     	or keyword1 in(select keyword1 from webtoon where title = #{title })
         or keyword2 in(select keyword2 from webtoon where title = #{title })
         or keyword3 in(select keyword3 from webtoon where title = #{title })
-
 	</select>
+	
+	<select id="getCount" parameterType = "java.util.Map" resultType="Integer">
+		select episodecode from recentview join episodelist using(episodecode)
+		where title in(select title from episodelist where episodecode = #{episodeCode})
+		and id = #{id}
+		
+	</select>
+
+	<insert id="insertRecent" parameterType = "java.util.Map">
+			insert into recentview values(#{id}, #{episodeCode}, sysdate)
+	</insert>
+	
+	<update id="updateRecent" parameterType = "java.util.Map">
+		update recentview set logtime = sysdate, episodecode = #{episodeCode}
+		where episodecode = #{count }
+	</update>
+	
+	<select id="homeEndBody" parameterType = "String" resultType="webtoon">
+		
+		select * from webtoon where toonday = #{end }
+		
+	</select>
+	
+	
 </mapper>

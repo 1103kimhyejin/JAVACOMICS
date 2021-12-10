@@ -109,7 +109,8 @@
 	.rankBox{
 		display: inline-block;
 		position:relative;
-		width: 24.6%;
+		width: 24.68%;
+		margin: 0.16%;
 		padding-top:51.8%;
 		overflow: hidden;
 	}
@@ -164,14 +165,6 @@
 		bottom: 0;
 		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.6)); /*투명도  */
 	}
-  	#Transparency{
-		position: absolute;
-		width:100%;
-		height:calc((100% / 3)*2);
-		left:0;
-		bottom: 0;
-		background-image: linear-gradient(180deg,transparent,rgba(0,0,0,.6)); /*투명도  */
-	}
 	
 /*-------------mobile------------------*/
 @media all and (max-width:768px){
@@ -182,7 +175,7 @@
 		padding-top:69.333%;
 	}
 	.rankBox{
-		width:24.5%;
+		width:24.67%;
 		
 	}
 	#rankBigBox3{
@@ -202,7 +195,7 @@
 @media all and (max-width:580px){
 	
 	.rankBox{
-		width:32.4%;
+		width:33%;
 		padding-top:69%;
 	}
 	#rankBigBox3{
