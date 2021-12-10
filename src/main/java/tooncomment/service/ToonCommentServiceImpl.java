@@ -51,4 +51,19 @@ public class ToonCommentServiceImpl implements ToonCommentService {
 		toonCommentDAO.commentDelete(commentSeq);
 	}
 
+	@Override
+	public ToonCommentDTO getPcomment(int commentSeq) {
+		return toonCommentDAO.getPcomment(commentSeq);
+	}
+
+	@Override
+	public void toonCommentReplyWrite(ToonCommentDTO toonCommentDTO) {
+		toonCommentDAO.toonCommentReplyWrite(toonCommentDTO);
+	}
+
+	@Override
+	public List<ToonCommentDTO> getToonCommentReplyList(int ref) {
+		return toonCommentDAO.getToonCommentReplyList(ref);
+	}
+
 }

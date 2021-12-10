@@ -51,6 +51,21 @@ public class ToonCommentDAOMybatis implements ToonCommentDAO {
 		sqlSession.delete("toonCommentSQL.commentDelete", commentSeq);
 	}
 
+	@Override
+	public ToonCommentDTO getPcomment(int commentSeq) {
+		return sqlSession.selectOne("toonCommentSQL.getPcomment", commentSeq);
+	}
+
+	@Override
+	public void toonCommentReplyWrite(ToonCommentDTO toonCommentDTO) {
+		sqlSession.insert("toonCommentSQL.toonCommentReplyWrite", toonCommentDTO);
+	}
+
+	@Override
+	public List<ToonCommentDTO> getToonCommentReplyList(int ref) {
+		return sqlSession.selectList("toonCommentSQL.getToonCommentReplyList", ref);
+	}
+
 
 
 }

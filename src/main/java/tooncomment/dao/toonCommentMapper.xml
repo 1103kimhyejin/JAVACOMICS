@@ -66,5 +66,31 @@
                                 foreign key (commentseq)
                                 references tooncomment(commentseq) on delete cascade;   -->
 	</delete>
+	<select id="getPcomment" parameterType="int" resultType="toonComment">
+		select * from tooncomment where commentseq=#{commentSeq}
+	</select>
 	
+	<!-- 답글 -->
+	<insert id="toonCommentReplyWrite" parameterType="toonComment">
+		begin
+			update tooncomment set step=step+1 where ref=#{ref} and  step>#{step};
+			
+			insert into tooncomment values(commentseq_tooncomment.nextval
+								  ,#{episodeCode}
+								   , #{id}
+								   , #{content}
+								   , #{ref}     <!-- 원글ref -->
+								   , #{lev}+1   <!-- 원글lev + 1 -->
+								   , #{step}+1  <!-- 원글step + 1 -->
+								   , #{pseq}    <!-- 원글번호 -->
+								   , sysdate
+								   , 0 );         <!-- 답글수 -->
+
+								   
+			update tooncomment set reply=reply+1 where commentseq=#{pseq};							   
+		end;
+	</insert>
+	<select id="getToonCommentReplyList" parameterType="int" resultType="toonComment">
+		select * from tooncomment <![CDATA[ where lev>0 and ref = #{ref} order by step]]>
+	</select>
 </mapper>
