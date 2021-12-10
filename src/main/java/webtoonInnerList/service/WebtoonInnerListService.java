@@ -11,5 +11,7 @@ public interface WebtoonInnerListService {
 
 	public List<EpisodeListDTO> episodeList(String title);
 
+	public int getCash(String toonMemId);
+
 //	WebtoonInnerListDTO episodeList(String title);
 }

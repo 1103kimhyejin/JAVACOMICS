@@ -26,6 +26,11 @@ public class WebtoonInnerListServiceImpl implements WebtoonInnerListService {
 		return webtoonInnerListDAO.episodeList(title);
 	}
 
+	@Override
+	public int getCash(String toonMemId) {
+		return webtoonInnerListDAO.getCash(toonMemId);
+	}
+
 //	@Override
 //	public WebtoonInnerListDTO episodeList(String title) {
 //		
