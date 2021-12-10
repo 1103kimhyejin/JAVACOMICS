@@ -1,29 +1,30 @@
 @charset "UTF-8";
-.backBtnSupport {
+@charset "UTF-8";
+.backBtnSupportView {
 	position: absolute;
 	left: 50px;
 	top: 50px;
 	cursor: pointer;
 }
-.supportWriteFormDiv {
+.supportReplyFormDiv {
 	width: 620px;
 	margin: 0 auto;
 	text-align: center;
 }
-.supportWriteFormDiv h1 {
+.supportReplyFormDiv h1 {
 	margin: 50px;
 }
 
-#supportWriteForm table {
+#supportReplyForm table {
 	width: 100%;
 	border:none;
 	margin: 0 auto;
 }
 
-#supportWriteForm tr td {
+#supportReplyForm tr td {
 	
 }
-#supportWriteForm tr td input[type=text] {
+#supportReplyForm tr td input[type=text] {
 	width: 100%;
 	height: 50px;
 	padding: 10px;
@@ -32,7 +33,7 @@
 	border: none;
 	border-bottom: 1px solid #fff;
 }
-#supportWriteForm tr td textarea {
+#supportReplyForm tr td textarea {
 	width: 100%;
 	margin: 30px 0;
 	padding: 10px;
@@ -40,12 +41,12 @@
 	color: #fff;
 	border: 1px solid #fff;
 }
-#supportWriteForm tr td label {
+#supportReplyForm tr td label {
 	width: 100px;
 	font-size: 1.6rem;
 	float: left;
 }
-#supportWriteForm tr:last-child td input {
+#supportReplyForm tr:last-child td input {
 	width: 100px;
 	height: 50px;
 }
@@ -62,7 +63,7 @@
 
 /*-------------mobile------------------*/
 @media all and (max-width:768px){
-	.supportWriteFormDiv {
+	.supportReplyFormDiv {
 		width: 100%;
 	}
 }

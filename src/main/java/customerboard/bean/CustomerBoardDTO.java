@@ -13,6 +13,7 @@ public class CustomerBoardDTO {
 	private String subject;
 	private String content;
 	private String image;
+	private String secretTF;
 	private int ref;
 	private int lev;
 	private int step;

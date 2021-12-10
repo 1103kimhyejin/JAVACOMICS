@@ -71,7 +71,7 @@ section{
 	color: #ddd;
     font-size: 14px;
     font-weight: 500;
-    margin-left: 250px;
+    margin-left: 225px;
 }
 .buy{
 	font-size: 3.7rem;
@@ -115,6 +115,8 @@ section{
 	display: block;
 	margin: 5px 15px;
 	color: rgb(104, 83, 231);
+	font-size: 1.2rem;
+	font-weight: 400;
 }
 .btnPayNext {
 	border: 1px solid #333;

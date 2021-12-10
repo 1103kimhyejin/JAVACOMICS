@@ -30,6 +30,11 @@
 			</tr>
 			<tr>
 				<td>
+					<label>비밀글<input type="checkbox" id="secretTF" name="secretTF" value="T" ></label>
+				</td>
+			</tr>
+			<tr>
+				<td>
 					<input type="button" id="supportModifyBtn" value="글수정"/>
 					<input type="reset" value="다시작성"/>
 				</td>
@@ -76,13 +81,19 @@ $('#supportModifyBtn').click(function(){
 		$('.msgDiv').css('font-weight','bold');
 		
 	}else{
+		if($('#secretTF').is(':checked')){
+			$('#secretTF').val('T')
+		} else {
+			$('#secretTF').val('F')
+		}
 		$.ajax({
 			type: 'post',
 			url: '/JAVACOMICS/customerboard/boardModify',
 			data: {
 				'subject': $('#supportSubject').val(),
 				'content': $('#supportContent').val(),
-				'seq': $('#seq').val()
+				'seq': $('#seq').val(),
+				'secretTF': $('#secretTF').val()
 			},
 			success: function(){
 				alert('글수정 완료');

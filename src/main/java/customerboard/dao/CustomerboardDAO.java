@@ -23,4 +23,8 @@ public interface CustomerboardDAO {
 
 	public int getTotalSearchA(Map<String, String> map);
 
+	public void boardReply(Map<String, String> map);
+
+	public CustomerBoardDTO getOriginId(String ref);
+
 }

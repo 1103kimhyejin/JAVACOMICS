@@ -166,4 +166,32 @@ public class CustomerboardController {
 		mav.setViewName("jsonView");
 		return mav;
 	}
+	
+	@RequestMapping(value="boardReplyForm", method=RequestMethod.GET)
+	public String boardReplyForm(@RequestParam String seq,
+								 @RequestParam String pg,
+								 Model model) {
+		System.out.println("controller reply 옴"+seq+"/"+pg);
+		//답글 - 원글 페이지, 원글 밑
+		model.addAttribute("pseq", seq); //원글번호
+		model.addAttribute("pg", pg); //원글이 페이지 번호
+		model.addAttribute("hide", "o");
+		model.addAttribute("fullscreenDisplay", "/supportService/supportReplyForm.jsp");
+		
+		return "/index";
+	}
+	
+	@RequestMapping(value="boardReply", method=RequestMethod.POST)
+	@ResponseBody
+	public void boardReply(@RequestParam Map<String, String> map) { //pseq, pg, subject, content
+		customerboardService.boardReply(map);
+	}
+	
+	@RequestMapping(value="getOriginId", method=RequestMethod.POST)
+	@ResponseBody
+	public String getOriginId(@RequestParam String ref) { 
+		//customerboardService.boardReply(map);
+		return customerboardService.getOriginId(ref);
+	}
+	
 }

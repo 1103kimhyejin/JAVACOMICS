@@ -58,6 +58,17 @@ public class CustomerboardDAOMybatis implements CustomerboardDAO {
 		return sqlSession.selectList("customerboardSQL.getSearchList", map);
 	}
 
+	@Override
+	public void boardReply(Map<String, String> map) {
+		sqlSession.insert("customerboardSQL.boardReply", map);
+		
+	}
+
+	@Override
+	public CustomerBoardDTO getOriginId(String ref) {
+		return sqlSession.selectOne("customerboardSQL.getOriginId", Integer.parseInt(ref));
+	}
+
 	
 	
 }
