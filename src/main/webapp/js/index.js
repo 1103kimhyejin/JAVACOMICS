@@ -284,3 +284,20 @@ $(function(){
 */	
 
 })
+
+//주희추가
+$('#container_inner .mainbody:first-child').click(function(){
+	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=쓰레기%20머학생';
+});
+
+$('#container_inner .mainbody:first-child').click(function(){
+	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=쓰레기%20머학생';
+});
+
+$('#container_inner .mainbody:nth-child(3)').click(function(){
+	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=블랙윈터';
+});
+
+$('#container_inner .mainbody:first-child').click(function(){
+	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=쓰레기%20머학생';
+});

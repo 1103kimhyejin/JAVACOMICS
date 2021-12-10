@@ -55,12 +55,13 @@
 			<jsp:include page="${display }" />
 		</c:if>
 	</div>
-	
+</section>
+
+<footer>
 	<button type="button" onclick="location.href='#'" class="scroll">
 		<img src="/JAVACOMICS/image/webtoonInnerList/scrollicon.png" alt="스크롤">
 	</button>
-	
-</section>
+</footer>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/JAVACOMICS/js/webtoonInnerList.js"></script>
@@ -126,13 +127,11 @@ $(function(){
  	
  	//작품정보 클릭시 display include
 	$('.information').click(function(){
-		alert('클릭했다');
 		location.href='/JAVACOMICS/webtoonInnerList/webtoonExplain?title='+$('#webtoon_title').val();
 	});
  	
  	//회차정보 클릭
  	$('.episode').click(function(){
-		alert('회차 클릭했다');
 		location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+$('#webtoon_title').val();
 	});
  	
@@ -143,13 +142,12 @@ $(function(){
 		data: 'title='+$('#webtoon_title').val(),
 		dataType: "json",
 		success: function(data){
-			
 			$.each(data, function(index, items){
-		
 				$("<div/>", {
 					class: "list1",
+					id: items.episode
 				}).append($("<a/>", {
-					href: "/JAVACOMICS/webtoon/webtoonView.jsp?"+"episodeCode="+items.episodeCode+"&"+"title="+items.title
+					href: "/JAVACOMICS/webtoon/webtoonView.jsp?"+"episodeCode="+items.episodeCode+"&"+"title="+items.title		
 				}).append($("<div/>", {
 					class: "epImage"
 				}).append($("<img/>", {
@@ -179,13 +177,14 @@ $(function(){
 				
 				//유료회차 클릭시 이용권 구매창 이동
 				$('.epPay').parents('.list1').click(function(){	
-					if(${sessionScope.toonMemId != null }){
-						//myMenu로 이동완료
-						//window.open("/JAVACOMICS/webtoonInnerList/webtoonPay", "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
-					 	window.open("/JAVACOMICS/webtoonInnerList/episodeBuy", "EPISODE BUY", "width=400 height=600 top=200 left=700 scrollbars=yes");
-						return false;						
-					}
-				});
+				var episode = $(this).attr("id");
+			 		if(${sessionScope.toonMemId != null }){
+			 			//myMenu로 이동완료
+			 			//window.open("/JAVACOMICS/webtoonInnerList/webtoonPay", "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
+			 		 	window.open("/JAVACOMICS/webtoonInnerList/episodeBuy.jsp?episode=" + episode+"&title="+items.title, "EPISODE BUY", "width=400 height=600 top=200 left=700 scrollbars=yes");
+			 		 	return false;						
+			 		}
+		 		});
 				
 				//첫화보기 클릭
 				$('.webtoonList>a>div:first-child').click(function(){	
@@ -199,15 +198,14 @@ $(function(){
 					alert("로그인 먼저 하세요");
 					return false;	
 				}
-			});
-			
+			});			
 		},
 		error: function(err){
 			console.log(err);
 		}
-	});
- 	
+	}); 	
 });
+
 </script>
 </body>
 </html>

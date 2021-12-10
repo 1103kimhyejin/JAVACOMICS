@@ -27,6 +27,11 @@ public class WebtoonInnerListDAOMybatis implements WebtoonInnerListDAO {
 		return sqlSession.selectList("webtoonInnerListSQL.episodeList", title);
 	}
 
+	@Override
+	public int getCash(String toonMemId) {
+		return sqlSession.selectOne("webtoonInnerListSQL.getCash", toonMemId);
+	}
+
 //	@Override
 //	public WebtoonInnerListDTO episodeList(String title) {
 //		return sqlSession.selectOne("webtoonInnerListSQL.episodeList", title);

@@ -64,9 +64,16 @@ public class WebtoonInnerListController {
 		return "/webtoonInnerList/webtoonPay";
 	}
 	
-	@RequestMapping(value="episodeBuy", method=RequestMethod.GET)
-	public String episodeBuy(){
-		System.out.println("episodeBuy 컨트롤러와따");
-		return "/webtoonInnerList/episodeBuy";
+//	@RequestMapping(value="episodeBuy", method=RequestMethod.GET)
+//	public String episodeBuy(){
+//		System.out.println("episodeBuy 컨트롤러와따");
+//		return "/webtoonInnerList/episodeBuy";
+//	}
+	
+	@PostMapping(value="/getCash")
+	@ResponseBody
+	public int getCash(@RequestParam String toonMemId){
+		System.out.println(toonMemId);
+		return webtoonInnerListService.getCash(toonMemId);	
 	}
 }
