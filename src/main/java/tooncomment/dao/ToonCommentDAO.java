@@ -1,6 +1,7 @@
 package tooncomment.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import tooncomment.bean.ToonCommentDTO;
 
@@ -25,5 +26,9 @@ public interface ToonCommentDAO {
 	public void toonCommentReplyWrite(ToonCommentDTO toonCommentDTO);
 
 	public List<ToonCommentDTO> getToonCommentReplyList(int ref);
+
+	public ToonCommentDTO replytotal(int commentSeq);
+
+	public void replyDelete(ToonCommentDTO toonCommentDTO);
 
 }

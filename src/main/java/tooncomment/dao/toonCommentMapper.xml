@@ -48,7 +48,7 @@
 		where commentseq=#{commentseq}
 	</select>
 	<select id="getToonCommentCount" parameterType="int" resultType="int">
-		select count(*) from tooncomment where episodecode=#{episodecode}
+		select count(*) from tooncomment where episodecode=#{episodecode} and lev=0
 	</select>
 	<select id="commentCheckId" parameterType="toonComment" resultType="toonComment">
 		select *
@@ -60,7 +60,7 @@
 		order by commentseq desc
 	</select>
 	<delete id="commentDelete" parameterType="int">
-		delete from tooncomment where commentseq=#{commentSeq}
+		delete from tooncomment where commentseq=#{commentSeq} or ref =#{commentSeq}
 		<!-- 기본키 외래키 제약조건 걸어둠 
 		alter table commentgoodbad add constraint tooncomment_pk
                                 foreign key (commentseq)
@@ -91,6 +91,21 @@
 		end;
 	</insert>
 	<select id="getToonCommentReplyList" parameterType="int" resultType="toonComment">
-		select * from tooncomment <![CDATA[ where lev>0 and ref = #{ref} order by step]]>
+		select * from tooncomment <![CDATA[ where lev>0 and ref = #{ref} order by step desc]]>
 	</select>
+	<select id="replytotal" parameterType="int" resultType="toonComment">
+		select *
+		from tooncomment left join 
+		(select commentseq ,count(commentgood) as totalgood, count(commentbad) as totalbad 
+		from commentgoodbad group by commentseq) 
+		using(commentseq) 
+		where commentseq=#{commentSeq}
+	</select>
+	<delete id="replyDelete" parameterType="toonComment">
+		begin
+			update tooncomment set reply=reply-1 where commentseq=#{pseq};
+			
+			delete tooncomment where commentseq=#{commentSeq};
+		end;
+	</delete>
 </mapper>

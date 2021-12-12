@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html{
 	background-color:#121212;
+	font-family: Arial, sans-serif;
 }
 
 #webtoonComment_header{
@@ -105,6 +106,7 @@ html{
 	font-size: 1.2rem;
 	color: white;
 	font-weight: bold;
+	font-family: Arial;
 }
 
 .webtoonComment_Id_p{
@@ -163,6 +165,32 @@ html{
 }
 
 /* 답글  */
+.deleteReply_btn{
+	color: #777777;
+	background-color: #121212;
+	margin-left:10px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 20px;
+	font-size: 1.2rem;
+}
+.webtoonComment_replyId_p{
+	font-weight : bold;
+	text-align:left;
+	/* margin: 10px; */
+	font-family: 돋움;
+	color:#dddddd;
+}
+.del_reply{
+	color: #777777;
+	background-color: #121212;
+	margin-left:10px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border-radius: 20px;
+	font-size: 1.2rem;
+	
+}
 .webtoonComment_Id_Date_div{/* 답글용  */
 	display: flex;
 	align-items: center;

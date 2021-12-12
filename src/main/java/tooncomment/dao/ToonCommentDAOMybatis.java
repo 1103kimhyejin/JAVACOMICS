@@ -2,6 +2,7 @@ package tooncomment.dao;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,6 +65,16 @@ public class ToonCommentDAOMybatis implements ToonCommentDAO {
 	@Override
 	public List<ToonCommentDTO> getToonCommentReplyList(int ref) {
 		return sqlSession.selectList("toonCommentSQL.getToonCommentReplyList", ref);
+	}
+
+	@Override
+	public ToonCommentDTO replytotal(int commentSeq) {
+		return sqlSession.selectOne("toonCommentSQL.replytotal", commentSeq);
+	}
+
+	@Override
+	public void replyDelete(ToonCommentDTO toonCommentDTO) {
+		sqlSession.delete("toonCommentSQL.replyDelete", toonCommentDTO);
 	}
 
 

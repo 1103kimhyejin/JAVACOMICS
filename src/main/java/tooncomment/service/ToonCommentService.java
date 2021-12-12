@@ -26,5 +26,9 @@ public interface ToonCommentService {
 
 	public List<ToonCommentDTO> getToonCommentReplyList(int ref);
 
+	public ToonCommentDTO replytotal(int commentSeq);
+
+	public void replyDelete(ToonCommentDTO toonCommentDTO);
+
 
 }

@@ -1,5 +1,9 @@
 package webtoonInnerList.controller;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,4 +80,5 @@ public class WebtoonInnerListController {
 		System.out.println(toonMemId);
 		return webtoonInnerListService.getCash(toonMemId);	
 	}
+	
 }

@@ -34,37 +34,6 @@ public class ToonCommentController {
 		toonCommentService.toonCommentWrite(toonCommentDTO);
 	}
 
-	/*
-	 * @RequestMapping(value="/getToonCommentList", method=RequestMethod.POST)
-	 * 
-	 * @ResponseBody public ModelAndView getToonCommentList(@RequestParam int
-	 * episodecode) {
-	 * 
-	 * List<ToonCommentDTO> list1 =
-	 * toonCommentService.getToonCommentList(episodecode); //List<CommentGoodBadDTO>
-	 * list2 = commentGoodBadService.getCommentGoodBadList(episodecode);
-	 * 
-	 * ModelAndView mav = new ModelAndView();
-	 * 
-	 * mav.addObject("list1", list1); //mav.addObject("list2", list2);
-	 * mav.setViewName("jsonView");
-	 * 
-	 * return mav; }
-	 */
-	/*
-	 * @PostMapping(value="getToonCommentList")
-	 * 
-	 * @ResponseBody public ModelAndView getToonCommentList(ToonCommentDTO
-	 * toonCommentDTO, @RequestParam int episodecode, HttpSession session){ String
-	 * id =(String)session.getAttribute("toonMemId"); List<ToonCommentDTO> list =
-	 * toonCommentService.getToonCommentList(episodecode); ModelAndView mav = new
-	 * ModelAndView(); mav.addObject("list", list); mav.addObject("id", id);
-	 * 
-	 * return mav;
-	 * 
-	 * }
-	 */
-
 	@PostMapping(value = "getToonCommentList")
 	@ResponseBody
 	public List<ToonCommentDTO> getToonCommentList(@RequestParam String episodeCode) {
@@ -78,9 +47,6 @@ public class ToonCommentController {
 		int episodecode = Integer.parseInt(episodeCode);
 		return toonCommentService.sortLatest(episodecode);
 	}
-	/*
-	 * @GetMapping(value = "/list") public String list() { return "/user/list"; }
-	 */
 
 	@PostMapping(value = "getCommentGood")
 	@ResponseBody
@@ -111,7 +77,6 @@ public class ToonCommentController {
 		toonCommentService.commentDelete(commentSeq);
 	}
 
-	
 	@RequestMapping(value="toonCommentReplyWrite", method=RequestMethod.POST)
 	@ResponseBody public void toonCommentReplyWrite(@ModelAttribute ToonCommentDTO toonCommentDTO,
 													@RequestParam String episodeCode, 
@@ -124,7 +89,6 @@ public class ToonCommentController {
 		toonCommentService.toonCommentReplyWrite(toonCommentDTO); 
 	}
  
-
 	@PostMapping(value = "getPcomment")
 	@ResponseBody
 	public ToonCommentDTO getPcomment(@RequestParam int commentSeq) {
@@ -137,5 +101,15 @@ public class ToonCommentController {
 		return toonCommentService.getToonCommentReplyList(ref);
 	}
 
-	
+	@PostMapping(value = "replytotal")
+	@ResponseBody
+	public ToonCommentDTO replytotal (@RequestParam int commentSeq) {
+		return toonCommentService.replytotal(commentSeq);
+	}
+
+	@PostMapping(value = "replyDelete")
+	@ResponseBody
+	public void replyDelete(@RequestParam int commentSeq, int pseq, @ModelAttribute ToonCommentDTO toonCommentDTO) {
+		toonCommentService.replyDelete(toonCommentDTO);
+	}
 }

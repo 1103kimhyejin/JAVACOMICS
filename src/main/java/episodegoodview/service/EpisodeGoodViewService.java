@@ -12,4 +12,8 @@ public interface EpisodeGoodViewService {
 
 	public int goodCount(int episodecode);
 
+	public void viewUpdate(EpisodeGoodViewDTO episodeGoodViewDTO);
+
+	public String viewIdCheck(EpisodeGoodViewDTO episodeGoodViewDTO);
+
 }
