@@ -15,4 +15,10 @@
 	<select id="goodCount" parameterType="int" resultType="int">
 		select count(*) from episodegoodview where episodecode=#{episodeCode}
 	</select>
+	<insert id="viewUpdate" parameterType="episodeGoodView">
+		insert into episodegoodview (id, episodecode, title, episodeview) values(#{id}, #{episodeCode}, #{title}, 'T')
+	</insert>
+	<select id="viewIdCheck" parameterType="episodeGoodView" resultType="episodeGoodView">
+		select distinct * from episodegoodview where id=#{id} and episodecode=#{episodeCode} and episodeview='T'
+	</select>
 </mapper>

@@ -151,7 +151,7 @@ $(function(){
         dataType: 'json',
         success: function(data){
           // alert(JSON.stringify(data));
-           $('#webtoonimg').attr('src','/JAVACOMICS/image/'+data.episodeContent);
+           $('#webtoonimg').attr('src','/JAVACOMICS/image/webtoonView_image/'+data.episodeContent);
            $('header p:nth-child(2)').html(data.episode);
         },
         error: function(err){
@@ -434,8 +434,58 @@ $('#fillgoodicon').click(function(){
 			});
       }
 });
+//조회수 증가
+if($('#sessionid').val()!=''){
+	$.ajax({
+			type: 'post',
+			url: '/JAVACOMICS/episodeGoodView/viewIdCheck',
+			data: 'episodeCode='+$('#episodeCode').val(),
+			success: function(data){
+				if(data=='non_exist'){
+					$.ajax({
+							type: 'post',
+							url: '/JAVACOMICS/episodeGoodView/viewUpdate',
+							data:'title='+$('#title').val()+'&episodeCode='+$('#episodeCode').val(),
+							success: function(){
+								//alert('조회수 증가');
+							},
+							error: function(err){
+								alert('조회수 증가 에러');
+							}
+					});
+				}
+			},
+			error: function(err){
+				alert('조회아이디체크 에러');
+			}
+	});
+}else{
+		$.ajax({
+				type: 'post',
+				url: '/JAVACOMICS/episodeGoodView/viewUpdateNotMem',
+				data:'title='+$('#title').val()+'&episodeCode='+$('#episodeCode').val(),
+				success: function(){
+					//alert('비회원 조회수 증가');
+				},
+				error: function(err){
+				}
+				});
+		
 
-
+	
+	
+}
+//조회수를 위한 쿠키 생성 여기에도
+$.ajax({
+		type: 'post',
+		url: '/JAVACOMICS/episodeGoodView/cookie',
+		success: function(){
+			//alert('쿠키생성');
+		},
+		error: function(err){
+			alert('쿠키생성에러');
+		}
+});
 </script>
 </body>
 </html>

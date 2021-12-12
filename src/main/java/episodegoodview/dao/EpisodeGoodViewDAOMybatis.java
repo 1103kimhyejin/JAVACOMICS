@@ -16,8 +16,7 @@ public class EpisodeGoodViewDAOMybatis implements EpisodeGoodViewDAO {
 	
 	@Override
 	public void episodeGood(EpisodeGoodViewDTO episodeGoodViewDTO) {
-		sqlSession.insert("episodeGoodViewSQL.episodeGood",episodeGoodViewDTO);
-		
+		sqlSession.insert("episodeGoodViewSQL.episodeGood",episodeGoodViewDTO);	
 	}
 
 	@Override
@@ -33,6 +32,16 @@ public class EpisodeGoodViewDAOMybatis implements EpisodeGoodViewDAO {
 	@Override
 	public int goodCount(int episodecode) {
 		return sqlSession.selectOne("episodeGoodViewSQL.goodCount", episodecode);
+	}
+
+	@Override
+	public void viewUpdate(EpisodeGoodViewDTO episodeGoodViewDTO) {
+		sqlSession.insert("episodeGoodViewSQL.viewUpdate",episodeGoodViewDTO);	
+	}
+
+	@Override
+	public EpisodeGoodViewDTO viewIdCheck(EpisodeGoodViewDTO episodeGoodViewDTO) {
+		return sqlSession.selectOne("episodeGoodViewSQL.viewIdCheck", episodeGoodViewDTO);
 	}
 
 }

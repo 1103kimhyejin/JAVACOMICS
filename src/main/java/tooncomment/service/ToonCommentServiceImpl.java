@@ -1,6 +1,7 @@
 package tooncomment.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -64,6 +65,16 @@ public class ToonCommentServiceImpl implements ToonCommentService {
 	@Override
 	public List<ToonCommentDTO> getToonCommentReplyList(int ref) {
 		return toonCommentDAO.getToonCommentReplyList(ref);
+	}
+
+	@Override
+	public ToonCommentDTO replytotal(int commentSeq) {
+		return toonCommentDAO.replytotal(commentSeq);
+	}
+
+	@Override
+	public void replyDelete(ToonCommentDTO toonCommentDTO) {
+		toonCommentDAO.replyDelete(toonCommentDTO);
 	}
 
 }

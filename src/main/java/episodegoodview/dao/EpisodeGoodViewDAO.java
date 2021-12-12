@@ -12,4 +12,8 @@ public interface EpisodeGoodViewDAO {
 
 	public int goodCount(int episodecode);
 
+	public void viewUpdate(EpisodeGoodViewDTO episodeGoodViewDTO);
+
+	public EpisodeGoodViewDTO viewIdCheck(EpisodeGoodViewDTO episodeGoodViewDTO);
+
 }

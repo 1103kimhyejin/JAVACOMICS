@@ -36,4 +36,19 @@ public class EpisodeGoodViewServiceImpl implements EpisodeGoodViewService {
 		return episodeGoodViewDAO.goodCount(episodecode);
 	}
 
+	@Override
+	public void viewUpdate(EpisodeGoodViewDTO episodeGoodViewDTO) {
+		episodeGoodViewDAO.viewUpdate(episodeGoodViewDTO);
+	}
+
+	@Override
+	public String viewIdCheck(EpisodeGoodViewDTO episodeGoodViewDTO) {
+		episodeGoodViewDTO = episodeGoodViewDAO.viewIdCheck(episodeGoodViewDTO);
+		
+		if(episodeGoodViewDTO == null)
+			return "non_exist";
+		else
+			return "exist"; 
+	}
+
 }

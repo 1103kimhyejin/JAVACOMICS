@@ -232,6 +232,19 @@ $(function(){
 	}); 	
 });
 
+
+//조회수를 위한 쿠키 생성 -hj
+$.ajax({
+		type: 'post',
+		url: '/JAVACOMICS/episodeGoodView/cookie',
+		success: function(){
+			//alert('쿠키생성');
+		},
+		error: function(err){
+			alert('쿠키생성에러');
+		}
+});
+
 </script>
 </body>
 </html>
