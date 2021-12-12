@@ -20,4 +20,6 @@ public interface WebtoonService {
 
 	List<WebtoonDTO> homeEndBody(String end);
 
+	List<WebtoonDTO> getSearchKeyword(String keyword);
+
 }

@@ -9,6 +9,7 @@
 <title>JAVA COMICS</title>
 <link rel="stylesheet" href="/JAVACOMICS/css/reset.css"> 
 <link rel="stylesheet" href="/JAVACOMICS/css/webtoonInnerListCss/webtoonInnerList.css">
+<link rel='icon' type='image/png' href='/JAVACOMICS/image/logo.png'>
 </head>
 <body>
 <input type="hidden" id="webtoon_title" value="${param.title }"> 

@@ -19,4 +19,6 @@ public interface WebtoonDAO {
 
 	List<WebtoonDTO> homeEndBody(String end);
 
+	List<WebtoonDTO> getSearchKeyword(String keyword);
+
 }
