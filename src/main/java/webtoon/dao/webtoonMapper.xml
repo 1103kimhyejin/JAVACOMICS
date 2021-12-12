@@ -62,4 +62,10 @@
 	</select>
 	
 	
+	<select id="getSearchKeyword" parameterType = "String" resultType="webtoon">
+		select * from webtoon where title like '%'||#{keyword}||'%' or keyword1 like '%'||#{keyword}||'%' or keyword2 like '%'||#{keyword}||'%' or 
+		keyword3 like '%'||#{keyword}||'%' or toontype like '%'||#{keyword}||'%' or writer like '%'||#{keyword}||'%' or artist like '%'||#{keyword}||'%'
+	</select>
+	
+	
 </mapper>

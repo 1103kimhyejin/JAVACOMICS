@@ -100,4 +100,15 @@ public class WebtoonController {
 		model.addAttribute("display","main/body.jsp");
 		return "/index";
 	}
+	
+	
+	@RequestMapping(value="searchMenu", method=RequestMethod.GET)
+	public String search(Model model) {
+		return "/search/searchMenu";
+	}
+	@RequestMapping(value="getSearchKeyword", method=RequestMethod.POST)
+	@ResponseBody
+	public List<WebtoonDTO> getSearchKeyword(@RequestParam String keyword){
+		return webtoonService.getSearchKeyword(keyword);
+	}
 }

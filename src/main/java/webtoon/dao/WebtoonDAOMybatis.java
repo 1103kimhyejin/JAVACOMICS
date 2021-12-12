@@ -58,4 +58,9 @@ public class WebtoonDAOMybatis implements WebtoonDAO {
 	public List<WebtoonDTO> homeEndBody(String end) {
 		return sqlSession.selectList("webtoonSQL.homeEndBody", end);
 	}
+
+	@Override
+	public List<WebtoonDTO> getSearchKeyword(String keyword) {
+		return sqlSession.selectList("webtoonSQL.getSearchKeyword", keyword);
+	}
 }

@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/JAVACOMICS/css/webtoonView.css">
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link rel='icon' type='image/png' href='/JAVACOMICS/image/logo.png'>
 </head>
 <body>
 <input type="hidden" id="episodeCode" value="${param.episodeCode}">

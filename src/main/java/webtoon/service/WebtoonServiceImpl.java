@@ -65,4 +65,10 @@ public class WebtoonServiceImpl implements WebtoonService {
 	public List<WebtoonDTO> homeEndBody(String end) {
 		return webtoonDAO.homeEndBody(end);
 	}
+
+	@Override
+	public List<WebtoonDTO> getSearchKeyword(String keyword) {
+		
+		return webtoonDAO.getSearchKeyword(keyword);
+	}
 }
