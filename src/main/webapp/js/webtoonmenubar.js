@@ -54,11 +54,12 @@ $(function(){
 					$("#rankBigBox2").html("<video autoplay loop muted playsinline>")
 					$("#rankBigBox2 video").html('<source src="/JAVACOMICS/image/'+ items.toonVideo + '" type="video/webm">')
 					$("#rankBigBox3 > img").prop("src", "/JAVACOMICS/image/" + items.type1stTitle)
-					$("#rankStory").text(items.story1)
+					$("#rankStory").text(items.story1),
+					$('#rankBigBox').attr("onclick", "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'")
 				}else{
 					$("<div/>", {
 						class: "rankBox",
-						onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList?title=" + items.title + "'"
+						onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title + "'"
 						
 					}).append($("<div/>", {
 						class: "rankNum"

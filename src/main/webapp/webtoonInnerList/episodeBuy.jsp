@@ -12,8 +12,9 @@
 </head>
 <body>
 <input type="hidden" id="toonMemId" value="${sessionScope.toonMemId }">
-<input type="hidden" id="episode" value="${param.episode}">
-<input type="hidden" id="title" value="${param.title}">
+<input type="hidden" id="episode" value="${param.episode }">
+<input type="hidden" id="title" value="${param.title }">
+<input type="hidden" id="episodeCode" value="${param.episodeCode }">
 <header>
 <div class="episodeBuyHeader">
 	<div>
@@ -72,40 +73,44 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
-$(function(){
-	var toonMemId = document.getElementById("toonMemId").value;
+$(function(){	
+	
+	var id = document.getElementById("toonMemId").value;
 	var title = document.getElementById("title").value;
 	var episode = document.getElementById("episode").value;
-	
+	var episodeCode = document.getElementById("episodeCode").value;
+
 	$('.webtoon_ep span:first-child').text(title);
-	$('.webtoon_ep span:last-child').text(episode);
+	$('.webtoon_ep span:last-child').text(episode);	
 	
 	$.ajax({
 		type: 'post',
 		url: '/JAVACOMICS/webtoonInnerList/getCash',
-		data: 'toonMemId=' + $('#toonMemId').val(),
+		data: 'id=' + $('#toonMemId').val(),
 		dataType: "json",
 		success: function(data){
 			alert(JSON.stringify(data));
 			$('.myCash span:last-child').text(data+'캐시');
 			
 			$('.wrap_btn').click(function(){
-				/* $(this).css({"background-color":"#fff", "color":"black"}) */
+				$('.btnPayNext').css({"background-color":"white", "color":"black", "border":"1px solid white"})
 				if(data==0){
 					$('#cashCheck').text('캐시충전이 필요합니다.'); 
-				}else{
-					
+				}else{	
+					$.ajax({
+						type: 'post',
+						url: '/JAVACOMICS/webtoonInnerList/useCash',
+						data: 'id=' + $('#toonMemId').val() +'&episodeCode=' + $('#episodeCode').val()
+					});	
+					window.close();
 				}
-				
 			});
 			
 			$('.cashImg').click(function(){
-				window.open("/JAVACOMICS/webtoonInnerList/webtoonPay?id="+toonMemId, "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
+				window.open("/JAVACOMICS/webtoonInnerList/webtoonPay?id="+id, "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
 				window.close();
 				return false;
-			});
-			
-			
+			});						
 		},
 		error: function(err){
 			console.log(err);

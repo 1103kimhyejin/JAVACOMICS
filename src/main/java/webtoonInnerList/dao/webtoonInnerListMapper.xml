@@ -20,6 +20,33 @@
 	</select>
 	
 	<select id="getCash" parameterType="String" resultType="Integer">
-		select cash from toonMember where id=#{toonMemId}
+		select cash from toonMember where id=#{id}
 	</select>
+	
+	<insert id="useCash" parameterType="cashList">
+	begin
+		insert into cashlist(id, cash, episodecode) values(#{id}, -200, #{episodeCode});
+		update toonmember set cash=(select cash+cash1 from    
+		(select *
+		from toonmember where id=#{id}) 
+		cross join 
+		(select cash as cash1 from cashlist where id=#{id} and episodecode=#{episodeCode})) where id=#{id};
+	end;
+	</insert>
+
+	<select id="checkEpisodeBuy" parameterType="cashList" resultType="cashList">
+		select * from cashlist where id=#{id} and episodecode=#{episodeCode}
+	</select>
+	
+	<insert id="webtoonKakaoPay" parameterType="cashList">
+	begin
+		insert into cashlist(id, cash) values(#{id}, #{cash});
+		update toonmember set cash=(select cash+cash1 from    
+		(select *
+		from toonmember where id=#{id}) 
+		cross join 
+		(select rownum, t.* from(
+		select cash as cash1 from cashlist where id=#{id} order by logtime desc) t where rownum=1)) where id=#{id};
+	end;
+	</insert>
 </mapper> 

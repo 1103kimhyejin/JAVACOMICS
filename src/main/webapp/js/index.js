@@ -287,10 +287,10 @@ $(function(){
 
 //주희추가
 $('#container_inner .mainbody:first-child').click(function(){
-	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=쓰레기%20머학생';
+	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=나%20혼자만%20레벨업';
 });
 
-$('#container_inner .mainbody:first-child').click(function(){
+$('#container_inner .mainbody:nth-child(2)').click(function(){
 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=쓰레기%20머학생';
 });
 
@@ -298,6 +298,6 @@ $('#container_inner .mainbody:nth-child(3)').click(function(){
 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=블랙윈터';
 });
 
-$('#container_inner .mainbody:first-child').click(function(){
-	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=쓰레기%20머학생';
+$('#container_inner .mainbody:last-child').click(function(){
+	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=내가%20죽였다';
 });

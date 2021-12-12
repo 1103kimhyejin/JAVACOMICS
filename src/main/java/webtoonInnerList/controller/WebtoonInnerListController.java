@@ -9,12 +9,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cashlist.bean.CashListDTO;
 import episodelist.bean.EpisodeListDTO;
 import webtoonInnerList.bean.WebtoonInnerListDTO;
 import webtoonInnerList.service.WebtoonInnerListService;
@@ -36,22 +38,9 @@ public class WebtoonInnerListController {
 	@PostMapping(value="/episodeList")
 	@ResponseBody
 	public List<EpisodeListDTO> episodeList(@RequestParam String title) {
-		/* List<EpisodeListDTO> list = webtoonInnerListService.episodeList(title); */
-		/* model.addAttribute("list", list); */
-		/* model.addAttribute("display", "/webtoonInnerList/episode.jsp"); */
 		return webtoonInnerListService.episodeList(title);
 	}
-	
-//	@PostMapping(value="/getEpisode")
-//	public String episodeList(@RequestParam String title,
-//							  Model model){
-//		
-//		WebtoonInnerListDTO webtoonInnerListDTO = webtoonInnerListService.getEpisode(title);
-//		model.addAttribute("webtoonInnerListDTO", webtoonInnerListDTO);
-//		return "/webtoonInnerList/webtoonInnerList";
-//		
-//	}
-	//@PostMapping(value="/webtoonExplain")
+
 	@RequestMapping(value="webtoonExplain", method=RequestMethod.GET)
 	public String webtoonExplain(@RequestParam String title, Model model){
 		System.out.println("display 컨트롤러와따");
@@ -68,17 +57,31 @@ public class WebtoonInnerListController {
 		return "/webtoonInnerList/webtoonPay";
 	}
 	
-//	@RequestMapping(value="episodeBuy", method=RequestMethod.GET)
-//	public String episodeBuy(){
-//		System.out.println("episodeBuy 컨트롤러와따");
-//		return "/webtoonInnerList/episodeBuy";
-//	}
-	
 	@PostMapping(value="/getCash")
 	@ResponseBody
-	public int getCash(@RequestParam String toonMemId){
-		System.out.println(toonMemId);
-		return webtoonInnerListService.getCash(toonMemId);	
+	public int getCash(@RequestParam String id){
+		return webtoonInnerListService.getCash(id);	
+	}
+	
+	@PostMapping(value="/useCash")
+	@ResponseBody
+	public void useCash(@ModelAttribute CashListDTO cashListDTO) {
+		webtoonInnerListService.useCash(cashListDTO);	
+	}
+
+	@PostMapping(value="/checkEpisodeBuy")
+	@ResponseBody
+	public CashListDTO checkEpisodeBuy(@ModelAttribute CashListDTO cashListDTO) {
+		System.out.println("checkEpisodeBuy 컨트롤러 옴");
+		return webtoonInnerListService.checkEpisodeBuy(cashListDTO);
+	}
+	
+	
+	@PostMapping(value="/webtoonKakaoPay")
+	@ResponseBody
+	public void webtoonKakaoPay(@ModelAttribute CashListDTO cashListDTO) {
+		System.out.println("webtoonKakaoPay 컨트롤러 옴");
+		webtoonInnerListService.webtoonKakaoPay(cashListDTO);
 	}
 	
 }

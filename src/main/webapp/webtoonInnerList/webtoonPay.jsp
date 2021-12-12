@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/JAVACOMICS/css/webtoonInnerListCss/webtoonPay.css">
 </head>
 <body>
+<input type="hidden" id="toonMemId" value="${sessionScope.toonMemId }">
 <header>
 	<div class="payHeader">
 		<span class="img_wtc ico_change"></span>
@@ -132,6 +133,40 @@
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script type="text/javascript" src="/JAVACOMICS/js/webtoonInnerList.js"></script>
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+<script>
 
+$('.btnPayNext').click(function(){
+
+	var IMP = window.IMP; 
+    IMP.init('imp92003320'); 
+    IMP.request_pay({
+    	pg : "kakaopay", 
+        pay_method : 'card',
+        merchant_uid : 'merchant_' + new Date().getTime(),
+        name : 'JAVACOMICS 캐시 충전',
+        amount : $("input[name='item_id']:checked").val(),
+        m_redirect_url : ''
+    }, function(rsp) {
+    if ( rsp.success ) {
+    	//DB
+        $.ajax({
+         url: '/JAVACOMICS/webtoonInnerList/webtoonKakaoPay',
+         type: 'post',
+         data: 'id=' + $('#toonMemId').val() + '&cash=' + $("input[name='item_id']:checked").val(),
+        });
+    	
+    	var msg = '결제가 완료되었습니다.';
+    	alert(msg);
+       	window.close();
+    } else {
+        var msg = '결제에 실패하였습니다.';
+        alert(msg);
+        rsp.error_msg;
+    }
+    
+    });
+});  
+</script>
 </body>
 </html>

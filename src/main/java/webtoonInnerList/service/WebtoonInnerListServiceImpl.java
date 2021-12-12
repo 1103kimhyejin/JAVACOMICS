@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import cashlist.bean.CashListDTO;
 import episodelist.bean.EpisodeListDTO;
 import webtoonInnerList.bean.WebtoonInnerListDTO;
 import webtoonInnerList.dao.WebtoonInnerListDAO;
@@ -27,13 +28,23 @@ public class WebtoonInnerListServiceImpl implements WebtoonInnerListService {
 	}
 
 	@Override
-	public int getCash(String toonMemId) {
-		return webtoonInnerListDAO.getCash(toonMemId);
+	public int getCash(String id) {
+		return webtoonInnerListDAO.getCash(id);
 	}
 
-//	@Override
-//	public WebtoonInnerListDTO episodeList(String title) {
-//		
-//		return webtoonInnerListDAO.episodeList(title);
-//	}
+	@Override
+	public void useCash(CashListDTO cashListDTO) {
+		webtoonInnerListDAO.useCash(cashListDTO);
+	}
+
+	@Override
+	public CashListDTO checkEpisodeBuy(CashListDTO cashListDTO) {
+		return webtoonInnerListDAO.checkEpisodeBuy(cashListDTO);
+	}
+
+	@Override
+	public void webtoonKakaoPay(CashListDTO cashListDTO) {
+		webtoonInnerListDAO.webtoonKakaoPay(cashListDTO);
+	}
+
 }

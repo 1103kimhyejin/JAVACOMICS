@@ -34,11 +34,34 @@ $(function(){
 	
 	
 	//radio버튼 클릭시 값 확인 => db들어갈 값
-	var check = $("input[name='item_id']:checked").val();
+	//var check = $("input[name='item_id']:checked").val();
 	//alert(check);
 		
-	$('input[name=item_id]').click(function(){
-		var check = $("input[name='item_id']:checked").val();
+	//$('input[name=item_id]').click(function(){
+		//var check = $("input[name='item_id']:checked").val();
 		//alert(check);	
+	//});
+	
+	$('.back').click(function(){	
+
+		if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/homebody'){
+			history.back();
+		}else {
+			location.href='/JAVACOMICS/webtoon/homebody';
+		}
+		
+		if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/rankbody'){
+			history.back();
+		}else {
+			location.href='/JAVACOMICS/webtoon/rankbody';
+		}
+		
+		if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/mainpage'){
+			history.back();
+		}else{
+			location.href='/JAVACOMICS/webtoon/mainpage';
+		}
+		
 	});
-})
+	
+});
