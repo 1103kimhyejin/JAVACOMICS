@@ -1,30 +1,30 @@
 $(function(){
 	//요일 메뉴바 클릭시 스크롤 이동
-	$(".toonList li:nth-child(2)").click(function(){
+	$(".toonList li:nth-child(1)").click(function(){
 		var monset = $('#rankTop').offset(); 
 	    $('html').animate({scrollTop : monset.top}, 800); 
 	})
-	$(".toonList li:nth-child(3)").click(function(){
+	$(".toonList li:nth-child(2)").click(function(){
 		var tueset = $('#tueWeb').offset(); 
 	    $('html').animate({scrollTop : tueset.top}, 800); 
 	})
-	$(".toonList li:nth-child(4)").click(function(){
+	$(".toonList li:nth-child(3)").click(function(){
 		var wedset = $('#wedWeb').offset(); 
 	    $('html').animate({scrollTop : wedset.top}, 800); 
 	})
-	$(".toonList li:nth-child(5)").click(function(){
+	$(".toonList li:nth-child(4)").click(function(){
 		var thuset = $('#thuWeb').offset(); 
 	    $('html').animate({scrollTop : thuset.top}, 800); 
 	})
-	$(".toonList li:nth-child(6)").click(function(){
+	$(".toonList li:nth-child(5)").click(function(){
 		var friset = $('#friWeb').offset(); 
 	    $('html').animate({scrollTop : friset.top}, 800); 
 	})
-	$(".toonList li:nth-child(7)").click(function(){
+	$(".toonList li:nth-child(6)").click(function(){
 		var satset = $('#satWeb').offset(); 
 	    $('html').animate({scrollTop : satset.top}, 800); 
 	})
-	$(".toonList li:nth-child(8)").click(function(){
+	$(".toonList li:nth-child(7)").click(function(){
 		var sunset = $('#sunWeb').offset(); 
 	    $('html').animate({scrollTop : sunset.top}, 800); 
 	})

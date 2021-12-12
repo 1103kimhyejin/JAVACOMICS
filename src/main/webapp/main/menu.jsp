@@ -19,7 +19,6 @@
 	</div>
 	<div class="submenu">
 		<ul class="toonList hide">
-			<li>신작</li>
 			<li>월</li>
 			<li>화</li>
 			<li>수</li>
@@ -64,7 +63,7 @@ $('.mainmenu div:eq(3)').click(function(){
 });
 
 
-$('.toonList li:eq(8)').click(function(){
+$('.toonList li:eq(7)').click(function(){
 	$('.submenu .ranking').addClass('hide');
 	$('.submenu .myBox').addClass('hide');
 	$('.submenu .toonList').removeClass('hide');
