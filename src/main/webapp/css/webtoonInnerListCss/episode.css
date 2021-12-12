@@ -1,7 +1,8 @@
 @charset "UTF-8";
+
 .webtoonList{
 	width: 640px;
-	min-height: 150px;
+	min-height: 500px;
 	background-color: black;
 	margin: 0 auto;
 	color: white;

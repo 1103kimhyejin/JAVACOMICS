@@ -48,13 +48,13 @@ $(function(){
 				
 				
 				$.each(data, function(index, items){
-					
-					
+							
 					if(index == 0){
 						$("#rankBigBox1 > img").prop("src", "/JAVACOMICS/image/" + items.toonBg)
 						$("#rankBigBox2 video").html('<source src="/JAVACOMICS/image/'+ items.toonVideo + '" type="video/webm">')
 						$("#rankBigBox3 > img").prop("src", "/JAVACOMICS/image/" + items.type1stTitle)
-						$("#rankStory").text(items.story1)
+						$("#rankStory").text(items.story1),
+						$('#rankBigBox').attr("onclick", "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'")
 					}else{
 					
 						$("<div/>", {

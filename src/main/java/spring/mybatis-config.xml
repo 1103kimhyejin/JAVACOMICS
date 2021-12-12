@@ -12,5 +12,6 @@
       <typeAlias type="episodegoodview.bean.EpisodeGoodViewDTO" alias="episodeGoodView"/>
       <typeAlias type="webtoonInnerList.bean.WebtoonInnerListDTO" alias="webtoonInnerList"/>
       <typeAlias type="customerboard.bean.CustomerBoardDTO" alias="customerboard"/>
+   	  <typeAlias type="cashlist.bean.CashListDTO" alias="cashList"/>
    </typeAliases>
 </configuration>

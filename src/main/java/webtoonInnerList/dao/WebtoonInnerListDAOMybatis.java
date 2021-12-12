@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import cashlist.bean.CashListDTO;
 import episodelist.bean.EpisodeListDTO;
 import webtoonInnerList.bean.WebtoonInnerListDTO;
 
@@ -28,12 +29,23 @@ public class WebtoonInnerListDAOMybatis implements WebtoonInnerListDAO {
 	}
 
 	@Override
-	public int getCash(String toonMemId) {
-		return sqlSession.selectOne("webtoonInnerListSQL.getCash", toonMemId);
+	public int getCash(String id) {
+		return sqlSession.selectOne("webtoonInnerListSQL.getCash", id);
 	}
 
-//	@Override
-//	public WebtoonInnerListDTO episodeList(String title) {
-//		return sqlSession.selectOne("webtoonInnerListSQL.episodeList", title);
-//	}
+	@Override
+	public void useCash(CashListDTO cashListDTO) {
+		sqlSession.insert("webtoonInnerListSQL.useCash", cashListDTO);
+	}
+
+	@Override
+	public CashListDTO checkEpisodeBuy(CashListDTO cashListDTO) {
+		return sqlSession.selectOne("webtoonInnerListSQL.checkEpisodeBuy", cashListDTO);
+	}
+
+	@Override
+	public void webtoonKakaoPay(CashListDTO cashListDTO) {
+		sqlSession.insert("webtoonInnerListSQL.webtoonKakaoPay", cashListDTO);
+	}
+
 }
