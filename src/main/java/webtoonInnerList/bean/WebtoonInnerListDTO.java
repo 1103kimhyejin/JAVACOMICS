@@ -19,4 +19,6 @@ public class WebtoonInnerListDTO {
 	private String toonEnd;
 	private int totalGood;
 	private int totalView;
+	private String listColor1;
+	private String listColor2;
 }

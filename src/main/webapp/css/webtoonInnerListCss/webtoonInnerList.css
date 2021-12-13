@@ -81,7 +81,7 @@ footer{
 	background-color: black;
 	left: 50%;
 	transform: translateX(-50%); 
- 	border: 1px solid white; 
+ 	border: 1px solid black; 
 }
 .scroll img{
 	position: absolute;

@@ -107,7 +107,8 @@ $(function(){
 			}
 			if(data.toonEnd=='T'){
 				$('.plot>ul>li:first-child').text("완결");
-				$('.plot>ul>li:first-child').css("background-color", "#8e8e8e")
+				$('.plot>ul>li:first-child').css("background-color", "#8e8e8e");
+				$('.plot>ul>li:nth-child(2)').hide();
 			}
 			
 			$('.plot>ul>li:nth-child(2)').text(data.toonDay);
@@ -120,11 +121,61 @@ $(function(){
 			$('.keyword ul>li:nth-child(2)').text(data.keyword1);
 			$('.keyword ul>li:nth-child(3)').text(data.keyword2);
 			$('.keyword ul>li:nth-child(4)').text(data.keyword3);
+			
+			$('#trans').css("background-image", "linear-gradient(180deg,transparent,rgba("+data.listColor1+",9.9))");
+			$('#content').css("background-color", "rgb("+data.listColor1+")");
+			$('footer').css("background-color", "rgb("+data.listColor1+")");
+			$('.webtoonList>a>div:first-child').css("background-color", data.listColor2);
+			$('.explain').css("background-color", "rgb("+data.listColor1+")");
+			
+			$('.keyword ul>li').css("background-color", data.listColor2);
 		},
 		error: function(err){
 			console.log(err);
 		}
 	});
+ 	
+ 	
+ 	//유사작품
+ 	$.ajax({
+		url: "/JAVACOMICS/webtoon/getStorageBodybottom",
+		type: "post",
+		data: 'title='+$('#webtoon_title').val(),
+		success: function(data){
+
+			$.each(data, function(index, items){
+				if(items.title != $('#webtoon_title').val() && index < 6){
+					$("<div/>", {
+						class: 'similartoonbox',
+						onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
+					}).append($("<div/>", {
+						class: 'similartoonbox1'
+					}).append($("<img/>", {
+						src: "/JAVACOMICS/image/" + items.toonBg	
+					}))).append($("<div/>", {
+						class: "similartoonbox2"
+					}).append($("<img/>", {
+						src: "/JAVACOMICS/image/" + items.toonChar
+					}))).append($("<div>", {
+						class: "similartoonbox3"		
+					}).append($("<img>", {
+						src: "/JAVACOMICS/image/" + items.toonTitle		
+					}))).append($("<div/>", {
+						class: "Transparency"
+					})).appendTo($(".similar"));
+				}
+			}); 
+		},
+		error: function(err){
+			console.log(err)		
+		}
+		
+	});
+
+ 	
+ 	
+ 	
+ 	
  	
  	//작품정보 클릭시 display include
 	$('.information').click(function(){

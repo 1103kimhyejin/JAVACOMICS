@@ -22,5 +22,5 @@ public class WebtoonDTO {
 	private String toonEnd;
 	private String toonVideo;
 	private String type1stTitle;
-	private String episode;
+	private String episode;	
 }
