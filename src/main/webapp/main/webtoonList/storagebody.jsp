@@ -75,8 +75,8 @@ $(function(){
 				
 				$("<div>", {
 					id: 'watchingListBox',
-					class: items.title
-					
+					onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
+							
 				}).append($("<div>", {
 					id: "watchingListTopBox",
 					style: "background-color: "+ "rgb("+items.listColor1+")"
@@ -126,7 +126,8 @@ $(function(){
 						if(items.title != $("#randomTitle").text() && index < 17){
 
 							$("<div>", {
-								id: 'similarListBox'
+								id: 'similarListBox',
+								onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
 							}).append($("<div>", {
 								class: "similarListBox1"
 								

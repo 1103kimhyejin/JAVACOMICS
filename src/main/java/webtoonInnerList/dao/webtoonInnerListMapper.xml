@@ -49,4 +49,10 @@
 		select cash as cash1 from cashlist where id=#{id} order by logtime desc) t where rownum=1)) where id=#{id};
 	end;
 	</insert>
+	
+	<select id="getCashInfo" parameterType="String" resultType="java.util.Map">
+		select cash, logtime, title, episode from cashlist 
+		left join episodelist using(episodecode)
+		where id = #{id} order by logtime desc
+	</select>
 </mapper> 

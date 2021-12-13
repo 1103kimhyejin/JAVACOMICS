@@ -71,6 +71,9 @@
 	height: 180px;
 	background-color: rgba(28,28,28,0.8);
 }
+.contentsdiv .spandiv2 >div {
+	margin: 20px;
+}
 .contentsdiv .spandiv2 div a {
 	text-decoration: none;
 	color : #fff;

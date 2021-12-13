@@ -1,6 +1,7 @@
 package webtoonInnerList.service;
 
 import java.util.List;
+import java.util.Map;
 
 import cashlist.bean.CashListDTO;
 import episodelist.bean.EpisodeListDTO;
@@ -19,5 +20,7 @@ public interface WebtoonInnerListService {
 	public CashListDTO checkEpisodeBuy(CashListDTO cashListDTO);
 
 	public void webtoonKakaoPay(CashListDTO cashListDTO);
+
+	public List<Map<String,Object>> getCashInfo(String id);
 
 }

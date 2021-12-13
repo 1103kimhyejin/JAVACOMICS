@@ -12,7 +12,7 @@
 	</div>
 	<div class="mainmenu slider">
 		<input type="hidden" id="showhide" value="${display  }">
-		<div><img src="/JAVACOMICS/image/mainbody/homeLogo.svg" alt="kakao_webtoon"></div>
+		<div><img src="/JAVACOMICS/image/javacomics_logo9.png" alt="javacomics"></div>
 		<div>웹툰</div>
 		<div>랭킹</div>
 		<div>보관함</div>

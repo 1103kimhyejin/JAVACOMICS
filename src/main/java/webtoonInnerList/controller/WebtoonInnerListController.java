@@ -1,11 +1,9 @@
 package webtoonInnerList.controller;
 
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
+import java.util.Map;
 
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -82,6 +80,19 @@ public class WebtoonInnerListController {
 	public void webtoonKakaoPay(@ModelAttribute CashListDTO cashListDTO) {
 		System.out.println("webtoonKakaoPay 컨트롤러 옴");
 		webtoonInnerListService.webtoonKakaoPay(cashListDTO);
+	}
+	
+	//--------
+	@RequestMapping(value="cashInfo", method=RequestMethod.GET)
+	public String cashInfo(){
+		return "/cashList/cashList";
+	}
+	
+	@PostMapping(value="/getCashInfo")
+	@ResponseBody
+	public List<Map<String,Object>> getCashInfo(@RequestParam String id) {
+		List<Map<String,Object>> list = webtoonInnerListService.getCashInfo(id);
+		return list;
 	}
 	
 }

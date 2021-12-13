@@ -18,15 +18,17 @@
 	<div class="back">
 		<a><li><img src="/JAVACOMICS/image/webtoonInnerList/back.png"/></li></a>
 	</div>
-	<div class="heart">
+	<ul class="heart">
+		<li class="homeBtn"><a href="/JAVACOMICS/webtoon/mainpage"><img src="/JAVACOMICS/image/homeBtn2.png"/></a></li>
 		<li>
 		<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
 		  <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
 		</svg>
 		</li>
-	</div> 
+	</ul> 
 
 	<div class="fillheart">
+		<li class="homeBtn"><a href="/JAVACOMICS/webtoon/mainpage"><img src="/JAVACOMICS/image/homeBtn2.png"/></a></li>
 		<li>	
 		<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
 			<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
@@ -108,7 +110,8 @@ $(function(){
 			}
 			if(data.toonEnd=='T'){
 				$('.plot>ul>li:first-child').text("완결");
-				$('.plot>ul>li:first-child').css("background-color", "#8e8e8e")
+				$('.plot>ul>li:first-child').css("background-color", "#8e8e8e");
+				$('.plot>ul>li:nth-child(2)').hide();
 			}
 			
 			$('.plot>ul>li:nth-child(2)').text(data.toonDay);
@@ -134,6 +137,48 @@ $(function(){
 			console.log(err);
 		}
 	});
+ 	
+ 	
+ 	//유사작품
+ 	$.ajax({
+		url: "/JAVACOMICS/webtoon/getStorageBodybottom",
+		type: "post",
+		data: 'title='+$('#webtoon_title').val(),
+		success: function(data){
+
+			$.each(data, function(index, items){
+				if(items.title != $('#webtoon_title').val() && index < 6){
+					$("<div/>", {
+						class: 'similartoonbox',
+						onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
+					}).append($("<div/>", {
+						class: 'similartoonbox1'
+					}).append($("<img/>", {
+						src: "/JAVACOMICS/image/" + items.toonBg	
+					}))).append($("<div/>", {
+						class: "similartoonbox2"
+					}).append($("<img/>", {
+						src: "/JAVACOMICS/image/" + items.toonChar
+					}))).append($("<div>", {
+						class: "similartoonbox3"		
+					}).append($("<img>", {
+						src: "/JAVACOMICS/image/" + items.toonTitle		
+					}))).append($("<div/>", {
+						class: "Transparency"
+					})).appendTo($(".similar"));
+				}
+			}); 
+		},
+		error: function(err){
+			console.log(err)		
+		}
+		
+	});
+
+ 	
+ 	
+ 	
+ 	
  	
  	//작품정보 클릭시 display include
 	$('.information').click(function(){

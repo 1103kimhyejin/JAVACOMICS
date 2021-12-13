@@ -25,6 +25,5 @@ public class WebtoonDTO {
 	private String episode;
 	private String listColor1;
 	private String listColor2;
-	
-	
+
 }

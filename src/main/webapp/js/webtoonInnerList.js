@@ -1,4 +1,5 @@
 $(function(){
+
 	//webtoonExplain 더보기
 	$('.hidden').hide();
 	$('.more').click(function(){
@@ -16,6 +17,7 @@ $(function(){
 	
 	//webtoonInnerList 상단부분 좋아요 클릭 이벤트
 	$('.fillheart').hide();
+	
 	
 	$('.heart').click(function(){
 		$(this).hide();
@@ -46,13 +48,13 @@ $(function(){
 
 		if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/homebody'){
 			history.back();
-		}else {
+		}else{
 			location.href='/JAVACOMICS/webtoon/homebody';
 		}
 		
 		if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/rankbody'){
 			history.back();
-		}else {
+		}else{
 			location.href='/JAVACOMICS/webtoon/rankbody';
 		}
 		
