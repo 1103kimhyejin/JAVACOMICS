@@ -17,6 +17,7 @@ $(function(){
 	//webtoonInnerList 상단부분 좋아요 클릭 이벤트
 	$('.fillheart').hide();
 	
+	
 	$('.heart').click(function(){
 		$(this).hide();
 		$('.fillheart').show();

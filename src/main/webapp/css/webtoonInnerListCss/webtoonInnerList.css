@@ -23,6 +23,9 @@ header {
 	transform: translateY(-50%); 	
 	left: 15px;
 }
+.homeBtn img {
+	width: 20px;
+}
 .heart{
 	position: absolute;
 	color: white; 
@@ -30,12 +33,20 @@ header {
 	transform: translateY(-50%); 
 	right: 15px;
 }
+.heart li {
+	float: left;
+	margin-left: 10px;
+}
 .fillheart{
 	position: absolute;
 	color: white; 
 	top: 50%;
 	transform: translateY(-50%); 
 	right: 15px;
+}
+.fillheart li {
+	float: left;
+	margin-left: 10px;
 }
 .top{
 	position: absolute;

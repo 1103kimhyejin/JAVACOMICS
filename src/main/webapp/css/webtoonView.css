@@ -24,6 +24,14 @@ header p:nth-child(2){
 	left:50%;
 	transform:translateX(-50%);
 }
+header div {
+	position:absolute;
+	right:20px;
+	top: 10px;
+}
+header div img {
+	width: 20px;
+}
 
 
 /*----------section----------*/

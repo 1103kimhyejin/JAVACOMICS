@@ -1,6 +1,7 @@
 package webtoonInnerList.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +46,12 @@ public class WebtoonInnerListServiceImpl implements WebtoonInnerListService {
 	@Override
 	public void webtoonKakaoPay(CashListDTO cashListDTO) {
 		webtoonInnerListDAO.webtoonKakaoPay(cashListDTO);
+	}
+
+	@Override
+	public List<Map<String,Object>> getCashInfo(String id) {
+		return webtoonInnerListDAO.getCashInfo(id);
+		
 	}
 
 }
