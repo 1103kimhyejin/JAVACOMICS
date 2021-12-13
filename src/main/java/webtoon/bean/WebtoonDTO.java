@@ -23,4 +23,8 @@ public class WebtoonDTO {
 	private String toonVideo;
 	private String type1stTitle;
 	private String episode;
+	private String listColor1;
+	private String listColor2;
+	
+	
 }

@@ -84,13 +84,13 @@
 		flex-wrap:wrap;
 		margin-left:-1px;
 		margin-right:-1px;
-		/* margin-top:-44px; */
+		margin-top:-44px;
 		box-sizing: border-box;
 		/* height:390px; */
 		
 	}
 	#watchingListBox{
-		transform: translateY(0px);
+		/* transform: translateY(0px); */
 		border-bottom:1px solid #000;
 		border-left:1px solid #000;
 		border-right:1px solid #000;
