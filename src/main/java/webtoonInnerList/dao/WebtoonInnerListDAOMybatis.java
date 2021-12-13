@@ -1,6 +1,7 @@
 package webtoonInnerList.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +47,12 @@ public class WebtoonInnerListDAOMybatis implements WebtoonInnerListDAO {
 	@Override
 	public void webtoonKakaoPay(CashListDTO cashListDTO) {
 		sqlSession.insert("webtoonInnerListSQL.webtoonKakaoPay", cashListDTO);
+	}
+
+	@Override
+	public List<Map<String,Object>> getCashInfo(String id) {
+		List<Map<String,Object>> result = sqlSession.selectList("webtoonInnerListSQL.getCashInfo", id);
+		return result;
 	}
 
 }

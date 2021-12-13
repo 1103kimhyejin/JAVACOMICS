@@ -17,9 +17,10 @@
 <input type="hidden" id="title" value="${param.title}">
 <input id="sessionid" type="hidden" value="${sessionScope.toonMemId }"/>
 <header>
-	<a onclick="location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=${param.title}'"><p><img src="../image/webtoonComment_image/backicon.PNG"/></p></a>
+	<a onclick="location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=${param.title}'"><p><img src="/JAVACOMICS/image/webtoonComment_image/backicon.PNG"/></p></a>
 	<p></p>
 	<p></p>
+	<div><a href="/JAVACOMICS/webtoon/mainpage"><img src="/JAVACOMICS/image/homeBtn2.png"/></a></div>
 </header>
 		
 <section>

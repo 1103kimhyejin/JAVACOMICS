@@ -70,66 +70,7 @@
 			<span>이 작품과 유사한 작품들</span>		
 		</div>	
 		<div class="similar">
-			<div class="similartoonbox">
-				<div class="similartoonbox1">
-					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
-				</div>
-				<div class="similartoonbox2">
-					<img src="../image/webtoonView_image/similartoon1.png"/>
-				</div>
-				<div class="similartoonbox3">
-					<img src="../image/webtoonView_image/similartoon1_name.png"/>
-				</div>
-				<div class= "Transparency"></div>
-			</div>
-			<div class="similartoonbox">
-				<div class="similartoonbox1">
-					<img src="../image/webtoonList/01.Mon/05/bg.jpg"/>					
-				</div>
-				<div class="similartoonbox2">
-					<img src="../image/webtoonList/01.Mon/05/main.png"/>
-				</div>
-				<div class="similartoonbox3">
-					<img src="../image/webtoonList/01.Mon/05/title.png"/>
-				</div>
-				<div class= "Transparency"></div>
-			</div>
-			<div class="similartoonbox">
-				<div class="similartoonbox1">
-					<img src="../image/webtoonList/01.Mon/03/bg.jpg"/>					
-				</div>
-				<div class="similartoonbox2">
-					<img src="../image/webtoonList/01.Mon/03/main.png"/>
-				</div>
-				<div class="similartoonbox3">
-					<img src="../image/webtoonList/01.Mon/03/title.png"/>
-				</div>
-				<div class= "Transparency"></div>
-			</div>
-			<div class="similartoonbox">
-				<div class="similartoonbox1">
-					<img src="../image/webtoonList/02.Tue/03/bg.jpg"/>					
-				</div>
-				<div class="similartoonbox2">
-					<img src="../image/webtoonList/02.Tue/03/main.png"/>
-				</div>
-				<div class="similartoonbox3">
-					<img src="../image/webtoonList/02.Tue/03/title.png"/>
-				</div>
-				<div class= "Transparency"></div>
-			</div>	
-			<div class="similartoonbox">
-				<div class="similartoonbox1">
-					<img src="../image/webtoonList/04.Thu/05/bg.jpg"/>					
-				</div>
-				<div class="similartoonbox2">
-					<img src="../image/webtoonList/04.Thu/05/main.png"/>
-				</div>
-				<div class="similartoonbox3">
-					<img src="../image/webtoonList/04.Thu/05/title.png"/>
-				</div>
-				<div class= "Transparency"></div>
-			</div>	
+			
 		</div>			
 	</div>
 </div>

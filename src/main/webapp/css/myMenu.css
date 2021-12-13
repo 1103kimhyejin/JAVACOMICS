@@ -72,6 +72,10 @@
   z-index:1;
 }
 
+.contentsdiv .spandiv2 >div {
+	margin: 20px;
+}
+
 .contentsdiv .spandiv2 div a {
 	text-decoration: none;
 	color : #fff;

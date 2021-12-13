@@ -76,7 +76,10 @@ $('.searchBtn').click(function(){
 						
 					})).appendTo($(".searchToon"));	
 				});
-				
+				$('.searchToon > .box, .longBox').click(function(){
+				 	var title= $(this).attr("id"); 
+				 	location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title='+title;
+				});
 				
 			},
 			error: function(err){
