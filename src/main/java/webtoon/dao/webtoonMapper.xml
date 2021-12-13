@@ -22,7 +22,7 @@
 	</select>
 	
 	<select id="getStorageBodyList" parameterType = "String" resultType="webtoon">
-		select * from(select rownum rn, a.* from (select title, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, toonend, episode, episodecode
+		select * from(select rownum rn, a.* from (select title, toonbg, toonchar, toontitle, toontype, keyword1, keyword2, keyword3, toonend, episode, episodecode, listColor1
         from webtoon
         join episodelist using(title)
         join(select * from recentview where id = #{id } order by logtime desc) using(episodecode))a)

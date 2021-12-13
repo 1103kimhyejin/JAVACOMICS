@@ -47,8 +47,8 @@
 <section>
 	<div id="container">
 		<jsp:include page="webtoonImage.jsp" /> 
+		<div id= "trans"></div>
 	</div>
-	
 	<div id="content">
 		<c:if test="${empty display }"> 
 			<jsp:include page="episode.jsp" />
@@ -77,6 +77,7 @@ $(function(){
 		data: 'title='+$('#webtoon_title').val(),
 		dataType: "json",
 		success: function(data){
+			console.log(JSON.stringify(data))
 			
 			$("<div/>", { 
 				class : "bg"
@@ -125,12 +126,12 @@ $(function(){
 			$('.keyword ul>li:nth-child(4)').text(data.keyword3);
 			
 			$('#trans').css("background-image", "linear-gradient(180deg,transparent,rgba("+data.listColor1+",9.9))");
-			$('#content').css("background-color", "rgb("+data.listColor1+")");
-			$('footer').css("background-color", "rgb("+data.listColor1+")");
+			$("#content").css("background-color", "rgb("+data.listColor1+")");
 			$('.webtoonList>a>div:first-child').css("background-color", data.listColor2);
+			$('footer').css("background-color", "rgb("+data.listColor1+")");
 			$('.explain').css("background-color", "rgb("+data.listColor1+")");
-			
 			$('.keyword ul>li').css("background-color", data.listColor2);
+			
 		},
 		error: function(err){
 			console.log(err);

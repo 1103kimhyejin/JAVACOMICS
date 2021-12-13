@@ -3,7 +3,7 @@
 .webtoonList{
 	width: 640px;
 	min-height: 500px;
-	background-color: black;
+	/* background-color: black; */
 	margin: 0 auto;
 	color: white;
 }

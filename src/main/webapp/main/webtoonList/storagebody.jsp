@@ -53,14 +53,18 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(function(){
-
+	$(document).scroll(function(){
+		if($(document).scrollTop() > 100){
+			$("#watchingListBigBox #watchingListBox").css("transform", "translateY(0px)")
+			
+		}
+	});
 	$.ajax({
 		url: "/JAVACOMICS/webtoon/getStorageBodyList",
 		type: "post",
 		data: 'id=${toonMemId}',
 		success: function(data){
 			
-
 			$.each(data.list, function(index, items){
 				
 				if(data.random == index){
@@ -72,8 +76,10 @@ $(function(){
 				$("<div>", {
 					id: 'watchingListBox',
 					onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
+							
 				}).append($("<div>", {
-					id: "watchingListTopBox"
+					id: "watchingListTopBox",
+					style: "background-color: "+ "rgb("+items.listColor1+")"
 					
 				}).append($("<div>", {
 					id: "watchingListTopTitle"
@@ -82,7 +88,8 @@ $(function(){
 					text: items.episode
 					
 				})))).append($("<div>", {
-					id: "watchingListBottomBox"
+					id: "watchingListBottomBox",
+					style: "background-color: "+ "rgb("+items.listColor1+")"
 					
 				}).append($("<div>", {
 					id: "watchingListBottomBox1"
@@ -100,6 +107,11 @@ $(function(){
 					src: "/JAVACOMICS/image/" + items.toonTitle
 					
 				})))).appendTo($("#watchingListBigBox"));
+				
+				$("#watchingListBigBox #watchingListBox:nth-child("+(index+1)+")").css("transform", "translateY("+(index%4*60)+"px)")
+
+				
+				
 				
 			});
 			
