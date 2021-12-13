@@ -73,7 +73,7 @@ $(function(){
 				console.log(err);	
 			}
 		});
-//답글 목록
+
 });//onload
 
 //최신순 정렬 함수
@@ -580,7 +580,7 @@ $(document).on('click', '.webtoonComment_Reply_btn', function(){
 			success: function(data){
 				reply_ul.empty();
 			 	$.each(data, function(index, items){
-						addReply(items.commentSeq, items.id, items.logtime, items.content, reply_ul);			 
+						addReply(items.commentSeq, items.id, items.logtime, items.content, reply_ul, items.totalgood, items.totalbad);			 
 				});				
 
 			},
@@ -641,7 +641,7 @@ $(document).on('click', '#reply_inputBtn', function(){
 										success: function(data){
 									
 											$.each(data, function(index, items){
-													addReply(items.commentSeq, items.id, items.logtime, items.content, reply_ul);			 								
+													addReply(items.commentSeq, items.id, items.logtime, items.content, reply_ul, items.totalgood, items.totalbad);			 								
 											});				
 											 $.ajax({
 													url: '/JAVACOMICS/tooncomment/replytotal',
@@ -679,7 +679,7 @@ $(document).on('click', '#reply_inputBtn', function(){
 	    	  
 	});
 //답글 출력 함수
-function addReply(commentSeq, id, logtime, content, reply_ul){
+function addReply(commentSeq, id, logtime, content, reply_ul, totalgood, totalbad){
 	var webtoonComment_li = $('<li>');
 		webtoonComment_li.attr('data-num', commentSeq);
 		webtoonComment_li.addClass('webtoonComment_replyli');
@@ -715,10 +715,30 @@ function addReply(commentSeq, id, logtime, content, reply_ul){
 		});
 		del_input.addClass('deleteReply_btn');
 		
+		/* 좋아요, 싫어요, 답글 버튼 div  */
+		var webtoonComment_GBRbtn_div = $('<div>');
+		webtoonComment_GBRbtn_div.addClass('webtoonComment_GBRbtn_div');
+		webtoonComment_GBRbtn_div.attr({
+			'id':'Reply_GBbtn_div'
+		});
+		var webtoonComment_Good_btn = $('<input>');
+		webtoonComment_Good_btn.attr({
+			'type' : 'button',
+			'value' : '좋아요 '+totalgood,
+		});
+		webtoonComment_Good_btn.addClass('webtoonComment_Good_btn');
+
+		var webtoonComment_Bad_btn = $('<input>');
+		webtoonComment_Bad_btn.attr({
+			'type' : 'button',
+			'value' : '싫어요 '+totalbad
+		});
+		webtoonComment_Bad_btn.addClass('webtoonComment_Bad_btn');
 		
 	webtoonComment_Id_Date_div.append(reply_icon).append(webtoonComment_Id_p).append(webtoonComment_Date_p);
 	webtoonComment_IDC_div.append(webtoonComment_Id_Date_div).append(webtoonComment_Content_div);
-	webtoonComment_li.append(webtoonComment_IDC_div);
+	webtoonComment_GBRbtn_div.append(webtoonComment_Good_btn).append(webtoonComment_Bad_btn);
+	webtoonComment_li.append(webtoonComment_IDC_div).append(webtoonComment_GBRbtn_div);
 	reply_ul.append(webtoonComment_li);
 	
 	
@@ -740,6 +760,38 @@ function addReply(commentSeq, id, logtime, content, reply_ul){
 					alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
 				}
 			});
+		//좋아요 눌렀던거 빨간색
+		$.ajax({
+			url: '/JAVACOMICS/commentGoodBad/commentGoodCheck',
+			type: 'post',
+			dataType: 'json',
+			success: function(data){
+				$.each(data, function(index, items){
+					if(commentSeq==items.commentSeq){
+						webtoonComment_Good_btn.css('color','red');
+					}
+				});
+			},
+			error: function( request, status, error ){
+				alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
+			}
+		});
+		//싫어요 눌렀던거 빨간색
+		$.ajax({
+			url: '/JAVACOMICS/commentGoodBad/commentBadCheck',
+			type: 'post',
+			dataType: 'json',
+			success: function(data){
+				$.each(data, function(index, items){
+					if(commentSeq==items.commentSeq){
+						webtoonComment_Bad_btn.css('color','red');
+					}
+				});
+			},
+			error: function( request, status, error ){
+				alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
+			}
+		});
 	}  	
 }
 //답글삭제하기

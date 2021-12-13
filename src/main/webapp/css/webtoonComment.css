@@ -165,6 +165,13 @@ html{
 }
 
 /* 답글  */
+
+#Reply_GBbtn_div input{
+	padding-top: 6px;
+	padding-bottom: 6px;
+
+	border: solid 1px #333333;
+}
 .deleteReply_btn{
 	color: #777777;
 	background-color: #121212;
