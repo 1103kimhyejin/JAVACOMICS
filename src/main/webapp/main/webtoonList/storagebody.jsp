@@ -70,7 +70,8 @@ $(function(){
 				$("#watchingmemId").text("${toonMemId}님은")
 				
 				$("<div>", {
-					id: 'watchingListBox'
+					id: 'watchingListBox',
+					onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
 				}).append($("<div>", {
 					id: "watchingListTopBox"
 					
@@ -113,7 +114,8 @@ $(function(){
 						if(items.title != $("#randomTitle").text() && index < 17){
 
 							$("<div>", {
-								id: 'similarListBox'
+								id: 'similarListBox',
+								onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
 							}).append($("<div>", {
 								class: "similarListBox1"
 								
