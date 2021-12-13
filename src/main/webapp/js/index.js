@@ -77,6 +77,32 @@ $(function(){
 		$(location).attr("href",  "/JAVACOMICS/customerboard/customerboardView?seq="+$('#seq').val()+"&pg="+$('#pg').val());
 	});
 
+	//로그인 css 처리 - 혜진
+	$('#loginForm').hide();
+	$('#loginBtn').click(function(){
+	
+		   //화면의 높이와 너비를 구한다.
+        var maskHeight = $(document).height();  
+        var maskWidth = $(window).width();  
+		
+        //마스크의 높이와 너비를 화면 것으로 만들어 전체 화면을 채운다.
+        $('#mask').css({'width':maskWidth,'height':maskHeight});  
+		
+        //애니메이션 효과   
+        $('#mask').fadeTo("fast",0.5);
+        $('#loginForm').show();
+	});
+	
+	/*$('#closeLogin').click(function(){
+		$('#loginForm').fadeOut();
+	});*/
+	//검은 막을 눌렀을 때
+        $('#mask').click(function () {  
+            $(this).hide();  
+            $('#loginForm').hide();
+            $('.spandiv2').show();  
+        });    
+	
 	
 	//로그인 
 	$('#memberLoginBtn').click(function(){
