@@ -1,4 +1,8 @@
 @charset "utf-8";
+@font-face {
+    font-family: 'jua';
+    src: url('/JAVACOMICS/fonts/bmjua_ttf.ttf') format('truetype');
+}
 
 /* common */
 .hide {display:none !important;}
@@ -10,10 +14,11 @@
 }
 
 
-
 body {
 	color: #fff;
 	background-color: black;
+	
+	font-family: 'jua';
 }
 .history {
 	content: "";
@@ -33,6 +38,9 @@ header {
 	height: 137px;
 	position: fixed;
 	z-index: 999;
+	
+	font-family: 'jua', '돋움'';
+	
 }
 #fullscreen {
 	width: 100%;
