@@ -27,14 +27,14 @@
 		</li>
 	</ul> 
 
-	<div class="fillheart">
+	<ul class="fillheart">
 		<li class="homeBtn"><a href="/JAVACOMICS/webtoon/mainpage"><img src="/JAVACOMICS/image/homeBtn2.png"/></a></li>
 		<li>	
 		<svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
 			<path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
 		</svg>
 		</li>
-	</div> 
+	</ul> 
 	
 	<div class="top">
 		<ul>
@@ -77,7 +77,6 @@ $(function(){
 		data: 'title='+$('#webtoon_title').val(),
 		dataType: "json",
 		success: function(data){
-			console.log(JSON.stringify(data))
 			
 			$("<div/>", { 
 				class : "bg"
@@ -138,48 +137,7 @@ $(function(){
 		}
 	});
  	
- 	
- 	//유사작품
- 	$.ajax({
-		url: "/JAVACOMICS/webtoon/getStorageBodybottom",
-		type: "post",
-		data: 'title='+$('#webtoon_title').val(),
-		success: function(data){
 
-			$.each(data, function(index, items){
-				if(items.title != $('#webtoon_title').val() && index < 6){
-					$("<div/>", {
-						class: 'similartoonbox',
-						onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
-					}).append($("<div/>", {
-						class: 'similartoonbox1'
-					}).append($("<img/>", {
-						src: "/JAVACOMICS/image/" + items.toonBg	
-					}))).append($("<div/>", {
-						class: "similartoonbox2"
-					}).append($("<img/>", {
-						src: "/JAVACOMICS/image/" + items.toonChar
-					}))).append($("<div>", {
-						class: "similartoonbox3"		
-					}).append($("<img>", {
-						src: "/JAVACOMICS/image/" + items.toonTitle		
-					}))).append($("<div/>", {
-						class: "Transparency"
-					})).appendTo($(".similar"));
-				}
-			}); 
-		},
-		error: function(err){
-			console.log(err)		
-		}
-		
-	});
-
- 	
- 	
- 	
- 	
- 	
  	//작품정보 클릭시 display include
 	$('.information').click(function(){
 		location.href='/JAVACOMICS/webtoonInnerList/webtoonExplain?title='+$('#webtoon_title').val();
@@ -265,8 +223,6 @@ $(function(){
 						data: 'id=' + $('#toonMemId').val() +'&episodeCode=' + episodeCode,
 						dataType: "json",
 						success: function(data){
-							alert(JSON.stringify(data.cash));
-							
 							location.href="/JAVACOMICS/webtoon/webtoonView.jsp?"+"episodeCode="+episodeCode+"&"+"title="+title		
 	
 							
@@ -294,7 +250,7 @@ $(function(){
 						type: "post",
 						data: "episodeCode=" + $(this).find(".epFree").next().val(),
 						success: function(data){
-							alert("123")
+							
 						},
 						error: function(err){
 							
@@ -308,7 +264,44 @@ $(function(){
 		error: function(err){
 			console.log(err);
 		}
-	}); 	
+	}); 
+ 	
+ 	//유사작품
+ 	$.ajax({
+		url: "/JAVACOMICS/webtoon/getStorageBodybottom",
+		type: "post",
+		data: 'title='+$('#webtoon_title').val(),
+		success: function(data){
+
+			$.each(data, function(index, items){
+				if(items.title != $('#webtoon_title').val() && index < 6){
+					$("<div/>", {
+						class: 'similartoonbox',
+						onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
+					}).append($("<div/>", {
+						class: 'similartoonbox1'
+					}).append($("<img/>", {
+						src: "/JAVACOMICS/image/" + items.toonBg	
+					}))).append($("<div/>", {
+						class: "similartoonbox2"
+					}).append($("<img/>", {
+						src: "/JAVACOMICS/image/" + items.toonChar
+					}))).append($("<div>", {
+						class: "similartoonbox3"		
+					}).append($("<img>", {
+						src: "/JAVACOMICS/image/" + items.toonTitle		
+					}))).append($("<div/>", {
+						class: "Transparency"
+					})).appendTo($(".similar"));
+				}
+			}); 
+		},
+		error: function(err){
+			console.log(err)		
+		}
+		
+	});
+ 	
 });
 
 
