@@ -6,10 +6,8 @@ $(function(){
 		$('.hidden').show();
 		$('.more').hide();
 	});
-	
-	//webtoonInnerList 상단부분 회차, 작품정보버튼 클릭 이벤트
-	//$('.information').css({"background-color":"transparent", "color":"#fff"});
-	
+
+	//회차, 작품정보 클릭
 	$('.top ul li').click(function(){
 		$(this).css({"background-color":"#fff", "color":"black"})
 		$('.top ul li').not($(this)).css({"background-color":"transparent", "color":"#fff"})
@@ -17,7 +15,6 @@ $(function(){
 	
 	//webtoonInnerList 상단부분 좋아요 클릭 이벤트
 	$('.fillheart').hide();
-	
 	
 	$('.heart').click(function(){
 		$(this).hide();
@@ -33,37 +30,20 @@ $(function(){
 	$('.btnPayNext').click(function(){
 		$(this).css({"background-color":"white", "color":"black", "border":"1px solid white"});
 	});
-	
-	
-	//radio버튼 클릭시 값 확인 => db들어갈 값
-	//var check = $("input[name='item_id']:checked").val();
-	//alert(check);
-		
-	//$('input[name=item_id]').click(function(){
-		//var check = $("input[name='item_id']:checked").val();
-		//alert(check);	
-	//});
-	
-	$('.back').click(function(){	
 
-		if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/homebody'){
-			history.back();
-		}else{
-			location.href='/JAVACOMICS/webtoon/homebody';
-		}
+});
+
+//뒤로가기 버튼 클릭
+$('.back').click(function(){	
+
+	if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/homebody'){
+		history.back();
+	}else if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/rankbody'){
+		history.back();
+	}else if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/mainpage'){
+		history.back();
+	}else{
+		location.href='http://localhost:8080/JAVACOMICS/webtoon/homebody';
+	}
 		
-		if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/rankbody'){
-			history.back();
-		}else{
-			location.href='/JAVACOMICS/webtoon/rankbody';
-		}
-		
-		if(document.referrer.split('8080')[1].substr(0,35) == '/JAVACOMICS/webtoon/mainpage'){
-			history.back();
-		}else{
-			location.href='/JAVACOMICS/webtoon/mainpage';
-		}
-		
-	});
-	
 });

@@ -29,7 +29,6 @@ public class WebtoonInnerListController {
 	@PostMapping(value="/getEpisode")
 	@ResponseBody
 	public WebtoonInnerListDTO getEpisode(@RequestParam String title){
-		System.out.println(title);
 		return webtoonInnerListService.getEpisode(title);	
 	}
 
@@ -41,8 +40,6 @@ public class WebtoonInnerListController {
 
 	@RequestMapping(value="webtoonExplain", method=RequestMethod.GET)
 	public String webtoonExplain(@RequestParam String title, Model model){
-		System.out.println("display 컨트롤러와따");
-		System.out.println(title);
 		model.addAttribute("title", title);
 		model.addAttribute("display", "webtoonExplain.jsp");
 		return "/webtoonInnerList/webtoonInnerList";
@@ -50,7 +47,6 @@ public class WebtoonInnerListController {
 	
 	@RequestMapping(value="webtoonPay", method=RequestMethod.GET)
 	public String webtoonPay(@RequestParam String id, Model model){
-		System.out.println("webtoonPay 컨트롤러와따");
 		model.addAttribute("id", id);
 		return "/webtoonInnerList/webtoonPay";
 	}
@@ -70,7 +66,6 @@ public class WebtoonInnerListController {
 	@PostMapping(value="/checkEpisodeBuy")
 	@ResponseBody
 	public CashListDTO checkEpisodeBuy(@ModelAttribute CashListDTO cashListDTO) {
-		System.out.println("checkEpisodeBuy 컨트롤러 옴");
 		return webtoonInnerListService.checkEpisodeBuy(cashListDTO);
 	}
 	
@@ -78,7 +73,6 @@ public class WebtoonInnerListController {
 	@PostMapping(value="/webtoonKakaoPay")
 	@ResponseBody
 	public void webtoonKakaoPay(@ModelAttribute CashListDTO cashListDTO) {
-		System.out.println("webtoonKakaoPay 컨트롤러 옴");
 		webtoonInnerListService.webtoonKakaoPay(cashListDTO);
 	}
 	

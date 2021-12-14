@@ -132,10 +132,9 @@
 </footer>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="/JAVACOMICS/js/webtoonInnerList.js"></script>
+<script type="text/javascript" src="/JAVACOMICS/js/webtoonPay.js"></script>
 <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
-<script>
-
+<script>		
 $('.btnPayNext').click(function(){
 
 	var IMP = window.IMP; 
