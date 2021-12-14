@@ -14,4 +14,8 @@ public interface ToonMemberDAO {
 
 	public void kakaoMemberWrite(Map<String, String> map);
 
+	public void toonMemberModify(ToonMemberDTO toonMemberDTO);
+
+	public void memberDelete(String id);
+
 }

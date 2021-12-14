@@ -27,6 +27,7 @@
 	color : gray;
 	font-size: 3rem;
 	margin-bottom: 20px;
+	cursor: pointer;
 }
 .contentsdiv .cashdiv img {
 	width: 50px;

@@ -44,9 +44,13 @@ public class ToonMemberServiceImpl implements ToonMemberService {
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		
 		String password = map.get("pwd");
-		System.out.println("zzz"+map.get("pwd"));
-		System.out.println("yyy"+toonMemberDTO.getPwd());
+		//System.out.println("zzz"+map.get("pwd"));
+		//System.out.println("yyy"+toonMemberDTO.getPwd());
 		//------
+		if(toonMemberDTO==null) {
+			return "fail";
+		}
+		
 		if(encoder.matches(password, toonMemberDTO.getPwd())) {
 			session.setAttribute("toonMemName", toonMemberDTO.getName());
 			session.setAttribute("toonMemId", toonMemberDTO.getId());
@@ -91,5 +95,30 @@ public class ToonMemberServiceImpl implements ToonMemberService {
 		return  Integer.toString(toonMemberDTO.getCash());
 		
 	}
+
+	@Override
+	public ToonMemberDTO memberInfo(String id) {
+		return toonMemberDAO.checkId(id);
+	}
+
+	@Override
+	public void toonMemberModify(ToonMemberDTO toonMemberDTO, HttpSession session) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePassword = encoder.encode(toonMemberDTO.getPwd());
+		 
+		toonMemberDTO.setPwd(securePassword);
+		
+		session.setAttribute("toonMemName", toonMemberDTO.getName());
+		 		
+		toonMemberDAO.toonMemberModify(toonMemberDTO);
+		
+	}
+
+	@Override
+	public void memberDelete(String id) {
+		toonMemberDAO.memberDelete(id);
+		
+	}
+
 
 }

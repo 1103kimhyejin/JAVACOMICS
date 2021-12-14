@@ -33,7 +33,7 @@ public class ToonMemberController {
 	@RequestMapping(value="login", method=RequestMethod.POST)
 	@ResponseBody
 	public String login(@RequestParam Map<String, String> map, HttpSession session) {
-		System.out.println("toonMemberlogin");
+		//System.out.println("toonMemberlogin");
 		return toonMemberService.login(map, session);
 	}
 	
@@ -59,14 +59,49 @@ public class ToonMemberController {
 	@RequestMapping(value="kakaoMemberWrite", method=RequestMethod.POST)
 	@ResponseBody
 	public void kakaoMemberWrite(@RequestParam Map<String, String> map, HttpSession session) {
-		System.out.println("kakaoMemberWrite");
+		//System.out.println("kakaoMemberWrite");
 		toonMemberService.kakaoMemberWrite(map, session);
 	}
 	
 	@RequestMapping(value="checkId", method=RequestMethod.POST)
 	public @ResponseBody String checkId(@RequestParam String id) {
-		System.out.println("toonMemberCheckId");
+		//System.out.println("toonMemberCheckId");
 		return toonMemberService.checkId(id);
+	}
+	
+	@RequestMapping(value="memberMenu", method=RequestMethod.GET)
+	public String memberMenu(Model model) {
+		model.addAttribute("fullscreenDisplay","main/memberMenu/memberMenu.jsp");
+		model.addAttribute("hide","o");
+		return "/index";
+	}
+	
+	@RequestMapping(value="memberModifyForm", method=RequestMethod.GET)
+	public String memberModifyForm(Model model) {
+		model.addAttribute("fullscreenDisplay","main/memberMenu/memberModifyForm.jsp");
+		model.addAttribute("hide","o");
+		return "/index";
+	}
+	
+	@RequestMapping(value="memberInfo", method=RequestMethod.POST)
+	public @ResponseBody ToonMemberDTO memberInfo(@RequestParam String id) {
+		//System.out.println("toonMemberCheckId");
+		return toonMemberService.memberInfo(id);
+	}
+	
+	@RequestMapping(value="toonMemberModify", method=RequestMethod.POST)
+	@ResponseBody
+	public void toonMemberModify(@ModelAttribute ToonMemberDTO toonMemberDTO, HttpSession session) {
+		//System.out.println("toonMemberWrite");
+		toonMemberService.toonMemberModify(toonMemberDTO, session);
+	}
+	
+	@RequestMapping(value="memberDelete", method=RequestMethod.GET)
+	@ResponseBody
+	public void memberDelete(@RequestParam String id, HttpSession session) {
+		//System.out.println("toonMemberCheckId");
+		toonMemberService.memberDelete(id);
+		session.invalidate();//무효화
 	}
 
 }

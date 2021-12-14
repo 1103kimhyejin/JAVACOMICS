@@ -18,4 +18,10 @@ public interface ToonMemberService {
 
 	public String cashcheck(String id);
 
+	public ToonMemberDTO memberInfo(String id);
+
+	public void toonMemberModify(ToonMemberDTO toonMemberDTO, HttpSession session);
+
+	public void memberDelete(String id);
+
 }

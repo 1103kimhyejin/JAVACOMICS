@@ -37,4 +37,16 @@ public class ToonMemberDAOMybatis implements ToonMemberDAO {
 		
 	}
 
+	@Override
+	public void toonMemberModify(ToonMemberDTO toonMemberDTO) {
+		sqlSession.update("toonmemberSQL.toonMemberModify", toonMemberDTO);
+		
+	}
+
+	@Override
+	public void memberDelete(String id) {
+		sqlSession.delete("toonmemberSQL.memberDelete", id);
+		
+	}
+
 }
