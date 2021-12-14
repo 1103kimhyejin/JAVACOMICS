@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import toonmember.bean.ToonMemberDTO;
@@ -17,6 +18,11 @@ public class ToonMemberServiceImpl implements ToonMemberService {
 
 	@Override
 	public void toonMemberWrite(ToonMemberDTO toonMemberDTO) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePassword = encoder.encode(toonMemberDTO.getPwd());
+		 
+		toonMemberDTO.setPwd(securePassword);
+		 		
 		toonMemberDAO.toonMemberWrite(toonMemberDTO);
 		
 	}
@@ -35,7 +41,26 @@ public class ToonMemberServiceImpl implements ToonMemberService {
 	@Override
 	public String login(Map<String, String> map, HttpSession session) {
 		ToonMemberDTO toonMemberDTO = toonMemberDAO.login(map);
-		System.out.println("aaaaaa");
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		
+		String password = map.get("pwd");
+		System.out.println("zzz"+map.get("pwd"));
+		System.out.println("yyy"+toonMemberDTO.getPwd());
+		//------
+		if(encoder.matches(password, toonMemberDTO.getPwd())) {
+			session.setAttribute("toonMemName", toonMemberDTO.getName());
+			session.setAttribute("toonMemId", toonMemberDTO.getId());
+			session.setAttribute("toonMemEmail", toonMemberDTO.getEmail());
+			return "success";
+	        
+	    }else {
+	    	return "fail";
+	    }
+		
+		
+		//------
+		
+		/*
 		if(toonMemberDTO == null) {
 			return "fail";
 			
@@ -45,11 +70,16 @@ public class ToonMemberServiceImpl implements ToonMemberService {
 			session.setAttribute("toonMemEmail", toonMemberDTO.getEmail());
 			return "success";
 		}
+		*/
 		
 	}
 
 	@Override
 	public void kakaoMemberWrite(Map<String, String> map, HttpSession session) {
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		String securePassword = encoder.encode(map.get("pwd"));
+		 
+		map.put("pwd", securePassword);
 		
 		toonMemberDAO.kakaoMemberWrite(map);
 	}
