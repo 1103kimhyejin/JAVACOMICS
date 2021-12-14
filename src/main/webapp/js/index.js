@@ -81,7 +81,7 @@ $(function(){
 	$('#loginForm').hide();
 	$('#loginBtn').click(function(){
 	
-		   //화면의 높이와 너비를 구한다.
+		//화면의 높이와 너비
         var maskHeight = $(document).height();  
         var maskWidth = $(window).width();  
 		
@@ -89,18 +89,18 @@ $(function(){
         $('#mask').css({'width':maskWidth,'height':maskHeight});  
 		
         //애니메이션 효과   
-        $('#mask').fadeTo("fast",0.5);
-        $('#loginForm').show();
+        $('#mask').fadeTo("fast",0.7);
+   
+        $('#loginForm').fadeIn();
 	});
 	
-	/*$('#closeLogin').click(function(){
-		$('#loginForm').fadeOut();
-	});*/
+
 	//검은 막을 눌렀을 때
         $('#mask').click(function () {  
             $(this).hide();  
             $('#loginForm').hide();
-            $('.spandiv2').show();  
+            $('.spandiv2').show();
+            $('.spandiv2 div').show();  
         });    
 	
 	
@@ -110,15 +110,15 @@ $(function(){
 		$('#loginDiv').empty();
 		
 		if($('#loginId').val() == ''){
-			$('#loginDiv').text('아이디 입력');
+			$('#loginDiv').text('아이디를 입력하세요.');
 			$('#loginDiv').css('color', 'red');
-			$('#loginDiv').css('font-size', '14pt');
+			$('#loginDiv').css('font-size', '10pt');
 			$('#loginDiv').css('font-weight', 'bold');
 			
 		}else if($('#loginPwd').val() == ''){
-			$('#loginDiv').text('비밀번호 입력');
+			$('#loginDiv').text('비밀번호를 입력하세요.');
 			$('#loginDiv').css('color', 'red');
-			$('#loginDiv').css('font-size', '14pt');
+			$('#loginDiv').css('font-size', '10pt');
 			$('#loginDiv').css('font-weight', 'bold');
 			
 		}else{
