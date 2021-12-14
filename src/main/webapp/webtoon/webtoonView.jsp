@@ -86,8 +86,8 @@
 		<br> 
 			
 		<div id="similartoon">
-			<div id="similartoonTitle">이 작품과 유사한 작품들</div>
-			
+		<div id="similartoonTitle">이 작품과 유사한 작품들</div>
+			<!--
 			<div class="similartoonbox">
 				<div class="similartoonbox1">
 					<img src="../image/webtoonView_image/similartoon1_background.jpg"/>					
@@ -137,7 +137,7 @@
 					<img src="../image/webtoonList/01.Mon/15/title.png"/>
 				</div>
 				<div id="Transparency"></div>
-			</div>
+			</div> -->
 		
 		</div><!-- similartoon	 -->	
 	</footer>
@@ -241,8 +241,43 @@ if($('#sessionid').val()!=''){
 		alert("status : " + request.status + ", message : " + request.responseText + ", error : " + error);
 	}
 }); */
-
+//유사작품
+	$.ajax({
+	url: "/JAVACOMICS/webtoon/getStorageBodybottom",
+	type: "post",
+	data: 'title='+$('#title').val(),
+	success: function(data){
+		$.each(data, function(index, items){
+			if(items.title != $('#webtoon_title').val() && index < 4){
+				$("<div/>", {
+					class: 'similartoonbox',
+					onclick: href= "location.href='/JAVACOMICS/webtoonInnerList/webtoonInnerList.jsp?title=" + items.title +"'"
+				}).append($("<div/>", {
+					class: 'similartoonbox1'
+				}).append($("<img/>", {
+					src: "/JAVACOMICS/image/" + items.toonBg	
+				}))).append($("<div/>", {
+					class: "similartoonbox2"
+				}).append($("<img/>", {
+					src: "/JAVACOMICS/image/" + items.toonChar
+				}))).append($("<div>", {
+					class: "similartoonbox3"		
+				}).append($("<img>", {
+					src: "/JAVACOMICS/image/" + items.toonTitle		
+				}))).append($("<div/>", {
+					class: "Transparency",
+					id: "Transparency"
+				})).appendTo($("#similartoon"));
+			}
+		}); 
+	},
+	error: function(err){
+		console.log(err)		
+	}
+	
 });
+
+});//onload
 
 
 function addComment(id, content, logtime){

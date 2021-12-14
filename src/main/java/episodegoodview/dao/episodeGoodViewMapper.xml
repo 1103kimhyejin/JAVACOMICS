@@ -13,7 +13,7 @@
 		select distinct id from episodegoodview where id=#{id} and episodecode=#{episodeCode} and episodegood='T' 
 	</select>
 	<select id="goodCount" parameterType="int" resultType="int">
-		select count(*) from episodegoodview where episodecode=#{episodeCode}
+		select count(*) from episodegoodview where episodecode=#{episodeCode} and episodegood='T'
 	</select>
 	<insert id="viewUpdate" parameterType="episodeGoodView">
 		insert into episodegoodview (id, episodecode, title, episodeview) values(#{id}, #{episodeCode}, #{title}, 'T')
