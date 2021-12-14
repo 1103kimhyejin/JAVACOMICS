@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+h1 {
+	width: 150px;
+	margin: 0 auto;
+	margin-top: 100px;
+}
+.backBtn2 {
+	position: absolute;
+	left: 50px;
+	top: 50px;
+	cursor: pointer;
+}
+.memberModifyFormDiv {
+	width: 600px;
+	margin: 100px auto;
+	text-align: center;
+}
+#memberModifyForm {
+	width: 100%;
+	margin: 100px auto;
+	font-size: 2rem;
+}
+#memberModifyForm tr > td:first-child {
+	width: 200px;
+	height: 50px;
+}
+#memberModifyForm tr > td:nth-child(2) {
+	width: 400px;
+}
+#memberModifyForm table input[type=text] {
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding-left: 10px;
+}
+
+#memberModifyForm table input[type=password]{
+	width: 250px;
+	height: 30px;
+	line-height: 30px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+	padding-left: 10px;
+}
+#memberModifyForm table input[type=button] {
+	background-color: transparent;
+	width: 80px;
+	height: 40px;
+	border: 1px solid #fff;
+	color: #fff;
+}
+#memberModifyForm table #emailConfirm {
+	width: 60px;
+	height: 30px;
+	font-size: 1.2rem;
+}
+#memberModifyForm table input[type=reset] {
+	background-color: transparent;
+	width: 80px;
+	height: 40px;
+	border: 1px solid #fff;
+	color: #fff;
+}
+#memberModifyForm div{
+}
+
+/*-------------tablet 1024------------------*/
+@media all and (max-width:1300px){
+	
+}
+
+/*-------------tablet 768------------------*/
+@media all and (max-width:1024px){
+	
+
+}
+
+/*-------------mobile------------------*/
+@media all and (max-width:768px){
+	.memberModifyFormDiv {
+		width:100%;
+	}
+	#memberModifyForm {
+		width: 350px;
+	}
+	#memberModifyForm tr > td:first-child {
+		width: 150px;
+		padding-left: 10px;
+	}
+	#memberModifyForm tr > td:nth-child(2) {
+		width: 200px;
+		text-align: center;
+	}
+	#memberModifyForm table input[type=text] {
+		width: 200px;
+	}
+	#memberModifyForm table input[type=password]{
+		width: 200px;
+	}
+}

@@ -36,5 +36,17 @@
 																			sysdate)
 	</insert>
 	
+	<!-- 회원정보수정 -->
+	<update id="toonMemberModify" parameterType="toonmember">
+		update toonmember set name=#{name},
+						  pwd=#{pwd},
+						  gender=#{gender},
+						  email=#{email} where id=#{id}								 
+	</update>
+	
+	<!-- 회원 탈퇴 -->
+	<delete id="memberDelete" parameterType="String">
+		delete toonmember where id=#{id}
+	</delete>
 
 </mapper>

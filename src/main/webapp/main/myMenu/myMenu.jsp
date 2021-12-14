@@ -7,7 +7,7 @@
 
 	<div class="backBtn"><img src="/JAVACOMICS/image/backicon.PNG"></div>
 	<div class="contentsdiv">
-		<div class="membernamediv" href="#">${sessionScope.toonMemName } ></div><!-- 내 정보 표시 자리 -->
+		<div class="membernamediv">${sessionScope.toonMemName } ></div><!-- 내 정보 표시 자리 -->
 		<div class="cashdiv">
 			<img src="/JAVACOMICS/image/myMenu/cash.svg"><span class="cashspan"></span>
 		</div>
@@ -47,6 +47,10 @@ $(function(){
 		var id= $('#toonMemId').attr("value");
 		//alert(id);
 		window.open("/JAVACOMICS/webtoonInnerList/webtoonPay?id="+id, "JAVACOMICS Pay", "width=400 height=600 top=200 left=700 scrollbars=yes");
+	});
+	
+	$('.membernamediv').click(function(){
+		location.href = '/JAVACOMICS/toonmember/memberMenu';
 	});
 });
 

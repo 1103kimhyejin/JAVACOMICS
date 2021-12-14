@@ -207,6 +207,52 @@ $(function(){
 		
 		
 	});
+	
+	//회원정보 수정
+	$('#memberModifyBtn').click(function(){
+		$('#memberModifyForm .msgDiv').empty();
+		
+		if($('#memberModifyForm #name').val() == ''){
+			$('#memberModifyForm .msgDiv').text('이름을 입력해주세요');
+			$('#memberModifyForm .msgDiv').css('color', 'red');
+			$('#memberModifyForm .msgDiv').css('font-size', '14pt');
+			$('#memberModifyForm .msgDiv').css('font-weight', 'bold');
+			
+		}else if($('#memberModifyForm #pwd').val() == ''){
+			$('#memberModifyForm .msgDiv').text('비밀번호를 입력해주세요');
+			$('#memberModifyForm .msgDiv').css('color', 'red');
+			$('#memberModifyForm .msgDiv').css('font-size', '14pt');
+			$('#memberModifyForm .msgDiv').css('font-weight', 'bold');
+		
+		}else if($('#memberModifyForm #pwd').val() != $('#memberModifyForm #pwd2').val()){
+			$('#memberModifyForm .msgDiv').text('비밀번호가 맞지 않습니다');
+			$('#memberModifyForm .msgDiv').css('color', 'red');
+			$('#memberModifyForm .msgDiv').css('font-size', '14pt');
+			$('#memberModifyForm .msgDiv').css('font-weight', 'bold');
+		
+		}else if($('#memberModifyForm #email').val() == ''){
+			$('#memberModifyForm .msgDiv').text('이메일을 입력해주세요');
+			$('#memberModifyForm .msgDiv').css('color', 'red');
+			$('#memberModifyForm .msgDiv').css('font-size', '14pt');
+			$('#memberModifyForm .msgDiv').css('font-weight', 'bold');
+			
+		} else{
+			$.ajax({
+				type: 'post',
+				url: '/JAVACOMICS/toonmember/toonMemberModify',
+				data: $('#memberModifyForm').serialize(),
+				success: function(){
+					alert('회원정보를 수정하였습니다');
+					location.href = '/JAVACOMICS/toonmember/memberMenu';
+				},
+				error: function(err){
+					console.log(err);
+				}
+			});
+		}
+		
+		
+	});
 
 	//회가입중 아이디 중복 확인
 	$('#memberWriteForm #id').focusout(function(){
