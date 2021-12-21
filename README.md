@@ -1,5 +1,12 @@
 # JAVACOMICS
-: 웹툰 사이트 자바코믹스
+#### : 웹툰 사이트 자바코믹스
+<br>
+👉 PDF 다운로드 : [JAVACOMICS.pdf](https://github.com/1103kimhyejin/JAVACOMICS/files/7755610/JAVACOMICS.pdf)
+
+<br>
+<br>
+
+
 
 <br>
 ▶ 참 여 인 원 : 4명<br>
@@ -12,4 +19,5 @@
 <br>
 
 ![image](https://user-images.githubusercontent.com/84005648/146936157-f71a5de9-b171-41be-b44c-6d3def1683d3.png)
+
 
