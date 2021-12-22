@@ -17,6 +17,17 @@
 ▶ 담 당 업 무 : 웹툰 열람 화면(UI, 목록에서 웹툰 DB 연동), 좋아요, 조회수, 
                 댓글(UI, CRUD, 답글, 베스트 댓글, 정렬 등) 구현<br>
 <br>
+💬 배운점 
+<br>
+: 결제 api 사용법, ajax 비동기 처리 방식에 대한 명확한 이해, 효율적인 sql 쿼리를 위한 기능들
+<br>
+<br>
+🔨 개선할 부분 
+<br>
+: 중복 코드 줄이기
+<br>
+<br>
+
 
 ![image](https://user-images.githubusercontent.com/84005648/146936157-f71a5de9-b171-41be-b44c-6d3def1683d3.png)
 
